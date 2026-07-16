@@ -46,6 +46,14 @@ export default defineConfig({
             },
           },
           {
+            urlPattern: ({ url }) => url.origin === "https://p.ff.hr",
+            handler: "CacheFirst",
+            options: {
+              cacheName: "stranke-logos-v1",
+              expiration: { maxEntries: 1500, maxAgeSeconds: 60 * 60 * 24 * 30 },
+            },
+          },
+          {
             urlPattern: /^https:\/\/[abc]\.basemaps\.cartocdn\.com\/.+/,
             handler: "CacheFirst",
             options: {

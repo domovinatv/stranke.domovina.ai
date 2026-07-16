@@ -34,6 +34,7 @@ CREATE TABLE IF NOT EXISTS parties (
   x_url            TEXT,
   president        TEXT,    -- iz registra Osobe (SVOJSTVO=PREDSJEDNIK)
   wiki_url         TEXT,
+  brand_color      TEXT,    -- #RRGGBB — Wikidata P465 ili dominantna boja loga
   lat              REAL,
   lng              REAL,
   notes            TEXT,

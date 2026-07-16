@@ -28,6 +28,12 @@ export interface Party {
   wiki_url?: string;
   lat?: number;
   lng?: number;
+  /** CDN logo filename, e.g. "hrvatska-demokratska-zajednica.png" → https://p.ff.hr/logos/{logo}. */
+  logo?: string;
+  /** Available density-ladder tiers (subset of [192, 256, 512, 1024]) at https://p.ff.hr/logos/{size}/{slug}.png. */
+  logo_sizes?: number[];
+  /** Official/derived party brand color as "#RRGGBB". */
+  brand_color?: string;
 }
 
 export interface City {

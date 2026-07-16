@@ -107,6 +107,8 @@ def score_url(url: str, party_name: str, short_name: str | None) -> int:
     # one row per party — LLM extraction frequently grabs the wrong row.
     if url_l.endswith((".pdf", ".docx", ".doc", ".xlsx", ".xls")):
         score -= 8
+    if "addtoany.com" in url_l:
+        score -= 10  # share-widget links, never a real profile
     if "facebook.com" in url_l:
         if "/sharer" in url_l or "/dialog" in url_l or "/share" in url_l:
             score -= 10

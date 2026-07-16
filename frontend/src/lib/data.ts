@@ -43,3 +43,26 @@ export function googleMapsUrl(p: Pick<Party, "lat" | "lng">): string | null {
   if (p.lat == null || p.lng == null) return null;
   return `https://www.google.com/maps?q=${p.lat},${p.lng}`;
 }
+
+export const LOGO_CDN = "https://p.ff.hr";
+
+/** Web-default logo (≤512px PNG) or null when the party has none. */
+export function logoSrc(party: Pick<Party, "logo">): string | null {
+  if (!party.logo) return null;
+  return `${LOGO_CDN}/logos/${party.logo}`;
+}
+
+/**
+ * srcset over the CDN size ladder (192/256/512/1024). Tiers exist only where
+ * the source image honestly fills them, so the browser picks the best real
+ * resolution for the rendered size × devicePixelRatio and never upscales a
+ * tiny logo into a blurry big one.
+ */
+export function logoSrcSet(
+  party: Pick<Party, "logo" | "slug" | "logo_sizes">,
+): string | undefined {
+  if (!party.logo || !party.logo_sizes?.length) return undefined;
+  return party.logo_sizes
+    .map((s) => `${LOGO_CDN}/logos/${s}/${party.slug}.png ${s}w`)
+    .join(", ");
+}

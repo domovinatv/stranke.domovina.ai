@@ -1,9 +1,15 @@
+import { useState } from "react";
 import type { Party } from "@/lib/types";
+import { logoSrc, logoSrcSet } from "@/lib/data";
 
 /**
- * Stranke nemaju logotipe u katalogu, pa svaka dobiva inicijal-avatar:
- * prvo slovo kraćeg (ili punog) naziva na pozadini deterministički
- * izvedenoj iz canonical_name — ista stranka uvijek ima istu boju.
+ * Logo stranke unutar fiksnog kvadratnog *footprinta* (redci ostaju poravnati)
+ * ali bez vidljivog okvira: ne-kvadratni logotipi zadržavaju omjer i samo
+ * zauzimaju manje širine/visine — nikad izrezani, nikad letterboxani.
+ *
+ * Fallback lanac: logo s CDN-a → (nema loga ili img error) → inicijal-avatar.
+ * Inicijal-avatar koristi službenu brand_color kad postoji, inače pozadinu
+ * deterministički izvedenu iz canonical_name — ista stranka uvijek ista boja.
  */
 const PALETTE: Array<{ bg: string; fg: string }> = [
   { bg: "#0EA5E9", fg: "#FFFFFF" }, // sky-500
@@ -33,23 +39,66 @@ function initialOf(party: Pick<Party, "short_name" | "canonical_name">): string 
   return (m ? m[0] : "?").toUpperCase();
 }
 
+const HEX_COLOR_RE = /^#[0-9a-f]{6}$/i;
+
+/** Light or dark text over an arbitrary background, by YIQ perceived brightness. */
+function contrastFg(hex: string): string {
+  const n = parseInt(hex.slice(1), 16);
+  const r = (n >> 16) & 0xff;
+  const g = (n >> 8) & 0xff;
+  const b = n & 0xff;
+  const yiq = (r * 299 + g * 587 + b * 114) / 1000;
+  return yiq >= 150 ? "#1E293B" : "#FFFFFF";
+}
+
 export function partyColor(
-  party: Pick<Party, "canonical_name">,
+  party: Pick<Party, "canonical_name" | "brand_color">,
 ): { bg: string; fg: string } {
+  if (party.brand_color && HEX_COLOR_RE.test(party.brand_color)) {
+    return { bg: party.brand_color, fg: contrastFg(party.brand_color) };
+  }
   return PALETTE[hashString(party.canonical_name || "") % PALETTE.length];
 }
+
+type AvatarParty = Pick<
+  Party,
+  "slug" | "short_name" | "canonical_name" | "logo" | "logo_sizes" | "brand_color"
+>;
 
 export function PartyAvatar({
   party,
   size = 48,
   className = "",
 }: {
-  party: Pick<Party, "short_name" | "canonical_name">;
+  party: AvatarParty;
   size?: number;
   className?: string;
 }) {
-  const { bg, fg } = partyColor(party);
+  const [failed, setFailed] = useState(false);
+  const src = logoSrc(party);
   const px = `${size}px`;
+
+  if (src && !failed) {
+    return (
+      <span
+        className={`flex-shrink-0 grid place-items-center ${className}`}
+        style={{ width: px, height: px }}
+      >
+        <img
+          src={src}
+          srcSet={logoSrcSet(party)}
+          sizes={px}
+          alt={party.canonical_name}
+          loading="lazy"
+          decoding="async"
+          className="max-w-full max-h-full w-auto h-auto object-contain"
+          onError={() => setFailed(true)}
+        />
+      </span>
+    );
+  }
+
+  const { bg, fg } = partyColor(party);
   return (
     <span
       className={`flex-shrink-0 grid place-items-center rounded-full font-extrabold select-none ${className}`}

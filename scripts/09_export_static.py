@@ -24,15 +24,18 @@ sys.path.insert(0, str(ROOT))
 from src.db import connect  # noqa: E402
 
 OUT_DIR = ROOT / "frontend" / "public" / "data"
+LOGO_SRC = ROOT / "data" / "logos"
+SIZED_SRC = ROOT / "data" / "logos_sized"
+LOGO_TIERS = [192, 256, 512, 1024]
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 
 LIST_COLUMNS = [
     "id", "slug", "canonical_name", "short_name", "oib", "reg_number",
     "status", "registered_at", "status_date", "city", "address", "county",
     "founded_place", "founded_date", "website", "email", "phone",
     "phone_kind", "phone_e164", "fb_url", "ig_url", "x_url", "president",
-    "wiki_url", "lat", "lng",
+    "wiki_url", "brand_color", "lat", "lng",
 ]
 
 
@@ -48,12 +51,26 @@ def _write_json(path: Path, payload) -> None:
     )
 
 
+def _logo_sizes(slug: str) -> list[int]:
+    """Size tiers genuinely available on the p.ff.hr CDN (no upscaling)."""
+    return [s for s in LOGO_TIERS if (SIZED_SRC / str(s) / f"{slug}.png").exists()]
+
+
 def export_parties(conn) -> list[dict]:
     rows = conn.execute(
         f"SELECT {', '.join(LIST_COLUMNS)} FROM parties ORDER BY canonical_name"
     ).fetchall()
-    # drop nulls to shrink payload
-    return [{k: v for k, v in dict(r).items() if v not in (None, "")} for r in rows]
+    parties = []
+    for r in rows:
+        d = dict(r)
+        if (LOGO_SRC / f"{d['slug']}.png").exists():
+            d["logo"] = f"{d['slug']}.png"
+            sizes = _logo_sizes(d["slug"])
+            if sizes:
+                d["logo_sizes"] = sizes
+        # drop nulls to shrink payload
+        parties.append({k: v for k, v in d.items() if v not in (None, "")})
+    return parties
 
 
 def export_cities(conn) -> list[dict]:
