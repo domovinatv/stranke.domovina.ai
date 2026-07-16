@@ -1,0 +1,11 @@
+.env
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+data/stranke.db
+data/raw/
+data/logos/
+*.tsbuildinfo
+node_modules/
+dist/

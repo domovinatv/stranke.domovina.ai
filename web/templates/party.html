@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+
+{% block title %}{{ party.canonical_name }} · DOMOVINA Stranke{% endblock %}
+
+{% block content %}
+<a href="/" class="text-sm text-slate-500 hover:text-hr-red mb-4 inline-block">← Natrag na popis</a>
+
+<div class="bg-white rounded-lg border border-slate-200 overflow-hidden">
+
+  {# Header / hero #}
+  <div class="p-6 flex items-start gap-5 border-b border-slate-200">
+    <div class="w-24 h-24 flex-shrink-0 rounded-full {{ party.avatar_color }} grid place-items-center font-bold text-5xl select-none">
+      {{ party.initial }}
+    </div>
+    <div class="flex-1">
+      <div class="flex items-center gap-3 flex-wrap">
+        <h1 class="text-2xl font-bold">{{ party.canonical_name }}</h1>
+        {% if party.status == 'AKTIVAN' %}
+          <span class="text-xs font-bold uppercase tracking-wide bg-emerald-100 text-emerald-700 px-2 py-1 rounded">AKTIVAN</span>
+        {% elif party.status == 'PRESTANAK' %}
+          <span class="text-xs font-bold uppercase tracking-wide bg-slate-200 text-slate-600 px-2 py-1 rounded">PRESTANAK</span>
+        {% endif %}
+      </div>
+      {% if party.short_name and party.short_name != party.canonical_name %}
+        <div class="text-sm text-slate-500">Skraćeno: {{ party.short_name }}</div>
+      {% endif %}
+      <div class="mt-2 text-sm text-slate-600">
+        {% if party.city %}<a href="/gradovi/{{ party.city }}" class="inline-block mr-3 hover:text-hr-red">📍 {{ party.city }}</a>{% endif %}
+        {% if party.county %}<span class="inline-block mr-3">🏞 {{ party.county }}</span>{% endif %}
+        {% if party.registered_at %}<span class="inline-block mr-3" title="Datum upisa u registar">🗓 Upisana {{ party.registered_at }}</span>{% endif %}
+        {% if party.status == 'PRESTANAK' and party.status_date %}<span class="inline-block mr-3" title="Datum prestanka">✕ Prestanak {{ party.status_date }}</span>{% endif %}
+        {% if party.wiki_url %}<a href="{{ party.wiki_url }}" target="_blank" rel="noopener" class="inline-block mr-3 text-hr-blue hover:underline">📖 Wikipedija</a>{% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+
+    {# Contact panel #}
+    <div class="p-6 space-y-3">
+      <h2 class="text-xs font-semibold uppercase text-slate-500">Kontakt</h2>
+      {% set has_contact = false %}
+      {% if party.address %}
+        <div><span class="text-slate-400 text-sm">Adresa:</span> {{ party.address }}{% if party.city %}, {{ party.city }}{% endif %}</div>
+        {% set has_contact = true %}
+      {% elif party.seat %}
+        <div><span class="text-slate-400 text-sm">Sjedište:</span> {{ party.seat }}</div>
+        {% set has_contact = true %}
+      {% endif %}
+      {% if party.phone %}
+        <div>
+          <span class="text-slate-400 text-sm">
+            {% if party.phone_kind == 'mobile' %}📱 Mobitel:
+            {% elif party.phone_kind == 'landline' %}☎️ Fiksni:
+            {% else %}Telefon:{% endif %}
+          </span>
+          <a href="tel:{{ party.phone_e164 or party.phone }}" class="text-hr-blue hover:underline">{{ party.phone }}</a>
+          {% if party.phone_e164 %}
+            <span class="text-xs text-slate-400 ml-1 font-mono">({{ party.phone_e164 }})</span>
+          {% endif %}
+        </div>
+        {% set has_contact = true %}
+      {% endif %}
+      {% if party.email %}
+        <div><span class="text-slate-400 text-sm">Email:</span>
+          <a href="mailto:{{ party.email }}" class="text-hr-blue hover:underline">{{ party.email }}</a></div>
+        {% set has_contact = true %}
+      {% endif %}
+      {% if party.website %}
+        <div><span class="text-slate-400 text-sm">Web:</span>
+          <a href="{{ party.website }}" target="_blank" rel="noopener" class="text-hr-blue hover:underline break-all">{{ party.website }}</a></div>
+        {% set has_contact = true %}
+      {% endif %}
+      {% if party.president %}
+        <div><span class="text-slate-400 text-sm">Predsjednik:</span> {{ party.president }}</div>
+        {% set has_contact = true %}
+      {% endif %}
+
+      <div class="flex gap-3 pt-2">
+        {% if party.fb_url %}
+          <a href="{{ party.fb_url }}" target="_blank" rel="noopener"
+             class="px-3 py-1.5 text-sm rounded bg-blue-600 text-white hover:bg-blue-700">Facebook</a>
+          {% set has_contact = true %}
+        {% endif %}
+        {% if party.ig_url %}
+          <a href="{{ party.ig_url }}" target="_blank" rel="noopener"
+             class="px-3 py-1.5 text-sm rounded bg-pink-600 text-white hover:bg-pink-700">Instagram</a>
+          {% set has_contact = true %}
+        {% endif %}
+        {% if party.x_url %}
+          <a href="{{ party.x_url }}" target="_blank" rel="noopener"
+             class="px-3 py-1.5 text-sm rounded bg-slate-900 text-white hover:bg-slate-800">X</a>
+          {% set has_contact = true %}
+        {% endif %}
+      </div>
+
+      {% if not has_contact %}
+        <p class="text-sm text-slate-400 italic">Nema kontakt podataka. Pokreni backfill za ovu stranku.</p>
+      {% endif %}
+
+      {% if party.lat and party.lng %}
+        <div class="pt-3">
+          <h2 class="text-xs font-semibold uppercase text-slate-500 mb-2">Lokacija</h2>
+          <div id="mini-map" class="rounded border border-slate-200" style="height: 220px;"></div>
+        </div>
+      {% endif %}
+    </div>
+
+    {# Registry / people / functions / aliases #}
+    <div class="p-6 space-y-4">
+      <div>
+        <h2 class="text-xs font-semibold uppercase text-slate-500 mb-1">Registar</h2>
+        <dl class="text-sm space-y-1">
+          {% if party.oib %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">OIB</dt><dd class="font-mono">{{ party.oib }}</dd></div>
+          {% endif %}
+          {% if party.reg_number %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">Registarski broj</dt><dd class="font-mono">{{ party.reg_number }}</dd></div>
+          {% endif %}
+          {% if party.book_number %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">Broj knjige</dt><dd>{{ party.book_number }}</dd></div>
+          {% endif %}
+          {% if party.registered_at %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">Datum upisa</dt><dd>{{ party.registered_at }}</dd></div>
+          {% endif %}
+          {% if party.status_date %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">Datum statusa</dt><dd>{{ party.status_date }}</dd></div>
+          {% endif %}
+          {% if party.seat %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">Sjedište</dt><dd class="text-right">{{ party.seat }}</dd></div>
+          {% endif %}
+          {% if party.founded_place %}
+            <div class="flex justify-between border-b border-slate-100 py-1"><dt class="text-slate-400">Mjesto osnivanja</dt><dd>{{ party.founded_place }}</dd></div>
+          {% endif %}
+          {% if party.founded_date %}
+            <div class="flex justify-between py-1"><dt class="text-slate-400">Datum osnivanja</dt><dd>{{ party.founded_date }}</dd></div>
+          {% endif %}
+        </dl>
+      </div>
+
+      <div>
+        <h2 class="text-xs font-semibold uppercase text-slate-500 mb-1">Osobe ovlaštene za zastupanje</h2>
+        {% if party.people %}
+          <ul class="text-sm space-y-1">
+            {% for o in party.people %}
+              <li class="flex justify-between border-b border-slate-100 py-1 last:border-0">
+                <span>
+                  {{ o.full_name }}
+                  {% if o.represents %}<span class="text-[10px] font-medium px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700 ml-1">zastupa</span>{% endif %}
+                </span>
+                <span class="text-slate-400 text-xs">{{ o.role or '' }} <span class="text-slate-300">· {{ o.source }}</span></span>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p class="text-sm text-slate-400">Nema podataka.</p>
+        {% endif %}
+      </div>
+
+      {% if party.aliases %}
+        <div>
+          <h2 class="text-xs font-semibold uppercase text-slate-500 mb-1">Aliasi</h2>
+          <div class="text-sm space-x-2">
+            {% for a in party.aliases %}
+              <span class="inline-block bg-slate-100 rounded px-2 py-0.5 text-xs">
+                {{ a.alias }} <span class="text-slate-400">[{{ a.source }}]</span>
+              </span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {# Function history (NSK) #}
+  {% if party.functions %}
+  <div class="border-t border-slate-200 p-6">
+    <h2 class="text-xs font-semibold uppercase text-slate-500 mb-2">Povijest funkcija</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {% for g in party.functions %}
+        <div>
+          <h3 class="text-sm font-semibold mb-1">{{ g.function }}</h3>
+          <ul class="text-sm space-y-1">
+            {% for f in g.entries %}
+              <li class="flex justify-between border-b border-slate-100 py-1 last:border-0">
+                <span>{{ f.holder }}</span>
+                <span class="text-slate-400 text-xs">
+                  {% if f.mandate_start or f.mandate_end %}
+                    {{ f.mandate_start or '?' }} – {{ f.mandate_end or 'danas' }}
+                  {% endif %}
+                  <span class="text-slate-300">· {{ f.source }}</span>
+                </span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {# Provenance / backfill history #}
+  {% if party.backfill_runs %}
+  <div class="border-t border-slate-200 p-6">
+    <h2 class="text-xs font-semibold uppercase text-slate-500 mb-2">Backfill povijest</h2>
+    <ul class="text-xs space-y-1">
+      {% for r in party.backfill_runs %}
+        <li class="flex justify-between text-slate-500">
+          <span>{{ r.ran_at }}</span>
+          <span class="font-mono text-slate-400">{{ r.fields_filled }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+</div>
+
+{% if party.lat and party.lng %}
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+  const map = L.map('mini-map').setView([{{ party.lat }}, {{ party.lng }}], 14);
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap',
+    maxZoom: 19,
+  }).addTo(map);
+  L.circleMarker([{{ party.lat }}, {{ party.lng }}], {
+    radius: 8,
+    color: '#fff',
+    weight: 1.5,
+    fillColor: '{{ "#10b981" if party.status == "AKTIVAN" else "#94a3b8" }}',
+    fillOpacity: 0.95,
+  }).addTo(map);
+</script>
+{% endif %}
+{% endblock %}

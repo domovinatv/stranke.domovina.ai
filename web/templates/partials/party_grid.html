@@ -1,0 +1,58 @@
+{# Reusable grid of party cards. Expects `parties` in context.
+   Used by index list view AND by /gradovi/{name}. #}
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
+{% for p in parties %}
+  <a href="/stranke/{{ p.slug }}"
+     class="bg-white rounded-lg border border-slate-200 border-l-4
+       {% if p.action_score == 5 %}border-l-emerald-500
+       {% elif p.action_score >= 3 %}border-l-lime-400
+       {% elif p.action_score >= 1 %}border-l-amber-300
+       {% else %}border-l-slate-200 opacity-75{% endif %}
+       hover:border-hr-red hover:shadow-sm transition p-4 flex gap-3 group">
+    <div class="w-12 h-12 flex-shrink-0 rounded-full {{ p.avatar_color }} grid place-items-center font-bold text-xl select-none">
+      {{ p.initial }}
+    </div>
+    <div class="flex-1 min-w-0">
+      <div class="flex items-center gap-2">
+        <div class="font-semibold truncate group-hover:text-hr-red">{{ p.canonical_name }}</div>
+        {% if p.short_name and p.short_name != p.canonical_name %}
+          <span class="text-[9px] font-bold uppercase tracking-wide bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded shrink-0">{{ p.short_name }}</span>
+        {% endif %}
+      </div>
+      <div class="text-xs text-slate-500 truncate mt-0.5">
+        {% if p.city %}📍 {{ p.city }}{% endif %}
+        {% if p.city and p.president %} · {% endif %}
+        {% if p.president %}👤 {{ p.president }}{% endif %}
+        {% if (p.city or p.president) and p.reg_year %} · {% endif %}
+        {% if p.reg_year %}📅 {{ p.reg_year }}{% endif %}
+      </div>
+
+      <div class="mt-2 flex items-center gap-1 flex-wrap">
+        {% if p.status == 'AKTIVAN' %}
+          <span class="text-[10px] font-medium px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-700">AKTIVAN</span>
+        {% elif p.status == 'PRESTANAK' %}
+          <span class="text-[10px] font-medium px-1.5 py-0.5 rounded bg-slate-200 text-slate-600">PRESTANAK</span>
+        {% endif %}
+        {% if p.is_full %}
+          <span class="text-[9px] font-bold uppercase tracking-wide bg-emerald-500 text-white px-1.5 py-0.5 rounded">✓ Pun</span>
+        {% elif p.action_score == 0 %}
+          <span class="text-[9px] font-bold uppercase tracking-wide bg-slate-300 text-slate-700 px-1.5 py-0.5 rounded">∅ Nedostupna</span>
+        {% endif %}
+      </div>
+
+      <div class="mt-1.5 flex items-center gap-1 flex-wrap text-[10px]">
+        <span class="px-1.5 py-0.5 rounded {% if p.can_sms %}bg-emerald-100 text-emerald-700 font-medium{% else %}bg-slate-50 text-slate-300{% endif %}"
+              title="{% if p.can_sms %}SMS na {{ p.phone }}{% else %}Nema mobitela za SMS{% endif %}">💬 SMS</span>
+        <span class="px-1.5 py-0.5 rounded {% if p.can_call %}bg-sky-100 text-sky-700 font-medium{% else %}bg-slate-50 text-slate-300{% endif %}"
+              title="{% if p.can_call %}Nazvati {{ p.phone }}{% else %}Nema telefona{% endif %}">📞 Poziv</span>
+        <span class="px-1.5 py-0.5 rounded {% if p.can_email %}bg-purple-100 text-purple-700 font-medium{% else %}bg-slate-50 text-slate-300{% endif %}"
+              title="{% if p.can_email %}{{ p.email }}{% else %}Nema emaila{% endif %}">✉ Email</span>
+        <span class="px-1.5 py-0.5 rounded {% if p.can_mail %}bg-amber-100 text-amber-700 font-medium{% else %}bg-slate-50 text-slate-300{% endif %}"
+              title="{% if p.can_mail %}{{ p.address }}{% else %}Nema adrese za poštu{% endif %}">📮 Pošta</span>
+        <span class="px-1.5 py-0.5 rounded {% if p.can_web %}bg-indigo-100 text-indigo-700 font-medium{% else %}bg-slate-50 text-slate-300{% endif %}"
+              title="{% if p.can_web %}Online prisutnost{% else %}Nema online prisutnosti{% endif %}">🌐 Online</span>
+      </div>
+    </div>
+  </a>
+{% endfor %}
+</div>

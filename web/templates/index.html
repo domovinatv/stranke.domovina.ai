@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-6">
+
+  {# ---------- Sidebar: filters ---------- #}
+  <aside class="space-y-4">
+    <form id="filters" class="space-y-4 bg-white rounded-lg border border-slate-200 p-4"
+          hx-get="/" hx-target="#party-list" hx-push-url="true"
+          hx-trigger="change, keyup changed delay:300ms from:#q"
+          hx-include="this">
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Pretraga</label>
+        <input id="q" name="q" type="search" value="{{ q }}"
+               placeholder="Pretraži..."
+               class="w-full rounded border border-slate-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-hr-red/40 focus:border-hr-red">
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Status</label>
+        <select name="status" class="w-full rounded border border-slate-300 px-2 py-2 text-sm">
+          <option value="aktivne" {% if status == 'aktivne' %}selected{% endif %}>Aktivne ({{ stats.active or 0 }})</option>
+          <option value="ugasene" {% if status == 'ugasene' %}selected{% endif %}>Ugašene ({{ stats.defunct or 0 }})</option>
+          <option value="sve" {% if status == 'sve' %}selected{% endif %}>Sve ({{ stats.total }})</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-semibold text-slate-500 uppercase mb-1">Grad</label>
+        <select name="grad" class="w-full rounded border border-slate-300 px-2 py-2 text-sm">
+          <option value="">Svi gradovi</option>
+          {% for c in cities %}
+            <option value="{{ c.name }}" {% if grad == c.name %}selected{% endif %}>
+              {{ c.name }} ({{ c.n }})
+            </option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <div>
+        <div class="block text-xs font-semibold text-slate-500 uppercase mb-2">Filtriraj po kontaktu</div>
+        <div class="space-y-1.5 text-sm">
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="only_full" value="1" {% if only_full %}checked{% endif %}
+                   class="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500">
+            <span class="font-semibold text-emerald-700">✓ Samo Pun kontakt <span class="text-slate-400 text-xs font-normal">({{ stats.full_contact or 0 }})</span></span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="has_email" value="1" {% if has_email %}checked{% endif %}
+                   class="rounded border-slate-300 text-hr-red focus:ring-hr-red">
+            <span>✉ Ima email <span class="text-slate-400 text-xs">({{ stats.can_email or 0 }})</span></span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="has_phone" value="1" {% if has_phone %}checked{% endif %}
+                   class="rounded border-slate-300 text-hr-red focus:ring-hr-red">
+            <span>📞 Ima telefon <span class="text-slate-400 text-xs">({{ stats.can_call or 0 }})</span></span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="has_web" value="1" {% if has_web %}checked{% endif %}
+                   class="rounded border-slate-300 text-hr-red focus:ring-hr-red">
+            <span>🌐 Ima web <span class="text-slate-400 text-xs">({{ stats.with_website or 0 }})</span></span>
+          </label>
+          <label class="flex items-center gap-2">
+            <input type="checkbox" name="has_social" value="1" {% if has_social %}checked{% endif %}
+                   class="rounded border-slate-300 text-hr-red focus:ring-hr-red">
+            <span>👥 Društvene mreže <span class="text-slate-400 text-xs">({{ stats.with_social or 0 }})</span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="pt-2 border-t border-slate-200">
+        <a href="/" class="text-xs text-slate-500 hover:text-hr-red">↺ Resetiraj filtere</a>
+      </div>
+    </form>
+
+    {# Stats card #}
+    <div class="bg-white rounded-lg border border-slate-200 p-4">
+      <h3 class="text-xs font-semibold text-slate-500 uppercase mb-2">Po načinu dohvata</h3>
+      <dl class="text-sm space-y-1">
+        <div class="flex justify-between"><dt class="text-slate-500">Ukupno stranaka</dt><dd class="font-bold">{{ stats.total }}</dd></div>
+        <div class="flex justify-between"><dt class="text-emerald-700">Aktivne</dt><dd class="text-emerald-700 font-medium">{{ stats.active or 0 }}</dd></div>
+        <div class="flex justify-between"><dt class="text-slate-500">Ugašene</dt><dd>{{ stats.defunct or 0 }}</dd></div>
+        <div class="flex justify-between border-t pt-1 mt-1"><dt class="text-emerald-700 font-medium">✓ Pun kontakt</dt><dd class="font-medium">{{ stats.full_contact or 0 }}</dd></div>
+        <div class="flex justify-between"><dt class="text-slate-500">💬 Mogu SMS</dt><dd>{{ stats.can_sms or 0 }}</dd></div>
+        <div class="flex justify-between"><dt class="text-slate-500">📞 Mogu nazvati</dt><dd>{{ stats.can_call or 0 }}</dd></div>
+        <div class="flex justify-between"><dt class="text-slate-500">✉ Mogu email</dt><dd>{{ stats.can_email or 0 }}</dd></div>
+        <div class="flex justify-between"><dt class="text-slate-500">📮 Mogu poštom</dt><dd>{{ stats.can_mail or 0 }}</dd></div>
+        <div class="flex justify-between"><dt class="text-slate-500">🌐 Online prisutne</dt><dd>{{ stats.can_web or 0 }}</dd></div>
+        <div class="flex justify-between border-t pt-1 mt-1"><dt class="text-slate-400">∅ Nedostupne</dt><dd class="text-slate-400">{{ stats.unreachable or 0 }}</dd></div>
+      </dl>
+    </div>
+  </aside>
+
+  {# ---------- Main: party list ---------- #}
+  <section id="party-list">
+    {% include "partials/party_list.html" %}
+  </section>
+</div>
+{% endblock %}
