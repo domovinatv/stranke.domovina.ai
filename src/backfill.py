@@ -54,6 +54,10 @@ _SOCIAL_DOMAINS = {"facebook.com", "instagram.com", "twitter.com", "x.com"}
 
 _WIKI_RE = re.compile(r"https?://(?:hr\.)?wikipedia\.org/wiki/\S+", re.IGNORECASE)
 
+# Croatian parties don't live on neighbouring-country ccTLDs — a .rs/.ba/...
+# website or email is a namesake foreign party leaking through extraction.
+_FOREIGN_TLD_RE = re.compile(r"\.(?:rs|ba|me|mk|al)(?:[/:]|$)", re.IGNORECASE)
+
 
 def _is_blank(v: Any) -> bool:
     if v is None:
@@ -91,6 +95,12 @@ def score_url(url: str, party_name: str, short_name: str | None) -> int:
         "boniteti.hr", "fina.hr",
         # state election commission / government portals list every party
         "izbori.hr", "gov.hr", "sabor.hr",
+        # local-news portals that outrank small parties for their own name
+        # (2026-07-16 audit: sisak.info leaked into HSD, parentium.com into ISU)
+        "sisak.info", "parentium.com",
+        # foreign-party sites surfaced for namesake Croatian parties
+        # (Srpska radikalna stranka leaked into Župska stranka)
+        ".org.rs", ".gov.rs", "srpskaradikalnastranka",
     )):
         score -= 5
     # Documents almost always come from DIP/ministry directories that mix
@@ -174,8 +184,12 @@ def update_party(conn, party_id: int, fields: dict[str, Any]) -> list[str]:
             continue
         if col == "email":
             v = str(val).strip()
-            if not _EMAIL_RE.fullmatch(v):
+            if not _EMAIL_RE.fullmatch(v) or _FOREIGN_TLD_RE.search(v):
                 continue
+        if col in ("website", "fb_url", "ig_url", "x_url") and _FOREIGN_TLD_RE.search(
+            str(val).split("?")[0]
+        ):
+            continue
         # Fill-in only — never overwrite registry data.
         if not _is_blank(current.get(col)):
             continue

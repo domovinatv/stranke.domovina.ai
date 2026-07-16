@@ -68,6 +68,10 @@ def main() -> None:
                 except InsufficientCreditsError:
                     log.warning("all Firecrawl keys out of credits — stopping")
                     break
+                except Exception as e:  # network timeouts etc. — skip the party
+                    log.warning("error for %s: %s — skipping", row["slug"], str(e)[:150])
+                    stats["error"] = stats.get("error", 0) + 1
+                    continue
                 stats[result["status"]] = stats.get(result["status"], 0) + 1
                 log.info(
                     "[%d/%d] %s -> %s %s",
