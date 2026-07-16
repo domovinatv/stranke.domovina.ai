@@ -19,3 +19,5 @@ frontend/public/data/
 # Built from frontend/public/data/ by scripts/10_export_sitemap.py
 frontend/public/sitemap.xml
 frontend/public/robots.txt
+
+.wrangler/
