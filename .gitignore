@@ -9,3 +9,13 @@ data/logos/
 *.tsbuildinfo
 node_modules/
 dist/
+
+# Frontend (React PWA)
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.tsbuildinfo
+# Built from SQLite by scripts/09_export_static.py — regenerated on each deploy
+frontend/public/data/
+# Built from frontend/public/data/ by scripts/10_export_sitemap.py
+frontend/public/sitemap.xml
+frontend/public/robots.txt

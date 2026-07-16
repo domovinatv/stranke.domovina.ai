@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#002F6C"/>
+      <stop offset="1" stop-color="#001A40"/>
+    </linearGradient>
+    <linearGradient id="croFlagVertical" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF0000"/>
+      <stop offset="33.3%" stop-color="#FF0000"/>
+      <stop offset="33.3%" stop-color="#FFFFFF"/>
+      <stop offset="66.6%" stop-color="#FFFFFF"/>
+      <stop offset="66.6%" stop-color="#002F6C"/>
+      <stop offset="100%" stop-color="#002F6C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <rect x="0" y="0" width="400" height="8" fill="#FF0000"/>
+  <rect x="400" y="0" width="400" height="8" fill="#FFFFFF"/>
+  <rect x="800" y="0" width="400" height="8" fill="#FFFFFF" opacity="0.4"/>
+
+  <g transform="translate(100 175) scale(0.55)">
+    <rect width="512" height="512" rx="32" fill="white"/>
+    <path d="M72 64H248C354.071 64 440 149.929 440 256C440 362.071 354.071 448 248 448H72V64Z" fill="url(#croFlagVertical)"/>
+    <path d="M168 160H248C301.019 160 344 202.981 344 256C344 309.019 301.019 352 248 352H168V160Z" fill="white"/>
+    <g transform="translate(245 256)">
+      <circle cx="0" cy="0" r="68" fill="white" stroke="#002F6C" stroke-width="6"/>
+      <rect x="-16" y="-46" width="34" height="42" rx="5" fill="white" stroke="#002F6C" stroke-width="5"/>
+      <path d="M-7 -27 L-1 -20 L11 -36" stroke="#FF0000" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+      <rect x="-40" y="-2" width="80" height="46" rx="8" fill="#002F6C"/>
+      <rect x="-18" y="6" width="36" height="7" rx="3.5" fill="white"/>
+    </g>
+  </g>
+
+  <g transform="translate(440 230)" fill="#FFFFFF" font-family="Inter, Helvetica Neue, Arial, sans-serif">
+    <text font-size="32" font-weight="700" letter-spacing="6" opacity="0.85">DOMOVINA<tspan fill="#FFB3B3">.AI</tspan>  /  STRANKE</text>
+    <text y="80" font-size="56" font-weight="800" letter-spacing="-1">Hrvatske političke stranke</text>
+    <text y="148" font-size="56" font-weight="800" letter-spacing="-1">— sve na jednom mjestu</text>
+    <text y="218" font-size="26" font-weight="500" opacity="0.75">436 stranaka · aktivne i ugašene · otvoreni podaci</text>
+  </g>
+
+  <rect x="0" y="622" width="400" height="8" fill="#FFFFFF" opacity="0.4"/>
+  <rect x="400" y="622" width="400" height="8" fill="#FFFFFF"/>
+  <rect x="800" y="622" width="400" height="8" fill="#FF0000"/>
+</svg>

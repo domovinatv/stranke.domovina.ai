@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="croFlagVertical" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FF0000"/>
+      <stop offset="33.3%" stop-color="#FF0000"/>
+      <stop offset="33.3%" stop-color="#FFFFFF"/>
+      <stop offset="66.6%" stop-color="#FFFFFF"/>
+      <stop offset="66.6%" stop-color="#002F6C"/>
+      <stop offset="100%" stop-color="#002F6C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="32" fill="white"/>
+
+  <!-- DOMOVINA outer D with vertical Croatian flag fill -->
+  <path d="M72 64H248C354.071 64 440 149.929 440 256C440 362.071 354.071 448 248 448H72V64Z" fill="url(#croFlagVertical)"/>
+
+  <!-- Inner white D (negative space) -->
+  <path d="M168 160H248C301.019 160 344 202.981 344 256C344 309.019 301.019 352 248 352H168V160Z" fill="white"/>
+
+  <!-- Ballot box mark, navy, fits inside the inner D area -->
+  <g transform="translate(245 256)">
+    <circle cx="0" cy="0" r="68" fill="white" stroke="#002F6C" stroke-width="6"/>
+    <rect x="-16" y="-46" width="34" height="42" rx="5" fill="white" stroke="#002F6C" stroke-width="5"/>
+    <path d="M-7 -27 L-1 -20 L11 -36" stroke="#FF0000" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-40" y="-2" width="80" height="46" rx="8" fill="#002F6C"/>
+    <rect x="-18" y="6" width="36" height="7" rx="3.5" fill="white"/>
+  </g>
+</svg>
