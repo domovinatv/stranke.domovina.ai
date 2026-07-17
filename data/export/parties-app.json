@@ -1,0 +1,1767 @@
+[
+ {
+  "slug": "agrarna-stranka-pokret-za-hrvatsku-poljoprivredu",
+  "name": "AS - PHP",
+  "shortName": "AS - PHP",
+  "fullName": "AGRARNA STRANKA - POKRET ZA HRVATSKU POLJOPRIVREDU",
+  "town": "Sisak",
+  "founded": "2024",
+  "oib": "57801868784",
+  "logo": false
+ },
+ {
+  "slug": "akcija-mladih",
+  "name": "AM",
+  "shortName": "AM",
+  "fullName": "AKCIJA MLADIH",
+  "town": "Rijeka",
+  "founded": "2005",
+  "oib": "17604594468",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#EB6502",
+   "accentHex": "#53A3DA",
+   "pageHex": "#F8F4F2"
+  }
+ },
+ {
+  "slug": "akcija-umirovljenici-zajedno",
+  "name": "AUZ",
+  "shortName": "AUZ",
+  "fullName": "AKCIJA UMIROVLJENICI ZAJEDNO",
+  "town": "Karlovac",
+  "founded": "2012",
+  "oib": "33971013706",
+  "logo": false
+ },
+ {
+  "slug": "aktivni-nezavisni-umirovljenici",
+  "name": "ANU",
+  "shortName": "ANU",
+  "fullName": "AKTIVNI NEZAVISNI UMIROVLJENICI",
+  "town": "Osijek",
+  "founded": "2016",
+  "oib": "71241450053",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#6E84AC",
+   "accentHex": "#CC6261",
+   "pageHex": "#F4F5F6"
+  }
+ },
+ {
+  "slug": "alternativa-101",
+  "name": "ALTERNATIVA",
+  "shortName": "ALTERNATIVA",
+  "fullName": "ALTERNATIVA 101",
+  "town": "Rijeka",
+  "founded": "2005",
+  "oib": "88383990954",
+  "logo": false
+ },
+ {
+  "slug": "alternativa-nezavisni-jasenko-krovinovic",
+  "name": "ALTERNATIVA NEZAVISNI",
+  "shortName": "ALTERNATIVA NE",
+  "fullName": "ALTERNATIVA NEZAVISNI - JASENKO KROVINOVIĆ",
+  "town": "Petrinja",
+  "founded": "2025",
+  "oib": "00799481544",
+  "logo": false
+ },
+ {
+  "slug": "alternativa-za-hrvatsku",
+  "name": "AZH",
+  "shortName": "AZH",
+  "fullName": "ALTERNATIVA ZA HRVATSKU",
+  "town": "Zagreb",
+  "founded": "2025",
+  "oib": "02647048633",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#0198FE",
+   "accentHex": "#0163A5",
+   "pageHex": "#F2F5F8"
+  }
+ },
+ {
+  "slug": "ante-vicevic-lista-za-kostrenu",
+  "name": "A. V. - Lista za Kostrenu",
+  "shortName": "A. V. - Lista",
+  "fullName": "ANTE VIČEVIĆ - LISTA ZA KOSTRENU",
+  "town": "Kostrena",
+  "founded": "2024",
+  "oib": "92404393716",
+  "logo": false
+ },
+ {
+  "slug": "autohtona-hrvatska-seljacka-stranka",
+  "name": "A - HSS",
+  "shortName": "A - HSS",
+  "fullName": "AUTOHTONA - HRVATSKA SELJAČKA STRANKA",
+  "town": "Zagreb",
+  "founded": "2017",
+  "oib": "54220211211",
+  "logo": false
+ },
+ {
+  "slug": "autohtona-hrvatska-stranka-prava-drazen-keleminec",
+  "name": "A - HSP - Dražen Keleminec",
+  "shortName": "A - HSP - Draž",
+  "fullName": "AUTOHTONA - HRVATSKA STRANKA PRAVA - DRAŽEN KELEMINEC",
+  "town": "Zagreb",
+  "founded": "2003",
+  "oib": "84404674327",
+  "logo": false
+ },
+ {
+  "slug": "bandic-milan-365-stranka-rada-i-solidarnosti-u-stecaju",
+  "name": "365 STRANKA RADA I SOLIDARNOSTI U STEČAJU",
+  "shortName": "365 STRANKA RA",
+  "fullName": "BANDIĆ MILAN 365 - STRANKA RADA I SOLIDARNOSTI U STEČAJU",
+  "town": "Zagreb",
+  "founded": "2015",
+  "oib": "72454645041",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#38388A",
+   "accentHex": "#5E9D43",
+   "pageHex": "#F4F4F6"
+  }
+ },
+ {
+  "slug": "blok-umirovljenici-zajedno",
+  "name": "BUZ",
+  "shortName": "BUZ",
+  "fullName": "BLOK UMIROVLJENICI ZAJEDNO",
+  "town": "Zagreb",
+  "founded": "2010",
+  "oib": "55311208535",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#E5B501",
+   "accentHex": "#8A1D1A",
+   "pageHex": "#F8F7F2"
+  }
+ },
+ {
+  "slug": "blok-za-hrvatsku",
+  "name": "BLOK",
+  "shortName": "BLOK",
+  "fullName": "BLOK ZA HRVATSKU",
+  "town": "Zagreb",
+  "founded": "2019",
+  "oib": "08196162358",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#FB0203",
+   "accentHex": "#171694",
+   "pageHex": "#F8F2F2"
+  }
+ },
+ {
+  "slug": "bm365-idemo-delat",
+  "name": "BM365",
+  "shortName": "BM365",
+  "fullName": "BM365 IDEMO DELAT!",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "23561654888",
+  "logo": false
+ },
+ {
+  "slug": "bolje-sutra-nezavisna-lista",
+  "name": "BSNL",
+  "shortName": "BSNL",
+  "fullName": "BOLJE SUTRA - NEZAVISNA LISTA",
+  "town": "Zadubravlje",
+  "founded": "2025",
+  "oib": "36225983364",
+  "logo": false
+ },
+ {
+  "slug": "bolji-solin",
+  "name": "BS",
+  "shortName": "BS",
+  "fullName": "Bolji Solin",
+  "town": "Solin",
+  "founded": "2020",
+  "oib": "55316259654",
+  "logo": false
+ },
+ {
+  "slug": "centar",
+  "name": "CENTAR",
+  "shortName": "CENTAR",
+  "fullName": "CENTAR",
+  "town": "Split",
+  "founded": "2015",
+  "oib": "42956743890",
+  "logo": false
+ },
+ {
+  "slug": "dalija-oreskovic-i-ljudi-s-imenom-i-prezimenom",
+  "name": "\"DO i SIP\"",
+  "shortName": "\"DO i SIP\"",
+  "fullName": "\"DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM\"",
+  "town": "Zagreb",
+  "founded": "2019",
+  "oib": "45079433291",
+  "logo": false
+ },
+ {
+  "slug": "dalmatinska-akcija-1007602",
+  "name": "DA",
+  "shortName": "DA",
+  "fullName": "DALMATINSKA AKCIJA",
+  "town": "Split",
+  "founded": "2022",
+  "oib": "55391611356",
+  "logo": false
+ },
+ {
+  "slug": "damir-bajs-nezavisna-lista",
+  "name": "DAMIR BAJS NL",
+  "shortName": "DAMIR BAJS NL",
+  "fullName": "DAMIR BAJS NEZAVISNA LISTA",
+  "town": "Bjelovar",
+  "founded": "2017",
+  "oib": "14460125805",
+  "logo": false
+ },
+ {
+  "slug": "dario-zurovec-nezavisna-lista",
+  "name": "DARIO ZUROVEC - NL",
+  "shortName": "DARIO ZUROVEC",
+  "fullName": "DARIO ZUROVEC - NEZAVISNA LISTA",
+  "town": "Kerestinec",
+  "founded": "2024",
+  "oib": "18233627168",
+  "logo": false
+ },
+ {
+  "slug": "demokrati",
+  "name": "DEMOKRATI",
+  "shortName": "DEMOKRATI",
+  "fullName": "DEMOKRATI",
+  "town": "Pula",
+  "founded": "2018",
+  "oib": "69519718618",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#AF0E1E",
+   "accentHex": "#720914",
+   "pageHex": "#F7F2F3"
+  }
+ },
+ {
+  "slug": "demokratska-kneginecka-stranka",
+  "name": "DKS",
+  "shortName": "DKS",
+  "fullName": "DEMOKRATSKA KNEGINEČKA STRANKA",
+  "town": "Gornji Kneginec",
+  "founded": "2002",
+  "oib": "86378509070",
+  "logo": false
+ },
+ {
+  "slug": "demokratska-lokalna-stranka",
+  "name": "DLS",
+  "shortName": "DLS",
+  "fullName": "DEMOKRATSKA LOKALNA STRANKA",
+  "town": "Bročice",
+  "founded": "2017",
+  "oib": "61255994361",
+  "logo": false
+ },
+ {
+  "slug": "demokratska-prigorsko-zagrebacka-stranka",
+  "name": "DPS",
+  "shortName": "DPS",
+  "fullName": "DEMOKRATSKA PRIGORSKO-ZAGREBAČKA STRANKA",
+  "town": "Sveti Ivan Zelina",
+  "founded": "1999",
+  "oib": "64935763331",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#121382",
+   "accentHex": "#FE0001",
+   "pageHex": "#F2F3F7"
+  }
+ },
+ {
+  "slug": "demokratski-hss",
+  "name": "DHSS",
+  "shortName": "DHSS",
+  "fullName": "DEMOKRATSKI HSS",
+  "town": "Zagreb",
+  "founded": "2021",
+  "oib": "97342816373",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#0A6721",
+   "accentHex": "#EFC573",
+   "pageHex": "#F2F7F4"
+  }
+ },
+ {
+  "slug": "demokratski-savez-nacionalne-obnove",
+  "name": "DESNO",
+  "shortName": "DESNO",
+  "fullName": "DEMOKRATSKI SAVEZ NACIONALNE OBNOVE",
+  "town": "Osijek",
+  "founded": "2013",
+  "oib": "31632723805",
+  "logo": false
+ },
+ {
+  "slug": "demokratski-savez-srba",
+  "name": "DSS",
+  "shortName": "DSS",
+  "fullName": "DEMOKRATSKI SAVEZ SRBA",
+  "town": "Zagreb",
+  "founded": "2016",
+  "oib": "54194585459",
+  "logo": false
+ },
+ {
+  "slug": "demokratsko-socijalna-stranka-hrvatske",
+  "name": "DSSH",
+  "shortName": "DSSH",
+  "fullName": "DEMOKRATSKO SOCIJALNA STRANKA HRVATSKE",
+  "town": "Petrinja",
+  "founded": "2016",
+  "oib": "72834945334",
+  "logo": false
+ },
+ {
+  "slug": "dina-dogan-nezavisna-lista",
+  "name": "Dina Dogan - NL",
+  "shortName": "Dina Dogan - N",
+  "fullName": "DINA DOGAN - NEZAVISNA LISTA",
+  "town": "Zagreb",
+  "founded": "2025",
+  "oib": "71106071678",
+  "logo": false
+ },
+ {
+  "slug": "direkt",
+  "name": "DIREKT",
+  "shortName": "DIREKT",
+  "fullName": "DIREKT",
+  "town": "Split",
+  "founded": "2021",
+  "oib": "68884763845",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#FE3991",
+   "accentHex": "#6CBC47",
+   "pageHex": "#F8F2F4"
+  }
+ },
+ {
+  "slug": "dom-i-nacionalno-okupljanje",
+  "name": "DOMINO",
+  "shortName": "DOMINO",
+  "fullName": "DOM I NACIONALNO OKUPLJANJE",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "82642859813",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#7A2D34",
+   "accentHex": "#4F1D22",
+   "pageHex": "#F6F3F4"
+  }
+ },
+ {
+  "slug": "domovinski-pokret",
+  "name": "DP",
+  "shortName": "DP",
+  "fullName": "DOMOVINSKI POKRET",
+  "town": "Zagreb",
+  "founded": "2020",
+  "oib": "52853709191",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#005AAA",
+   "accentHex": "#EC1C23",
+   "pageHex": "#F2F5F8"
+  }
+ },
+ {
+  "slug": "dr-nenad-panian-nezavisna-lista",
+  "name": "DR. NENAD PANIAN - NL",
+  "shortName": "DR. NENAD PANI",
+  "fullName": "DR. NENAD PANIAN - NEZAVISNA LISTA",
+  "town": "Dugo Selo",
+  "founded": "2024",
+  "oib": "63959306952",
+  "logo": false
+ },
+ {
+  "slug": "drito",
+  "name": "DRITO",
+  "shortName": "DRITO",
+  "fullName": "DRITO",
+  "town": "Zagreb",
+  "founded": "2025",
+  "oib": "42421479444",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#F8AD41",
+   "accentHex": "#C47707",
+   "pageHex": "#F8F5F2"
+  }
+ },
+ {
+  "slug": "dubrovacka-bosnjacka-stranka",
+  "name": "DBS",
+  "shortName": "DBS",
+  "fullName": "DUBROVAČKA BOŠNJAČKA STRANKA",
+  "town": "Dubrovnik",
+  "founded": "2017",
+  "oib": "45137886420",
+  "logo": false
+ },
+ {
+  "slug": "dubrovacka-stranka",
+  "name": "DUSTRA",
+  "shortName": "DUSTRA",
+  "fullName": "DUBROVAČKA STRANKA",
+  "town": "Dubrovnik",
+  "founded": "2015",
+  "oib": "72323584368",
+  "logo": false
+ },
+ {
+  "slug": "dubrovacki-demokratski-sabor",
+  "name": "DDS",
+  "shortName": "DDS",
+  "fullName": "DUBROVAČKI DEMOKRATSKI SABOR",
+  "town": "Dubrovnik",
+  "founded": "2012",
+  "oib": "69505550242",
+  "logo": false
+ },
+ {
+  "slug": "duspara-mirko-nezavisna-lista",
+  "name": "DUSPARA MIRKO - NL",
+  "shortName": "DUSPARA MIRKO",
+  "fullName": "DUSPARA MIRKO - NEZAVISNA LISTA",
+  "town": "Slavonski Brod",
+  "founded": "2016",
+  "oib": "93296576616",
+  "logo": false
+ },
+ {
+  "slug": "fokus",
+  "name": "FOKUS",
+  "shortName": "FOKUS",
+  "fullName": "FOKUS",
+  "town": "Zagreb",
+  "founded": "2020",
+  "oib": "23941066484",
+  "logo": false
+ },
+ {
+  "slug": "generacija-obnove",
+  "name": "GO",
+  "shortName": "GO",
+  "fullName": "GENERACIJA OBNOVE",
+  "town": "Zagreb",
+  "founded": "2017",
+  "oib": "22239132070",
+  "logo": false
+ },
+ {
+  "slug": "gradansko-liberalni-savez",
+  "name": "GLAS",
+  "shortName": "GLAS",
+  "fullName": "GRAĐANSKO-LIBERALNI SAVEZ",
+  "town": "Zagreb",
+  "founded": "2017",
+  "oib": "34681350689",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#0081C7",
+   "accentHex": "#005481",
+   "pageHex": "#F2F6F8"
+  }
+ },
+ {
+  "slug": "grobnicka-stranka",
+  "name": "GS",
+  "shortName": "GS",
+  "fullName": "GROBNIČKA STRANKA",
+  "town": "Čavle",
+  "founded": "2021",
+  "oib": "66484719065",
+  "logo": false
+ },
+ {
+  "slug": "hocemo-pravedno",
+  "name": "HOĆEMO",
+  "shortName": "HOĆEMO",
+  "fullName": "HOĆEMO PRAVEDNO",
+  "town": "Zagreb",
+  "founded": "2022",
+  "oib": "59859453451",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-bunjevacka-stranka",
+  "name": "HBS",
+  "shortName": "HBS",
+  "fullName": "HRVATSKA BUNJEVAČKA STRANKA",
+  "town": "Podbilo",
+  "founded": "2016",
+  "oib": "40180184924",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-demokratska-zajednica",
+  "name": "HDZ",
+  "shortName": "HDZ",
+  "fullName": "HRVATSKA DEMOKRATSKA ZAJEDNICA",
+  "town": "Zagreb",
+  "founded": "1989",
+  "oib": "04150008463",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#285AA5",
+   "accentHex": "#1A3A6B",
+   "pageHex": "#F3F4F7"
+  }
+ },
+ {
+  "slug": "hrvatska-demokrscanska-stranka",
+  "name": "HDS",
+  "shortName": "HDS",
+  "fullName": "HRVATSKA DEMOKRŠĆANSKA STRANKA",
+  "town": "Zagreb",
+  "founded": "1990",
+  "oib": "46591217876",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-narodna-stranka-liberalni-demokrati",
+  "name": "HNS",
+  "shortName": "HNS",
+  "fullName": "HRVATSKA NARODNA STRANKA - LIBERALNI DEMOKRATI",
+  "town": "Zagreb",
+  "founded": "1990",
+  "oib": "82435880635",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#204496",
+   "accentHex": "#DA1B21",
+   "pageHex": "#F3F4F7"
+  }
+ },
+ {
+  "slug": "hrvatska-pucka-seljacka-stranka-1010223",
+  "name": "HPSS",
+  "shortName": "HPSS",
+  "fullName": "HRVATSKA PUČKA SELJAČKA STRANKA",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "25326781342",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-seljacka-stranka",
+  "name": "HSS",
+  "shortName": "HSS",
+  "fullName": "HRVATSKA SELJAČKA STRANKA",
+  "town": "Zagreb",
+  "founded": "1989",
+  "oib": "56890881647",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#0AAF4C",
+   "accentHex": "#067231",
+   "pageHex": "#F2F8F4"
+  }
+ },
+ {
+  "slug": "hrvatska-seljacka-stranka-brace-radic-600837",
+  "name": "HSS BRAĆE RADIĆ",
+  "shortName": "HSS BRAĆE RADI",
+  "fullName": "HRVATSKA SELJAČKA STRANKA BRAĆE RADIĆ",
+  "town": "Zagreb",
+  "founded": "2007",
+  "oib": "36114066915",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-seljacka-stranka-stjepan-radic",
+  "name": "HSS - SR",
+  "shortName": "HSS - SR",
+  "fullName": "HRVATSKA SELJAČKA STRANKA - STJEPAN RADIĆ",
+  "town": "Sesvete",
+  "founded": "2016",
+  "oib": "94081525878",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-socijalno-liberalna-stranka",
+  "name": "HSLS",
+  "shortName": "HSLS",
+  "fullName": "HRVATSKA SOCIJALNO - LIBERALNA STRANKA",
+  "town": "Zagreb",
+  "founded": "1989",
+  "oib": "08692235081",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-branitelja-i-domoljuba",
+  "name": "HSBID",
+  "shortName": "HSBID",
+  "fullName": "HRVATSKA STRANKA BRANITELJA I DOMOLJUBA",
+  "town": "Rakitje",
+  "founded": "2016",
+  "oib": "21434973204",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-buducnosti",
+  "name": "HSB",
+  "shortName": "HSB",
+  "fullName": "HRVATSKA STRANKA BUDUĆNOSTI",
+  "town": "Split",
+  "founded": "2019",
+  "oib": "42932421958",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-demokrata",
+  "name": "HSD",
+  "shortName": "HSD",
+  "fullName": "HRVATSKA STRANKA DEMOKRATA",
+  "town": "Petrinja",
+  "founded": "2016",
+  "oib": "68444048964",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-gradanskog-otpora",
+  "name": "HSGO",
+  "shortName": "HSGO",
+  "fullName": "HRVATSKA STRANKA GRAĐANSKOG OTPORA",
+  "town": "Zagreb",
+  "founded": "2018",
+  "oib": "94396895699",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-prava",
+  "name": "HSP",
+  "shortName": "HSP",
+  "fullName": "HRVATSKA STRANKA PRAVA",
+  "town": "Zagreb",
+  "founded": "1990",
+  "oib": "26665813859",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-prava-1861",
+  "name": "HSP - 1861",
+  "shortName": "HSP - 1861",
+  "fullName": "HRVATSKA STRANKA PRAVA - 1861",
+  "town": "Zagreb",
+  "founded": "1995",
+  "oib": "50798154188",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-prava-dr-ante-starcevic-601137",
+  "name": "HSP AS",
+  "shortName": "HSP AS",
+  "fullName": "HRVATSKA STRANKA PRAVA DR. ANTE STARČEVIĆ",
+  "town": "Zadar",
+  "founded": "2009",
+  "oib": "72355713477",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-pravne-drzave-1004681",
+  "name": "HSPD",
+  "shortName": "HSPD",
+  "fullName": "HRVATSKA STRANKA PRAVNE DRŽAVE",
+  "town": "Virovitica",
+  "founded": "2020",
+  "oib": "89277055115",
+  "logo": true
+ },
+ {
+  "slug": "hrvatska-stranka-reda",
+  "name": "HSR",
+  "shortName": "HSR",
+  "fullName": "HRVATSKA STRANKA REDA",
+  "town": "Novigrad Podravski",
+  "founded": "2013",
+  "oib": "88839344284",
+  "logo": false
+ },
+ {
+  "slug": "hrvatska-stranka-umirovljenika",
+  "name": "HSU",
+  "shortName": "HSU",
+  "fullName": "HRVATSKA STRANKA UMIROVLJENIKA",
+  "town": "Zagreb",
+  "founded": "1996",
+  "oib": "27101359149",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#2D3092",
+   "accentHex": "#1D1F5F",
+   "pageHex": "#F3F3F6"
+  }
+ },
+ {
+  "slug": "hrvatski-demokratski-savez-slavonije-i-baranje",
+  "name": "HDSSB",
+  "shortName": "HDSSB",
+  "fullName": "HRVATSKI DEMOKRATSKI SAVEZ SLAVONIJE I BARANJE",
+  "town": "Osijek",
+  "founded": "2006",
+  "oib": "37050651240",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#EE1B24",
+   "accentHex": "#0173BB",
+   "pageHex": "#F7F2F2"
+  }
+ },
+ {
+  "slug": "hrvatski-laburisti-stranka-rada",
+  "name": "LABURISTI",
+  "shortName": "LABURISTI",
+  "fullName": "HRVATSKI LABURISTI - STRANKA RADA",
+  "town": "Zagreb",
+  "founded": "2010",
+  "oib": "95623108508",
+  "logo": false
+ },
+ {
+  "slug": "hrvatski-narodni-zastupnici",
+  "name": "HNZ",
+  "shortName": "HNZ",
+  "fullName": "HRVATSKI NARODNI ZASTUPNICI",
+  "town": "Rijeka",
+  "founded": "2023",
+  "oib": "32226138417",
+  "logo": false
+ },
+ {
+  "slug": "hrvatski-oslobodilacki-pokret",
+  "name": "HOP",
+  "shortName": "HOP",
+  "fullName": "HRVATSKI OSLOBODILAČKI POKRET",
+  "town": "Zagreb",
+  "founded": "1991",
+  "oib": "65242725782",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#DD0000",
+   "accentHex": "#900000",
+   "pageHex": "#F8F2F2"
+  }
+ },
+ {
+  "slug": "hrvatski-suverenisti",
+  "name": "HRVATSKI SUVERENISTI",
+  "shortName": "HRVATSKI SUVER",
+  "fullName": "HRVATSKI SUVERENISTI",
+  "town": "Zagreb",
+  "founded": "2019",
+  "oib": "82753030855",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#DB0712",
+   "accentHex": "#004E9F",
+   "pageHex": "#F8F2F2"
+  }
+ },
+ {
+  "slug": "hrvatski-umirovljenici-zajedno",
+  "name": "HUZ",
+  "shortName": "HUZ",
+  "fullName": "HRVATSKI UMIROVLJENICI ZAJEDNO",
+  "town": "Zagreb",
+  "founded": "2020",
+  "oib": "18788876240",
+  "logo": false
+ },
+ {
+  "slug": "istarska-stranka-umirovljenika-partito-istriano-dei-pensionati",
+  "name": "ISU - PIP",
+  "shortName": "ISU - PIP",
+  "fullName": "ISTARSKA STRANKA UMIROVLJENIKA - PARTITO ISTRIANO DEI PENSIONATI",
+  "town": "Pula",
+  "founded": "2012",
+  "oib": "57104226919",
+  "logo": false
+ },
+ {
+  "slug": "istarski-demokrati-democratici-istriani-id-di",
+  "name": "ID - DI",
+  "shortName": "ID - DI",
+  "fullName": "ISTARSKI DEMOKRATI - DEMOCRATICI ISTRIANI - ID - DI",
+  "town": "Pula",
+  "founded": "2014",
+  "oib": "00231350823",
+  "logo": false
+ },
+ {
+  "slug": "istarski-demokratski-sabor",
+  "name": "IDS",
+  "shortName": "IDS",
+  "fullName": "ISTARSKI DEMOKRATSKI SABOR",
+  "town": "Pula",
+  "founded": "1990",
+  "oib": "16964251485",
+  "logo": false
+ },
+ {
+  "slug": "istarski-laburisti",
+  "name": "IL",
+  "shortName": "IL",
+  "fullName": "ISTARSKI LABURISTI",
+  "town": "Pula",
+  "founded": "2015",
+  "oib": "41198662396",
+  "logo": false
+ },
+ {
+  "slug": "javno-dobro",
+  "name": "JAVNO DOBRO",
+  "shortName": "JAVNO DOBRO",
+  "fullName": "JAVNO DOBRO",
+  "town": "Supetar",
+  "founded": "2023",
+  "oib": "64933094286",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#0B9444",
+   "accentHex": "#008ED4",
+   "pageHex": "#F2F7F4"
+  }
+ },
+ {
+  "slug": "kvarnerska-inicijativa-regionalna-platforma",
+  "name": "KVARNERSKA",
+  "shortName": "KVARNERSKA",
+  "fullName": "KVARNERSKA INICIJATIVA - REGIONALNA PLATFORMA",
+  "town": "Opatija",
+  "founded": "2020",
+  "oib": "95034436731",
+  "logo": false
+ },
+ {
+  "slug": "lipo",
+  "name": "LiPO",
+  "shortName": "LiPO",
+  "fullName": "LiPO",
+  "town": "Gospić",
+  "founded": "2021",
+  "oib": "96391986841",
+  "logo": false
+ },
+ {
+  "slug": "lista-za-dobro-mista",
+  "name": "LZDM",
+  "shortName": "LZDM",
+  "fullName": "LISTA ZA DOBRO MISTA",
+  "town": "Murter",
+  "founded": "2025",
+  "oib": "03247352902",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#C3BB09",
+   "accentHex": "#7F7A06",
+   "pageHex": "#F8F7F2"
+  }
+ },
+ {
+  "slug": "lista-za-rijeku",
+  "name": "RI",
+  "shortName": "RI",
+  "fullName": "LISTA ZA RIJEKU",
+  "town": "Rijeka",
+  "founded": "2006",
+  "oib": "03376628315",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#B4181C",
+   "accentHex": "#E3C303",
+   "pageHex": "#F7F2F3"
+  }
+ },
+ {
+  "slug": "marko-magdic-nezavisna-lista",
+  "name": "MARKO MAGDIĆ NL",
+  "shortName": "MARKO MAGDIĆ N",
+  "fullName": "MARKO MAGDIĆ - NEZAVISNA LISTA",
+  "town": "Križ",
+  "founded": "2025",
+  "oib": "79090627094",
+  "logo": false
+ },
+ {
+  "slug": "matija-teur-nezavisna-lista",
+  "name": "MATIJA TEUR NL",
+  "shortName": "MATIJA TEUR NL",
+  "fullName": "MATIJA TEUR - NEZAVISNA LISTA",
+  "town": "Zaprešić",
+  "founded": "2024",
+  "oib": "79871580771",
+  "logo": false
+ },
+ {
+  "slug": "medimurski-demokratski-savez",
+  "name": "MDS",
+  "shortName": "MDS",
+  "fullName": "MEĐIMURSKI DEMOKRATSKI SAVEZ",
+  "town": "Čakovec",
+  "founded": "2005",
+  "oib": "22716317556",
+  "logo": false
+ },
+ {
+  "slug": "mladi-za-brezovicu",
+  "name": "MZB",
+  "shortName": "MZB",
+  "fullName": "MLADI ZA BREZOVICU",
+  "town": "Desprim",
+  "founded": "2021",
+  "oib": "70495514263",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#014767",
+   "accentHex": "#012E43",
+   "pageHex": "#F2F6F8"
+  }
+ },
+ {
+  "slug": "moderna-demokratska-snaga",
+  "name": "MODES",
+  "shortName": "MODES",
+  "fullName": "MODERNA DEMOKRATSKA SNAGA",
+  "town": "Zadar",
+  "founded": "2016",
+  "oib": "10251332404",
+  "logo": false
+ },
+ {
+  "slug": "moja-voljena-hrvatska",
+  "name": "MVH",
+  "shortName": "MVH",
+  "fullName": "MOJA VOLJENA HRVATSKA",
+  "town": "Sisak",
+  "founded": "2018",
+  "oib": "08985799493",
+  "logo": false
+ },
+ {
+  "slug": "most",
+  "name": "MOST",
+  "shortName": "MOST",
+  "fullName": "MOST",
+  "town": "Zagreb",
+  "founded": "2012",
+  "oib": "67345817198",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#1E5696",
+   "accentHex": "#143862",
+   "pageHex": "#F3F5F7"
+  }
+ },
+ {
+  "slug": "mozemo-politicka-platforma",
+  "name": "Možemo!",
+  "shortName": "Možemo!",
+  "fullName": "Možemo! - politička platforma",
+  "town": "Zagreb",
+  "founded": "2019",
+  "oib": "56908453917",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#BDD52E",
+   "accentHex": "#7C8C1C",
+   "pageHex": "#F6F7F3"
+  }
+ },
+ {
+  "slug": "mreza-nezavisnih-lista",
+  "name": "MREŽA",
+  "shortName": "MREŽA",
+  "fullName": "MREŽA NEZAVISNIH LISTA",
+  "town": "Koprivnica",
+  "founded": "2017",
+  "oib": "82413060941",
+  "logo": false
+ },
+ {
+  "slug": "nada",
+  "name": "NADA",
+  "shortName": "NADA",
+  "fullName": "NADA",
+  "town": "Zagreb",
+  "founded": "2017",
+  "oib": "00352380702",
+  "logo": false
+ },
+ {
+  "slug": "narodna-stranka-reformisti",
+  "name": "REFORMISTI",
+  "shortName": "REFORMISTI",
+  "fullName": "NARODNA STRANKA - REFORMISTI",
+  "town": "Zagreb",
+  "founded": "2014",
+  "oib": "18468070483",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#4A217B",
+   "accentHex": "#005AA8",
+   "pageHex": "#F5F3F7"
+  }
+ },
+ {
+  "slug": "nezavisna-lista-ante-dapica",
+  "name": "NL ANTE ĐAPIĆA",
+  "shortName": "NL ANTE ĐAPIĆA",
+  "fullName": "NEZAVISNA LISTA ANTE ĐAPIĆA",
+  "town": "Osijek",
+  "founded": "2021",
+  "oib": "13883407118",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-ivanic-grad",
+  "name": "NEZAVISNA LISTA IVANIĆ-GRAD",
+  "shortName": "NEZAVISNA LIST",
+  "fullName": "NEZAVISNA LISTA IVANIĆ-GRAD",
+  "town": "Ivanić-Grad",
+  "founded": "2025",
+  "oib": "75729065652",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-mladih",
+  "name": "NLM",
+  "shortName": "NLM",
+  "fullName": "NEZAVISNA LISTA MLADIH",
+  "town": "Solin",
+  "founded": "2016",
+  "oib": "48084908034",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-podbablje-sutra",
+  "name": "PODBABLJE SUTRA",
+  "shortName": "PODBABLJE SUTR",
+  "fullName": "NEZAVISNA LISTA PODBABLJE SUTRA",
+  "town": "Grubine",
+  "founded": "2021",
+  "oib": "65540818179",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-stipe-petrina",
+  "name": "NLSP",
+  "shortName": "NLSP",
+  "fullName": "NEZAVISNA LISTA STIPE PETRINA",
+  "town": "Primošten",
+  "founded": "2013",
+  "oib": "23924878047",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-tomislava-jonjica-jedino-hrvatska",
+  "name": "NEZAVISNA LISTA TOMISLAVA JONJIĆA",
+  "shortName": "NEZAVISNA LIST",
+  "fullName": "NEZAVISNA LISTA TOMISLAVA JONJIĆA - JEDINO HRVATSKA!",
+  "town": "Zagreb",
+  "founded": "2025",
+  "oib": "58624248125",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-tomislava-misetica",
+  "name": "NL TOMISLAVA MIŠETIĆA",
+  "shortName": "NL TOMISLAVA M",
+  "fullName": "NEZAVISNA LISTA TOMISLAVA MIŠETIĆA",
+  "town": "Osijek",
+  "founded": "2025",
+  "oib": "88563478015",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-visnjan",
+  "name": "NLV",
+  "shortName": "NLV",
+  "fullName": "NEZAVISNA LISTA VIŠNJAN",
+  "town": "Višnjan",
+  "founded": "2016",
+  "oib": "56181309379",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-lista-vrime-je",
+  "name": "VRIME JE!",
+  "shortName": "VRIME JE!",
+  "fullName": "NEZAVISNA LISTA - VRIME JE!",
+  "town": "Seget Donji",
+  "founded": "2025",
+  "oib": "12817977036",
+  "logo": false
+ },
+ {
+  "slug": "nezavisna-platforma-sjevera",
+  "name": "NPS",
+  "shortName": "NPS",
+  "fullName": "NEZAVISNA PLATFORMA SJEVERA",
+  "town": "Čakovec",
+  "founded": "2021",
+  "oib": "60164411785",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#6CBA6B",
+   "accentHex": "#0F2638",
+   "pageHex": "#F4F6F4"
+  }
+ },
+ {
+  "slug": "nezavisna-stranka-samo-tim",
+  "name": "SAMOTIM",
+  "shortName": "SAMOTIM",
+  "fullName": "NEZAVISNA STRANKA SAMO TIM",
+  "town": "Samobor",
+  "founded": "2025",
+  "oib": "83994982816",
+  "logo": false
+ },
+ {
+  "slug": "nezavisni",
+  "name": "NEZAVISNI",
+  "shortName": "NEZAVISNI",
+  "fullName": "NEZAVISNI",
+  "town": "Đurđevac",
+  "founded": "2017",
+  "oib": "60827372574",
+  "logo": false
+ },
+ {
+  "slug": "nezavisni-seljaci-hrvatske",
+  "name": "NSH",
+  "shortName": "NSH",
+  "fullName": "NEZAVISNI SELJACI HRVATSKE",
+  "town": "Zagreb",
+  "founded": "2012",
+  "oib": "88321807980",
+  "logo": false
+ },
+ {
+  "slug": "nezavisni-za-zapresic",
+  "name": "NZ",
+  "shortName": "NZ",
+  "fullName": "NEZAVISNI ZA ZAPREŠIĆ",
+  "town": "Zaprešić",
+  "founded": "2019",
+  "oib": "05095698719",
+  "logo": false
+ },
+ {
+  "slug": "nova-politika",
+  "name": "NP",
+  "shortName": "NP",
+  "fullName": "NOVA POLITIKA",
+  "town": "Zagreb",
+  "founded": "2019",
+  "oib": "88362534914",
+  "logo": false
+ },
+ {
+  "slug": "odlucnost-i-pravednost",
+  "name": "OIP",
+  "shortName": "OIP",
+  "fullName": "ODLUČNOST I PRAVEDNOST",
+  "town": "Zagreb",
+  "founded": "2022",
+  "oib": "77969126343",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#262755",
+   "accentHex": "#191937",
+   "pageHex": "#F4F4F6"
+  }
+ },
+ {
+  "slug": "pavle-kalinic-nezavisna-lista",
+  "name": "PAVLE KALINIĆ - NL",
+  "shortName": "PAVLE KALINIĆ",
+  "fullName": "PAVLE KALINIĆ - NEZAVISNA LISTA",
+  "town": "Zagreb",
+  "founded": "2025",
+  "oib": "11286821452",
+  "logo": false
+ },
+ {
+  "slug": "plavo-zelena-stranka",
+  "name": "PZS",
+  "shortName": "PZS",
+  "fullName": "PLAVO ZELENA STRANKA",
+  "town": "Sisak",
+  "founded": "2019",
+  "oib": "18166654780",
+  "logo": false
+ },
+ {
+  "slug": "plocanska-stranka",
+  "name": "PLS",
+  "shortName": "PLS",
+  "fullName": "PLOČANSKA STRANKA",
+  "town": "Ploče",
+  "founded": "2012",
+  "oib": "98241611798",
+  "logo": false
+ },
+ {
+  "slug": "pokret-za-modernu-hrvatsku",
+  "name": "POKRET ZA MODERNU HRVATSKU",
+  "shortName": "POKRET ZA MODE",
+  "fullName": "POKRET ZA MODERNU HRVATSKU",
+  "town": "Zagreb",
+  "founded": "2011",
+  "oib": "31526120662",
+  "logo": false
+ },
+ {
+  "slug": "pokret-za-zivotinje",
+  "name": "POKRET ZA ŽIVOTINJE",
+  "shortName": "POKRET ZA ŽIVO",
+  "fullName": "POKRET ZA ŽIVOTINJE",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "65497802358",
+  "logo": false
+ },
+ {
+  "slug": "pokret-zajedno",
+  "name": "PZ",
+  "shortName": "PZ",
+  "fullName": "POKRET ZAJEDNO",
+  "town": "Zagreb",
+  "founded": "2014",
+  "oib": "00521288836",
+  "logo": false
+ },
+ {
+  "slug": "politicka-stranka-plavi-grad",
+  "name": "PLAVI GRAD",
+  "shortName": "PLAVI GRAD",
+  "fullName": "POLITIČKA STRANKA - PLAVI GRAD",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "64561910814",
+  "logo": false
+ },
+ {
+  "slug": "popravi-grad",
+  "name": "PG",
+  "shortName": "PG",
+  "fullName": "POPRAVI GRAD",
+  "town": "Split",
+  "founded": "2009",
+  "oib": "90654406562",
+  "logo": false
+ },
+ {
+  "slug": "pravedna-hrvatska",
+  "name": "PH",
+  "shortName": "PH",
+  "fullName": "PRAVEDNA HRVATSKA",
+  "town": "Zagreb",
+  "founded": "2022",
+  "oib": "73600813818",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#005595",
+   "accentHex": "#003761",
+   "pageHex": "#F2F5F8"
+  }
+ },
+ {
+  "slug": "pravo-i-pravda",
+  "name": "PRAVO I PRAVDA",
+  "shortName": "PRAVO I PRAVDA",
+  "fullName": "PRAVO I PRAVDA",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "97795236567",
+  "logo": false
+ },
+ {
+  "slug": "primorsko-goranski-savez",
+  "name": "PGS",
+  "shortName": "PGS",
+  "fullName": "PRIMORSKO GORANSKI SAVEZ",
+  "town": "Rijeka",
+  "founded": "1990",
+  "oib": "41495097026",
+  "logo": false
+ },
+ {
+  "slug": "projekt-domovina",
+  "name": "PROJEKT DOMOVINA",
+  "shortName": "PROJEKT DOMOVI",
+  "fullName": "PROJEKT DOMOVINA",
+  "town": "Zagreb",
+  "founded": "2015",
+  "oib": "98019312130",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#CA474B",
+   "accentHex": "#8E418A",
+   "pageHex": "#F6F3F3"
+  }
+ },
+ {
+  "slug": "radnicka-fronta",
+  "name": "RF",
+  "shortName": "RF",
+  "fullName": "RADNIČKA FRONTA",
+  "town": "Zagreb",
+  "founded": "2015",
+  "oib": "36018590831",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#CC0000",
+   "accentHex": "#850000",
+   "pageHex": "#F8F2F2"
+  }
+ },
+ {
+  "slug": "rapski-pucki-sabor-1004160",
+  "name": "RPS",
+  "shortName": "RPS",
+  "fullName": "RAPSKI PUČKI SABOR",
+  "town": "Rab",
+  "founded": "2019",
+  "oib": "08152837411",
+  "logo": false
+ },
+ {
+  "slug": "renato-petek-nova-snaga",
+  "name": "RENATO PETEK - NS",
+  "shortName": "RENATO PETEK -",
+  "fullName": "RENATO PETEK - NOVA SNAGA",
+  "town": "Zagreb",
+  "founded": "2025",
+  "oib": "35641566576",
+  "logo": false
+ },
+ {
+  "slug": "republika",
+  "name": "REPUBLIKA",
+  "shortName": "REPUBLIKA",
+  "fullName": "REPUBLIKA",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "38183692834",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#F3C300",
+   "accentHex": "#9E7F00",
+   "pageHex": "#F8F7F2"
+  }
+ },
+ {
+  "slug": "ricard-nezavisni",
+  "name": "RIČARD NEZAVISNI",
+  "shortName": "RIČARD NEZAVIS",
+  "fullName": "RIČARD NEZAVISNI",
+  "town": "Zadar",
+  "founded": "2024",
+  "oib": "41958630987",
+  "logo": false
+ },
+ {
+  "slug": "samostalna-demokratska-srpska-stranka",
+  "name": "SDSS",
+  "shortName": "SDSS",
+  "fullName": "SAMOSTALNA DEMOKRATSKA SRPSKA STRANKA",
+  "town": "Vukovar",
+  "founded": "1995",
+  "oib": "39908510192",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#D71E31",
+   "accentHex": "#2C3C8C",
+   "pageHex": "#F7F2F3"
+  }
+ },
+ {
+  "slug": "snaga-slavonije-i-baranje",
+  "name": "Snaga SiB",
+  "shortName": "Snaga SiB",
+  "fullName": "SNAGA SLAVONIJE I BARANJE",
+  "town": "Osijek",
+  "founded": "2019",
+  "oib": "58744208610",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#21418E",
+   "accentHex": "#E11E26",
+   "pageHex": "#F3F4F7"
+  }
+ },
+ {
+  "slug": "snaga-stranka-narodnog-i-gradanskog-aktivizma",
+  "name": "SNAGA",
+  "shortName": "SNAGA",
+  "fullName": "SNAGA - STRANKA NARODNOG I GRAĐANSKOG AKTIVIZMA",
+  "town": "Zaprešić",
+  "founded": "2016",
+  "oib": "27316913311",
+  "logo": false
+ },
+ {
+  "slug": "socijaldemokrati",
+  "name": "SOCIJALDEMOKRATI",
+  "shortName": "SOCIJALDEMOKRA",
+  "fullName": "SOCIJALDEMOKRATI",
+  "town": "Zagreb",
+  "founded": "2022",
+  "oib": "60210036488",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#024699",
+   "accentHex": "#D70103",
+   "pageHex": "#F2F5F8"
+  }
+ },
+ {
+  "slug": "socijaldemokratska-partija-hrvatske",
+  "name": "SDP",
+  "shortName": "SDP",
+  "fullName": "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE",
+  "town": "Zagreb",
+  "founded": "1990",
+  "oib": "02010978731",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#ED1C24",
+   "accentHex": "#A00D12",
+   "pageHex": "#F7F2F2"
+  }
+ },
+ {
+  "slug": "socijalisticka-radnicka-partija-hrvatske",
+  "name": "SRP",
+  "shortName": "SRP",
+  "fullName": "SOCIJALISTIČKA RADNIČKA PARTIJA HRVATSKE",
+  "town": "Zagreb",
+  "founded": "1997",
+  "oib": "21748965627",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#FE0000",
+   "accentHex": "#CCCB00",
+   "pageHex": "#F8F2F2"
+  }
+ },
+ {
+  "slug": "split-je-nas",
+  "name": "SJN",
+  "shortName": "SJN",
+  "fullName": "SPLIT JE NAŠ!",
+  "town": "Split",
+  "founded": "2026",
+  "oib": "69765496042",
+  "logo": false
+ },
+ {
+  "slug": "srd-je-grad",
+  "name": "SJG",
+  "shortName": "SJG",
+  "fullName": "SRĐ JE GRAD",
+  "town": "Dubrovnik",
+  "founded": "2020",
+  "oib": "56457179048",
+  "logo": true
+ },
+ {
+  "slug": "stjepan-kozic-nezavisna-lista",
+  "name": "SKNL",
+  "shortName": "SKNL",
+  "fullName": "STJEPAN KOŽIĆ - NEZAVISNA LISTA",
+  "town": "Velika Gorica",
+  "founded": "2018",
+  "oib": "35855688983",
+  "logo": false
+ },
+ {
+  "slug": "stranka-demokratske-akcije-hrvatske",
+  "name": "SDA HRVATSKE",
+  "shortName": "SDA HRVATSKE",
+  "fullName": "STRANKA DEMOKRATSKE AKCIJE HRVATSKE",
+  "town": "Zagreb",
+  "founded": "1990",
+  "oib": "19621827951",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#FC020C",
+   "accentHex": "#0020FE",
+   "pageHex": "#F8F2F2"
+  }
+ },
+ {
+  "slug": "stranka-hrvatski-vidik",
+  "name": "SHV",
+  "shortName": "SHV",
+  "fullName": "STRANKA HRVATSKI VIDIK",
+  "town": "Zagreb",
+  "founded": "2016",
+  "oib": "45534720253",
+  "logo": false
+ },
+ {
+  "slug": "stranka-hrvatskih-umirovljenika-umirovljenici",
+  "name": "UMIROVLJENICI",
+  "shortName": "UMIROVLJENICI",
+  "fullName": "STRANKA HRVATSKIH UMIROVLJENIKA - UMIROVLJENICI",
+  "town": "Zagreb",
+  "founded": "2015",
+  "oib": "17765565660",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#2D3092",
+   "accentHex": "#1D1F5F",
+   "pageHex": "#F3F3F6"
+  }
+ },
+ {
+  "slug": "stranka-hrvatskog-zajednistva",
+  "name": "SHZ",
+  "shortName": "SHZ",
+  "fullName": "STRANKA HRVATSKOG ZAJEDNIŠTVA",
+  "town": "Zadar",
+  "founded": "2009",
+  "oib": "36372094522",
+  "logo": false
+ },
+ {
+  "slug": "stranka-umirovljenika",
+  "name": "SU",
+  "shortName": "SU",
+  "fullName": "STRANKA UMIROVLJENIKA",
+  "town": "Zagreb",
+  "founded": "2000",
+  "oib": "32843121594",
+  "logo": false
+ },
+ {
+  "slug": "stranka-umirovljenika-sjever",
+  "name": "SUS",
+  "shortName": "SUS",
+  "fullName": "STRANKA UMIROVLJENIKA SJEVER",
+  "town": "Varaždin",
+  "founded": "2025",
+  "oib": "16043117969",
+  "logo": false
+ },
+ {
+  "slug": "stranka-za-narod",
+  "name": "SZN",
+  "shortName": "SZN",
+  "fullName": "STRANKA ZA NAROD",
+  "town": "Zagreb",
+  "founded": "2019",
+  "oib": "99070018966",
+  "logo": false
+ },
+ {
+  "slug": "stranka-za-zadar",
+  "name": "ZZ!",
+  "shortName": "ZZ!",
+  "fullName": "STRANKA ZA ZADAR!",
+  "town": "Zadar",
+  "founded": "2021",
+  "oib": "47462735164",
+  "logo": false
+ },
+ {
+  "slug": "sve-se-moze",
+  "name": "SSM",
+  "shortName": "SSM",
+  "fullName": "SVE SE MOŽE",
+  "town": "Jastrebarsko",
+  "founded": "2025",
+  "oib": "56194434386",
+  "logo": false
+ },
+ {
+  "slug": "umirovljenici-zajedno-politicka-platforma",
+  "name": "UMIROVLJENICI ZAJEDNO",
+  "shortName": "UMIROVLJENICI",
+  "fullName": "UMIROVLJENICI ZAJEDNO - POLITIČKA PLATFORMA",
+  "town": "Zagreb",
+  "founded": "2023",
+  "oib": "28676632079",
+  "logo": false
+ },
+ {
+  "slug": "umirovljenicka-demokratska-unija",
+  "name": "UDU",
+  "shortName": "UDU",
+  "fullName": "UMIROVLJENIČKA DEMOKRATSKA UNIJA",
+  "town": "Mošćenica",
+  "founded": "2013",
+  "oib": "85384556930",
+  "logo": false
+ },
+ {
+  "slug": "unija-kvarnera",
+  "name": "UNIJA",
+  "shortName": "UNIJA",
+  "fullName": "UNIJA KVARNERA",
+  "town": "Kostrena",
+  "founded": "2017",
+  "oib": "39757690131",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#E3B836",
+   "accentHex": "#A07E16",
+   "pageHex": "#F7F6F2"
+  }
+ },
+ {
+  "slug": "zagorska-demokratska-stranka",
+  "name": "ZDS",
+  "shortName": "ZDS",
+  "fullName": "ZAGORSKA DEMOKRATSKA STRANKA",
+  "town": "Zabok",
+  "founded": "1997",
+  "oib": "37654664728",
+  "logo": false
+ },
+ {
+  "slug": "zagorska-stranka",
+  "name": "ZS",
+  "shortName": "ZS",
+  "fullName": "ZAGORSKA STRANKA",
+  "town": "Zabok",
+  "founded": "2004",
+  "oib": "80505604089",
+  "logo": false
+ },
+ {
+  "slug": "zajedno-hrvatska",
+  "name": "ZH",
+  "shortName": "ZH",
+  "fullName": "ZAJEDNO HRVATSKA",
+  "town": "Zagreb",
+  "founded": "2024",
+  "oib": "05615753371",
+  "logo": false
+ },
+ {
+  "slug": "zajedno-za-murter",
+  "name": "ZM",
+  "shortName": "ZM",
+  "fullName": "ZAJEDNO ZA MURTER",
+  "town": "Murter",
+  "founded": "2020",
+  "oib": "19360019466",
+  "logo": false
+ },
+ {
+  "slug": "zajedno-za-trogir",
+  "name": "ZAJEDNO ZA TROGIR",
+  "shortName": "ZAJEDNO ZA TRO",
+  "fullName": "ZAJEDNO ZA TROGIR",
+  "town": "Trogir",
+  "founded": "2023",
+  "oib": "21831652202",
+  "logo": true,
+  "brand": {
+   "primaryHex": "#012A5C",
+   "accentHex": "#011B3C",
+   "pageHex": "#F2F5F8"
+  }
+ },
+ {
+  "slug": "zaokret-nezavisna-lista",
+  "name": "Zaokret",
+  "shortName": "Zaokret",
+  "fullName": "ZAOKRET - NEZAVISNA LISTA",
+  "town": "Orebić",
+  "founded": "2021",
+  "oib": "56917525548",
+  "logo": false
+ },
+ {
+  "slug": "zelena-alternativa-odrzivi-razvoj-hrvatske",
+  "name": "Zelena alternativa - ORaH",
+  "shortName": "Zelena alterna",
+  "fullName": "ZELENA ALTERNATIVA - ODRŽIVI RAZVOJ HRVATSKE",
+  "town": "Zagreb",
+  "founded": "2021",
+  "oib": "68408088216",
+  "logo": false
+ },
+ {
+  "slug": "zelena-lista-1000123",
+  "name": "ZELENA LISTA",
+  "shortName": "ZELENA LISTA",
+  "fullName": "ZELENA LISTA",
+  "town": "Zagreb",
+  "founded": "2017",
+  "oib": "65414808749",
+  "logo": false
+ },
+ {
+  "slug": "zeleni-forum",
+  "name": "ZF",
+  "shortName": "ZF",
+  "fullName": "ZELENI FORUM",
+  "town": "Sisak",
+  "founded": "2015",
+  "oib": "27156001282",
+  "logo": false
+ },
+ {
+  "slug": "zelinski-laburisti-stranka-prigorja",
+  "name": "ZL",
+  "shortName": "ZL",
+  "fullName": "ZELINSKI LABURISTI - STRANKA PRIGORJA",
+  "town": "Sveti Ivan Zelina",
+  "founded": "2015",
+  "oib": "67794410308",
+  "logo": false
+ },
+ {
+  "slug": "zeljko-kerum-hrvatska-gradanska-stranka",
+  "name": "HGS",
+  "shortName": "HGS",
+  "fullName": "ŽELJKO KERUM - HRVATSKA GRAĐANSKA STRANKA",
+  "town": "Split",
+  "founded": "2009",
+  "oib": "28046181108",
+  "logo": false
+ },
+ {
+  "slug": "zupska-stranka",
+  "name": "ŽUPKA",
+  "shortName": "ŽUPKA",
+  "fullName": "ŽUPSKA STRANKA",
+  "town": "Brašina",
+  "founded": "2019",
+  "oib": "07802125412",
+  "logo": false
+ }
+]
