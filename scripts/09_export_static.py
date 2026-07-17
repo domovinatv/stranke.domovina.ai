@@ -22,6 +22,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from src.db import connect  # noqa: E402
+from src.wallet_alias import build_alias_map  # noqa: E402
 
 OUT_DIR = ROOT / "frontend" / "public" / "data"
 LOGO_SRC = ROOT / "data" / "logos"
@@ -60,6 +61,9 @@ def export_parties(conn) -> list[dict]:
     rows = conn.execute(
         f"SELECT {', '.join(LIST_COLUMNS)} FROM parties ORDER BY canonical_name"
     ).fetchall()
+    # kratki wallet alias ({alias}.ff.hr) — ista derivacija kao ff-edge export
+    # (scripts/15 preko src/wallet_alias.py), samo nad AKTIVNIMA
+    alias_map = build_alias_map([dict(r) for r in rows if r["status"] == "AKTIVAN"])
     parties = []
     for r in rows:
         d = dict(r)
@@ -68,6 +72,8 @@ def export_parties(conn) -> list[dict]:
             sizes = _logo_sizes(d["slug"])
             if sizes:
                 d["logo_sizes"] = sizes
+        if d["slug"] in alias_map:
+            d["wallet_alias"] = alias_map[d["slug"]]
         # drop nulls to shrink payload
         parties.append({k: v for k, v in d.items() if v not in (None, "")})
     return parties

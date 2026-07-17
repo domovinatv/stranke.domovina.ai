@@ -46,12 +46,14 @@ export function googleMapsUrl(p: Pick<Party, "lat" | "lng">): string | null {
 
 /**
  * Demo novčanik stranke — politika/novcanik-prototip serviran kroz ff-edge
- * dispatcher na `{slug}.ff.hr` (svih 155 AKTIVNIH iz ovog kataloga). Ugašene
+ * dispatcher na `*.ff.hr` (svih 155 AKTIVNIH iz ovog kataloga). Kratki
+ * `wallet_alias` (hdz.ff.hr, sdp.ff.hr…) izveden je iz VLASTITE <label>.hr
+ * domene stranke (src/wallet_alias.py); ostale idu punim slugom. Ugašene
  * (PRESTANAK) se NE izlažu — nisu u worker katalogu pa bi pale na whitelabel.
  */
-export function walletUrl(p: Pick<Party, "slug" | "status">): string | null {
+export function walletUrl(p: Pick<Party, "slug" | "status" | "wallet_alias">): string | null {
   if (p.status !== "AKTIVAN") return null;
-  return `https://${p.slug}.ff.hr`;
+  return `https://${p.wallet_alias ?? p.slug}.ff.hr`;
 }
 
 export const LOGO_CDN = "https://p.ff.hr";

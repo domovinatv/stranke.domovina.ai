@@ -26,6 +26,8 @@ export interface Party {
   x_url?: string;
   president?: string;
   wiki_url?: string;
+  /** Kratki wallet subdomain ({wallet_alias}.ff.hr) — iz vlastite <label>.hr domene stranke. */
+  wallet_alias?: string;
   lat?: number;
   lng?: number;
   /** CDN logo filename, e.g. "hrvatska-demokratska-zajednica.png" → https://p.ff.hr/logos/{logo}. */

@@ -31,6 +31,9 @@ from pathlib import Path
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT))
+
+from src.wallet_alias import build_alias_map  # noqa: E402
 DB_PATH = ROOT / "data" / "stranke.db"
 LOGO_DIR = ROOT / "data" / "logos_sized" / "256"
 OUT_PATH = ROOT / "data" / "export" / "parties-app.json"
@@ -157,11 +160,15 @@ def run(clubs_json: Path) -> None:
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
     rows = con.execute(
-        """SELECT slug, canonical_name, short_name, oib, city,
+        """SELECT slug, canonical_name, short_name, oib, city, website,
                   substr(COALESCE(founded_date, registered_at), 1, 4) AS founded_year
            FROM parties WHERE status = 'AKTIVAN' ORDER BY slug"""
     ).fetchall()
     log.info("loaded %d AKTIVAN parties from %s", len(rows), DB_PATH)
+
+    # kratki wallet aliasi iz vlastitih <label>.hr domena (src/wallet_alias.py)
+    alias_map = build_alias_map([dict(r) for r in rows])
+    log.info("wallet aliasi iz vlastitih domena: %d", len(alias_map))
 
     # kolizijski guard — presjek sa svim klupskim labelima na *.ff.hr
     club_labels: set[str] = set(CLUB_ALIASES)
@@ -171,7 +178,7 @@ def run(clubs_json: Path) -> None:
     else:
         log.error("clubs-app.json NOT FOUND at %s — guard incomplete, aborting", clubs_json)
         sys.exit(2)
-    party_labels = {r["slug"] for r in rows} | set(PARTY_ALIASES)
+    party_labels = {r["slug"] for r in rows} | set(PARTY_ALIASES) | set(alias_map.values())
     overlap = sorted(party_labels & club_labels)
     if overlap:
         log.error("COLLISION klubovi × stranke na *.ff.hr: %s", ", ".join(overlap))
@@ -197,6 +204,8 @@ def run(clubs_json: Path) -> None:
             "shortName": short[:SHORT_NAME_MAX].strip(),
             "fullName": r["canonical_name"],
         }
+        if slug in alias_map:
+            rec["alias"] = alias_map[slug]  # kratki wallet subdomain ({alias}.ff.hr)
         if r["city"]:
             rec["town"] = r["city"]
         if r["founded_year"]:
