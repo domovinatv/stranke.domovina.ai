@@ -5,6 +5,7 @@ import {
   googleMapsUrl,
   loadParties,
   loadPartyDetail,
+  walletUrl,
   yearOf,
 } from "@/lib/data";
 import {
@@ -16,6 +17,7 @@ import {
   ScrollText,
   Smartphone,
   Users,
+  Wallet,
 } from "lucide-react";
 import type { Party, PartyDetail, PartyFunction } from "@/lib/types";
 import { PageSpinner } from "@/components/PageSpinner";
@@ -101,16 +103,29 @@ export default function PartyRoute() {
                 <span className="pill inline-flex items-center gap-1"><Cake size={13} /> reg. {regYear}.</span>
               )}
             </div>
-            {party.wiki_url && (
+            {(walletUrl(party) || party.wiki_url) && (
               <div className="mt-4 flex items-center gap-2 flex-wrap">
-                <a
-                  href={party.wiki_url}
-                  target="_blank"
-                  rel="noopener"
-                  className="btn-ghost text-xs"
-                >
-                  <ExternalLink size={14} /> Wikipedija
-                </a>
+                {walletUrl(party) && (
+                  <a
+                    href={walletUrl(party)!}
+                    target="_blank"
+                    rel="noopener"
+                    className="btn-primary text-xs"
+                    title="Interaktivni demo prototip stranačkog novčanika — nije službena aplikacija stranke"
+                  >
+                    <Wallet size={14} /> Novčanik stranke · demo
+                  </a>
+                )}
+                {party.wiki_url && (
+                  <a
+                    href={party.wiki_url}
+                    target="_blank"
+                    rel="noopener"
+                    className="btn-ghost text-xs"
+                  >
+                    <ExternalLink size={14} /> Wikipedija
+                  </a>
+                )}
               </div>
             )}
           </div>

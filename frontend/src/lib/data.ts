@@ -44,6 +44,16 @@ export function googleMapsUrl(p: Pick<Party, "lat" | "lng">): string | null {
   return `https://www.google.com/maps?q=${p.lat},${p.lng}`;
 }
 
+/**
+ * Demo novčanik stranke — politika/novcanik-prototip serviran kroz ff-edge
+ * dispatcher na `{slug}.ff.hr` (svih 155 AKTIVNIH iz ovog kataloga). Ugašene
+ * (PRESTANAK) se NE izlažu — nisu u worker katalogu pa bi pale na whitelabel.
+ */
+export function walletUrl(p: Pick<Party, "slug" | "status">): string | null {
+  if (p.status !== "AKTIVAN") return null;
+  return `https://${p.slug}.ff.hr`;
+}
+
 export const LOGO_CDN = "https://p.ff.hr";
 
 /** Web-default logo (≤512px PNG) or null when the party has none. */
