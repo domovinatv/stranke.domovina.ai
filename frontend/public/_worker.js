@@ -133,15 +133,14 @@ class HeadInjector {
   element(el) {
     if (el.tagName.toLowerCase() !== "head") return;
     // Append any og:* properties that the source index.html did not have so
-    // crawlers see a complete set.
-    for (const [prop, val] of Object.entries(this.extras)) {
-      if (this.r.seen.has(prop)) continue;
-      const v = escapeHtml(val);
-      el.append(
-        `<meta property="${prop}" content="${v}" />`,
-        { html: true },
-      );
-    }
+    // crawlers see a complete set. Runs at </head>: only then has the
+    // rewriter seen the existing <meta> tags.
+    el.onEndTag((end) => {
+      for (const [prop, val] of Object.entries(this.extras)) {
+        if (this.r.seen.has(prop)) continue;
+        end.before(`<meta property="${prop}" content="${escapeHtml(val)}" />`, { html: true });
+      }
+    });
   }
 }
 
