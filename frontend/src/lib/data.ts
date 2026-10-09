@@ -5,7 +5,8 @@ const memo = new Map<string, Promise<unknown>>();
 function fetchJson<T>(url: string): Promise<T> {
   const cached = memo.get(url) as Promise<T> | undefined;
   if (cached) return cached;
-  const p = fetch(url, { credentials: "omit" }).then((r) => {
+  const versioned = url.startsWith("/data/") ? `${url}?v=${__BUILD_ID__}` : url;
+  const p = fetch(versioned, { credentials: "omit" }).then((r) => {
     if (!r.ok) throw new Error(`${url} → ${r.status}`);
     return r.json() as Promise<T>;
   });

@@ -4,6 +4,9 @@ import { VitePWA } from "vite-plugin-pwa";
 import path from "node:path";
 
 export default defineConfig({
+  // Oznaka builda za /data/*.json: novi deploy → novi URL, pa ni HTTP cache
+  // (max-age=3600) ni service worker ne vraćaju JSON stariji od koda.
+  define: { __BUILD_ID__: JSON.stringify(Date.now().toString(36)) },
   plugins: [
     react(),
     VitePWA({
