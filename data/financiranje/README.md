@@ -39,6 +39,7 @@ u NN ljeti godine N−1, prije donošenja proračuna za N. Provjereno za
 | `izvjesca_cl11.json` | sabor.hr, izvješća po čl. 11. za 2024. i 2025. (skenirani PDF-ovi bez tekstualnog sloja) | ručna transkripcija |
 | `porezni_prihodi.json` | godišnji izvještaji o izvršenju DP 2017.–2025. (NN), plan 2026. i projekcije 2027.–2028. (NN 152/2025), polugodišnji izvještaj 2026. | ručno iz NN; iznosi do 2022. u kunama preračunati 7,53450 |
 | `makro.json` | Eurostat: HICP (`prc_hicp_aind`), nominalni i realni BDP (`nama_10_gdp`) za HR | `scripts/20_fetch_eurostat_makro.py`; samo za usporedbu na stranici, ne ulazi u izračun |
+| `revizija_stranke.json` | Državni ured za reviziju: pojedinačna izvješća o financijskoj reviziji stranaka 2020.–2024. (s usporednom 2019.) | `scripts/21_fetch_revizija_stranke.py`: prihodi po izvorima, rashodi, višak/manjak, novac, obveze, vlastiti izvori; kontrole zbrojeva i bilance |
 | `zastupnici.json` | sabor.hr API interaktivne sabornice + profil svakog zastupnika | `scripts/18_fetch_sabor_zastupnici.py` |
 
 Sirovi HTML/PDF izvornici su u `data/raw/financiranje/` i `data/raw/sabor/`
@@ -99,6 +100,12 @@ u `scripts/19_export_financiranje.py`, ponovno pokreni
 `scripts/18_fetch_sabor_zastupnici.py --refresh` i deploy. Kad izađe novi
 izvještaj o izvršenju proračuna ili Eurostat objavi nove godišnje podatke:
 `scripts/20_fetch_eurostat_makro.py`, pa `scripts/19_export_financiranje.py`.
+Revizije stranaka izlaze u prosincu za prethodnu godinu: dodaj `godinaID` i
+`tema` („Političke stranke“ → pojedinačna izvješća) u `YEARS` u
+`scripts/21_fetch_revizija_stranke.py` (ID-jevi su u HTML-u
+https://www.revizija.hr/izvjesca/10), pokreni je pa `19_export_financiranje.py`.
+Upozorenja skripte za stranke koje ne primaju državni novac ne ulaze na
+stranicu; Centar 2022. ima razliku od 63 kn u samom izvorniku.
 
 ## Vezani dokumenti
 

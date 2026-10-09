@@ -5,6 +5,7 @@ import { deburr, formatDate, loadFunding, loadParties } from "@/lib/data";
 import type { Funding, FundingMp, FundingParty, Party } from "@/lib/types";
 import { PageSpinner } from "@/components/PageSpinner";
 import { PartyAvatar } from "@/components/PartyAvatar";
+import { FundingAudits } from "@/components/FundingAudits";
 import { buildSchedule, catalogAvatar, perSecond, segmentAt } from "@/lib/fundingLive";
 
 const MALE = "#002F6C";
@@ -144,8 +145,25 @@ export default function FundingRoute() {
           državnog proračuna (bez doprinosa i bez lokalne razine) u nominalnom
           BDP-u. Od 2024. porez na dohodak više nije prihod državnog
           proračuna, pa ta godina nije izravno usporediva s ranijima.
-          Preuzeto {formatDate(data.macro.retrieved)}.
+          Preuzeto {formatDate(data.macro.retrieved)}
         </p>
+      )}
+
+      {data.audits && (
+        <>
+          <h2 className="mt-12 mb-1 text-xl font-bold text-navy">Prihodi, rashodi i rezerve stranaka</h2>
+          <p className="text-sm text-muted mb-4 max-w-3xl">
+            Novac iz državnog proračuna samo je dio prihoda stranke. Koliko su
+            stranke ukupno primile, na što su potrošile i koliko im je ostalo
+            vidi se iz godišnjih financijskih izvještaja koje revidira Državni
+            ured za reviziju.
+          </p>
+          <FundingAudits
+            audits={data.audits}
+            catalog={catalog}
+            hicp={new Map((data.macro?.years ?? []).map((y) => [y.year, y.hicp_pct]))}
+          />
+        </>
       )}
 
       <Sources data={data} />

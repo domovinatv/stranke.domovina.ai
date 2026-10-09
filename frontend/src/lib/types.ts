@@ -223,6 +223,34 @@ export interface Macro {
   years: MacroYear[];
 }
 
+export interface AuditYear {
+  source: string;
+  audit_year: number;
+  currency: "HRK" | "EUR";
+  revenue: { state: number | null; local: number | null; members: number | null; donations: number | null; other: number | null; total: number | null };
+  expenses: { staff: number | null; promo: number | null; material: number | null; material_other: number | null; amortization: number | null; financial: number | null; donations: number | null; other: number | null; total: number | null };
+  /** Višak (+) ili manjak (−) prihoda. */
+  result: number;
+  /** Stanje 31. prosinca. */
+  balance: { cash: number | null; assets: number | null; liabilities: number | null; loans: number | null; equity: number | null };
+}
+
+export interface AuditParty {
+  name: string;
+  slug: string | null;
+  short: string | null;
+  /** Prima novac u 11. sazivu. */
+  current: boolean;
+  years: Record<string, AuditYear>;
+}
+
+export interface Audits {
+  source: string;
+  note: string;
+  parties: AuditParty[];
+  missing: string[];
+}
+
 export interface Funding {
   generated_at: string;
   as_of: string;
@@ -245,6 +273,7 @@ export interface Funding {
   previous: FundingConvocation;
   taxes: TaxYear[];
   macro: Macro | null;
+  audits: Audits | null;
   reports: { year: number; page_url: string; pdf_url: string; currency: "HRK" | "EUR"; allocated_eur: number; paid_eur: number }[];
   checks: { rows: number; max_diff: number; split_2024_max_diff: number };
   seated_fetched_at: string;

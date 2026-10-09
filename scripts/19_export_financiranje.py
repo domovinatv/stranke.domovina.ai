@@ -42,6 +42,16 @@ from src.normalize import norm_key  # noqa: E402
 
 SRC = ROOT / "data" / "financiranje"
 MAKRO = SRC / "makro.json"  # scripts/20_fetch_eurostat_makro.py
+REVIZIJA = SRC / "revizija_stranke.json"  # scripts/21_fetch_revizija_stranke.py
+
+# Naslovi revizijskih izvješća koji se razlikuju od naziva u odlukama.
+AUDIT_ALIASES = {
+    "HRVATSKA NARODA STRANKA – LIBERALNI DEMOKRATI": "Hrvatska narodna stranka – liberalni demokrati",
+    "HRVATSKA NARODNA STRANKA": "Hrvatska narodna stranka – liberalni demokrati",
+    "HRVATSKA KONZERVATIVNA STANKA": "Hrvatska konzervativna stranka",
+    "HRAST": "HRAST – pokret za uspješnu Hrvatsku",
+    "NARODNA STRANKA - REFORMISTI": "Narodna stranka – Reformisti",
+}
 DB = ROOT / "data" / "stranke.db"
 OUT = ROOT / "frontend" / "public" / "data" / "financiranje.json"
 
@@ -375,6 +385,35 @@ def build_projection(conv: dict, odluke: dict, taxes: dict, h1: dict | None) -> 
     }
 
 
+def build_audits(convs: dict) -> dict | None:
+    """Revidirani prihodi, rashodi i bilanca stranaka koje primaju novac u 10. ili 11. sazivu."""
+    if not REVIZIJA.exists():
+        return None
+    doc = json.loads(REVIZIJA.read_text())
+    recipients: dict[str, dict] = {}
+    for cid in (10, 11):  # 11. saziv prepisuje slug/kraticu iz 10.
+        for p in convs[cid]["parties"]:
+            if not p["independent"]:
+                recipients[norm_key(p["name"])] = {"name": p["name"], "slug": p["slug"], "short": p["short"]}
+    current = {norm_key(p["name"]) for p in convs[11]["parties"]}
+    by_name: dict[str, dict] = {}
+    for a in doc["parties"].values():
+        title = AUDIT_ALIASES.get(a["title"], a["title"])
+        key = norm_key(canon(title))
+        if key not in recipients:
+            continue
+        r = recipients[key]
+        entry = by_name.setdefault(r["name"], {**r, "current": key in current, "years": {}})
+        entry["years"].update(a["years"])
+    missing = sorted(set(r["name"] for r in recipients.values()) - set(by_name))
+    if missing:
+        log.info("revizija: nema izvješća za %s", ", ".join(missing))
+    parties = sorted(by_name.values(), key=lambda e: -max((y["revenue"]["total"] or 0) for y in e["years"].values()))
+    for e in parties:
+        e["years"] = dict(sorted(e["years"].items()))
+    return {"source": doc["source"], "note": doc["note"], "parties": parties, "missing": missing}
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--as-of", default=date.today().isoformat(),
@@ -487,6 +526,7 @@ def main() -> int:
         "previous": prev,
         "taxes": [taxes[y] for y in sorted(taxes)],
         "macro": json.loads(MAKRO.read_text()) if MAKRO.exists() else None,
+        "audits": build_audits(convs),
         "reports": [{"year": x["year"], "page_url": x["page_url"], "pdf_url": x["pdf_url"],
                      "currency": x.get("currency", "EUR"),
                      "allocated_eur": r2(to_eur(x["total_allocated_eur"], x.get("currency", "EUR"))),
