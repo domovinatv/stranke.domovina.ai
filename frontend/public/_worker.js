@@ -231,16 +231,30 @@ async function serveSpaWithOg(env, og) {
 
   const out = new Response(transformed.body, transformed);
   out.headers.set("Content-Type", "text/html; charset=utf-8");
-  out.headers.set("Cache-Control", "public, max-age=300, must-revalidate");
+  out.headers.set("Cache-Control", HTML_CACHE);
   out.headers.set("X-Content-Type-Options", "nosniff");
   out.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
   return out;
 }
 
+// HTML se uvijek provjerava: service worker ga precachea, a da je HTTP-cachiran
+// (prije max-age=300), novi sw.js bi spremio stari index.html sa starim bundleom.
+const HTML_CACHE = "no-cache";
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     const path = url.pathname;
+
+    // Pages bi /index.html preusmjerio (308) na /, a service worker precachea
+    // baš /index.html; poslužimo ga izravno i bez cachea.
+    if (path === "/index.html") {
+      const indexRes = await env.ASSETS.fetch(new Request(`${SITE}/`));
+      const headers = new Headers(indexRes.headers);
+      headers.set("Cache-Control", HTML_CACHE);
+      headers.set("Content-Type", "text/html; charset=utf-8");
+      return new Response(indexRes.body, { status: 200, headers });
+    }
 
     // Static assets — pass through to ASSETS with cache patching.
     if (/\.\w{1,8}$/.test(path)) {
@@ -270,7 +284,7 @@ export default {
     // SPA fallback — serve index.html for everything else
     const indexRes = await env.ASSETS.fetch(new Request(`${SITE}/index.html`));
     const headers = new Headers(indexRes.headers);
-    headers.set("Cache-Control", "public, max-age=300, must-revalidate");
+    headers.set("Cache-Control", HTML_CACHE);
     headers.set("Content-Type", "text/html; charset=utf-8");
     headers.set("X-Content-Type-Options", "nosniff");
     return new Response(indexRes.body, {
