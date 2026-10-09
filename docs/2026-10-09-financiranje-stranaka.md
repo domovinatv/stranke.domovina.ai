@@ -58,3 +58,72 @@ flowchart LR
 - Nova odluka Odbora za 2027. očekuje se u siječnju 2027. (+ izmjene kad se
   promijeni omjer M/Ž) → dodati u `odluke.json` i `PERIODS`.
 - „Stranka s imenom i prezimenom" (10. saziv) nema zapis u katalogu stranaka.
+
+## Nastavak 9. 10. 2026.: uživo, makro usporedba, revizije stranaka
+
+### /financiranje/uzivo
+
+`frontend/src/lib/fundingLive.ts` gradi raspored razdoblja s granicama u
+ponoć po zagrebačkom vremenu (DST ručno: zadnja nedjelja ožujka/listopada).
+Iznos razdoblja / sekunde razdoblja = stopa; kumulativ = završena razdoblja +
+linearni udio tekućeg. Kontrola: zbroj = `projection.saziv_total_eur`
+(49.893.321,43) u cent, kumulativ na 1. 10. 2026. = `received_eur`.
+
+- Stopa nije konstantna unutar godine: Q4/2026 = 0,4123 €/s, prosjek godine
+  0,416 €/s (tromjesečja imaju 90–92 dana, Q4 i sat više zbog DST-a).
+- 2027. je „po zakonu“, 2028. „procjena“; oznaka izvora se mijenja sama.
+- OG opis u workeru (`livePeriod`) računa stopu samo iz odluka u JSON-u:
+  bez nove odluke za 2027. ostaje na stopi Q4/2026.
+
+### Porezi, inflacija i BDP (Eurostat)
+
+`scripts/20_fetch_eurostat_makro.py` → `makro.json` (HICP `prc_hicp_aind`,
+`nama_10_gdp` nominalni i realni). 2018. → 2025.: porezi +76,5 %, nominalni
+BDP +75,3 %, cijene +34,9 %, realni BDP +27,3 %; porezi su stalno 19–20,4 %
+BDP-a. Usporedba nominalnog rasta novca s realnim BDP-om je pogrešna (miješa
+nominalno i realno); ispravno je nominalno↔nominalno ili realno↔realno.
+
+### Revizije stranaka (Državni ured za reviziju)
+
+DIP objavljuje godišnje izvještaje stranaka samo kroz svoju aplikaciju bez
+javne poveznice (`/financiranje/` vraća 403). Strankama FINA ne prima
+izvještaje. Upotrebljiv izvor su **pojedinačna izvješća DUR-a** (tekstualni
+PDF, 40–55 stranaka godišnje, sve parlamentarne).
+
+```mermaid
+flowchart LR
+  L[revizija.hr/izvjesca/10?t=1&tema=T&godinaID=G&page=N] -->|href u jednostrukim navodnicima| P[PDF po stranci]
+  P -->|pdftotext -layout| T1[Tablica 1 prihodi] & T2[Tablica 2 rashodi, višak/manjak] & T3[Tablica 3 imovina, obveze, vlastiti izvori]
+  T1 & T2 & T3 -->|kontrole zbrojeva| J[revizija_stranke.json] -->|19: samo primatelji 10./11. saziva| F[financiranje.json audits]
+```
+
+- Popis je straničen po 40 (`&page=2`); bez toga nedostaju stranke iza „R“ (SDP!).
+- ID-jevi `godinaID`/`tema` stoje u HTML-u (`data-val`) pod „POLITIČKE STRANKE“
+  → pojedinačna izvješća; godina objave = revidirana godina + 1.
+- Nova stranka ima tablice s jednim stupcem (bez prethodne godine).
+- Iznosi u rečenicama ispod tablice („267.704,00 kn“) zbunjuju brojanje
+  stupaca → `table_nums` preskače iznos iza kojeg slijedi kn/eura/%.
+  Rezanje tablice na „prvom odlomku“ lomi duge nazive redaka — uklonjeno.
+- Centar 2022.: izvornik ima razliku 63 kn u bilanci (revizor to navodi).
+- Promjena vlastitih izvora ≠ višak/manjak godine (revalorizacija imovine,
+  npr. SDP svake godine), pa to na stranici ne tvrdimo.
+- 271 MB PDF-ova u `data/raw/financiranje/revizija/` (gitignorirano).
+
+Brojke (13 stranaka 11. saziva s podacima 2019. i 2024.): vlastiti izvori
+6,67 → 8,24 mil. € (+24 %, cijene +28 %), rashodi za zaposlene 3,25 → 3,72
+mil. € (+14 %), ukupni manjak 2021. i 2024. (≈ −2,3 mil. € svaki), HDZ drži
+68 % vlastitih izvora; Most, Fokus i Pravo i pravda negativni krajem 2024.
+
+### Zamka: PWA + Cloudflare cache
+
+Nakon deploya korisnik nije vidio novi odjeljak. Uzroci:
+1. zona domovina.ai na Cloudflareu drži `/sw.js` do 4 h i prepisuje
+   Cache-Control u `max-age=14400` (na `*.pages.dev` worker šalje `no-cache`
+   ispravno) → preglednik ne vidi novi service worker;
+2. `/data/*.json` je StaleWhileRevalidate + HTTP `max-age=3600` → novi kod
+   dobije stari JSON, a odjeljak se bez `audits` ne prikaže.
+
+Popravljeno: `?v=__BUILD_ID__` na sve `/data/` JSON-e, reload na
+`controllerchange`, `no-cache` za `sw.js` u workeru. **Otvoreno:** purge
+`/sw.js` i Cache Rule (bypass) za `/sw.js` i `/registerSW.js` u zoni
+domovina.ai. Do tada: nakon deploya provjeriti u pregledniku s Cmd+Shift+R.
