@@ -109,9 +109,9 @@ class OgRewriter {
       "twitter:description": this.og.desc,
       "twitter:image": this.og.image,
     };
+    if (property) this.seen.add(property);
     if (property && map[property] != null) {
       el.setAttribute("content", map[property]);
-      this.seen.add(property);
     }
     if (metaName === "description") {
       el.setAttribute("content", this.og.desc);
