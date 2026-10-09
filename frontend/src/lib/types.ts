@@ -91,6 +91,7 @@ export interface PartyDetail {
 
 export interface FundingRate {
   nn: string;
+  currency?: "HRK" | "EUR";
   url: string;
   adopted: string;
   in_force: string;
@@ -125,12 +126,65 @@ export interface FundingParty {
   mps_male: number;
   mps_female: number;
   month_eur: number;
-  year_eur: number;
+  /** Null when the last decision covers only part of a year. */
+  year_eur: number | null;
   total_eur: number;
   by_period: Record<string, number>;
-  /** Seated MPs who are still members today. */
-  seated_male: number;
-  seated_female: number;
+  /** Seated MPs who are still members today (11th convocation only). */
+  seated_male?: number;
+  seated_female?: number;
+}
+
+export interface FundingProjectionYear {
+  year: number;
+  tax_year: number;
+  tax_revenue_eur: number;
+  tax_kind: "ostvareno" | "plan" | "projekcija";
+  tax_source: string | null;
+  annual_eur: number;
+  quarters: number;
+  amount_eur: number;
+  month_m: number;
+  month_f: number;
+  alt: { tax_revenue_eur: number; growth: number; amount_eur: number } | null;
+}
+
+export interface FundingProjection {
+  end: string;
+  open_periods: string[];
+  years: FundingProjectionYear[];
+  parties: Record<string, {
+    open_eur: number;
+    by_year: Record<string, number>;
+    projected_eur: number;
+    saziv_total_eur: number;
+    saziv_total_alt_eur: number;
+  }>;
+  projected_eur: number;
+  saziv_total_eur: number;
+  saziv_total_alt_eur: number;
+  h1: { year: number; growth: number; status: string; source_url: string } | null;
+  assumptions: string[];
+}
+
+export interface FundingConvocation {
+  id: number;
+  label: string;
+  start: string;
+  end: string;
+  periods: FundingPeriod[];
+  parties: FundingParty[];
+  rates: FundingRate[];
+  received_eur: number;
+  mps_male: number;
+  mps_female: number;
+}
+
+export interface TaxYear {
+  year: number;
+  kind: "ostvareno" | "plan" | "projekcija";
+  tax_revenue_eur: number;
+  source_url: string;
 }
 
 export interface FundingMp {
@@ -171,6 +225,10 @@ export interface Funding {
   periods: FundingPeriod[];
   parties: FundingParty[];
   mps: FundingMp[];
-  reports: { year: number; page_url: string; pdf_url: string; allocated_eur: number; paid_eur: number }[];
+  projection: FundingProjection;
+  previous: FundingConvocation;
+  taxes: TaxYear[];
+  reports: { year: number; page_url: string; pdf_url: string; currency: "HRK" | "EUR"; allocated_eur: number; paid_eur: number }[];
+  checks: { rows: number; max_diff: number; split_2024_max_diff: number };
   seated_fetched_at: string;
 }

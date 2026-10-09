@@ -84,6 +84,8 @@ export default function FundingRoute() {
       </p>
       <PartyTable data={data} catalog={catalog} />
 
+      <Projection data={data} catalog={catalog} />
+
       <h2 className="mt-12 mb-1 text-xl font-bold text-navy">Po osobi</h2>
       <p className="text-sm text-muted mb-4 max-w-3xl">
         Koliko mjesečno donosi mandat svakog od {t.seated} zastupnika koji
@@ -93,15 +95,24 @@ export default function FundingRoute() {
       </p>
       <MpList data={data} />
 
-      <h2 className="mt-12 mb-1 text-xl font-bold text-navy">Kako se iznos mijenjao</h2>
+      <Previous data={data} catalog={catalog} />
+
+      <h2 className="mt-12 mb-1 text-xl font-bold text-navy">Kako se iznos mijenjao, 2020.–2028.</h2>
       <p className="text-sm text-muted mb-4 max-w-3xl">
-        Iznos po mandatu raste svake godine jer se računa od poreznih prihoda
-        iz posljednjeg objavljenog izvještaja o izvršenju proračuna. Unutar
-        godine se mijenja samo kad se promijeni omjer muškaraca i žena (npr.
-        kad zastupnika zamijeni zamjenica), jer se isti iznos tada dijeli
-        drugačije.
+        Iznos po mandatu raste jer se računa od poreznih prihoda iz godine
+        N−2. Unutar godine se mijenja samo kad se promijeni omjer muškaraca
+        i žena (npr. kad zastupnika zamijeni zamjenica), jer se isti iznos
+        tada dijeli drugačije. Iznosi do 2022. preračunati su iz kuna
+        (7,53450 kn/€).
       </p>
       <RatesTable data={data} />
+
+      <h3 className="mt-8 mb-1 text-lg font-bold text-navy">Porezni prihodi → novac za stranke</h3>
+      <p className="text-sm text-muted mb-4 max-w-3xl">
+        0,075 % poreznih prihoda državnog proračuna (skupina računa 61) iz
+        godišnjeg izvještaja o izvršenju za godinu N−2.
+      </p>
+      <TaxTable data={data} />
 
       <Sources data={data} />
     </section>
@@ -239,7 +250,7 @@ function PartyTable({ data, catalog }: { data: Funding; catalog: Map<string, Par
                     <GenderBar m={p.mps_male} f={p.mps_female} max={max} />
                   </td>
                   <td className="p-3 text-right tabular-nums whitespace-nowrap">{eur(p.month_eur)}</td>
-                  <td className="p-3 text-right tabular-nums whitespace-nowrap hidden md:table-cell">{eur(p.year_eur)}</td>
+                  <td className="p-3 text-right tabular-nums whitespace-nowrap hidden md:table-cell">{p.year_eur != null ? eur(p.year_eur) : "–"}</td>
                   <td className="p-3 text-right tabular-nums whitespace-nowrap font-bold text-navy">{eur(p.total_eur)}</td>
                   <td className="p-3 text-muted">
                     <ChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
@@ -476,8 +487,50 @@ function MpList({ data }: { data: Funding }) {
   );
 }
 
+interface RateRow {
+  key: string;
+  nn: string | null;
+  url: string | null;
+  from: string;
+  to: string;
+  mps: string;
+  month_m: number;
+  month_f: number;
+  annual: number;
+  tag?: string;
+}
+
+function rateRows(data: Funding): RateRow[] {
+  const decided: RateRow[] = [...data.previous.rates, ...data.rates].map((r) => ({
+    key: r.nn,
+    nn: r.nn,
+    url: r.url,
+    from: r.period_from,
+    to: r.period_to,
+    mps: `${r.mps_male} / ${r.mps_female}`,
+    month_m: r.month_m,
+    month_f: r.month_f,
+    annual: r.annual_budget_eur,
+    tag: r.currency === "HRK" ? "kn → €" : undefined,
+  }));
+  const projected: RateRow[] = data.projection.years.map((y) => ({
+    key: `p${y.year}`,
+    nn: null,
+    url: y.tax_source,
+    from: `${y.year}-01-01`,
+    to: y.year === Number(data.projection.end.slice(0, 4)) ? data.projection.end : `${y.year}-12-31`,
+    mps: `${data.totals.mps_male} / ${data.totals.mps_female}`,
+    month_m: y.month_m,
+    month_f: y.month_f,
+    annual: y.annual_eur,
+    tag: y.tax_kind === "ostvareno" ? "po zakonu" : "procjena",
+  }));
+  return [...decided, ...projected];
+}
+
 function RatesTable({ data }: { data: Funding }) {
-  const max = Math.max(...data.rates.map((r) => r.month_f));
+  const rows = rateRows(data);
+  const max = Math.max(...rows.map((r) => r.month_f));
   return (
     <div className="card overflow-x-auto">
       <table className="w-full text-sm">
@@ -485,32 +538,38 @@ function RatesTable({ data }: { data: Funding }) {
           <tr className="text-left text-[11px] uppercase tracking-wider text-muted border-b border-border">
             <th className="p-3 font-semibold">Odluka</th>
             <th className="p-3 font-semibold">Vrijedi</th>
-            <th className="p-3 font-semibold">M / Ž</th>
+            <th className="p-3 font-semibold hidden sm:table-cell">M / Ž</th>
             <th className="p-3 font-semibold">Mjesečno po mandatu</th>
             <th className="p-3 font-semibold text-right hidden sm:table-cell">Godišnji iznos</th>
           </tr>
         </thead>
         <tbody>
-          {data.rates.map((r) => (
-            <tr key={r.nn} className="border-b border-border/70">
+          {rows.map((r) => (
+            <tr key={r.key} className={`border-b border-border/70 ${r.nn ? "" : "bg-surface/50"}`}>
               <td className="p-3 whitespace-nowrap">
-                <a href={r.url} target="_blank" rel="noopener" className="inline-flex items-center gap-1">
-                  NN {r.nn} <ExternalLink size={12} />
-                </a>
+                {r.nn ? (
+                  <a href={r.url ?? undefined} target="_blank" rel="noopener" className="inline-flex items-center gap-1">
+                    NN {r.nn} <ExternalLink size={12} />
+                  </a>
+                ) : (
+                  <span className="font-semibold text-navy">{r.from.slice(0, 4)}.</span>
+                )}
+                {r.tag && <div className="text-[11px] text-muted">{r.tag}</div>}
               </td>
               <td className="p-3 whitespace-nowrap text-muted tabular-nums">
-                {formatDate(r.period_from)} – {formatDate(r.period_to)}
+                {formatDate(r.from)} – {formatDate(r.to)}
               </td>
-              <td className="p-3 tabular-nums whitespace-nowrap">
-                {r.mps_male} / {r.mps_female}
-              </td>
+              <td className="p-3 tabular-nums whitespace-nowrap hidden sm:table-cell">{r.mps}</td>
               <td className="p-3">
                 <div className="space-y-1 min-w-48">
                   {([["M", r.month_m, MALE], ["Ž", r.month_f, FEMALE]] as const).map(([k, v, c]) => (
                     <div key={k} className="grid grid-cols-[1rem_1fr_6.5rem] items-center gap-2 text-xs">
                       <span className="text-muted">{k}</span>
                       <span className="h-2 rounded-full bg-surface overflow-hidden">
-                        <span className="block h-full" style={{ width: `${(100 * v) / max}%`, background: c }} />
+                        <span
+                          className="block h-full"
+                          style={{ width: `${(100 * v) / max}%`, background: c, opacity: r.nn ? 1 : 0.55 }}
+                        />
                       </span>
                       <span className="tabular-nums text-right">{eur(v)}</span>
                     </div>
@@ -518,13 +577,254 @@ function RatesTable({ data }: { data: Funding }) {
                 </div>
               </td>
               <td className="p-3 text-right tabular-nums whitespace-nowrap hidden sm:table-cell">
-                {mil(r.annual_budget_eur)}
+                {mil(r.annual)}
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+  );
+}
+
+const KIND_LABEL = { ostvareno: "ostvareno", plan: "plan", projekcija: "projekcija" } as const;
+
+function TaxTable({ data }: { data: Funding }) {
+  const rows = data.taxes.filter((t) => t.year >= 2018 && t.year <= Number(data.projection.end.slice(0, 4)) - 2);
+  return (
+    <div className="card overflow-x-auto">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="text-left text-[11px] uppercase tracking-wider text-muted border-b border-border">
+            <th className="p-3 font-semibold">Porezni prihodi</th>
+            <th className="p-3 font-semibold text-right">Iznos</th>
+            <th className="p-3 font-semibold text-right">Rast</th>
+            <th className="p-3 font-semibold">→ Godina</th>
+            <th className="p-3 font-semibold text-right">Strankama</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((t) => {
+            const prev = data.taxes.find((x) => x.year === t.year - 1);
+            const g = prev ? t.tax_revenue_eur / prev.tax_revenue_eur - 1 : null;
+            return (
+              <tr key={t.year} className={`border-b border-border/70 ${t.kind === "ostvareno" ? "" : "bg-surface/50"}`}>
+                <td className="p-3 whitespace-nowrap">
+                  <a href={t.source_url} target="_blank" rel="noopener">{t.year}.</a>
+                  <span className="text-[11px] text-muted ml-1.5">{KIND_LABEL[t.kind]}</span>
+                </td>
+                <td className="p-3 text-right tabular-nums whitespace-nowrap">
+                  {(t.tax_revenue_eur / 1e9).toLocaleString("hr-HR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} mlrd. €
+                </td>
+                <td className={`p-3 text-right tabular-nums whitespace-nowrap ${g != null && g < 0 ? "text-flag-red" : ""}`}>
+                  {g == null ? "" : `${g > 0 ? "+" : ""}${(100 * g).toLocaleString("hr-HR", { maximumFractionDigits: 1 })} %`}
+                </td>
+                <td className="p-3 whitespace-nowrap">{t.year + 2}.</td>
+                <td className="p-3 text-right tabular-nums whitespace-nowrap font-semibold text-navy">
+                  {mil(t.tax_revenue_eur * 0.00075)}
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function catalogAvatar(p: FundingParty, catalog: Map<string, Party>) {
+  const cat = p.slug ? catalog.get(p.slug) : undefined;
+  return {
+    slug: p.slug ?? p.name,
+    canonical_name: p.name,
+    short_name: cat?.short_name ?? p.short ?? undefined,
+    logo: cat?.logo,
+    logo_sizes: cat?.logo_sizes,
+    brand_color: cat?.brand_color,
+  };
+}
+
+function Projection({ data, catalog }: { data: Funding; catalog: Map<string, Party> }) {
+  const pr = data.projection;
+  const prev = new Map(data.previous.parties.map((p) => [p.name, p.total_eur]));
+  const y27 = pr.years.find((y) => y.tax_kind === "ostvareno");
+  const yEst = pr.years.find((y) => y.tax_kind !== "ostvareno");
+  return (
+    <>
+      <h2 className="mt-12 mb-1 text-xl font-bold text-navy">Do kraja saziva ({formatDate(pr.end)})</h2>
+      <p className="text-sm text-muted mb-4 max-w-3xl">
+        {pr.open_periods.join(", ")} je već raspoređeno odlukom za {data.year}.
+        {y27 && (
+          <>
+            {" "}Iznos za {y27.year}. nije procjena: zakon ga veže uz porezne
+            prihode {y27.tax_year}., koji su objavljeni u{" "}
+            <a href={y27.tax_source ?? undefined} target="_blank" rel="noopener">izvještaju o izvršenju proračuna</a>.
+          </>
+        )}
+        {yEst && (
+          <>
+            {" "}Za {yEst.year}. porezni prihodi {yEst.tax_year}. još nisu poznati
+            pa se koristi {yEst.tax_kind === "plan" ? "plan iz proračuna" : "projekcija iz proračuna"}
+            {yEst.alt && (
+              <>
+                ; ako se nastavi trend iz prvog polugodišta {yEst.tax_year}.
+                (+{(100 * yEst.alt.growth).toLocaleString("hr-HR", { maximumFractionDigits: 1 })} %),
+                iznos bi bio nešto veći
+              </>
+            )}
+            .
+          </>
+        )}
+      </p>
+      <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <Kpi
+          label="11. saziv ukupno (procjena)"
+          value={`≈ ${mil(pr.saziv_total_eur)}`}
+          note={pr.saziv_total_alt_eur > pr.saziv_total_eur ? `do ${mil(pr.saziv_total_alt_eur)} po trendu poreza` : undefined}
+          accent
+        />
+        <Kpi label="Još do kraja saziva" value={mil(pr.projected_eur)} note={`od ${formatDate(data.as_of)}`} />
+        {y27 && (
+          <Kpi
+            label={`${y27.year}. – po zakonu`}
+            value={mil(y27.annual_eur)}
+            note={`${eur(y27.month_m)} / ${eur(y27.month_f)} mjesečno po mandatu (M / Ž)`}
+          />
+        )}
+        {yEst && (
+          <Kpi
+            label={`${yEst.year}. do ${formatDate(pr.end)} – procjena`}
+            value={mil(yEst.amount_eur)}
+            note={`${eur(yEst.month_m)} / ${eur(yEst.month_f)} mjesečno (M / Ž)`}
+          />
+        )}
+      </div>
+
+      <div className="card overflow-x-auto mt-4">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-[11px] uppercase tracking-wider text-muted border-b border-border">
+              <th className="p-3 font-semibold">Primatelj</th>
+              <th className="p-3 font-semibold text-right hidden md:table-cell">10. saziv</th>
+              <th className="p-3 font-semibold text-right hidden sm:table-cell">11. dosad</th>
+              <th className="p-3 font-semibold text-right">Do kraja</th>
+              <th className="p-3 font-semibold text-right">11. saziv ukupno</th>
+              <th className="p-3 font-semibold text-right hidden md:table-cell">vs 10.</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.parties.map((p) => {
+              const x = pr.parties[p.name];
+              const before = prev.get(p.name);
+              const delta = before ? x.saziv_total_eur / before - 1 : null;
+              return (
+                <tr key={p.name} className="border-b border-border/70">
+                  <td className="p-3">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <PartyAvatar size={28} party={catalogAvatar(p, catalog)} />
+                      <span className="font-semibold text-navy leading-snug">{p.name}</span>
+                    </div>
+                  </td>
+                  <td className="p-3 text-right tabular-nums whitespace-nowrap text-muted hidden md:table-cell">
+                    {before ? eur(before, 0) : "–"}
+                  </td>
+                  <td className="p-3 text-right tabular-nums whitespace-nowrap hidden sm:table-cell">{eur(p.total_eur, 0)}</td>
+                  <td className="p-3 text-right tabular-nums whitespace-nowrap text-muted">+{eur(x.projected_eur, 0)}</td>
+                  <td className="p-3 text-right tabular-nums whitespace-nowrap font-bold text-navy">{eur(x.saziv_total_eur, 0)}</td>
+                  <td className="p-3 text-right tabular-nums whitespace-nowrap hidden md:table-cell">
+                    {delta == null ? <span className="text-muted">novo</span> : `${delta > 0 ? "+" : ""}${Math.round(100 * delta)} %`}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+          <tfoot>
+            <tr className="font-bold text-navy">
+              <td className="p-3">Ukupno</td>
+              <td className="p-3 text-right tabular-nums whitespace-nowrap hidden md:table-cell">{eur(data.previous.received_eur, 0)}</td>
+              <td className="p-3 text-right tabular-nums whitespace-nowrap hidden sm:table-cell">{eur(data.totals.received_eur, 0)}</td>
+              <td className="p-3 text-right tabular-nums whitespace-nowrap">+{eur(pr.projected_eur, 0)}</td>
+              <td className="p-3 text-right tabular-nums whitespace-nowrap text-flag-red">{eur(pr.saziv_total_eur, 0)}</td>
+              <td className="p-3 text-right tabular-nums whitespace-nowrap hidden md:table-cell">
+                +{Math.round(100 * (pr.saziv_total_eur / data.previous.received_eur - 1))} %
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <ul className="text-xs text-muted mt-2 space-y-0.5 list-disc pl-4">
+        {pr.assumptions.map((a) => (
+          <li key={a}>{a}</li>
+        ))}
+        <li>
+          „vs 10.” uspoređuje cijeli 11. saziv (s procjenom) s 10. sazivom, za stranke koje su primale novac u oba.
+          10. saziv trajao je kraće ({formatDate(data.previous.start)} – {formatDate(data.previous.end)}, 3 godine i
+          10 mjeseci), pa dio razlike dolazi i od toga, ne samo od rasta poreznih prihoda.
+        </li>
+      </ul>
+    </>
+  );
+}
+
+function Previous({ data, catalog }: { data: Funding; catalog: Map<string, Party> }) {
+  const pv = data.previous;
+  const first = pv.rates[0];
+  const last = pv.rates[pv.rates.length - 1];
+  const max = Math.max(...pv.parties.map((p) => p.total_eur));
+  return (
+    <>
+      <h2 className="mt-12 mb-1 text-xl font-bold text-navy">
+        10. saziv ({formatDate(pv.start)} – {formatDate(pv.end)})
+      </h2>
+      <p className="text-sm text-muted mb-4 max-w-3xl">
+        Isti obračun za prethodni saziv, iz {pv.rates.length} odluka Odbora.
+        Zbroj po godinama poklapa se sa Saborovim izvješćima za 2021.–2023.,
+        a 2024. (podijeljena između dva saziva) s izvješćem za 2024. Mandati su
+        oni iz posljednje odluke saziva.
+      </p>
+      <div className="grid gap-3 sm:grid-cols-3">
+        <Kpi label="10. saziv ukupno" value={mil(pv.received_eur)} note={`${pv.parties.length} primatelja`} accent />
+        <Kpi label="Po mandatu mjesečno, 2020." value={`${eur(first.month_m)}`} note={`zastupnica ${eur(first.month_f)}`} />
+        <Kpi label="Po mandatu mjesečno, 2024." value={`${eur(last.month_m)}`} note={`zastupnica ${eur(last.month_f)}`} />
+      </div>
+      <div className="card overflow-x-auto mt-4">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="text-left text-[11px] uppercase tracking-wider text-muted border-b border-border">
+              <th className="p-3 font-semibold">Primatelj</th>
+              <th className="p-3 font-semibold">Mandati M / Ž</th>
+              <th className="p-3 font-semibold text-right">Ukupno 10. saziv</th>
+            </tr>
+          </thead>
+          <tbody>
+            {pv.parties.map((p) => (
+              <tr key={p.name} className="border-b border-border/70">
+                <td className="p-3">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <PartyAvatar size={28} party={catalogAvatar(p, catalog)} />
+                    <div className="min-w-0">
+                      <div className="font-semibold text-navy leading-snug">{p.name}</div>
+                      {p.independent && <div className="text-xs text-muted">zastupnik nacionalne manjine · nezavisni zastupnik</div>}
+                    </div>
+                  </div>
+                </td>
+                <td className="p-3 tabular-nums whitespace-nowrap">
+                  <span style={{ color: MALE }} className="font-semibold">{p.mps_male}</span>
+                  <span className="text-muted"> / </span>
+                  <span style={{ color: FEMALE }} className="font-semibold">{p.mps_female}</span>
+                </td>
+                <td className="p-3 text-right">
+                  <div className="tabular-nums whitespace-nowrap font-bold text-navy">{eur(p.total_eur)}</div>
+                  <div className="h-1.5 mt-1 ml-auto max-w-40 rounded-full bg-surface overflow-hidden">
+                    <div className="h-full bg-navy/70 ml-auto" style={{ width: `${(100 * p.total_eur) / max}%` }} />
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </>
   );
 }
 
@@ -543,7 +843,7 @@ function Sources({ data }: { data: Funding }) {
           <li>
             Odluke Odbora za Ustav, Poslovnik i politički sustav o raspoređivanju
             sredstava:{" "}
-            {data.rates.map((r, i) => (
+            {[...data.previous.rates, ...data.rates].map((r, i) => (
               <Fragment key={r.nn}>
                 {i > 0 && ", "}
                 <a href={r.url} target="_blank" rel="noopener">NN {r.nn}</a>
@@ -556,8 +856,20 @@ function Sources({ data }: { data: Funding }) {
                 Izvješće o raspoređenim i isplaćenim sredstvima za {r.year}.
               </a>{" "}
               (Hrvatski sabor, čl. 11.): raspoređeno {eur(r.allocated_eur)}, isplaćeno {eur(r.paid_eur)}
+              {r.currency === "HRK" && " (preračunato iz kuna)"}
             </li>
           ))}
+          <li>
+            Godišnji izvještaji o izvršenju državnog proračuna (Narodne novine) –
+            porezni prihodi, skupina 61:{" "}
+            {data.taxes.filter((t) => t.kind === "ostvareno" && t.year >= 2018).map((t, i) => (
+              <Fragment key={t.year}>
+                {i > 0 && ", "}
+                <a href={t.source_url} target="_blank" rel="noopener">{t.year}.</a>
+              </Fragment>
+            ))}
+            ; plan i projekcije iz Državnog proračuna za 2026. (NN 152/2025)
+          </li>
           <li>
             <a href="https://www.sabor.hr/hr/zastupnici" target="_blank" rel="noopener">sabor.hr</a>{" "}
             – raspored i profili zastupnika (spol, lista s koje su izabrani), stanje{" "}
@@ -569,9 +881,10 @@ function Sources({ data }: { data: Funding }) {
         <h2 className="text-lg font-bold text-navy mb-2">Napomene</h2>
         <ul className="space-y-1.5 text-muted list-disc pl-4">
           <li>
-            Zbroj za 2025. po svakom primatelju poklapa se sa Saborovim
-            izvješćem o raspoređenim sredstvima (odstupanje najviše 0,02 €
-            zbog zaokruživanja).
+            Godišnji zbroj po svakom primatelju poklapa se sa Saborovim
+            izvješćima o raspoređenim sredstvima za 2021.–2025. ({data.checks.rows}{" "}
+            usporedbi, odstupanje najviše {data.checks.max_diff.toLocaleString("hr-HR")} zbog
+            zaokruživanja).
           </li>
           <li>
             „Raspoređeno” znači iznos po odlukama za tromjesečja koja su

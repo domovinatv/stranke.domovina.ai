@@ -1,0 +1,234 @@
+{
+ "source_notes": {
+  "definition": "'Porezni prihodi' = skupina računa 61 'Prihodi od poreza' u Računu prihoda i rashoda općeg dijela Godišnjeg izvještaja o izvršenju Državnog proračuna RH (državni proračun, ne opća država; bez doprinosa 62). Od 2024. (zbog porezne reforme 2023.) porez na dohodak više nije prihod DP-a pa skupina 61 uglavnom = PDV + trošarine + porez na dobit + carine.",
+  "law": "ZFPAIP čl. 5 (NN 29/19, 98/19): 0,075 % ostvarenih poreznih prihoda iz prethodno objavljenog godišnjeg izvještaja o izvršenju proračuna.",
+  "lag_rule": "Financiranje za godinu N = 0,075 % × skupina 61 ostvarena u godini N-2 (izvještaj za N-2 objavljuje se u NN lipanj-kolovoz godine N-1, prije donošenja proračuna za N u prosincu N-1). Potvrđeno za 2024 (2022), 2025 (2023), 2026 (2024). Iznimka moguća za 2021. (vidi funding_check).",
+  "currency": "Do 2022. izvorno HRK; EUR = HRK / 7,53450. Za 2022. EUR iznos objavljen u izvještaju za 2023.",
+  "consistency": "Svaki izvještaj sadrži i stupac ostvarenja prethodne godine; svi takvi stupci identični su iznosima iz izvještaja te godine (nema revizija 2017-2024).",
+  "raw_dir": "data/raw/porezi/ (NN full-text HTML izvještaja, proračun 2026, polugodišnji izvještaj 2026 PDF-ovi sa sabor.hr)",
+  "retrieved": "2026-10-09"
+ },
+ "years": [
+  {
+   "year": 2017,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 9986580418.12,
+   "tax_revenue_hrk": 75243890160.35,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2019_10_103_2063.html",
+   "source_doc": "NN 103/2019 (28.10.2019.), Godišnji izvještaj o izvršenju DP RH za 2018., stupac 'Ostvarenje/izvršenje 2017.'",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "Iz stupca prethodne godine u izvještaju za 2018. Služi samo za provjeru financiranja 2019."
+  },
+  {
+   "year": 2018,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 10355092891.06,
+   "tax_revenue_hrk": 78020447387.72,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2019_10_103_2063.html",
+   "source_doc": "NN 103/2019 (28.10.2019.), Godišnji izvještaj o izvršenju DP RH za 2018.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "HRK izvorni iznos; EUR = HRK/7,53450 (izračun, nije objavljen)."
+  },
+  {
+   "year": 2019,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 10980987747.24,
+   "tax_revenue_hrk": 82736252181.58,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2021_03_25_557.html",
+   "source_doc": "NN 25/2021 (11.3.2021.), Godišnji izvještaj o izvršenju DP RH za 2019.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "HRK izvorni iznos; EUR = HRK/7,53450 (izračun, nije objavljen)."
+  },
+  {
+   "year": 2020,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 9708440048.28,
+   "tax_revenue_hrk": 73148241543.77,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2021_07_79_1469.html",
+   "source_doc": "NN 79/2021 (12.7.2021.), Godišnji izvještaj o izvršenju DP RH za 2020.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "HRK izvorni iznos; EUR = HRK/7,53450 (izračun, nije objavljen)."
+  },
+  {
+   "year": 2021,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 11102500206.17,
+   "tax_revenue_hrk": 83651787803.36,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2022_06_66_948.html",
+   "source_doc": "NN 66/2022 (9.6.2022.), Godišnji izvještaj o izvršenju DP RH za 2021.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "HRK izvorni iznos; EUR = HRK/7,53450 (izračun, nije objavljen)."
+  },
+  {
+   "year": 2022,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 12987895209.44,
+   "tax_revenue_hrk": 97857296455.94,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2023_08_89_1385.html",
+   "source_doc": "NN 89/2023 (1.8.2023.), Godišnji izvještaj o izvršenju DP RH za 2022. (HRK); EUR iznos iz NN 87/2024, stupac 'Ostvarenje 2022.'",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "HRK iznos iz izvještaja za 2022.; EUR iznos 12.987.895.209,44 objavljen u izvještaju za 2023. = HRK/7,53450 (podudara se u lipu)."
+  },
+  {
+   "year": 2023,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 15495126573.62,
+   "tax_revenue_hrk": null,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2024_07_87_1522.html",
+   "source_doc": "NN 87/2024 (25.7.2024.), Godišnji izvještaj o izvršenju DP RH za 2023.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": null
+  },
+  {
+   "year": 2024,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 17485258275.45,
+   "tax_revenue_hrk": null,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2025_07_99_1370.html",
+   "source_doc": "NN 99/2025 (8.7.2025.), Godišnji izvještaj o izvršenju DP RH za 2024.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": null
+  },
+  {
+   "year": 2025,
+   "kind": "ostvareno",
+   "tax_revenue_eur": 18279879604.73,
+   "tax_revenue_hrk": null,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2026_07_73_867.html",
+   "source_doc": "NN 73/2026 (9.7.2026.), Godišnji izvještaj o izvršenju DP RH za 2025.",
+   "page_or_table": "Opći dio, 1.2.1. Izvještaj o prihodima i rashodima prema ekonomskoj klasifikaciji (Račun prihoda i rashoda), redak '61 Prihodi od poreza'",
+   "note": "Ključno: temelj za financiranje stranaka 2027. (0,075 % = 13.709.909,70 EUR). Tekući plan 2025 (rebalans) bio 18.084.971.809 EUR; ostvarenje 101,08 % plana, +4,54 % na 2024."
+  },
+  {
+   "year": 2026,
+   "kind": "plan",
+   "tax_revenue_eur": 19080509467.0,
+   "tax_revenue_hrk": null,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2025_12_152_2267.html",
+   "source_doc": "NN 152/2025 (16.12.2025.), Državni proračun RH za 2026. i projekcije za 2027. i 2028.",
+   "page_or_table": "Članak 2., A. Račun prihoda i rashoda, A1. Prihodi i rashodi prema ekonomskoj klasifikaciji, redak '61 Prihodi od poreza'",
+   "note": "Plan 2026 (+4,4 % na ostvarenje 2025). Do 30.6.2026. nema rebalansa: izvorni = tekući plan u polugodišnjem izvještaju. H1 2026 ostvarenje 9.213.380.317,72 EUR = 48,29 % plana, +8,12 % na H1 2025 (8.521.456.507,05). Izvor H1: https://www.sabor.hr/sites/default/files/uploads/sabor/2026-09-18/080407/1_2_OPCI_DIO_PRIHODI_RASHODI_EKONOMSKA_KLASIFIKACIJA.pdf (Prijedlog polugodišnjeg izvještaja o izvršenju DP RH za 2026., upućen Saboru 18.9.2026., još nije donesen/objavljen u NN)."
+  },
+  {
+   "year": 2027,
+   "kind": "projekcija",
+   "tax_revenue_eur": 19990742223.0,
+   "tax_revenue_hrk": null,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2025_12_152_2267.html",
+   "source_doc": "NN 152/2025 (16.12.2025.), Državni proračun RH za 2026. i projekcije za 2027. i 2028.",
+   "page_or_table": "Članak 2., A. Račun prihoda i rashoda, A1. Prihodi i rashodi prema ekonomskoj klasifikaciji, redak '61 Prihodi od poreza'",
+   "note": "Projekcija iz proračuna 2026.; proračun za 2027. još nije donesen (prijedlog se očekuje u studenom 2026.)."
+  },
+  {
+   "year": 2028,
+   "kind": "projekcija",
+   "tax_revenue_eur": 20771977715.0,
+   "tax_revenue_hrk": null,
+   "source_url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2025_12_152_2267.html",
+   "source_doc": "NN 152/2025 (16.12.2025.), Državni proračun RH za 2026. i projekcije za 2027. i 2028.",
+   "page_or_table": "Članak 2., A. Račun prihoda i rashoda, A1. Prihodi i rashodi prema ekonomskoj klasifikaciji, redak '61 Prihodi od poreza'",
+   "note": "Projekcija iz proračuna 2026."
+  }
+ ],
+ "funding_check": [
+  {
+   "funding_year": 2019,
+   "matched_tax_year": 2017,
+   "expected_funding_eur": 7489935.31,
+   "expected_funding_hrk": 56432917.62,
+   "funding_eur": null,
+   "implied_base_eur": null,
+   "diff_eur": null,
+   "note": "Proračun 2019. donesen u prosincu 2018.; izvještaj za 2017. bio je zadnji objavljeni -> N-2."
+  },
+  {
+   "funding_year": 2020,
+   "matched_tax_year": 2018,
+   "expected_funding_eur": 7766319.67,
+   "expected_funding_hrk": 58515335.54,
+   "funding_eur": null,
+   "implied_base_eur": null,
+   "diff_eur": null,
+   "note": "Izvještaj za 2018. objavljen u NN 103/2019 (28.10.2019.), prije donošenja proračuna 2020. -> N-2."
+  },
+  {
+   "funding_year": 2021,
+   "matched_tax_year": 2019,
+   "expected_funding_eur": 8235740.81,
+   "expected_funding_hrk": 62052189.14,
+   "funding_eur": null,
+   "implied_base_eur": null,
+   "diff_eur": null,
+   "note": "OPREZ: proračun 2021. donesen u prosincu 2020., a izvještaj za 2019. objavljen tek u NN 25/2021 (ožujak 2021.). 'Prethodno objavljeni' izvještaj u trenutku donošenja bio je onaj za 2018. (NN 103/2019) -> moguće je da je osnovica 2018. (očekivano 58.515.335,54 HRK) umjesto 2019. Provjeriti prema stvarnoj odluci za 2021."
+  },
+  {
+   "funding_year": 2022,
+   "matched_tax_year": 2020,
+   "expected_funding_eur": 7281330.04,
+   "expected_funding_hrk": 54861181.16,
+   "funding_eur": null,
+   "implied_base_eur": null,
+   "diff_eur": null,
+   "note": null
+  },
+  {
+   "funding_year": 2023,
+   "matched_tax_year": 2021,
+   "expected_funding_eur": 8326875.15,
+   "expected_funding_hrk": 62738840.85,
+   "funding_eur": null,
+   "implied_base_eur": null,
+   "diff_eur": null,
+   "note": "Iznos za 2023. bi u EUR bio 62.738.840,85 HRK / 7,5345 = 8.326.875,15 EUR (proračun 2023. donesen u EUR)."
+  },
+  {
+   "funding_year": 2024,
+   "matched_tax_year": 2022,
+   "expected_funding_eur": 9740921.41,
+   "expected_funding_hrk": 73392972.34,
+   "funding_eur": 9740919.0,
+   "implied_base_eur": 12987892000.0,
+   "diff_eur": -2.41,
+   "diff_base_eur": -3209.44,
+   "note": "Razlika -2,41 EUR (implicirana osnovica 12.987.892.000 vs objavljeno 12.987.895.209,44); vjerojatno zaokruživanje/konverzija pri planiranju, ne druga stavka."
+  },
+  {
+   "funding_year": 2025,
+   "matched_tax_year": 2023,
+   "expected_funding_eur": 11621344.93,
+   "funding_eur": 11621345.0,
+   "implied_base_eur": 15495126666.67,
+   "diff_eur": 0.07,
+   "diff_base_eur": 93.05,
+   "note": "Točno podudaranje (razlika +0,07 EUR = zaokruživanje na cijeli euro)."
+  },
+  {
+   "funding_year": 2026,
+   "matched_tax_year": 2024,
+   "expected_funding_eur": 13113943.71,
+   "funding_eur": 13113949.0,
+   "implied_base_eur": 17485265333.33,
+   "diff_eur": 5.29,
+   "diff_base_eur": 7057.88,
+   "note": "Razlika +5,29 EUR (implicirana osnovica 17.485.265.333 vs objavljeno 17.485.258.275,45, +7.058 EUR); vjerojatno radna/preliminarna brojka u trenutku planiranja. Godina osnovice nedvojbeno 2024."
+  },
+  {
+   "funding_year": 2027,
+   "matched_tax_year": 2025,
+   "expected_funding_eur": 13709909.7,
+   "funding_eur": null,
+   "implied_base_eur": null,
+   "diff_eur": null,
+   "note": "Prognoza: 0,075 % ostvarenja 2025. iz NN 73/2026 (zadnji objavljeni izvještaj prije donošenja proračuna 2027.)."
+  }
+ ],
+ "h1": {
+  "year": 2026,
+  "h1_eur": 9213380317.72,
+  "h1_prev_year_eur": 8521456507.05,
+  "growth": 0.0812,
+  "status": "prijedlog Vlade upućen Saboru 18.9.2026., još nije donesen",
+  "source_url": "https://www.sabor.hr/sites/default/files/uploads/sabor/2026-09-18/080407/1_2_OPCI_DIO_PRIHODI_RASHODI_EKONOMSKA_KLASIFIKACIJA.pdf",
+  "note": "Polugodišnji izvještaj o izvršenju DP 2026, skupina 61; služi za alternativni scenarij poreznih prihoda 2026 (temelj financiranja 2028)."
+ }
+}

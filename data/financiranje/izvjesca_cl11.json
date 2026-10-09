@@ -1,5 +1,691 @@
 [
  {
+  "year": 2020,
+  "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
+  "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz",
+  "pdf_url": "https://www.sabor.hr/sites/default/files/HS_Izvjesce_o_rasporedjenim_i_isplacenim_sredstvima_politickih_stranaka_i_nezavisnih_zastupnika_za_2020_godinu.pdf",
+  "source_file": "sabor_izvjesce_2020.pdf",
+  "reference": "Klasa 400-06/21-01/05, Urbroj 6521-1-21-03",
+  "date": "2021-03-25",
+  "transcription": "manual transcription from scanned PDF (no text layer); Footnote 1: allocated on the basis of the decisions of 15 Jan 2020 (klasa 400-06/20-01/01 = NN 7/2020) and of 31 Jul 2020 (klasa 400-06/20-01/25 = NN 90/2020-1732 and 400-06/20-01/26 = NN 90/2020-1733). Footnote 2: paid amounts reported by the Ministry of Finance on 24 Mar 2021 (klasa 400-06/21-01/05, urbroj 513-21-02). Covers both the 9th and the 10th convocation; rows sorted by amount in the original, names as printed (mixed case). Amounts in HRK (field names keep the _eur suffix for schema compatibility).",
+  "currency": "HRK",
+  "total_allocated_eur": 58515336.0,
+  "total_paid_eur": 58515335.87,
+  "sum_check": {
+   "sum_allocated": 58515335.98,
+   "sum_paid": 58515335.87
+  },
+  "recipients": [
+   {
+    "name": "Hrvatska demokratska zajednica",
+    "allocated_eur": 22898631.11,
+    "paid_eur": 22898631.1
+   },
+   {
+    "name": "Socijaldemokratska partija Hrvatske",
+    "allocated_eur": 14095451.03,
+    "paid_eur": 14095451.03
+   },
+   {
+    "name": "Most nezavisnih lista",
+    "allocated_eur": 4382733.56,
+    "paid_eur": 4382733.56
+   },
+   {
+    "name": "Hrvatska narodna stranka - liberalni demokrati",
+    "allocated_eur": 2203571.76,
+    "paid_eur": 2203571.75
+   },
+   {
+    "name": "Domovinski pokret Miroslava Škore",
+    "allocated_eur": 1880929.35,
+    "paid_eur": 1880929.35
+   },
+   {
+    "name": "Hrvatska seljačka stranka",
+    "allocated_eur": 1415126.7,
+    "paid_eur": 1415126.69
+   },
+   {
+    "name": "Samostalna demokratska srpska stranka",
+    "allocated_eur": 1169251.88,
+    "paid_eur": 1169251.88
+   },
+   {
+    "name": "Istarski demokratski sabor",
+    "allocated_eur": 1152606.49,
+    "paid_eur": 1152606.48
+   },
+   {
+    "name": "Možemo - politička platforma",
+    "allocated_eur": 848915.02,
+    "paid_eur": 848915.02
+   },
+   {
+    "name": "Živi zid",
+    "allocated_eur": 636599.32,
+    "paid_eur": 636599.32
+   },
+   {
+    "name": "Hrvatska demokršćanska stranka",
+    "allocated_eur": 590853.47,
+    "paid_eur": 590853.47
+   },
+   {
+    "name": "Hrvatska stranka umirovljenika",
+    "allocated_eur": 590853.47,
+    "paid_eur": 590853.47
+   },
+   {
+    "name": "Hrvatska socijalno-liberalna stranka",
+    "allocated_eur": 545107.62,
+    "paid_eur": 545107.62
+   },
+   {
+    "name": "Promijenimo Hrvatsku",
+    "allocated_eur": 424399.55,
+    "paid_eur": 424399.55
+   },
+   {
+    "name": "Ermina Lekaj – Prljaskaj (nezavisna zastupnica)",
+    "allocated_eur": 416519.07,
+    "paid_eur": 416519.06
+   },
+   {
+    "name": "Narodna stranka – Reformisti",
+    "allocated_eur": 395299.09,
+    "paid_eur": 395299.09
+   },
+   {
+    "name": "HRAST – Pokret za uspješnu Hrvatsku",
+    "allocated_eur": 378653.7,
+    "paid_eur": 378653.69
+   },
+   {
+    "name": "Hrvatski demokratski savez Slavonije i Baranje",
+    "allocated_eur": 378653.7,
+    "paid_eur": 378653.69
+   },
+   {
+    "name": "Robert Jankovics (nezavisni zastupnik)",
+    "allocated_eur": 378653.7,
+    "paid_eur": 378653.69
+   },
+   {
+    "name": "Furio Radin (nezavisni zastupnik)",
+    "allocated_eur": 378653.7,
+    "paid_eur": 378653.69
+   },
+   {
+    "name": "Vladimir Bilek (nezavisni zastupnik)",
+    "allocated_eur": 378653.7,
+    "paid_eur": 378653.69
+   },
+   {
+    "name": "Veljko Kajtazi (nezavisni zastupnik)",
+    "allocated_eur": 378653.7,
+    "paid_eur": 378653.69
+   },
+   {
+    "name": "Hrvatska konzervativna stranka",
+    "allocated_eur": 332907.85,
+    "paid_eur": 332907.85
+   },
+   {
+    "name": "SNAGA - Stranka narodnog i građanskog aktivizma",
+    "allocated_eur": 212199.77,
+    "paid_eur": 212199.77
+   },
+   {
+    "name": "Bandić Milan 365 - Stranka rada i solidarnosti",
+    "allocated_eur": 212199.77,
+    "paid_eur": 212199.77
+   },
+   {
+    "name": "Abeceda demokracije",
+    "allocated_eur": 212199.77,
+    "paid_eur": 212199.77
+   },
+   {
+    "name": "Željko Glasnović (nezavisni zastupnik)",
+    "allocated_eur": 212199.77,
+    "paid_eur": 212199.77
+   },
+   {
+    "name": "Nova ljevica",
+    "allocated_eur": 183099.32,
+    "paid_eur": 183099.32
+   },
+   {
+    "name": "Radnička fronta",
+    "allocated_eur": 183099.32,
+    "paid_eur": 183099.32
+   },
+   {
+    "name": "Građansko – liberalni savez",
+    "allocated_eur": 183099.32,
+    "paid_eur": 183099.32
+   },
+   {
+    "name": "Stranka s imenom i prezimenom",
+    "allocated_eur": 183099.32,
+    "paid_eur": 183099.32
+   },
+   {
+    "name": "Pametno",
+    "allocated_eur": 183099.32,
+    "paid_eur": 183099.32
+   },
+   {
+    "name": "Hrvatski suverenisti",
+    "allocated_eur": 166453.92,
+    "paid_eur": 166453.92
+   },
+   {
+    "name": "Blok za Hrvatsku",
+    "allocated_eur": 166453.92,
+    "paid_eur": 166453.92
+   },
+   {
+    "name": "Fokus",
+    "allocated_eur": 166453.92,
+    "paid_eur": 166453.92
+   }
+  ]
+ },
+ {
+  "year": 2021,
+  "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
+  "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz-0",
+  "pdf_url": "https://www.sabor.hr/sites/default/files/HS_Odb_Ustav_Izvjesce_iznos_rasporedjenih_isplacenih_sredstava_polit_strankama_nezavisnim_zastupnicima_2021.pdf",
+  "source_file": "sabor_izvjesce_2021.pdf",
+  "reference": "Klasa 400-06/22-01/11, Urbroj 6521-1-22-03",
+  "date": "2022-03-09",
+  "transcription": "manual transcription from scanned PDF (no text layer); Names as printed (mixed case). Amounts in HRK (field names keep the _eur suffix for schema compatibility).",
+  "currency": "HRK",
+  "total_allocated_eur": 62052190.0,
+  "total_paid_eur": 62052190.06,
+  "sum_check": {
+   "sum_allocated": 62052190.02,
+   "sum_paid": 62052190.06
+  },
+  "recipients": [
+   {
+    "name": "Hrvatska demokratska zajednica",
+    "allocated_eur": 25341039.72,
+    "paid_eur": 25341039.72
+   },
+   {
+    "name": "Socijaldemokratska partija Hrvatske",
+    "allocated_eur": 14170274.45,
+    "paid_eur": 14170274.44
+   },
+   {
+    "name": "Domovinski pokret",
+    "allocated_eur": 4504191.08,
+    "paid_eur": 4504191.08
+   },
+   {
+    "name": "Most",
+    "allocated_eur": 3228667.94,
+    "paid_eur": 3228667.93
+   },
+   {
+    "name": "Možemo - politička platforma",
+    "allocated_eur": 2052785.45,
+    "paid_eur": 2052785.46
+   },
+   {
+    "name": "Samostalna demokratska srpska stranka",
+    "allocated_eur": 1275523.14,
+    "paid_eur": 1275523.14
+   },
+   {
+    "name": "Istarski demokratski sabor",
+    "allocated_eur": 1235663.04,
+    "paid_eur": 1235663.04
+   },
+   {
+    "name": "Hrvatska socijalno-liberalna stranka",
+    "allocated_eur": 797201.96,
+    "paid_eur": 797201.96
+   },
+   {
+    "name": "Hrvatska seljačka stranka",
+    "allocated_eur": 797201.96,
+    "paid_eur": 797201.96
+   },
+   {
+    "name": "Hrvatska konzervativna stranka",
+    "allocated_eur": 797201.96,
+    "paid_eur": 797201.96
+   },
+   {
+    "name": "Nova ljevica",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Radnička fronta",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Građansko – liberalni savez",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Stranka s imenom i prezimenom",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Centar",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Narodna stranka – Reformisti",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Hrvatski suverenisti",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "HRAST – pokret za uspješnu Hrvatsku",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Hrvatska demokršćanska stranka",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Hrvatska stranka umirovljenika",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Blok za Hrvatsku",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Fokus",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Hrvatska narodna stranka - liberalni demokrati",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Hrvatski demokratski savez Slavonije i Baranje",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Ermina Lekaj – Prljaskaj",
+    "allocated_eur": 438461.08,
+    "paid_eur": 438461.07
+   },
+   {
+    "name": "Robert Jankovics",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Furio Radin",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Vladimir Bilek",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   },
+   {
+    "name": "Veljko Kajtazi",
+    "allocated_eur": 398600.98,
+    "paid_eur": 398600.99
+   }
+  ]
+ },
+ {
+  "year": 2022,
+  "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
+  "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz-1",
+  "pdf_url": "https://www.sabor.hr/sites/default/files/HS_Odb_Ustav_Izvjesce_iznos_rasporedjenih_isplacenih_sredstava_polit_strankama_nezavisnim_zastupnicima_2022.pdf",
+  "source_file": "sabor_izvjesce_2022.pdf",
+  "reference": "Klasa 400-06/23-01/07, Urbroj 6521-1-23-02",
+  "date": "2023-02-14",
+  "transcription": "manual transcription from scanned PDF (no text layer); Header says 'u kunama'. Names as printed (mixed case). Amounts in HRK (field names keep the _eur suffix for schema compatibility).",
+  "currency": "HRK",
+  "total_allocated_eur": 54861183.0,
+  "total_paid_eur": 54861182.9,
+  "sum_check": {
+   "sum_allocated": 54861182.99,
+   "sum_paid": 54861182.9
+  },
+  "recipients": [
+   {
+    "name": "Hrvatska demokratska zajednica",
+    "allocated_eur": 22423593.69,
+    "paid_eur": 22423593.69
+   },
+   {
+    "name": "Socijaldemokratska partija Hrvatske",
+    "allocated_eur": 12506483.53,
+    "paid_eur": 12506483.54
+   },
+   {
+    "name": "Domovinski pokret",
+    "allocated_eur": 3980937.01,
+    "paid_eur": 3980937.02
+   },
+   {
+    "name": "Most",
+    "allocated_eur": 2853592.02,
+    "paid_eur": 2853592.03
+   },
+   {
+    "name": "Možemo - politička platforma",
+    "allocated_eur": 1840738.76,
+    "paid_eur": 1840738.74
+   },
+   {
+    "name": "Samostalna demokratska srpska stranka",
+    "allocated_eur": 1109733.06,
+    "paid_eur": 1109733.05
+   },
+   {
+    "name": "Istarski demokratski sabor",
+    "allocated_eur": 1092115.46,
+    "paid_eur": 1092115.45
+   },
+   {
+    "name": "Hrvatska socijalno-liberalna stranka",
+    "allocated_eur": 704590.62,
+    "paid_eur": 704590.61
+   },
+   {
+    "name": "Hrvatska seljačka stranka",
+    "allocated_eur": 704590.62,
+    "paid_eur": 704590.61
+   },
+   {
+    "name": "Hrvatska konzervativna stranka",
+    "allocated_eur": 704590.62,
+    "paid_eur": 704590.61
+   },
+   {
+    "name": "Nova ljevica",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Radnička fronta",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Građansko – liberalni savez",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Stranka s imenom i prezimenom",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Centar",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Narodna stranka – Reformisti",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Hrvatski suverenisti",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "HRAST – pokret za uspješnu Hrvatsku",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Hrvatska demokršćanska stranka",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Hrvatska stranka umirovljenika",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Blok za Hrvatsku",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Fokus",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Hrvatska narodna stranka - liberalni demokrati",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Hrvatski demokratski savez Slavonije i Baranje",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Ermina Lekaj – Prljaskaj",
+    "allocated_eur": 387524.84,
+    "paid_eur": 387524.85
+   },
+   {
+    "name": "Robert Jankovics",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Furio Radin",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Vladimir Bilek",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   },
+   {
+    "name": "Veljko Kajtazi",
+    "allocated_eur": 352295.31,
+    "paid_eur": 352295.3
+   }
+  ]
+ },
+ {
+  "year": 2023,
+  "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
+  "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz-2",
+  "pdf_url": "https://www.sabor.hr/sites/default/files/HS_Izvjesce_o_rasporedjenim_i_isplacenim_sredstvima_politickih_stranaka_i_nezavisnih_zastupnika_za_2023.pdf",
+  "source_file": "sabor_izvjesce_2023.pdf",
+  "reference": "Klasa 400-06/24-01/7, Urbroj 6521-1-24-02",
+  "date": "2024-02-13",
+  "transcription": "manual transcription from scanned PDF (no text layer); Header says 'u eurima'. Names as printed (mixed case).",
+  "currency": "EUR",
+  "total_allocated_eur": 8326875.0,
+  "total_paid_eur": 8326874.97,
+  "sum_check": {
+   "sum_allocated": 8326874.97,
+   "sum_paid": 8326874.97
+  },
+  "recipients": [
+   {
+    "name": "Hrvatska demokratska zajednica",
+    "allocated_eur": 3407661.75,
+    "paid_eur": 3407661.75
+   },
+   {
+    "name": "Socijaldemokratska partija Hrvatske",
+    "allocated_eur": 1896113.68,
+    "paid_eur": 1896113.68
+   },
+   {
+    "name": "Domovinski pokret",
+    "allocated_eur": 603551.68,
+    "paid_eur": 603551.69
+   },
+   {
+    "name": "Most",
+    "allocated_eur": 432634.39,
+    "paid_eur": 432634.4
+   },
+   {
+    "name": "Možemo - politička platforma",
+    "allocated_eur": 283081.76,
+    "paid_eur": 283081.77
+   },
+   {
+    "name": "Samostalna demokratska srpska stranka",
+    "allocated_eur": 165576.12,
+    "paid_eur": 165576.12
+   },
+   {
+    "name": "Istarski demokratski sabor",
+    "allocated_eur": 165576.12,
+    "paid_eur": 165576.12
+   },
+   {
+    "name": "Hrvatska socijalno-liberalna stranka",
+    "allocated_eur": 106823.31,
+    "paid_eur": 106823.3
+   },
+   {
+    "name": "Hrvatska seljačka stranka",
+    "allocated_eur": 106823.31,
+    "paid_eur": 106823.3
+   },
+   {
+    "name": "Hrvatska konzervativna stranka",
+    "allocated_eur": 106823.31,
+    "paid_eur": 106823.3
+   },
+   {
+    "name": "Nova ljevica",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Radnička fronta",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Građansko – liberalni savez",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Stranka s imenom i prezimenom",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Centar",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Narodna stranka – Reformisti",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Hrvatski suverenisti",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "HRAST – pokret za uspješnu Hrvatsku",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Hrvatska demokršćanska stranka",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Hrvatska stranka umirovljenika",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Blok za Hrvatsku",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Fokus",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Hrvatska narodna stranka - liberalni demokrati",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Hrvatski demokratski savez Slavonije i Baranje",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Ermina Lekaj – Prljaskaj",
+    "allocated_eur": 58752.82,
+    "paid_eur": 58752.82
+   },
+   {
+    "name": "Robert Jankovics",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Furio Radin",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Vladimir Bilek",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   },
+   {
+    "name": "Veljko Kajtazi",
+    "allocated_eur": 53411.65,
+    "paid_eur": 53411.65
+   }
+  ]
+ },
+ {
   "year": 2024,
   "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
   "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz-3",
@@ -8,6 +694,7 @@
   "reference": "Klasa 400-06/25-01/9, Urbroj 6521-1-25-02",
   "date": "dated 'Zagreb, 18. veljače 2024.' in the document (evident typo for 2025; klasa is /25)",
   "transcription": "manual transcription from scanned PDF (no text layer); names as printed (upper case)",
+  "currency": "EUR",
   "total_allocated_eur": 9740919.0,
   "total_paid_eur": 9740919.06,
   "sum_check": {
@@ -196,6 +883,7 @@
   "reference": "Klasa 400-06/26-01/8, Urbroj 6521-1-26-02",
   "date": "2026-02-26",
   "transcription": "manual transcription from scanned PDF (no text layer); names as printed (upper case)",
+  "currency": "EUR",
   "total_allocated_eur": 11621345.0,
   "total_paid_eur": 11621345.06,
   "sum_check": {
