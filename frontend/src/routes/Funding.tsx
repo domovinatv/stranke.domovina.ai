@@ -1,10 +1,11 @@
-import { ChevronDown, Euro, ExternalLink, Search } from "lucide-react";
+import { ChevronDown, ChevronRight, Euro, ExternalLink, Search } from "lucide-react";
 import { Fragment, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { deburr, formatDate, loadFunding, loadParties } from "@/lib/data";
 import type { Funding, FundingMp, FundingParty, Party } from "@/lib/types";
 import { PageSpinner } from "@/components/PageSpinner";
 import { PartyAvatar } from "@/components/PartyAvatar";
+import { buildSchedule, catalogAvatar, perSecond, segmentAt } from "@/lib/fundingLive";
 
 const MALE = "#002F6C";
 const FEMALE = "#DB2777";
@@ -73,6 +74,22 @@ export default function FundingRoute() {
         />
       </div>
 
+      <Link
+        to="/financiranje/uzivo"
+        className="card card-hover mt-3 flex items-center gap-3 p-4 no-underline"
+      >
+        <span className="relative flex h-2.5 w-2.5 shrink-0">
+          <span className="absolute inline-flex h-full w-full rounded-full bg-flag-red opacity-60 motion-safe:animate-ping" />
+          <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-flag-red" />
+        </span>
+        <span className="flex-1 text-sm text-navy-700">
+          <strong className="text-navy">Uživo:</strong> svake sekunde strankama
+          pripada ≈ {liveRate(data)} €.
+          Pogledajte kako brojači rastu dok gledate.
+        </span>
+        <ChevronRight size={18} className="text-muted shrink-0" />
+      </Link>
+
       <Formula data={data} />
 
       <h2 className="mt-12 mb-1 text-xl font-bold text-navy">Po strankama</h2>
@@ -117,6 +134,12 @@ export default function FundingRoute() {
       <Sources data={data} />
     </section>
   );
+}
+
+function liveRate(data: Funding) {
+  const s = buildSchedule(data);
+  const seg = segmentAt(s, Date.now()) ?? s.segments[s.segments.length - 1];
+  return perSecond(seg, seg.total).toLocaleString("hr-HR", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 function Kpi({
@@ -630,18 +653,6 @@ function TaxTable({ data }: { data: Funding }) {
       </table>
     </div>
   );
-}
-
-function catalogAvatar(p: FundingParty, catalog: Map<string, Party>) {
-  const cat = p.slug ? catalog.get(p.slug) : undefined;
-  return {
-    slug: p.slug ?? p.name,
-    canonical_name: p.name,
-    short_name: cat?.short_name ?? p.short ?? undefined,
-    logo: cat?.logo,
-    logo_sizes: cat?.logo_sizes,
-    brand_color: cat?.brand_color,
-  };
 }
 
 function Projection({ data, catalog }: { data: Funding; catalog: Map<string, Party> }) {

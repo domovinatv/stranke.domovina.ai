@@ -9,6 +9,7 @@ const Party = lazy(() => import("./routes/Party"));
 const City = lazy(() => import("./routes/City"));
 const Stats = lazy(() => import("./routes/Stats"));
 const Funding = lazy(() => import("./routes/Funding"));
+const FundingLive = lazy(() => import("./routes/FundingLive"));
 const About = lazy(() => import("./routes/About"));
 const NotFound = lazy(() => import("./routes/NotFound"));
 
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
       { path: "grad/:name", element: lazyRoute(City) },
       { path: "statistika", element: lazyRoute(Stats) },
       { path: "financiranje", element: lazyRoute(Funding) },
+      { path: "financiranje/uzivo", element: lazyRoute(FundingLive) },
       { path: "o-projektu", element: lazyRoute(About) },
       { path: "*", element: lazyRoute(NotFound) },
     ],

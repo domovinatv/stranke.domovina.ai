@@ -171,6 +171,40 @@ async function buildFundingOg(env) {
   }
 }
 
+/** € u sekundi svim strankama u tromjesečju koje je u tijeku (kao na /financiranje/uzivo). */
+function livePeriod(d, now = Date.now()) {
+  const day = (iso) => Date.parse(iso + "T00:00:00+01:00");
+  const p = d.periods.find((x) => day(x.from) <= now && now < day(x.to) + 86400000) ?? d.periods[d.periods.length - 1];
+  const total = d.parties.reduce((s, party) => s + (party.by_period[p.label] || 0), 0);
+  return { p, total, rate: total / ((day(p.to) + 86400000 - day(p.from)) / 1000) };
+}
+
+async function buildFundingLiveOg(env) {
+  const fallback = {
+    title: "Javni novac u stvarnom vremenu · DOMOVINA Stranke",
+    desc: "Koliko parlamentarnim strankama svake sekunde pripada iz državnog proračuna, uživo, prema odlukama u Narodnim novinama.",
+    image: `${SITE}/og-image.png`,
+    canonical: `${SITE}/financiranje/uzivo`,
+  };
+  try {
+    const r = await env.ASSETS.fetch(new Request(`${SITE}/data/financiranje.json`));
+    if (!r.ok) return fallback;
+    const d = await r.json();
+    const { p, total, rate } = livePeriod(d);
+    const hdz = d.parties[0];
+    const share = (hdz.by_period[p.label] || 0) / total;
+    return {
+      ...fallback,
+      desc:
+        `Svake sekunde strankama iz proračuna pripada ${fmtEur(rate)} €, ${fmtEur(rate * 86400, 0)} € na dan ` +
+        `(${hdz.short || hdz.name} ${fmtEur(rate * share, 3)} €/s). ` +
+        `Do kraja 11. saziva (15. 5. 2028.) ≈ ${fmtEur(d.projection.saziv_total_eur / 1e6)} mil. €. Brojači uživo.`,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
 async function serveSpaWithOg(env, og) {
   const indexRes = await env.ASSETS.fetch(new Request(`${SITE}/index.html`));
   if (!indexRes.ok) return indexRes;
@@ -219,6 +253,10 @@ export default {
       if (party) {
         return serveSpaWithOg(env, buildOgFor(party, `${SITE}${path}`));
       }
+    }
+
+    if (/^\/financiranje\/uzivo\/?$/.test(path)) {
+      return serveSpaWithOg(env, await buildFundingLiveOg(env));
     }
 
     if (/^\/financiranje\/?$/.test(path)) {
