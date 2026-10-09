@@ -96,3 +96,7 @@ Kad Odbor donese novu odluku (obično siječanj, a unutar godine kad se promijen
 omjer M/Ž): dodaj zapis u `odluke.json`, dodaj/izmijeni razdoblja u `PERIODS`
 u `scripts/19_export_financiranje.py`, ponovno pokreni
 `scripts/18_fetch_sabor_zastupnici.py --refresh` i deploy.
+
+## Vezani dokumenti
+
+- [docs/2026-10-09-financiranje-stranaka.md](../../docs/2026-10-09-financiranje-stranaka.md) — zamke, ključne brojke, otvorene stavke
