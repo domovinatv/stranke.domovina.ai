@@ -124,6 +124,20 @@ Nakon deploya korisnik nije vidio novi odjeljak. Uzroci:
    dobije stari JSON, a odjeljak se bez `audits` ne prikaže.
 
 Popravljeno: `?v=__BUILD_ID__` na sve `/data/` JSON-e, reload na
-`controllerchange`, `no-cache` za `sw.js` u workeru. **Otvoreno:** purge
-`/sw.js` i Cache Rule (bypass) za `/sw.js` i `/registerSW.js` u zoni
-domovina.ai. Do tada: nakon deploya provjeriti u pregledniku s Cmd+Shift+R.
+`controllerchange`, `no-cache` za `sw.js` u workeru (nakon isteka stare kopije
+Cloudflare ga više ne cacheira: `cf-cache-status: BYPASS`, purge nije trebao).
+Treći uzrok: novi SW precachea `/index.html`, a Pages ga preusmjerava (308) na
+`/`, koji je bio HTTP-cachiran 5 min → SW je spremio **stari** HTML. Sada
+worker `/index.html` poslužuje izravno i sav HTML šalje s `no-cache`.
+Provjereno u Braveu: prvo obično učitavanje nakon deploya prikazuje novu verziju.
+
+### Krediti i dugovi pri prestanku stranke
+
+`data/financiranje/krediti.json` je ručni prijepis poglavlja „Obveze“
+revizija za 2024. (9 stranaka, 2,67 mil. €; stanja = bilance iz scripts/21).
+Za SDP-ov kredit od 2 mil. € izvješće ne navodi osiguranje (cesija +
+zadužnica navedeni su samo za okvirne kredite). Pravno: ZPS čl. 10. (statut
+uređuje imovinu pri prestanku), čl. 23. (prestanak), ZFPAIP čl. 52. (završni
+izvještaj prije brisanja); odredbe o dugovima nema, stranka odgovara svojom
+imovinom (primjer: stečaj Bandić 365, tražbine ~284.000 €, imovina 14.520 €).
+Pri ažuriranju za 2025. treba ponovno prepisati krediti.json (`as_of`).
