@@ -124,12 +124,29 @@ export default function FundingRoute() {
       </p>
       <RatesTable data={data} />
 
-      <h3 className="mt-8 mb-1 text-lg font-bold text-navy">Porezni prihodi → novac za stranke</h3>
+      <h3 className="mt-8 mb-1 text-lg font-bold text-navy">Porezi, cijene i gospodarstvo</h3>
       <p className="text-sm text-muted mb-4 max-w-3xl">
-        0,075 % poreznih prihoda državnog proračuna (skupina računa 61) iz
-        godišnjeg izvještaja o izvršenju za godinu N−2.
+        Novac za stranke je 0,075 % poreznih prihoda državnog proračuna
+        (skupina računa 61) iz godine N−2, pa raste točno onoliko koliko
+        su porasli porezni prihodi. Zakon ga ne veže ni uz inflaciju ni uz
+        BDP; usporedba pokazuje kako se ti prihodi kreću u odnosu na cijene i
+        gospodarstvo.
       </p>
+      <MacroSummary data={data} />
       <TaxTable data={data} />
+      {data.macro && (
+        <p className="text-xs text-muted mt-2 max-w-3xl">
+          Inflacija: HICP, prosječna godišnja stopa (
+          <a href={data.macro.sources.hicp_pct.page} target="_blank" rel="noopener">Eurostat prc_hicp_aind</a>
+          ), a ne nacionalni CPI DZS-a. BDP: Eurostat{" "}
+          <a href={data.macro.sources.gdp_real_pct.page} target="_blank" rel="noopener">nama_10_gdp</a>
+          , zadnje godine su privremene. Porezi / BDP: porezni prihodi
+          državnog proračuna (bez doprinosa i bez lokalne razine) u nominalnom
+          BDP-u. Od 2024. porez na dohodak više nije prihod državnog
+          proračuna, pa ta godina nije izravno usporediva s ranijima.
+          Preuzeto {formatDate(data.macro.retrieved)}.
+        </p>
+      )}
 
       <Sources data={data} />
     </section>
@@ -612,37 +629,114 @@ function RatesTable({ data }: { data: Funding }) {
 
 const KIND_LABEL = { ostvareno: "ostvareno", plan: "plan", projekcija: "projekcija" } as const;
 
+const signedPct = (g: number | null | undefined) =>
+  g == null ? "" : `${g > 0 ? "+" : g < 0 ? "−" : ""}${Math.abs(g).toLocaleString("hr-HR", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}\u00a0%`;
+
+function growthWindow(data: Funding) {
+  const macro = new Map((data.macro?.years ?? []).map((y) => [y.year, y]));
+  const tax = new Map(data.taxes.map((t) => [t.year, t]));
+  // Od temelja za prvu godinu 10. saziva (2020. ← porezi 2018.) do
+  // zadnje godine za koju postoje i ostvareni porezi i Eurostatovi podaci.
+  const first = Number(data.previous.start.slice(0, 4)) - 2;
+  let last = first;
+  for (let y = first + 1; tax.get(y)?.kind === "ostvareno" && macro.get(y)?.gdp_nominal_meur != null; y++) last = y;
+  if (last === first) return null;
+  let prices = 1;
+  let real = 1;
+  for (let y = first + 1; y <= last; y++) {
+    prices *= 1 + (macro.get(y)?.hicp_pct ?? 0) / 100;
+    real *= 1 + (macro.get(y)?.gdp_real_pct ?? 0) / 100;
+  }
+  return {
+    first,
+    last,
+    tax: tax.get(last)!.tax_revenue_eur / tax.get(first)!.tax_revenue_eur - 1,
+    nominal: macro.get(last)!.gdp_nominal_meur! / macro.get(first)!.gdp_nominal_meur! - 1,
+    prices: prices - 1,
+    real: real - 1,
+  };
+}
+
+function MacroSummary({ data }: { data: Funding }) {
+  const w = growthWindow(data);
+  if (!w) return null;
+  const pp = (g: number) => signedPct(100 * g);
+  const tiles = [
+    { label: `Novac strankama ${w.first + 2}. → ${w.last + 2}.`, value: pp(w.tax), note: `= porezni prihodi ${w.first}. → ${w.last}.`, accent: true },
+    { label: `Nominalni BDP ${w.first}. → ${w.last}.`, value: pp(w.nominal), note: "gospodarstvo u tekućim cijenama" },
+    { label: `Cijene ${w.first}. → ${w.last}.`, value: pp(w.prices), note: "kumulativna inflacija (HICP)" },
+    { label: `Realni BDP ${w.first}. → ${w.last}.`, value: pp(w.real), note: "gospodarstvo bez inflacije" },
+  ];
+  const realGain = (1 + w.tax) / (1 + w.prices) - 1;
+  return (
+    <>
+      <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-3">
+        {tiles.map((t) => (
+          <div key={t.label} className="card p-4">
+            <div className="field-label">{t.label}</div>
+            <div className={`text-xl sm:text-2xl font-extrabold tabular-nums ${t.accent ? "text-flag-red" : "text-navy"}`}>{t.value}</div>
+            <div className="text-xs text-muted mt-1">{t.note}</div>
+          </div>
+        ))}
+      </div>
+      <p className="text-sm text-navy-700 mb-4 max-w-3xl leading-relaxed">
+        Od {w.first}. do {w.last}. porezni prihodi državnog proračuna porasli
+        su {pp(w.tax)}, nominalni BDP {pp(w.nominal)}, a cijene {pp(w.prices)}.
+        Kad se oduzme inflacija, porezni prihodi realno su veći za oko{" "}
+        {Math.round(100 * realGain)}&nbsp;%. Novac strankama prati ih s dvije godine zakašnjenja:
+        iznos za {w.last + 2}. viši je za {pp(w.tax)} nego za {w.first + 2}.
+      </p>
+    </>
+  );
+}
+
 function TaxTable({ data }: { data: Funding }) {
   const rows = data.taxes.filter((t) => t.year >= 2018 && t.year <= Number(data.projection.end.slice(0, 4)) - 2);
+  const macro = new Map((data.macro?.years ?? []).map((y) => [y.year, y]));
+  const th = "p-3 font-semibold text-right";
   return (
     <div className="card overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
-          <tr className="text-left text-[11px] uppercase tracking-wider text-muted border-b border-border">
-            <th className="p-3 font-semibold">Porezni prihodi</th>
-            <th className="p-3 font-semibold text-right">Iznos</th>
-            <th className="p-3 font-semibold text-right">Rast</th>
-            <th className="p-3 font-semibold">→ Godina</th>
-            <th className="p-3 font-semibold text-right">Strankama</th>
+          <tr className="text-left text-[11px] uppercase tracking-wider text-muted border-b border-border align-bottom">
+            <th className="p-3 font-semibold">Godina</th>
+            <th className={th}>Porezni prihodi</th>
+            <th className={th}>Rast poreza</th>
+            <th className={th}>Nominalni BDP</th>
+            <th className={th}>Realni BDP</th>
+            <th className={th}>Inflacija</th>
+            <th className={th}>Porezi / BDP</th>
+            <th className="p-3 font-semibold border-l border-border">→ Strankama</th>
+            <th className={th}>Iznos</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((t) => {
             const prev = data.taxes.find((x) => x.year === t.year - 1);
             const g = prev ? t.tax_revenue_eur / prev.tax_revenue_eur - 1 : null;
+            const m = macro.get(t.year);
+            const mp = macro.get(t.year - 1);
+            const nom = m?.gdp_nominal_meur && mp?.gdp_nominal_meur ? m.gdp_nominal_meur / mp.gdp_nominal_meur - 1 : null;
+            const share = m?.gdp_nominal_meur && t.kind === "ostvareno" ? t.tax_revenue_eur / 1e6 / m.gdp_nominal_meur : null;
+            const neg = (v: number | null | undefined) => (v != null && v < 0 ? "text-flag-red" : "");
+            const td = "p-3 text-right tabular-nums whitespace-nowrap";
             return (
               <tr key={t.year} className={`border-b border-border/70 ${t.kind === "ostvareno" ? "" : "bg-surface/50"}`}>
                 <td className="p-3 whitespace-nowrap">
                   <a href={t.source_url} target="_blank" rel="noopener">{t.year}.</a>
                   <span className="text-[11px] text-muted ml-1.5">{KIND_LABEL[t.kind]}</span>
                 </td>
-                <td className="p-3 text-right tabular-nums whitespace-nowrap">
+                <td className={td}>
                   {(t.tax_revenue_eur / 1e9).toLocaleString("hr-HR", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} mlrd. €
                 </td>
-                <td className={`p-3 text-right tabular-nums whitespace-nowrap ${g != null && g < 0 ? "text-flag-red" : ""}`}>
-                  {g == null ? "" : `${g > 0 ? "+" : ""}${(100 * g).toLocaleString("hr-HR", { maximumFractionDigits: 1 })} %`}
+                <td className={`${td} font-semibold ${neg(g)}`}>{g == null ? "" : signedPct(100 * g)}</td>
+                <td className={`${td} ${neg(nom)}`}>{nom == null ? "" : signedPct(100 * nom)}</td>
+                <td className={`${td} ${neg(m?.gdp_real_pct)}`}>{signedPct(m?.gdp_real_pct)}</td>
+                <td className={td}>{signedPct(m?.hicp_pct)}</td>
+                <td className={td}>
+                  {share == null ? "" : (100 * share).toLocaleString("hr-HR", { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + " %"}
                 </td>
-                <td className="p-3 whitespace-nowrap">{t.year + 2}.</td>
+                <td className="p-3 whitespace-nowrap border-l border-border">{t.year + 2}.</td>
                 <td className="p-3 text-right tabular-nums whitespace-nowrap font-semibold text-navy">
                   {mil(t.tax_revenue_eur * 0.00075)}
                 </td>

@@ -41,6 +41,7 @@ sys.path.insert(0, str(ROOT))
 from src.normalize import norm_key  # noqa: E402
 
 SRC = ROOT / "data" / "financiranje"
+MAKRO = SRC / "makro.json"  # scripts/20_fetch_eurostat_makro.py
 DB = ROOT / "data" / "stranke.db"
 OUT = ROOT / "frontend" / "public" / "data" / "financiranje.json"
 
@@ -485,6 +486,7 @@ def main() -> int:
         "projection": projection,
         "previous": prev,
         "taxes": [taxes[y] for y in sorted(taxes)],
+        "macro": json.loads(MAKRO.read_text()) if MAKRO.exists() else None,
         "reports": [{"year": x["year"], "page_url": x["page_url"], "pdf_url": x["pdf_url"],
                      "currency": x.get("currency", "EUR"),
                      "allocated_eur": r2(to_eur(x["total_allocated_eur"], x.get("currency", "EUR"))),

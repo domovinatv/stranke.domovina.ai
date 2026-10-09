@@ -38,6 +38,7 @@ u NN ljeti godine N−1, prije donošenja proračuna za N. Provjereno za
 | `odluke.json` | Narodne novine: NN 8/24, 74/24, 77/24, 16/25, 102/25, 140/25, 11/26 | ručna transkripcija svakog primatelja; zbroj = ukupni iznos ±0,08 € |
 | `izvjesca_cl11.json` | sabor.hr, izvješća po čl. 11. za 2024. i 2025. (skenirani PDF-ovi bez tekstualnog sloja) | ručna transkripcija |
 | `porezni_prihodi.json` | godišnji izvještaji o izvršenju DP 2017.–2025. (NN), plan 2026. i projekcije 2027.–2028. (NN 152/2025), polugodišnji izvještaj 2026. | ručno iz NN; iznosi do 2022. u kunama preračunati 7,53450 |
+| `makro.json` | Eurostat: HICP (`prc_hicp_aind`), nominalni i realni BDP (`nama_10_gdp`) za HR | `scripts/20_fetch_eurostat_makro.py`; samo za usporedbu na stranici, ne ulazi u izračun |
 | `zastupnici.json` | sabor.hr API interaktivne sabornice + profil svakog zastupnika | `scripts/18_fetch_sabor_zastupnici.py` |
 
 Sirovi HTML/PDF izvornici su u `data/raw/financiranje/` i `data/raw/sabor/`
@@ -95,7 +96,9 @@ odstupanje 0,02), a 2024. — podijeljena između dva saziva — zbroju oba dije
 Kad Odbor donese novu odluku (obično siječanj, a unutar godine kad se promijeni
 omjer M/Ž): dodaj zapis u `odluke.json`, dodaj/izmijeni razdoblja u `PERIODS`
 u `scripts/19_export_financiranje.py`, ponovno pokreni
-`scripts/18_fetch_sabor_zastupnici.py --refresh` i deploy.
+`scripts/18_fetch_sabor_zastupnici.py --refresh` i deploy. Kad izađe novi
+izvještaj o izvršenju proračuna ili Eurostat objavi nove godišnje podatke:
+`scripts/20_fetch_eurostat_makro.py`, pa `scripts/19_export_financiranje.py`.
 
 ## Vezani dokumenti
 

@@ -1,0 +1,90 @@
+{
+ "retrieved": "2026-10-09",
+ "sources": {
+  "hicp_pct": {
+   "dataset": "prc_hicp_aind",
+   "query": "geo=HR&coicop=CP00&unit=RCH_A_AVG",
+   "page": "https://ec.europa.eu/eurostat/databrowser/view/prc_hicp_aind/default/table?lang=en",
+   "updated": "2026-02-06T23:00:00+0100"
+  },
+  "gdp_nominal_meur": {
+   "dataset": "nama_10_gdp",
+   "query": "geo=HR&na_item=B1GQ&unit=CP_MEUR",
+   "page": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table?lang=en",
+   "updated": "2026-10-07T11:00:00+0200"
+  },
+  "gdp_real_pct": {
+   "dataset": "nama_10_gdp",
+   "query": "geo=HR&na_item=B1GQ&unit=CLV_PCH_PRE",
+   "page": "https://ec.europa.eu/eurostat/databrowser/view/nama_10_gdp/default/table?lang=en",
+   "updated": "2026-10-07T11:00:00+0200"
+  }
+ },
+ "notes": [
+  "Inflacija je HICP (harmonizirani indeks potrošačkih cijena, Eurostat), ne nacionalni CPI DZS-a; razlika je obično nekoliko desetinki postotnog boda.",
+  "BDP prije 2023. Eurostat iskazuje u eurima preračunom fiksnim tečajem 7,53450 kn/€, isto kao porezne prihode.",
+  "Zadnje godine BDP-a su privremene i Eurostat ih revidira."
+ ],
+ "years": [
+  {
+   "year": 2016,
+   "hicp_pct": -0.6,
+   "gdp_nominal_meur": 47573.5,
+   "gdp_real_pct": 3.5
+  },
+  {
+   "year": 2017,
+   "hicp_pct": 1.3,
+   "gdp_nominal_meur": 50204.3,
+   "gdp_real_pct": 3.3
+  },
+  {
+   "year": 2018,
+   "hicp_pct": 1.6,
+   "gdp_nominal_meur": 53035.3,
+   "gdp_real_pct": 2.9
+  },
+  {
+   "year": 2019,
+   "hicp_pct": 0.8,
+   "gdp_nominal_meur": 55767.8,
+   "gdp_real_pct": 3.1
+  },
+  {
+   "year": 2020,
+   "hicp_pct": 0.0,
+   "gdp_nominal_meur": 50717.8,
+   "gdp_real_pct": -8.3
+  },
+  {
+   "year": 2021,
+   "hicp_pct": 2.7,
+   "gdp_nominal_meur": 58390.4,
+   "gdp_real_pct": 12.6
+  },
+  {
+   "year": 2022,
+   "hicp_pct": 10.7,
+   "gdp_nominal_meur": 67609.4,
+   "gdp_real_pct": 7.3
+  },
+  {
+   "year": 2023,
+   "hicp_pct": 8.4,
+   "gdp_nominal_meur": 79186.3,
+   "gdp_real_pct": 3.8
+  },
+  {
+   "year": 2024,
+   "hicp_pct": 4.0,
+   "gdp_nominal_meur": 85905.2,
+   "gdp_real_pct": 3.8
+  },
+  {
+   "year": 2025,
+   "hicp_pct": 4.4,
+   "gdp_nominal_meur": 92975.1,
+   "gdp_real_pct": 3.4
+  }
+ ]
+}

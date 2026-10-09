@@ -207,6 +207,22 @@ export interface FundingMp {
   seat_month_eur: number;
 }
 
+export interface MacroYear {
+  year: number;
+  /** HICP, prosječna godišnja stopa, %. */
+  hicp_pct: number | null;
+  gdp_nominal_meur: number | null;
+  /** Realni rast BDP-a, %. */
+  gdp_real_pct: number | null;
+}
+
+export interface Macro {
+  retrieved: string;
+  sources: Record<string, { dataset: string; query: string; page: string; updated: string | null }>;
+  notes: string[];
+  years: MacroYear[];
+}
+
 export interface Funding {
   generated_at: string;
   as_of: string;
@@ -228,6 +244,7 @@ export interface Funding {
   projection: FundingProjection;
   previous: FundingConvocation;
   taxes: TaxYear[];
+  macro: Macro | null;
   reports: { year: number; page_url: string; pdf_url: string; currency: "HRK" | "EUR"; allocated_eur: number; paid_eur: number }[];
   checks: { rows: number; max_diff: number; split_2024_max_diff: number };
   seated_fetched_at: string;
