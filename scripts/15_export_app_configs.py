@@ -33,11 +33,10 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from src.wallet_alias import build_alias_map  # noqa: E402
+from src.wallet_alias import DEFAULT_CLUBS_JSON, build_alias_map  # noqa: E402
 DB_PATH = ROOT / "data" / "stranke.db"
 LOGO_DIR = ROOT / "data" / "logos_sized" / "256"
 OUT_PATH = ROOT / "data" / "export" / "parties-app.json"
-DEFAULT_CLUBS_JSON = Path("/Users/ms/git/ss/ss-novcanik-prototip/worker/clubs-app.json")
 
 # Kurirani stranački aliasi (sync s ss repo worker/parties-aliases.ts — NE
 # generirati kratice mehanički; 155 kratica bi se sudaralo međusobno i s klubovima).

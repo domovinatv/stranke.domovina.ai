@@ -24,6 +24,7 @@ ff-edge worker) — ISTI ulaz ⇒ ISTI aliasi, nema divergencije katalog↔worke
 from __future__ import annotations
 
 import json
+import os
 import re
 import unicodedata
 from pathlib import Path
@@ -34,7 +35,15 @@ _WEBSITE_RE = re.compile(r"https?://(?:www\.)?([a-z0-9-]{3,63})\.hr/?$")
 # derivirani alias u koliziji s klupskim labelom ISPUŠTA (npr. `split` je NK
 # Split, ne "Split je naš"). Puni slugovi stranaka se i dalje HARD-guardaju u
 # scripts/15 (kolizija puna imena = stop svijeta, alias = samo nice-to-have).
-DEFAULT_CLUBS_JSON = Path("/Users/ms/git/ss/ss-novcanik-prototip/worker/clubs-app.json")
+_CLUBS_JSON_CANDIDATES = [
+    Path("/Users/ms/git/ss/ss-novcanik-prototip/worker/clubs-app.json"),
+    Path("/Volumes/DOMOVINA2TB/git/ss/ss-novcanik-prototip/worker/clubs-app.json"),
+]
+# STRANKE_CLUBS_JSON overrides; otherwise the first checkout that exists (the
+# ss repo lives on the external drive on some machines).
+DEFAULT_CLUBS_JSON = Path(os.environ["STRANKE_CLUBS_JSON"]) if os.environ.get("STRANKE_CLUBS_JSON") else next(
+    (p for p in _CLUBS_JSON_CANDIDATES if p.exists()), _CLUBS_JSON_CANDIDATES[0]
+)
 CLUB_CURATED_ALIASES = {"lom", "luk", "croz", "moks", "nkw"}
 
 
