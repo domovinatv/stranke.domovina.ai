@@ -3,6 +3,7 @@
 #
 # Steps:
 #   1. Refresh static data from SQLite (09_export_static.py)
+#   1b. Party funding data (19_export_financiranje.py)
 #   2. Refresh sitemap + robots (10_export_sitemap.py)
 #   3. Type-check + Vite build
 #   4. wrangler pages deploy dist --project-name=stranke-domovina
@@ -28,6 +29,9 @@ cd "$REPO_ROOT"
 
 echo "==> 1/4 Exporting static data from SQLite"
 uv run python scripts/09_export_static.py
+
+echo "==> 1b/4 Exporting party funding page data (financiranje.json)"
+uv run python scripts/19_export_financiranje.py
 
 echo "==> 2/4 Generating sitemap + robots.txt"
 uv run python scripts/10_export_sitemap.py

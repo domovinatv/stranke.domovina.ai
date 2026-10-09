@@ -49,6 +49,14 @@ stranaka + funkcije) i geo-koordinatama.
 | Povijesnih funkcija (mandati)       | 4 203   |
 | Geokodirano (lat/lng)               | vidi `/api/stats` |
 
+## Financiranje iz proračuna
+
+Stranica [`/financiranje`](https://stranke.domovina.ai/financiranje) prikazuje
+koliko je koja parlamentarna stranka dobila iz državnog proračuna u 11. sazivu
+Sabora te koliko mjesečno donosi mandat svakog zastupnika (zastupnice +10 %).
+Izvori su odluke Odbora za Ustav, Poslovnik i politički sustav (Narodne novine)
+i Saborova godišnja izvješća. Metoda i podaci: [`data/financiranje/`](data/financiranje/README.md).
+
 ## Izvori podataka
 
 ### Registar političkih stranaka RH (`data.gov.hr`, MPU)

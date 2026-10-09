@@ -88,3 +88,89 @@ export interface PartyDetail {
   functions: PartyFunction[];
   aliases: Array<{ alias: string; source?: string }>;
 }
+
+export interface FundingRate {
+  nn: string;
+  url: string;
+  adopted: string;
+  in_force: string;
+  period_from: string;
+  period_to: string;
+  annual_budget_eur: number;
+  quarter_total_eur: number;
+  mps_male: number;
+  mps_female: number;
+  quarter_m: number;
+  quarter_f: number;
+  month_m: number;
+  month_f: number;
+}
+
+export interface FundingPeriod {
+  label: string;
+  from: string;
+  to: string;
+  nn: string;
+  /** Quarter ended by `as_of` → counted in "received so far". */
+  ended: boolean;
+}
+
+export interface FundingParty {
+  name: string;
+  slug: string | null;
+  short: string | null;
+  /** National-minority MP funded personally as "nezavisni zastupnik". */
+  independent: boolean;
+  /** Mandates the current decision funds (by final election results). */
+  mps_male: number;
+  mps_female: number;
+  month_eur: number;
+  year_eur: number;
+  total_eur: number;
+  by_period: Record<string, number>;
+  /** Seated MPs who are still members today. */
+  seated_male: number;
+  seated_female: number;
+}
+
+export interface FundingMp {
+  name: string;
+  gender: "M" | "F";
+  party: string;
+  party_full: string | null;
+  club: string;
+  elected_on: string | null;
+  constituency: string | null;
+  mandate_start: string | null;
+  minority: boolean;
+  img: string | null;
+  profile: string;
+  /** Recipient in the current decision, null when the MP left the party holding the mandate. */
+  recipient: string | null;
+  /** "switched": left the party holding the mandate; "substitute": minority substitute, decision names the predecessor. */
+  recipient_note: "switched" | "substitute" | null;
+  mandate_changes: string | null;
+  seat_month_eur: number;
+}
+
+export interface Funding {
+  generated_at: string;
+  as_of: string;
+  year: string;
+  convocation_start: string;
+  totals: {
+    received_eur: number;
+    year_eur: number;
+    month_eur: number;
+    mps_male: number;
+    mps_female: number;
+    seated: number;
+    seated_female: number;
+  };
+  rates: FundingRate[];
+  periods: FundingPeriod[];
+  parties: FundingParty[];
+  mps: FundingMp[];
+  reports: { year: number; page_url: string; pdf_url: string; allocated_eur: number; paid_eur: number }[];
+  seated_fetched_at: string;
+}

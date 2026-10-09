@@ -32,6 +32,9 @@ export function Header() {
           <NavLink to="/karta" className={navItem}>
             Karta
           </NavLink>
+          <NavLink to="/financiranje" className={navItem}>
+            Financiranje
+          </NavLink>
           <NavLink to="/statistika" className={navItem}>
             Statistika
           </NavLink>

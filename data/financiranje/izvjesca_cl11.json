@@ -1,0 +1,333 @@
+[
+ {
+  "year": 2024,
+  "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
+  "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz-3",
+  "pdf_url": "https://www.sabor.hr/sites/default/files/Izvje%C5%A1%C4%87e%20o%20raspore%C4%91enim%20i%20ispla%C4%87enim%20sredstvima%2024._0.pdf",
+  "source_file": "sabor_izvjesce_2024.pdf",
+  "reference": "Klasa 400-06/25-01/9, Urbroj 6521-1-25-02",
+  "date": "dated 'Zagreb, 18. veljače 2024.' in the document (evident typo for 2025; klasa is /25)",
+  "transcription": "manual transcription from scanned PDF (no text layer); names as printed (upper case)",
+  "total_allocated_eur": 9740919.0,
+  "total_paid_eur": 9740919.06,
+  "sum_check": {
+   "sum_allocated": 9740919.01,
+   "sum_paid": 9740919.06
+  },
+  "recipients": [
+   {
+    "name": "ARMIN HODŽIĆ (NZ)",
+    "allocated_eur": 39091.42,
+    "paid_eur": 39091.43
+   },
+   {
+    "name": "BLOK ZA HRVATSKU",
+    "allocated_eur": 23330.37,
+    "paid_eur": 23330.37
+   },
+   {
+    "name": "CENTAR",
+    "allocated_eur": 111664.53,
+    "paid_eur": 111664.52
+   },
+   {
+    "name": "DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM",
+    "allocated_eur": 43000.56,
+    "paid_eur": 43000.56
+   },
+   {
+    "name": "DOMOVINSKI POKRET",
+    "allocated_eur": 740548.48,
+    "paid_eur": 740548.47
+   },
+   {
+    "name": "ERMINA LEKAJ PRLJASKAJ (NZ)",
+    "allocated_eur": 25663.4,
+    "paid_eur": 25663.4
+   },
+   {
+    "name": "FOKUS",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "FURIO RADIN (NZ)",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "GRAĐANSKO-LIBERALNI SAVEZ",
+    "allocated_eur": 68663.97,
+    "paid_eur": 68663.96
+   },
+   {
+    "name": "HRVATSKI DEMOKRATSKI SAVEZ SLAVONIJE I BARANJE",
+    "allocated_eur": 23330.37,
+    "paid_eur": 23330.37
+   },
+   {
+    "name": "HRAST-POKRET ZA USPJEŠNU HRVATSKU",
+    "allocated_eur": 23330.37,
+    "paid_eur": 23330.37
+   },
+   {
+    "name": "HRVATSKA DEMOKRATSKA ZAJEDNICA",
+    "allocated_eur": 3742476.3,
+    "paid_eur": 3742476.3
+   },
+   {
+    "name": "HRVATSKA DEMOKRŠĆANSKA STRANKA",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "HRVATSKA KONZERVATIVNA STRANKA",
+    "allocated_eur": 46660.74,
+    "paid_eur": 46660.73
+   },
+   {
+    "name": "HRVATSKA NARODNA STRANKA-LIBERALNI DEMOKRATI",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "HRVATSKA SELJAČKA STRANKA",
+    "allocated_eur": 85752.16,
+    "paid_eur": 85752.16
+   },
+   {
+    "name": "HRVATSKA SOCIJALNO-LIBERALNA STRANKA",
+    "allocated_eur": 124843.58,
+    "paid_eur": 124843.56
+   },
+   {
+    "name": "HRVATSKA STRANKA UMIROVLJENIKA",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "HRVATSKI SUVERENISTI",
+    "allocated_eur": 105422.35,
+    "paid_eur": 105422.36
+   },
+   {
+    "name": "ISTARSKI DEMOKRATSKI SABOR",
+    "allocated_eur": 150506.98,
+    "paid_eur": 150506.97
+   },
+   {
+    "name": "MOST",
+    "allocated_eur": 544707.9,
+    "paid_eur": 544707.91
+   },
+   {
+    "name": "MOŽEMO!-POLITIČKA PLATFORMA",
+    "allocated_eur": 545838.29,
+    "paid_eur": 545838.3
+   },
+   {
+    "name": "NARODNA STRANKA-REFORMISTI",
+    "allocated_eur": 25663.4,
+    "paid_eur": 25663.4
+   },
+   {
+    "name": "NEZAVISNA PLATFORMA SJEVERA",
+    "allocated_eur": 78182.84,
+    "paid_eur": 78182.83
+   },
+   {
+    "name": "NEZAVISNI",
+    "allocated_eur": 39091.42,
+    "paid_eur": 39091.43
+   },
+   {
+    "name": "NOVA LJEVICA",
+    "allocated_eur": 25663.4,
+    "paid_eur": 25663.4
+   },
+   {
+    "name": "PRAVO I PRAVDA",
+    "allocated_eur": 39091.42,
+    "paid_eur": 39091.43
+   },
+   {
+    "name": "RADNIČKA FRONTA",
+    "allocated_eur": 25663.4,
+    "paid_eur": 25663.4
+   },
+   {
+    "name": "ROBERT JANKOVICS (NZ)",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "SAMOSTALNA DEMOKRATSKA SRPSKA STRANKA",
+    "allocated_eur": 197416.68,
+    "paid_eur": 197416.68
+   },
+   {
+    "name": "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE",
+    "allocated_eur": 2340276.96,
+    "paid_eur": 2340276.95
+   },
+   {
+    "name": "STRANKA S IMENOM I PREZIMENOM",
+    "allocated_eur": 25663.4,
+    "paid_eur": 25663.4
+   },
+   {
+    "name": "VELJKO KAJTAZI (NZ)",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   },
+   {
+    "name": "VLADIMIR BILEK (NZ)",
+    "allocated_eur": 62421.79,
+    "paid_eur": 62421.8
+   }
+  ]
+ },
+ {
+  "year": 2025,
+  "legal_basis": "čl. 11. st. 1. ZFPAIP (NN 29/19, 98/19)",
+  "page_url": "https://www.sabor.hr/hr/odbori-i-povjerenstva/ostala-aktivnost/izvjesce-o-iznosu-rasporedenih-i-isplacenih-sredstava-iz-4",
+  "pdf_url": "https://www.sabor.hr/sites/default/files/IZVJE%C5%A0%C4%86E%20O%20IZNOSU%20RASPORE%C4%90ENIH%20I%20ISPLA%C4%86ENIH%20SREDSTAVA%20IZ%20DR%C5%BDAVNOG%20PRORA%C4%8CUNA%20ZA%20REDOVITO%20GODI%C5%A0NJE%20FINANCIRANJE%20%20POLITI%C4%8CKIH%20STRANAKA%20I%20NEZAVISNIH%20ZASTUPNIKA%20ZA%202025.%20GODINU.pdf",
+  "source_file": "sabor_izvjesce_2025.pdf",
+  "reference": "Klasa 400-06/26-01/8, Urbroj 6521-1-26-02",
+  "date": "2026-02-26",
+  "transcription": "manual transcription from scanned PDF (no text layer); names as printed (upper case)",
+  "total_allocated_eur": 11621345.0,
+  "total_paid_eur": 11621345.06,
+  "sum_check": {
+   "sum_allocated": 11621345.0,
+   "sum_paid": 11621345.06
+  },
+  "recipients": [
+   {
+    "name": "ARMIN HODŽIĆ (NZ)",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "CENTAR",
+    "allocated_eur": 163917.04,
+    "paid_eur": 163917.04
+   },
+   {
+    "name": "DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM",
+    "allocated_eur": 81958.52,
+    "paid_eur": 81958.54
+   },
+   {
+    "name": "DOMOVINSKI POKRET",
+    "allocated_eur": 901543.74,
+    "paid_eur": 901543.75
+   },
+   {
+    "name": "FOKUS",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "FURIO RADIN (NZ)",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "GRAĐANSKO-LIBERALNI SAVEZ",
+    "allocated_eur": 81958.52,
+    "paid_eur": 81958.54
+   },
+   {
+    "name": "HRVATSKA DEMOKRATSKA ZAJEDNICA",
+    "allocated_eur": 4287920.26,
+    "paid_eur": 4287920.26
+   },
+   {
+    "name": "HRVATSKA DEMOKRŠĆANSKA STRANKA",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "HRVATSKA NARODNA STRANKA-LIBERALNI DEMOKRATI",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "HRVATSKA SELJAČKA STRANKA",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "HRVATSKA SOCIJALNO-LIBERALNA STRANKA",
+    "allocated_eur": 149015.49,
+    "paid_eur": 149015.49
+   },
+   {
+    "name": "HRVATSKA STRANKA UMIROVLJENIKA",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "HRVATSKI SUVERENISTI",
+    "allocated_eur": 156466.27,
+    "paid_eur": 156466.28
+   },
+   {
+    "name": "ISTARSKI DEMOKRATSKI SABOR",
+    "allocated_eur": 149015.49,
+    "paid_eur": 149015.49
+   },
+   {
+    "name": "MOST",
+    "allocated_eur": 678020.5,
+    "paid_eur": 678020.51
+   },
+   {
+    "name": "MOŽEMO!-POLITIČKA PLATFORMA",
+    "allocated_eur": 804683.67,
+    "paid_eur": 804683.66
+   },
+   {
+    "name": "NEZAVISNA PLATFORMA SJEVERA",
+    "allocated_eur": 149015.49,
+    "paid_eur": 149015.49
+   },
+   {
+    "name": "NEZAVISNI",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "PRAVO I PRAVDA",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "ROBERT JANKOVICS (NZ)",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "SAMOSTALNA DEMOKRATSKA SRPSKA STRANKA",
+    "allocated_eur": 238424.79,
+    "paid_eur": 238424.79
+   },
+   {
+    "name": "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE",
+    "allocated_eur": 2885312.22,
+    "paid_eur": 2885312.22
+   },
+   {
+    "name": "VELJKO KAJTAZI (NZ)",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   },
+   {
+    "name": "VLADIMIR BILEK (NZ)",
+    "allocated_eur": 74507.75,
+    "paid_eur": 74507.75
+   }
+  ]
+ }
+]

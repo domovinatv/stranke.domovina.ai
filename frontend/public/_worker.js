@@ -145,12 +145,37 @@ class HeadInjector {
   }
 }
 
-async function serveSpaWithOg(env, request, party) {
-  const url = new URL(request.url);
+const fmtEur = (n, digits = 2) =>
+  new Intl.NumberFormat("hr-HR", { minimumFractionDigits: digits, maximumFractionDigits: digits }).format(n);
+
+async function buildFundingOg(env) {
+  const fallback = {
+    title: "Koliko stranke dobivaju iz proračuna · DOMOVINA Stranke",
+    desc: "Iznos po stranci i po zastupniku u 11. sazivu Hrvatskoga sabora, prema odlukama objavljenima u Narodnim novinama.",
+    image: `${SITE}/og-image.png`,
+    canonical: `${SITE}/financiranje`,
+  };
+  try {
+    const r = await env.ASSETS.fetch(new Request(`${SITE}/data/financiranje.json`));
+    if (!r.ok) return fallback;
+    const d = await r.json();
+    const cur = d.rates[d.rates.length - 1];
+    return {
+      ...fallback,
+      desc:
+        `${fmtEur(d.totals.received_eur / 1e6)} mil. € od 16. 5. 2024. · ` +
+        `${fmtEur(cur.month_m)} € mjesečno po zastupniku, ${fmtEur(cur.month_f)} € po zastupnici (${d.year}.). ` +
+        `Iznos po stranci i po osobi, iz odluka u Narodnim novinama.`,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
+async function serveSpaWithOg(env, og) {
   const indexRes = await env.ASSETS.fetch(new Request(`${SITE}/index.html`));
   if (!indexRes.ok) return indexRes;
 
-  const og = buildOgFor(party, `${SITE}${url.pathname}`);
   const rewriter = new OgRewriter(og);
 
   const transformed = new HTMLRewriter()
@@ -193,8 +218,12 @@ export default {
       const parties = await loadParties(env);
       const party = parties.find((p) => p.slug === slug);
       if (party) {
-        return serveSpaWithOg(env, request, party);
+        return serveSpaWithOg(env, buildOgFor(party, `${SITE}${path}`));
       }
+    }
+
+    if (/^\/financiranje\/?$/.test(path)) {
+      return serveSpaWithOg(env, await buildFundingOg(env));
     }
 
     // SPA fallback — serve index.html for everything else

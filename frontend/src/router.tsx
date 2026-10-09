@@ -8,6 +8,7 @@ const Map = lazy(() => import("./routes/Map"));
 const Party = lazy(() => import("./routes/Party"));
 const City = lazy(() => import("./routes/City"));
 const Stats = lazy(() => import("./routes/Stats"));
+const Funding = lazy(() => import("./routes/Funding"));
 const About = lazy(() => import("./routes/About"));
 const NotFound = lazy(() => import("./routes/NotFound"));
 
@@ -28,6 +29,7 @@ export const router = createBrowserRouter([
       { path: "stranka/:slug", element: lazyRoute(Party) },
       { path: "grad/:name", element: lazyRoute(City) },
       { path: "statistika", element: lazyRoute(Stats) },
+      { path: "financiranje", element: lazyRoute(Funding) },
       { path: "o-projektu", element: lazyRoute(About) },
       { path: "*", element: lazyRoute(NotFound) },
     ],

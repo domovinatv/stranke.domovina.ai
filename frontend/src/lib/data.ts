@@ -1,4 +1,4 @@
-import type { City, Party, PartyDetail, Stats } from "./types";
+import type { City, Funding, Party, PartyDetail, Stats } from "./types";
 
 const memo = new Map<string, Promise<unknown>>();
 
@@ -16,6 +16,7 @@ function fetchJson<T>(url: string): Promise<T> {
 export const loadParties = () => fetchJson<Party[]>("/data/parties.json");
 export const loadCities = () => fetchJson<City[]>("/data/cities.json");
 export const loadStats = () => fetchJson<Stats>("/data/stats.json");
+export const loadFunding = () => fetchJson<Funding>("/data/financiranje.json");
 export const loadPartyDetail = (slug: string) =>
   fetchJson<PartyDetail>(`/data/parties/${slug}.json`);
 

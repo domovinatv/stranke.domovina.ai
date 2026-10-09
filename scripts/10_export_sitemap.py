@@ -26,6 +26,7 @@ def main() -> None:
     urls: list[tuple[str, str, str]] = [
         ("/", "1.0", "weekly"),
         ("/karta", "0.9", "weekly"),
+        ("/financiranje", "0.9", "monthly"),
         ("/statistika", "0.8", "monthly"),
         ("/o-projektu", "0.5", "yearly"),
     ]
