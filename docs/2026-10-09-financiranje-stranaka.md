@@ -141,3 +141,22 @@ uređuje imovinu pri prestanku), čl. 23. (prestanak), ZFPAIP čl. 52. (završni
 izvještaj prije brisanja); odredbe o dugovima nema, stranka odgovara svojom
 imovinom (primjer: stečaj Bandić 365, tražbine ~284.000 €, imovina 14.520 €).
 Pri ažuriranju za 2025. treba ponovno prepisati krediti.json (`as_of`).
+
+### Kod koje banke? (istraženo, bez javnog odgovora)
+
+- DUR u svih 244 izvješća piše samo „poslovna banka“ (pretraga imena banaka
+  s granicama riječi: 0 pogodaka; „otp“/„rba“ bez granica su lažni pogoci).
+- DIP prilozi (program, financijski plan, donacije) i izvješće o nadzoru
+  kampanje za Sabor 2024. (200 str.) ne navode vjerovnike.
+- Novac strankama isplaćuje **Ministarstvo financija** (razdjel 025, 02506
+  „ostali izdaci države“, A539232, konto 3811). Isplate su javne:
+  https://www.drzavna-riznica.hr/trosenje_sredstava_DP/ (pretraga po OIB-u
+  primatelja; filtar vrste rashoda ne radi). SDP 2025. = 2.885.312,22 € i
+  Most 2024. = 544.707,91 € isplaćeni izravno stranci → cesije se nisu
+  aktivirale, banka se u isplatama ne vidi.
+- Posebni računi za kampanju 2024. (DIP izvješće): SDP, Most, DP → Erste
+  (2402006); IDS → Istarska kreditna banka (2380006); SDSS → PBZ; Centar →
+  HPB; Pravo i pravda → Zaba. To nisu dokazi o zajmodavcu, ne objavljivati.
+- Put do odgovora: zahtjev po ZPPI Ministarstvu financija (obavijesti o
+  cesiji koje je kao cesus primilo za SDP 2023./2024., Most i DP 2024.) i
+  DUR-u. Stranke nisu obveznici ZPPI.
