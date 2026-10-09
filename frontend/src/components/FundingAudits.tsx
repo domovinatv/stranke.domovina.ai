@@ -192,8 +192,124 @@ export function FundingAudits({
         gradova i općina za svoje vijećnike. Iznosi do 2022. preračunati su iz
         kuna (7,53450 kn/€). Kliknite redak za sve godine i poveznice na izvješća.
       </p>
+      {audits.loans && <Loans data={audits.loans} parties={audits.parties} catalog={catalog} />}
     </>
   );
+}
+
+function Loans({
+  data,
+  parties,
+  catalog,
+}: {
+  data: NonNullable<Audits["loans"]>;
+  parties: AuditParty[];
+  catalog: Map<string, Party>;
+}) {
+  const byName = new Map(parties.map((p) => [p.name, p]));
+  const year = data.as_of.slice(0, 4);
+  const total = data.loans.reduce((s, l) => s + l.balance_2024, 0);
+  return (
+    <>
+      <h3 className="mt-10 mb-1 text-lg font-bold text-navy">Krediti i pozajmice</h3>
+      <div className="text-sm text-navy-700 max-w-3xl space-y-3 leading-relaxed mb-4">
+        <p>
+          Stranke se najčešće zadužuju početkom izborne godine: kampanja se plaća
+          prije izbora, a država naknadu troškova promidžbe isplaćuje tek nakon
+          izbora, po osvojenom mandatu. Banka kredit često osigurava{" "}
+          <strong>ustupom (cesijom) potraživanja prema državnom proračunu</strong>:
+          Ministarstvo financija dio tromjesečnog novca za stranku uplaćuje
+          izravno banci (SDP, Most, DP); drugi daju bjanko-zadužnicu (Fokus, IDS).
+          Uz cesiju je banci rizik malen, a rate se slažu s tromjesečnim isplatama. Rizik je izborni rezultat: s manje mandata
+          stranka dobiva manje novca, a dug ostaje isti.
+        </p>
+        <p>
+          Krajem {year}. {data.loans.length} stranaka 11. saziva imalo je kredite
+          ili pozajmice, ukupno {money(total)}. Uvjeti su preuzeti iz poglavlja
+          „Obveze“ revizijskih izvješća za {year}.
+        </p>
+      </div>
+      <div className="grid gap-3 md:grid-cols-2">
+        {data.loans.map((l) => {
+          const p = byName.get(l.party);
+          return (
+            <div key={l.party} className="card p-4 text-sm">
+              <div className="flex items-center gap-2 mb-2">
+                {p && <PartyAvatar size={24} party={catalogAvatar(avatarParty(p), catalog)} />}
+                <span className="font-semibold text-navy">{p?.short ?? l.party}</span>
+                <span className="ml-auto text-right">
+                  <span className="block font-extrabold text-navy tabular-nums">{money(l.balance_2024)}</span>
+                  <span className="block text-[11px] text-muted">duguje 31. 12. {year}.</span>
+                </span>
+              </div>
+              <dl className="grid grid-cols-[7.5rem_1fr] gap-x-3 gap-y-1">
+                <LoanRow k="Zajmodavac" v={l.lender} />
+                <LoanRow k="Iznos" v={money(l.amount)} />
+                <LoanRow k="Kamata" v={l.rate} />
+                <LoanRow k="Ugovoren" v={l.taken && fmtMonth(l.taken)} />
+                <LoanRow k="Rok" v={l.due} />
+                <LoanRow k="Otplata" v={l.repayment} />
+                <LoanRow k="Namjena" v={l.purpose} />
+                <LoanRow k="Osiguranje" v={l.security ?? (l.lender === "banka" ? "nije navedeno u izvješću" : null)} />
+                <LoanRow k="Stanje" v={l.status} />
+              </dl>
+              {l.note && <p className="text-xs text-muted mt-2">{l.note}</p>}
+              {l.source_url && (
+                <a href={l.source_url} target="_blank" rel="noopener" className="mt-2 inline-flex items-center gap-1 text-xs">
+                  Revizijsko izvješće <ExternalLink size={11} />
+                </a>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      <h3 className="mt-10 mb-1 text-lg font-bold text-navy">A ako se stranka ugasi s dugovima?</h3>
+      <div className="text-sm text-navy-700 max-w-3xl space-y-3 leading-relaxed">
+        <p>
+          Stranka je upisom u registar pravna osoba i za dugove odgovara svojom
+          imovinom.{" "}
+          <a href="https://www.zakon.hr/z/549/zakon-o-politickim-strankama" target="_blank" rel="noopener">Zakon o političkim strankama</a>{" "}
+          ne uređuje što biva s dugovima:
+          prepušta statutu stranke „postupak s imovinom u slučaju prestanka“
+          (čl. 10.), a stranka prestaje odlukom svojih tijela, kad prestane
+          djelovati ili zabranom Ustavnog suda (čl. 23.). Zakon o financiranju
+          traži još samo završni financijski izvještaj prije brisanja iz registra
+          (<a href="https://www.zakon.hr/z/1957/Zakon-o-financiranju-politi%C4%8Dkih-aktivnosti,-izborne-promid%C5%BEbe-i-referenduma" target="_blank" rel="noopener">čl. 52.</a>). Ne postoji odredba po kojoj bi za dugove odgovarali članovi
+          ili čelnici.
+        </p>
+        <p>
+          Vjerovnici se zato naplaćuju kao od svake pravne osobe: ovrhom ili u
+          stečaju, do visine imovine stranke. Primjer je stranka Bandić Milan 365
+          – Stranka rada i solidarnosti: Trgovački sud u Zagrebu otvorio je stečaj
+          u siječnju 2024., vjerovnici su prijavili tražbine od oko 284.000 €, a
+          imovina stranke procijenjena je na 14.520 € (
+          <a href="https://dnevnik.hr/vijesti/hrvatska/bandic-milan-365-stranka-rada-i-solidarnosti-duguje-preko-280-000-eura---848588.html" target="_blank" rel="noopener">Dnevnik.hr, svibanj 2024.</a>). Ono što imovina ne pokrije vjerovnici ne naplate. Osobno
+          odgovara samo onaj tko je dug osobno jamčio (npr. kao jamac ili
+          supotpisnik zadužnice), a čelnici mogu odgovarati za štetu ili kazneno
+          djelo po općim pravilima. Banka s cesijom državnog novca naplaćuje se
+          dok novac stiže; kad stranka izgubi mandate ili se ugasi, ostaje joj
+          samo zadužnica stranke.
+        </p>
+      </div>
+    </>
+  );
+}
+
+function LoanRow({ k, v }: { k: string; v: string | null | undefined }) {
+  if (!v) return null;
+  return (
+    <>
+      <dt className="text-muted">{k}</dt>
+      <dd className="text-navy-700">{v}</dd>
+    </>
+  );
+}
+
+const MONTHS = ["siječanj", "veljača", "ožujak", "travanj", "svibanj", "lipanj", "srpanj", "kolovoz", "rujan", "listopad", "studeni", "prosinac"];
+function fmtMonth(s: string) {
+  const m = s.match(/^(\d{4})-(\d{2})$/);
+  return m ? `${MONTHS[Number(m[2]) - 1]} ${m[1]}.` : s;
 }
 
 function PartyYears({ p }: { p: AuditParty }) {

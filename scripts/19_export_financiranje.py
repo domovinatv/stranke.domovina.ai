@@ -43,6 +43,7 @@ from src.normalize import norm_key  # noqa: E402
 SRC = ROOT / "data" / "financiranje"
 MAKRO = SRC / "makro.json"  # scripts/20_fetch_eurostat_makro.py
 REVIZIJA = SRC / "revizija_stranke.json"  # scripts/21_fetch_revizija_stranke.py
+KREDITI = SRC / "krediti.json"  # ručno iz poglavlja „Obveze“ revizijskih izvješća
 
 # Naslovi revizijskih izvješća koji se razlikuju od naziva u odlukama.
 AUDIT_ALIASES = {
@@ -411,7 +412,16 @@ def build_audits(convs: dict) -> dict | None:
     parties = sorted(by_name.values(), key=lambda e: -max((y["revenue"]["total"] or 0) for y in e["years"].values()))
     for e in parties:
         e["years"] = dict(sorted(e["years"].items()))
-    return {"source": doc["source"], "note": doc["note"], "parties": parties, "missing": missing}
+    loans = None
+    if KREDITI.exists():
+        kd = json.loads(KREDITI.read_text())
+        names = {e["name"] for e in parties}
+        unknown = [x["party"] for x in kd["loans"] if x["party"] not in names]
+        if unknown:
+            raise SystemExit(f"krediti.json: nepoznate stranke {unknown}")
+        src = {e["name"]: e["years"].get(kd["as_of"][:4], {}).get("source") for e in parties}
+        loans = {**kd, "loans": [{**x, "source_url": src[x["party"]]} for x in kd["loans"]]}
+    return {"source": doc["source"], "note": doc["note"], "parties": parties, "missing": missing, "loans": loans}
 
 
 def main() -> int:

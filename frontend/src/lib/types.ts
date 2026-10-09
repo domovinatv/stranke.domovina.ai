@@ -244,11 +244,28 @@ export interface AuditParty {
   years: Record<string, AuditYear>;
 }
 
+export interface Loan {
+  party: string;
+  lender: string;
+  amount: number;
+  rate: string | null;
+  taken: string | null;
+  due: string | null;
+  repayment: string | null;
+  purpose: string | null;
+  security: string | null;
+  balance_2024: number;
+  status: string | null;
+  note: string | null;
+  source_url: string | null;
+}
+
 export interface Audits {
   source: string;
   note: string;
   parties: AuditParty[];
   missing: string[];
+  loans: { as_of: string; source: string; loans: Loan[] } | null;
 }
 
 export interface Funding {
