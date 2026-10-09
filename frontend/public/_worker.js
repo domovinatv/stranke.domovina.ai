@@ -27,7 +27,11 @@ async function loadParties(env) {
 
 function applyCacheHeaders(res, path) {
   const headers = new Headers(res.headers);
-  if (/^\/assets\//.test(path)) {
+  if (/^\/(sw\.js|registerSW\.js|manifest\.webmanifest)$/.test(path)) {
+    // Service worker mora odmah vidjeti novi deploy: inače Cloudflare (.js se
+    // cacheira na rubu) satima vraća stari sw.js koji poslužuje stari bundle.
+    headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+  } else if (/^\/assets\//.test(path)) {
     headers.set("Cache-Control", "public, max-age=31536000, immutable");
   } else if (/^\/data\//.test(path)) {
     headers.set("Cache-Control", "public, max-age=3600, must-revalidate");
