@@ -160,3 +160,45 @@ Pri ažuriranju za 2025. treba ponovno prepisati krediti.json (`as_of`).
 - Put do odgovora: zahtjev po ZPPI Ministarstvu financija (obavijesti o
   cesiji koje je kao cesus primilo za SDP 2023./2024., Most i DP 2024.) i
   DUR-u. Stranke nisu obveznici ZPPI.
+
+## Nastavak 18. 10. 2026.: tri izvora uživo i ekran po stranci
+
+### Što je na /financiranje/uzivo
+
+Tri brojača jedan uz drugi, pa zbroj javnog novca:
+
+1. **Državni proračun**: kao dosad, iz `buildSchedule` (odluke Odbora, zakon, procjena).
+2. **Lokalni proračuni**: `revenue.local` iz revizije DUR-a.
+3. **Članarine, donacije i ostalo**: `members + donations + other`.
+4. **Ukupno javnog novca** = 1 + 2, s trakom udjela sva tri izvora.
+
+Izvori 2 i 3 su iz **zadnje godine revizije** (sada 2024.), podijeljene na
+sekunde te godine (`buildOther` u `frontend/src/lib/fundingLive.ts`). To je
+procjena, ne obračun: pretpostavlja da prihodi i danas teku kao 2024., a 2024.
+je bila izborna godina (parlamentarni i EU izbori), pa su donacije vjerojatno
+precijenjene. Kad DUR objavi revizije za 2025. (prosinac 2026.), brojke se same
+pomaknu na 2025. čim scripts/21 povuče nove PDF-ove i ide redeploy.
+
+Brojke 18. 10. 2026. (Q4/2026, sve stranke): državni 0,412 €/s, lokalni
+0,137 €/s, ostalo 0,121 €/s, tj. 61 / 20 / 18 %; javni novac je 82 % svih
+prihoda. HDZ: 55 / 20 / 25 %, SDP 86 % javno, DP 93 % javno.
+
+Primatelji bez revizije (nezavisni zastupnici manjina) imaju samo državni broj.
+
+### Ekran po stranci: /financiranje/uzivo/:slug
+
+`FundingLiveParty.tsx`. Slug je `party.slug`, a za nezavisne zastupnike
+izveden iz imena (`liveSlug`, ista funkcija i u `_worker.js`, koji za tu rutu
+ubacuje vlastiti OG opis s €/s stranke). Promjena slugifikacije mora ići na oba
+mjesta.
+
+### Zamka: prvo otvaranje nove rute nakon deploya davalo je 404
+
+Stari service worker posluži stari `index.html` i bundle, koji novu rutu ne
+zna, pa React Router prikaže NotFound. `main.tsx` doduše osvježi stranicu na
+`controllerchange`, ali se do tada vidi 404. Sada `NotFound.tsx` prije 404
+pozove `reg.update()`; ako postoji nova verzija, pokaže spinner i osvježi
+(najviše jednom po adresi, `sessionStorage`; pričuvni timeout 8 s).
+Provjereno u Braveu: nakon redeploya stranica se sama osvježila na novi
+bundle. Sam put „stari kod ne zna rutu → spinner umjesto 404" bit će prvi put
+stvarno uhvaćen kod sljedeće nove rute.
