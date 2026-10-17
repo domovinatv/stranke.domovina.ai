@@ -22,8 +22,12 @@ import { PartyAvatar } from "@/components/PartyAvatar";
 
 const MALE = "#002F6C";
 const FEMALE = "#DB2777";
+export const STATE = "#FF0000";
+export const LOCAL = "#B45309";
 export const OTHER = "#0F766E";
-export const PUBLIC = "#B45309";
+export const PUBLIC = "#7C2D12";
+/** Ostalo bez lokalnih proračuna: članarine, donacije, ostali prihodi. */
+export const PRIVATE_KEYS = OTHER_KEYS.filter((k) => k.key !== "local");
 
 const nf = (digits: number) =>
   new Intl.NumberFormat("hr-HR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
@@ -98,9 +102,11 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
   const rowCum = useRef<(HTMLSpanElement | null)[]>([]);
   const rowBar = useRef<(HTMLDivElement | null)[]>([]);
   const otherRef = useRef<HTMLSpanElement>(null);
+  const localRef = useRef<HTMLSpanElement>(null);
   const publicRef = useRef<HTMLSpanElement>(null);
   const otherSrcRef = useRef<(HTMLSpanElement | null)[]>([]);
   const rowOther = useRef<(HTMLSpanElement | null)[]>([]);
+  const rowLocal = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const cum0 = new Float64Array(n);
@@ -139,12 +145,16 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
 
       if (other) {
         const elapsed = (t - opened) / 1000;
-        set(otherRef.current, eur(other.rate * elapsed));
+        set(localRef.current, eur(other.bySource.local * elapsed));
+        set(otherRef.current, eur((other.rate - other.bySource.local) * elapsed));
         set(publicRef.current, eur(session + other.bySource.local * elapsed));
-        OTHER_KEYS.forEach(({ key }, k) => set(otherSrcRef.current[k], eur(other.bySource[key] * elapsed)));
+        PRIVATE_KEYS.forEach(({ key }, k) => set(otherSrcRef.current[k], eur(other.bySource[key] * elapsed)));
         for (let i = 0; i < n; i++) {
           const r = other.byParty[i];
-          if (!Number.isNaN(r)) set(rowOther.current[i], "+" + eur(r * elapsed, F4));
+          if (Number.isNaN(r)) continue;
+          const loc = other.byPartySource.local[i];
+          set(rowLocal.current[i], "+" + eur(loc * elapsed, F4));
+          set(rowOther.current[i], "+" + eur((r - loc) * elapsed, F4));
         }
       }
 
@@ -204,14 +214,17 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
         <p className="text-muted mt-3 max-w-2xl leading-relaxed">
           Parlamentarne stranke iz državnog proračuna dobivaju novac za svaki
           saborski mandat. Ovdje se taj iznos raspoređuje po sekundama: dok
-          gledate stranicu, vidite koliko je kojoj stranci pripalo.
+          gledate stranicu, vidite koliko je kojoj stranci pripalo. Uz to su
+          tu i druga dva izvora: lokalni proračuni te članarine, donacije i
+          ostalo.
         </p>
       </header>
 
-      <div className={other ? "grid gap-3 lg:grid-cols-2" : ""}>
-      <div className="card p-5 sm:p-8 text-center">
-        <div className="field-label">Otkad ste otvorili ovu stranicu, iz državnog proračuna strankama je pripalo</div>
-        <div className="text-4xl sm:text-6xl font-extrabold text-flag-red tabular-nums leading-tight my-2">
+      <p className="field-label text-center mb-2">Otkad ste otvorili ovu stranicu, strankama je pripalo</p>
+      <div className={other ? "grid gap-3 lg:grid-cols-3" : ""}>
+      <div className="card p-5 sm:p-6 text-center">
+        <div className="field-label">1 · Iz državnog proračuna</div>
+        <div className="text-4xl sm:text-5xl font-extrabold text-flag-red tabular-nums leading-tight my-2">
           <span ref={heroRef} aria-live="off">0,00 €</span>
         </div>
         <div className="text-sm text-muted">
@@ -227,13 +240,14 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
         </div>
         <ShareButton />
       </div>
+      {other && <LocalCard other={other} valueRef={localRef} />}
       {other && <OtherCard other={other} valueRef={otherRef} srcRefs={otherSrcRef} />}
       </div>
       {other && (
         <PublicCard
           valueRef={publicRef}
           rate={rate + other.bySource.local}
-          share={(rate + other.bySource.local) / (rate + other.rate)}
+          parts={{ state: rate, local: other.bySource.local, other: other.rate - other.bySource.local }}
           year={other.year}
         />
       )}
@@ -329,9 +343,14 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
                       <span ref={(el) => (rowSession.current[i] = el)} />
                     </div>
                     {other && !Number.isNaN(other.byParty[i]) && (
-                      <div className="text-xs tabular-nums" style={{ color: OTHER }} title={`ostali prihodi po razini iz ${other.year}.`}>
-                        <span ref={(el) => (rowOther.current[i] = el)} /> ostalo
-                      </div>
+                      <>
+                        <div className="text-xs tabular-nums" style={{ color: LOCAL }} title={`lokalni proračuni po razini iz ${other.year}.`}>
+                          <span ref={(el) => (rowLocal.current[i] = el)} /> lokalno
+                        </div>
+                        <div className="text-xs tabular-nums" style={{ color: OTHER }} title={`članarine, donacije i ostalo po razini iz ${other.year}.`}>
+                          <span ref={(el) => (rowOther.current[i] = el)} /> ostalo
+                        </div>
+                      </>
                     )}
                   </div>
                 </div>
@@ -347,23 +366,23 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
                   style={{ background: MALE, transform: "scaleX(0)" }}
                 />
               </div>
-              {sh && <ShareSplit className="mt-1.5 ml-8" share={sh.share} />}
+              {sh && <ShareSplit className="mt-1.5 ml-8" parts={{ state: sh.state, local: sh.local, other: sh.priv }} />}
             </li>
           );
         })}
       </ol>
       <p className="text-xs text-muted mt-2">
-        Gornji broj: obračunato od {formatDate(data.convocation_start)}. Crveni
-        broj: iz državnog proračuna otkad gledate stranicu.
+        Gornji broj: iz državnog proračuna od {formatDate(data.convocation_start)}.
+        Ispod, otkad gledate stranicu: crveno državni proračun
         {other && (
           <>
-            {" "}Zeleni broj: ostali prihodi (lokalni proračuni, članarine,
-            donacije, ostalo) otkad gledate, po razini iz revizije za{" "}
-            {other.year}.; stranke bez te revizije nemaju zeleni broj. Traka
-            ispod: koliki dio prihoda stranke je javni novac (državni i lokalni
-            proračuni), a koliki iz ostalih izvora.
+            , smeđe lokalni proračuni, zeleno članarine, donacije i ostalo (po
+            razini iz revizije za {other.year}.; stranke bez te revizije
+            imaju samo crveni broj). Traka ispod: udio svakog od tri izvora u
+            prihodima stranke
           </>
         )}
+        .
       </p>
 
       <h2 className="mt-10 mb-2 text-xl font-bold text-navy">Kako se ovo računa</h2>
@@ -395,10 +414,10 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
         </p>
         {other && (
           <p>
-            <strong>Ostali prihodi</strong> (zeleni brojač) nisu iz odluka
-            nego iz revizija Državnog ureda za reviziju: zbroj prihoda iz
-            lokalnih proračuna, članarina, donacija i ostalih prihoda za{" "}
-            {other.year}. godinu ({other.covered} od {n} primatelja ima
+            <strong>Lokalni proračuni i ostalo</strong> (drugi i treći brojač)
+            nisu iz odluka nego iz revizija Državnog ureda za reviziju: prihodi
+            iz proračuna županija, gradova i općina, odnosno članarine,
+            donacije i ostali prihodi za {other.year}. godinu ({other.covered} od {n} primatelja ima
             reviziju), podijeljen na sekunde te godine. Brojač pretpostavlja da
             ti prihodi i danas teku istom brzinom, što je gruba procjena:
             donacije posebno ovise o izbornim godinama ({other.year}. su bili
@@ -418,6 +437,33 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
   );
 }
 
+export function LocalCard({
+  other,
+  valueRef,
+  digits = F2,
+}: {
+  other: OtherIncome;
+  valueRef: React.RefObject<HTMLSpanElement>;
+  digits?: Intl.NumberFormat;
+}) {
+  const r = other.bySource.local;
+  return (
+    <div className="card p-5 sm:p-6 text-center">
+      <div className="field-label">2 · Iz lokalnih proračuna</div>
+      <div className="text-4xl sm:text-5xl font-extrabold tabular-nums leading-tight my-2" style={{ color: LOCAL }}>
+        <span ref={valueRef} aria-live="off">{eur(0, digits)}</span>
+      </div>
+      <div className="text-sm text-muted">
+        <strong className="text-navy tabular-nums">{eur(r, F4)}</strong> u sekundi ·{" "}
+        <span className="tabular-nums">{eur(r * 86400, F0)}</span> na dan
+      </div>
+      <p className="text-xs text-muted mt-3">
+        županije, gradovi i općine; i to je javni novac · po reviziji DUR-a za {other.year}.
+      </p>
+    </div>
+  );
+}
+
 export function OtherCard({
   other,
   valueRef,
@@ -427,24 +473,25 @@ export function OtherCard({
   valueRef: React.RefObject<HTMLSpanElement>;
   srcRefs: React.MutableRefObject<(HTMLSpanElement | null)[]>;
 }) {
+  const r = other.rate - other.bySource.local;
   return (
-    <div className="card p-5 sm:p-8 text-center">
-      <div className="field-label">A iz svih ostalih izvora u isto vrijeme</div>
-      <div className="text-4xl sm:text-6xl font-extrabold tabular-nums leading-tight my-2" style={{ color: OTHER }}>
+    <div className="card p-5 sm:p-6 text-center">
+      <div className="field-label">3 · Članarine, donacije i ostalo</div>
+      <div className="text-4xl sm:text-5xl font-extrabold tabular-nums leading-tight my-2" style={{ color: OTHER }}>
         <span ref={valueRef} aria-live="off">0,00 €</span>
       </div>
       <div className="text-sm text-muted">
-        <strong className="text-navy tabular-nums">{eur(other.rate, F4)}</strong> u sekundi ·{" "}
-        <span className="tabular-nums">{eur(other.rate * 86400, F0)}</span> na dan · po reviziji DUR-a za {other.year}.
+        <strong className="text-navy tabular-nums">{eur(r, F4)}</strong> u sekundi ·{" "}
+        <span className="tabular-nums">{eur(r * 86400, F0)}</span> na dan
       </div>
-      <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-left text-sm">
-        {OTHER_KEYS.map(({ key, label, note }, k) => (
+      <ul className="mt-3 grid grid-cols-3 gap-x-3 text-left text-sm">
+        {PRIVATE_KEYS.map(({ key, label, note }, k) => (
           <li key={key} title={note ?? undefined}>
             <div className="text-xs text-muted">{label}</div>
             <div className="font-bold text-navy tabular-nums">
               <span ref={(el) => (srcRefs.current[k] = el)} />
             </div>
-            <div className="text-xs text-muted tabular-nums">{eur(other.bySource[key], F5)}/s</div>
+            <div className="text-[11px] text-muted tabular-nums">{eur(other.bySource[key], F5)}/s</div>
           </li>
         ))}
       </ul>
@@ -452,18 +499,34 @@ export function OtherCard({
   );
 }
 
-/** Traka javno / ostalo s postocima. */
-export function ShareSplit({ share, className = "" }: { share: number; className?: string }) {
-  const pct = (x: number) => F0.format(Math.round(x * 100)) + " %";
+export interface Parts {
+  state: number;
+  local: number;
+  other: number;
+}
+
+/** Traka s udjelom tri izvora: državni proračun, lokalni proračuni, ostalo. */
+export function ShareSplit({ parts, className = "" }: { parts: Parts; className?: string }) {
+  const all = parts.state + parts.local + parts.other || 1;
+  const pct = (x: number) => F0.format(Math.round((x / all) * 100)) + " %";
+  const segs = [
+    { v: parts.state, color: STATE, label: "državni" },
+    { v: parts.local, color: LOCAL, label: "lokalni" },
+    { v: parts.other, color: OTHER, label: "ostalo" },
+  ];
   return (
     <div className={className}>
       <div className="flex h-1.5 rounded-full overflow-hidden bg-surface">
-        <div style={{ width: `${share * 100}%`, background: PUBLIC }} />
-        <div style={{ width: `${(1 - share) * 100}%`, background: OTHER }} />
+        {segs.map((x) => (
+          <div key={x.label} style={{ width: `${(x.v / all) * 100}%`, background: x.color }} />
+        ))}
       </div>
-      <div className="mt-0.5 flex justify-between text-[11px] tabular-nums">
-        <span style={{ color: PUBLIC }}>javni novac {pct(share)}</span>
-        <span style={{ color: OTHER }}>drugi izvori {pct(1 - share)}</span>
+      <div className="mt-0.5 flex justify-between gap-2 text-[11px] tabular-nums">
+        {segs.map((x) => (
+          <span key={x.label} style={{ color: x.color }}>
+            {x.label} {pct(x.v)}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -472,16 +535,17 @@ export function ShareSplit({ share, className = "" }: { share: number; className
 export function PublicCard({
   valueRef,
   rate,
-  share,
+  parts,
   year,
   label = "Ukupno javnog novca otkad ste otvorili stranicu",
 }: {
   valueRef: React.RefObject<HTMLSpanElement>;
   rate: number;
-  share: number;
+  parts: Parts;
   year: number;
   label?: string;
 }) {
+  const all = parts.state + parts.local + parts.other || 1;
   return (
     <div className="card p-5 sm:p-6 mt-3 text-center">
       <div className="field-label">{label}</div>
@@ -489,12 +553,13 @@ export function PublicCard({
         <span ref={valueRef} aria-live="off">0,00 €</span>
       </div>
       <div className="text-sm text-muted">
-        državni + lokalni proračuni · <strong className="text-navy tabular-nums">{eur(rate, F4)}</strong> u sekundi ·{" "}
-        <span className="tabular-nums">{eur(rate * 86400, F0)}</span> na dan
+        1 + 2, državni i lokalni proračuni · <strong className="text-navy tabular-nums">{eur(rate, F4)}</strong> u sekundi ·{" "}
+        <span className="tabular-nums">{eur(rate * 86400, F0)}</span> na dan ·{" "}
+        <strong className="text-navy">{F0.format(Math.round(((parts.state + parts.local) / all) * 100))} %</strong> svih prihoda
       </div>
-      <ShareSplit className="mt-4 max-w-xl mx-auto text-left" share={share} />
+      <ShareSplit className="mt-4 max-w-xl mx-auto text-left" parts={parts} />
       <div className="text-xs text-muted mt-1">
-        udio u svim prihodima; lokalni i ostali prihodi po reviziji DUR-a za {year}.
+        udio tri izvora u svim prihodima; lokalni i ostalo po reviziji DUR-a za {year}.
       </div>
     </div>
   );

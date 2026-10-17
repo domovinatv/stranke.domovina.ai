@@ -23,7 +23,9 @@ import {
   F4,
   F5,
   OTHER,
+  LocalCard,
   OtherCard,
+  PRIVATE_KEYS,
   ProgressRow,
   PublicCard,
   ShareButton,
@@ -101,6 +103,7 @@ function PartyLive({
 
   const stateRef = useRef<HTMLSpanElement>(null);
   const otherRef = useRef<HTMLSpanElement>(null);
+  const localRef = useRef<HTMLSpanElement>(null);
   const publicRef = useRef<HTMLSpanElement>(null);
   const srcRefs = useRef<(HTMLSpanElement | null)[]>([]);
   const cumRef = useRef<HTMLSpanElement>(null);
@@ -118,15 +121,16 @@ function PartyLive({
       const t = Math.min(Date.now(), s.end);
       cumulativeAt(s, t, cum);
       const session = cum[i] - cum0[i];
-      set(stateRef.current, eur(session));
+      set(stateRef.current, eur(session, F4));
       set(cumRef.current, eur(cum[i]));
       set(leftRef.current, eur(s.totals[i] - cum[i], F0));
       barRef.current?.style.setProperty("transform", `scaleX(${cum[i] / s.totals[i]})`);
       if (other) {
         const elapsed = (Date.now() - opened) / 1000;
-        set(otherRef.current, eur(other.rate * elapsed));
+        set(localRef.current, eur(other.bySource.local * elapsed, F4));
+        set(otherRef.current, eur((other.rate - other.bySource.local) * elapsed, F4));
         set(publicRef.current, eur(session + other.bySource.local * elapsed));
-        OTHER_KEYS.forEach(({ key }, k) => set(srcRefs.current[k], eur(other.bySource[key] * elapsed, F4)));
+        PRIVATE_KEYS.forEach(({ key }, k) => set(srcRefs.current[k], eur(other.bySource[key] * elapsed, F4)));
       }
     };
     tick();
@@ -189,10 +193,11 @@ function PartyLive({
         </div>
       </header>
 
-      <div className={other ? "grid gap-3 lg:grid-cols-2" : ""}>
-        <div className="card p-5 sm:p-8 text-center">
-          <div className="field-label">Iz državnog proračuna, otkad ste otvorili stranicu</div>
-          <div className="text-4xl sm:text-6xl font-extrabold text-flag-red tabular-nums leading-tight my-2">
+      <p className="field-label text-center mb-2">Otkad ste otvorili ovu stranicu</p>
+      <div className={other ? "grid gap-3 lg:grid-cols-3" : ""}>
+        <div className="card p-5 sm:p-6 text-center">
+          <div className="field-label">1 · Iz državnog proračuna</div>
+          <div className="text-4xl sm:text-5xl font-extrabold text-flag-red tabular-nums leading-tight my-2">
             <span ref={stateRef} aria-live="off">0,00 €</span>
           </div>
           <div className="text-sm text-muted">
@@ -202,6 +207,7 @@ function PartyLive({
           </div>
           <ShareButton path={path} title={`${name}: javni novac u stvarnom vremenu`} />
         </div>
+        {other && <LocalCard other={other} valueRef={localRef} digits={F4} />}
         {other && <OtherCard other={other} valueRef={otherRef} srcRefs={srcRefs} />}
       </div>
 
@@ -209,7 +215,7 @@ function PartyLive({
         <PublicCard
           valueRef={publicRef}
           rate={sh.pub}
-          share={sh.share}
+          parts={{ state: sh.state, local: sh.local, other: sh.priv }}
           year={other.year}
         />
       )}
@@ -243,7 +249,7 @@ function PartyLive({
             {sh ? (
               <>
                 {eur(sh.all * 86400 * 365, F0)} godišnje ·{" "}
-                <span style={{ color: OTHER }}>drugi izvori {eur(sh.priv, F5)}/s</span>
+                <span style={{ color: OTHER }}>od toga ostalo {eur(sh.priv, F5)}/s</span>
               </>
             ) : (
               "samo državni proračun (nema revizije)"
@@ -265,7 +271,7 @@ function PartyLive({
         </p>
         {other && (
           <p>
-            Ostali prihodi (lokalni proračuni, članarine, donacije, ostalo) su iz
+            Lokalni proračuni i ostalo (članarine, donacije, ostali prihodi) su iz
             revizije Državnog ureda za reviziju za {other.year}., podijeljeni na
             sekunde te godine, uz pretpostavku da teku istom brzinom i danas.
             Javni novac je državni i lokalni proračun zajedno.
