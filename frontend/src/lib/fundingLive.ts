@@ -179,3 +179,82 @@ export function catalogAvatar(p: FundingParty, catalog: Map<string, Party>) {
     brand_color: cat?.brand_color,
   };
 }
+
+/** Ostali prihodi iz revizije DUR-a, u eurima godišnje. */
+export const OTHER_KEYS = [
+  { key: "local", label: "lokalni proračuni", note: "županije, gradovi, općine; i to je javni novac" },
+  { key: "members", label: "članarine", note: null },
+  { key: "donations", label: "donacije", note: null },
+  { key: "other", label: "ostali prihodi", note: "kamate, najam, prodaja i sl." },
+] as const;
+export type OtherKey = (typeof OTHER_KEYS)[number]["key"];
+
+export interface OtherIncome {
+  year: number;
+  /** €/s po izvoru, za sve stranke zajedno. */
+  bySource: Record<OtherKey, number>;
+  /** €/s po stranci, istim redom kao Schedule.parties (NaN = nema revizije). */
+  byParty: Float64Array;
+  /** €/s po stranci i izvoru (0 kad nema revizije). */
+  byPartySource: Record<OtherKey, Float64Array>;
+  rate: number;
+  covered: number;
+}
+
+/**
+ * Ostale prihode (sve osim državnog proračuna) uzima iz zadnje revizije DUR-a
+ * i pretpostavlja da teku istom brzinom kao te godine.
+ */
+export function buildOther(data: Funding, s: Schedule): OtherIncome | null {
+  const audits = data.audits?.parties ?? [];
+  const bySlug = new Map(audits.filter((a) => a.slug).map((a) => [a.slug!, a]));
+  const years = audits.flatMap((a) => Object.keys(a.years).map(Number));
+  if (!years.length) return null;
+  const year = Math.max(...years);
+  const secs = (Date.UTC(year + 1, 0, 1) - Date.UTC(year, 0, 1)) / 1000;
+  const bySource = { local: 0, members: 0, donations: 0, other: 0 } as Record<OtherKey, number>;
+  const byParty = new Float64Array(s.parties.length).fill(NaN);
+  const byPartySource = Object.fromEntries(
+    OTHER_KEYS.map(({ key }) => [key, new Float64Array(s.parties.length)]),
+  ) as Record<OtherKey, Float64Array>;
+  let covered = 0;
+  s.parties.forEach((p, i) => {
+    const y = p.slug ? bySlug.get(p.slug)?.years[String(year)] : undefined;
+    if (!y || y.currency !== "EUR") return;
+    covered++;
+    let sum = 0;
+    for (const { key } of OTHER_KEYS) {
+      const v = (y.revenue[key] ?? 0) / secs;
+      bySource[key] += v;
+      byPartySource[key][i] = v;
+      sum += v;
+    }
+    byParty[i] = sum;
+  });
+  const rate = OTHER_KEYS.reduce((a, { key }) => a + bySource[key], 0);
+  return { year, bySource, byParty, byPartySource, rate, covered };
+}
+
+
+/** Adresa zasebnog ekrana primatelja; nezavisni zastupnici nemaju slug stranke. */
+export function liveSlug(p: FundingParty): string {
+  return (
+    p.slug ??
+    p.name
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")
+  );
+}
+
+/** Udio javnog novca (državni + lokalni proračuni) u stopi primatelja i. */
+export function publicShare(seg: Segment | null, other: OtherIncome | null, i: number) {
+  const state = seg ? perSecond(seg, seg.amounts[i]) : 0;
+  if (!other || Number.isNaN(other.byParty[i])) return null;
+  const pub = state + other.byPartySource.local[i];
+  const all = state + other.byParty[i];
+  return all > 0 ? { state, local: other.byPartySource.local[i], pub, priv: all - pub, all, share: pub / all } : null;
+}

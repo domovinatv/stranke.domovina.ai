@@ -209,6 +209,44 @@ async function buildFundingLiveOg(env) {
   }
 }
 
+/** Isti slug kao liveSlug() u frontend/src/lib/fundingLive.ts. */
+function liveSlug(p) {
+  return (
+    p.slug ??
+    p.name
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/đ/g, "d")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-|-$/g, "")
+  );
+}
+
+async function buildFundingLivePartyOg(env, slug) {
+  const fallback = await buildFundingLiveOg(env);
+  try {
+    const r = await env.ASSETS.fetch(new Request(`${SITE}/data/financiranje.json`));
+    if (!r.ok) return fallback;
+    const d = await r.json();
+    const party = d.parties.find((x) => liveSlug(x) === slug);
+    if (!party) return fallback;
+    const { p, total, rate } = livePeriod(d);
+    const prate = rate * ((party.by_period[p.label] || 0) / (total || 1));
+    const name = party.short || party.name;
+    return {
+      ...fallback,
+      title: `${name}: javni novac u stvarnom vremenu · DOMOVINA Stranke`,
+      desc:
+        `${party.name} iz državnog proračuna dobiva ${fmtEur(prate, 4)} € u sekundi, ` +
+        `${fmtEur(prate * 86400, 0)} € na dan. Uz to lokalni proračuni, članarine i donacije, uživo.`,
+      canonical: `${SITE}/financiranje/uzivo/${slug}`,
+    };
+  } catch {
+    return fallback;
+  }
+}
+
 async function serveSpaWithOg(env, og) {
   const indexRes = await env.ASSETS.fetch(new Request(`${SITE}/index.html`));
   if (!indexRes.ok) return indexRes;
@@ -271,6 +309,11 @@ export default {
       if (party) {
         return serveSpaWithOg(env, buildOgFor(party, `${SITE}${path}`));
       }
+    }
+
+    const livePartyMatch = path.match(/^\/financiranje\/uzivo\/([a-z0-9-]+)\/?$/);
+    if (livePartyMatch) {
+      return serveSpaWithOg(env, await buildFundingLivePartyOg(env, livePartyMatch[1]));
     }
 
     if (/^\/financiranje\/uzivo\/?$/.test(path)) {

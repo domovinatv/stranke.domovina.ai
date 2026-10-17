@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import { formatDate, loadFunding, loadParties } from "@/lib/data";
 import type { Funding, Party } from "@/lib/types";
 import {
+  OTHER_KEYS,
+  buildOther,
   buildSchedule,
+  liveSlug,
+  publicShare,
+  type OtherIncome,
   catalogAvatar,
   cumulativeAt,
   perSecond,
@@ -17,64 +22,16 @@ import { PartyAvatar } from "@/components/PartyAvatar";
 
 const MALE = "#002F6C";
 const FEMALE = "#DB2777";
-const OTHER = "#0F766E";
-
-/** Ostali prihodi iz revizije DUR-a, u eurima godišnje. */
-const OTHER_KEYS = [
-  { key: "local", label: "lokalni proračuni", note: "županije, gradovi, općine; i to je javni novac" },
-  { key: "members", label: "članarine", note: null },
-  { key: "donations", label: "donacije", note: null },
-  { key: "other", label: "ostali prihodi", note: "kamate, najam, prodaja i sl." },
-] as const;
-type OtherKey = (typeof OTHER_KEYS)[number]["key"];
-
-interface OtherIncome {
-  year: number;
-  /** €/s po izvoru, za sve stranke zajedno. */
-  bySource: Record<OtherKey, number>;
-  /** €/s po stranci, istim redom kao Schedule.parties (NaN = nema revizije). */
-  byParty: Float64Array;
-  rate: number;
-  covered: number;
-}
-
-/**
- * Ostale prihode (sve osim državnog proračuna) uzima iz zadnje revizije DUR-a
- * i pretpostavlja da teku istom brzinom kao te godine.
- */
-function buildOther(data: Funding, s: Schedule): OtherIncome | null {
-  const audits = data.audits?.parties ?? [];
-  const bySlug = new Map(audits.filter((a) => a.slug).map((a) => [a.slug!, a]));
-  const years = audits.flatMap((a) => Object.keys(a.years).map(Number));
-  if (!years.length) return null;
-  const year = Math.max(...years);
-  const secs = (Date.UTC(year + 1, 0, 1) - Date.UTC(year, 0, 1)) / 1000;
-  const bySource = { local: 0, members: 0, donations: 0, other: 0 } as Record<OtherKey, number>;
-  const byParty = new Float64Array(s.parties.length).fill(NaN);
-  let covered = 0;
-  s.parties.forEach((p, i) => {
-    const y = p.slug ? bySlug.get(p.slug)?.years[String(year)] : undefined;
-    if (!y || y.currency !== "EUR") return;
-    covered++;
-    let sum = 0;
-    for (const { key } of OTHER_KEYS) {
-      const v = (y.revenue[key] ?? 0) / secs;
-      bySource[key] += v;
-      sum += v;
-    }
-    byParty[i] = sum;
-  });
-  const rate = OTHER_KEYS.reduce((a, { key }) => a + bySource[key], 0);
-  return { year, bySource, byParty, rate, covered };
-}
+export const OTHER = "#0F766E";
+export const PUBLIC = "#B45309";
 
 const nf = (digits: number) =>
   new Intl.NumberFormat("hr-HR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
-const F0 = nf(0);
-const F2 = nf(2);
-const F4 = nf(4);
-const F5 = nf(5);
-const eur = (n: number, f = F2) => f.format(n) + " €";
+export const F0 = nf(0);
+export const F2 = nf(2);
+export const F4 = nf(4);
+export const F5 = nf(5);
+export const eur = (n: number, f = F2) => f.format(n) + " €";
 const mil = (n: number) => nf(2).format(n / 1e6) + " mil. €";
 
 const SOURCE_TEXT: Record<Segment["source"], string> = {
@@ -83,7 +40,7 @@ const SOURCE_TEXT: Record<Segment["source"], string> = {
   procjena: "procjena",
 };
 
-function useReducedMotion() {
+export function useReducedMotion() {
   const [reduced, setReduced] = useState(
     () => typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches,
   );
@@ -141,6 +98,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
   const rowCum = useRef<(HTMLSpanElement | null)[]>([]);
   const rowBar = useRef<(HTMLDivElement | null)[]>([]);
   const otherRef = useRef<HTMLSpanElement>(null);
+  const publicRef = useRef<HTMLSpanElement>(null);
   const otherSrcRef = useRef<(HTMLSpanElement | null)[]>([]);
   const rowOther = useRef<(HTMLSpanElement | null)[]>([]);
 
@@ -182,6 +140,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
       if (other) {
         const elapsed = (t - opened) / 1000;
         set(otherRef.current, eur(other.rate * elapsed));
+        set(publicRef.current, eur(session + other.bySource.local * elapsed));
         OTHER_KEYS.forEach(({ key }, k) => set(otherSrcRef.current[k], eur(other.bySource[key] * elapsed)));
         for (let i = 0; i < n; i++) {
           const r = other.byParty[i];
@@ -270,6 +229,14 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
       </div>
       {other && <OtherCard other={other} valueRef={otherRef} srcRefs={otherSrcRef} />}
       </div>
+      {other && (
+        <PublicCard
+          valueRef={publicRef}
+          rate={rate + other.bySource.local}
+          share={(rate + other.bySource.local) / (rate + other.rate)}
+          year={other.year}
+        />
+      )}
 
       <div className="grid gap-3 sm:grid-cols-3 mt-3">
         <div className="card p-4">
@@ -329,6 +296,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
 
       <h2 className="mt-10 mb-1 text-xl font-bold text-navy">Po strankama, uživo</h2>
       <p className="text-sm text-muted mb-4 max-w-3xl">
+        Klik na ime otvara zaseban ekran stranke sa svim njezinim brojačima.{" "}
         Puna traka je obračunato od {formatDate(data.convocation_start)} do ovog
         trenutka, svijetla je iznos do kraja saziva. Sve trake na istoj su
         skali (najveći iznos je HDZ-ov za cijeli saziv).
@@ -336,6 +304,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
       <ol className="card divide-y divide-border">
         {s.parties.map((p, i) => {
           const r = seg ? perSecond(seg, seg.amounts[i]) : 0;
+          const sh = publicShare(seg, other, i);
           const mandates = p.mps_male + p.mps_female;
           return (
             <li key={p.name} className="p-3 sm:px-4">
@@ -345,7 +314,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
                 <div className="min-w-0 flex-1 sm:flex sm:items-center sm:gap-3">
                   <div className="min-w-0 sm:flex-1">
                     <div className="font-semibold text-navy leading-snug sm:truncate">
-                      {p.slug ? <Link to={`/stranka/${p.slug}`}>{p.name}</Link> : p.name}
+                      <Link to={`/financiranje/uzivo/${liveSlug(p)}`}>{p.name}</Link>
                     </div>
                     <div className="text-xs text-muted">
                       {p.independent ? "nezavisni zastupnik nacionalne manjine" : `${mandates} ${mandates % 10 === 1 && mandates % 100 !== 11 ? "mandat" : "mandata"}`} ·{" "}
@@ -378,6 +347,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
                   style={{ background: MALE, transform: "scaleX(0)" }}
                 />
               </div>
+              {sh && <ShareSplit className="mt-1.5 ml-8" share={sh.share} />}
             </li>
           );
         })}
@@ -389,7 +359,9 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
           <>
             {" "}Zeleni broj: ostali prihodi (lokalni proračuni, članarine,
             donacije, ostalo) otkad gledate, po razini iz revizije za{" "}
-            {other.year}.; stranke bez te revizije nemaju zeleni broj.
+            {other.year}.; stranke bez te revizije nemaju zeleni broj. Traka
+            ispod: koliki dio prihoda stranke je javni novac (državni i lokalni
+            proračuni), a koliki iz ostalih izvora.
           </>
         )}
       </p>
@@ -446,7 +418,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
   );
 }
 
-function OtherCard({
+export function OtherCard({
   other,
   valueRef,
   srcRefs,
@@ -480,7 +452,55 @@ function OtherCard({
   );
 }
 
-function ProgressRow({
+/** Traka javno / ostalo s postocima. */
+export function ShareSplit({ share, className = "" }: { share: number; className?: string }) {
+  const pct = (x: number) => F0.format(Math.round(x * 100)) + " %";
+  return (
+    <div className={className}>
+      <div className="flex h-1.5 rounded-full overflow-hidden bg-surface">
+        <div style={{ width: `${share * 100}%`, background: PUBLIC }} />
+        <div style={{ width: `${(1 - share) * 100}%`, background: OTHER }} />
+      </div>
+      <div className="mt-0.5 flex justify-between text-[11px] tabular-nums">
+        <span style={{ color: PUBLIC }}>javni novac {pct(share)}</span>
+        <span style={{ color: OTHER }}>drugi izvori {pct(1 - share)}</span>
+      </div>
+    </div>
+  );
+}
+
+export function PublicCard({
+  valueRef,
+  rate,
+  share,
+  year,
+  label = "Ukupno javnog novca otkad ste otvorili stranicu",
+}: {
+  valueRef: React.RefObject<HTMLSpanElement>;
+  rate: number;
+  share: number;
+  year: number;
+  label?: string;
+}) {
+  return (
+    <div className="card p-5 sm:p-6 mt-3 text-center">
+      <div className="field-label">{label}</div>
+      <div className="text-3xl sm:text-5xl font-extrabold tabular-nums leading-tight my-2" style={{ color: PUBLIC }}>
+        <span ref={valueRef} aria-live="off">0,00 €</span>
+      </div>
+      <div className="text-sm text-muted">
+        državni + lokalni proračuni · <strong className="text-navy tabular-nums">{eur(rate, F4)}</strong> u sekundi ·{" "}
+        <span className="tabular-nums">{eur(rate * 86400, F0)}</span> na dan
+      </div>
+      <ShareSplit className="mt-4 max-w-xl mx-auto text-left" share={share} />
+      <div className="text-xs text-muted mt-1">
+        udio u svim prihodima; lokalni i ostali prihodi po reviziji DUR-a za {year}.
+      </div>
+    </div>
+  );
+}
+
+export function ProgressRow({
   label,
   barRef,
   color,
@@ -503,7 +523,7 @@ function ProgressRow({
   );
 }
 
-function SeatTile({
+export function SeatTile({
   who,
   color,
   rate,
@@ -533,11 +553,16 @@ function SeatTile({
   );
 }
 
-function ShareButton() {
+export function ShareButton({
+  path = "/financiranje/uzivo",
+  title = "Javni novac u stvarnom vremenu",
+}: {
+  path?: string;
+  title?: string;
+}) {
   const [copied, setCopied] = useState(false);
   const share = async () => {
-    const url = window.location.origin + "/financiranje/uzivo";
-    const title = "Javni novac u stvarnom vremenu";
+    const url = window.location.origin + path;
     try {
       if (navigator.share) {
         await navigator.share({ title, url });
