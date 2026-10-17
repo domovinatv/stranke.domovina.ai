@@ -17,6 +17,56 @@ import { PartyAvatar } from "@/components/PartyAvatar";
 
 const MALE = "#002F6C";
 const FEMALE = "#DB2777";
+const OTHER = "#0F766E";
+
+/** Ostali prihodi iz revizije DUR-a, u eurima godišnje. */
+const OTHER_KEYS = [
+  { key: "local", label: "lokalni proračuni", note: "županije, gradovi, općine; i to je javni novac" },
+  { key: "members", label: "članarine", note: null },
+  { key: "donations", label: "donacije", note: null },
+  { key: "other", label: "ostali prihodi", note: "kamate, najam, prodaja i sl." },
+] as const;
+type OtherKey = (typeof OTHER_KEYS)[number]["key"];
+
+interface OtherIncome {
+  year: number;
+  /** €/s po izvoru, za sve stranke zajedno. */
+  bySource: Record<OtherKey, number>;
+  /** €/s po stranci, istim redom kao Schedule.parties (NaN = nema revizije). */
+  byParty: Float64Array;
+  rate: number;
+  covered: number;
+}
+
+/**
+ * Ostale prihode (sve osim državnog proračuna) uzima iz zadnje revizije DUR-a
+ * i pretpostavlja da teku istom brzinom kao te godine.
+ */
+function buildOther(data: Funding, s: Schedule): OtherIncome | null {
+  const audits = data.audits?.parties ?? [];
+  const bySlug = new Map(audits.filter((a) => a.slug).map((a) => [a.slug!, a]));
+  const years = audits.flatMap((a) => Object.keys(a.years).map(Number));
+  if (!years.length) return null;
+  const year = Math.max(...years);
+  const secs = (Date.UTC(year + 1, 0, 1) - Date.UTC(year, 0, 1)) / 1000;
+  const bySource = { local: 0, members: 0, donations: 0, other: 0 } as Record<OtherKey, number>;
+  const byParty = new Float64Array(s.parties.length).fill(NaN);
+  let covered = 0;
+  s.parties.forEach((p, i) => {
+    const y = p.slug ? bySlug.get(p.slug)?.years[String(year)] : undefined;
+    if (!y || y.currency !== "EUR") return;
+    covered++;
+    let sum = 0;
+    for (const { key } of OTHER_KEYS) {
+      const v = (y.revenue[key] ?? 0) / secs;
+      bySource[key] += v;
+      sum += v;
+    }
+    byParty[i] = sum;
+  });
+  const rate = OTHER_KEYS.reduce((a, { key }) => a + bySource[key], 0);
+  return { year, bySource, byParty, rate, covered };
+}
 
 const nf = (digits: number) =>
   new Intl.NumberFormat("hr-HR", { minimumFractionDigits: digits, maximumFractionDigits: digits });
@@ -76,6 +126,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
 
   const n = s.parties.length;
   const max = Math.max(...s.totals);
+  const other = useMemo(() => buildOther(data, s), [data, s]);
 
   // Čvorovi koje petlja ažurira izravno, bez React re-rendera.
   const heroRef = useRef<HTMLSpanElement>(null);
@@ -89,6 +140,9 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
   const rowSession = useRef<(HTMLSpanElement | null)[]>([]);
   const rowCum = useRef<(HTMLSpanElement | null)[]>([]);
   const rowBar = useRef<(HTMLDivElement | null)[]>([]);
+  const otherRef = useRef<HTMLSpanElement>(null);
+  const otherSrcRef = useRef<(HTMLSpanElement | null)[]>([]);
+  const rowOther = useRef<(HTMLSpanElement | null)[]>([]);
 
   useEffect(() => {
     const cum0 = new Float64Array(n);
@@ -125,6 +179,16 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
         set(seatFRef.current, eur(seatM * 1.1 * elapsed, F4));
       }
 
+      if (other) {
+        const elapsed = (t - opened) / 1000;
+        set(otherRef.current, eur(other.rate * elapsed));
+        OTHER_KEYS.forEach(({ key }, k) => set(otherSrcRef.current[k], eur(other.bySource[key] * elapsed)));
+        for (let i = 0; i < n; i++) {
+          const r = other.byParty[i];
+          if (!Number.isNaN(r)) set(rowOther.current[i], "+" + eur(r * elapsed, F4));
+        }
+      }
+
       for (let i = 0; i < n; i++) {
         set(rowSession.current[i], "+" + eur(cum[i] - cum0[i], F4));
         set(rowCum.current[i], eur(cum[i]));
@@ -149,7 +213,7 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
     };
     raf = requestAnimationFrame(loop);
     return () => cancelAnimationFrame(raf);
-  }, [s, n, max, opened, reduced]);
+  }, [s, n, max, opened, reduced, other]);
 
   const rate = seg ? perSecond(seg, seg.total) : 0;
   const seatM = seg ? perSecond(seg, seg.total / seg.weight) : 0;
@@ -185,8 +249,9 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
         </p>
       </header>
 
+      <div className={other ? "grid gap-3 lg:grid-cols-2" : ""}>
       <div className="card p-5 sm:p-8 text-center">
-        <div className="field-label">Otkad ste otvorili ovu stranicu, strankama je pripalo</div>
+        <div className="field-label">Otkad ste otvorili ovu stranicu, iz državnog proračuna strankama je pripalo</div>
         <div className="text-4xl sm:text-6xl font-extrabold text-flag-red tabular-nums leading-tight my-2">
           <span ref={heroRef} aria-live="off">0,00 €</span>
         </div>
@@ -202,6 +267,8 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
           )}
         </div>
         <ShareButton />
+      </div>
+      {other && <OtherCard other={other} valueRef={otherRef} srcRefs={otherSrcRef} />}
       </div>
 
       <div className="grid gap-3 sm:grid-cols-3 mt-3">
@@ -292,6 +359,11 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
                     <div className="text-xs text-flag-red tabular-nums">
                       <span ref={(el) => (rowSession.current[i] = el)} />
                     </div>
+                    {other && !Number.isNaN(other.byParty[i]) && (
+                      <div className="text-xs tabular-nums" style={{ color: OTHER }} title={`ostali prihodi po razini iz ${other.year}.`}>
+                        <span ref={(el) => (rowOther.current[i] = el)} /> ostalo
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -312,7 +384,14 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
       </ol>
       <p className="text-xs text-muted mt-2">
         Gornji broj: obračunato od {formatDate(data.convocation_start)}. Crveni
-        broj: otkad gledate stranicu.
+        broj: iz državnog proračuna otkad gledate stranicu.
+        {other && (
+          <>
+            {" "}Zeleni broj: ostali prihodi (lokalni proračuni, članarine,
+            donacije, ostalo) otkad gledate, po razini iz revizije za{" "}
+            {other.year}.; stranke bez te revizije nemaju zeleni broj.
+          </>
+        )}
       </p>
 
       <h2 className="mt-10 mb-2 text-xl font-bold text-navy">Kako se ovo računa</h2>
@@ -342,6 +421,19 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
             </>
           )}
         </p>
+        {other && (
+          <p>
+            <strong>Ostali prihodi</strong> (zeleni brojač) nisu iz odluka
+            nego iz revizija Državnog ureda za reviziju: zbroj prihoda iz
+            lokalnih proračuna, članarina, donacija i ostalih prihoda za{" "}
+            {other.year}. godinu ({other.covered} od {n} primatelja ima
+            reviziju), podijeljen na sekunde te godine. Brojač pretpostavlja da
+            ti prihodi i danas teku istom brzinom, što je gruba procjena:
+            donacije posebno ovise o izbornim godinama ({other.year}. su bili
+            parlamentarni i europski izbori). Podaci po strankama i godinama su
+            na stranici <Link to="/financiranje">Financiranje stranaka</Link>.
+          </p>
+        )}
         <p>
           Granice razdoblja su u ponoć po hrvatskom vremenu. Novac za mandat
           ide stranci s čije je liste zastupnik izabran, i kad je on u
@@ -351,6 +443,40 @@ function Live({ data, s, catalog }: { data: Funding; s: Schedule; catalog: Map<s
         </p>
       </div>
     </section>
+  );
+}
+
+function OtherCard({
+  other,
+  valueRef,
+  srcRefs,
+}: {
+  other: OtherIncome;
+  valueRef: React.RefObject<HTMLSpanElement>;
+  srcRefs: React.MutableRefObject<(HTMLSpanElement | null)[]>;
+}) {
+  return (
+    <div className="card p-5 sm:p-8 text-center">
+      <div className="field-label">A iz svih ostalih izvora u isto vrijeme</div>
+      <div className="text-4xl sm:text-6xl font-extrabold tabular-nums leading-tight my-2" style={{ color: OTHER }}>
+        <span ref={valueRef} aria-live="off">0,00 €</span>
+      </div>
+      <div className="text-sm text-muted">
+        <strong className="text-navy tabular-nums">{eur(other.rate, F4)}</strong> u sekundi ·{" "}
+        <span className="tabular-nums">{eur(other.rate * 86400, F0)}</span> na dan · po reviziji DUR-a za {other.year}.
+      </div>
+      <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-left text-sm">
+        {OTHER_KEYS.map(({ key, label, note }, k) => (
+          <li key={key} title={note ?? undefined}>
+            <div className="text-xs text-muted">{label}</div>
+            <div className="font-bold text-navy tabular-nums">
+              <span ref={(el) => (srcRefs.current[k] = el)} />
+            </div>
+            <div className="text-xs text-muted tabular-nums">{eur(other.bySource[key], F5)}/s</div>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
