@@ -23,18 +23,15 @@ from __future__ import annotations
 
 import argparse
 import logging
-import re
 import sqlite3
 import sys
 from pathlib import Path
-
-from rapidfuzz import fuzz, process
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from src.db import add_alias, connect  # noqa: E402
-from src.normalize import norm_key  # noqa: E402
+from src.party_match import CatalogMatcher, load_catalog  # noqa: E402
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
 log = logging.getLogger("crosscheck")
@@ -42,31 +39,6 @@ log = logging.getLogger("crosscheck")
 DEFAULT_IZBORI_DB = (
     ROOT.parent / "izbori.domovina.ai" / "data" / "izbori.sqlite"
 )
-
-_ABBR_SUFFIX = re.compile(r"\s*-\s*\"?[A-ZČĆĐŠŽ][A-ZČĆĐŠŽa-zčćđšž !.]{0,30}\"?\s*$")
-
-
-def name_variants(name: str) -> list[str]:
-    """Normalised match keys for a ballot party name, most specific first.
-
-    Ballot names stack suffixes ("AUTOHTONA - HSP - DRAŽEN KELEMINEC -
-    A - HSP - Dražen Keleminec"), so the abbr-strip is applied iteratively.
-    """
-    name = name.strip().strip('"')
-    keys = [norm_key(name)]
-    current = name
-    for _ in range(3):
-        stripped = _ABBR_SUFFIX.sub("", current).strip()
-        if not stripped or stripped == current:
-            break
-        keys.append(norm_key(stripped))
-        current = stripped
-    out: list[str] = []
-    for k in keys:
-        if k and k not in out:
-            out.append(k)
-    return out
-
 
 def collect_election_parties(izbori_db: Path) -> dict[str, dict]:
     """{ballot party name: {votes, seats, lists}} from RH-level parlament-2024."""
@@ -111,47 +83,15 @@ def run(izbori_db: Path, write_aliases: bool) -> None:
             conn.execute(
                 "DELETE FROM party_aliases WHERE source = 'dip-parlament-2024'"
             )
-        rows = conn.execute(
-            """SELECT p.id, p.canonical_name, p.short_name, p.status, p.status_date,
-                      COALESCE(GROUP_CONCAT(a.alias, ';'), '') AS aliases
-               FROM parties p LEFT JOIN party_aliases a ON a.party_id = p.id
-               GROUP BY p.id
-               ORDER BY (p.status != 'AKTIVAN'),
-                        COALESCE(p.status_date, '9999-12-31') DESC, p.id"""
-        ).fetchall()
-        # Key priority: exact names before abbr-stripped variants, and (via the
-        # ORDER BY above) active parties before defunct ones — so the ballot's
-        # "SDP" resolves to today's SDP, not the 1990s SDPH-SDP entity.
-        by_key: dict[str, sqlite3.Row] = {}
-        for r in rows:
-            candidates = [r["canonical_name"], r["short_name"] or ""]
-            candidates += [a for a in r["aliases"].split(";") if a]
-            for c in candidates:
-                if c:
-                    by_key.setdefault(norm_key(c), r)
-        for r in rows:
-            candidates = [r["canonical_name"], r["short_name"] or ""]
-            candidates += [a for a in r["aliases"].split(";") if a]
-            for c in candidates:
-                for k in name_variants(c):
-                    by_key.setdefault(k, r)
-        fuzz_map = {r["canonical_name"]: r for r in rows}
+        # Matching rules (exact names before abbr-stripped variants, active
+        # parties before defunct ones, rapidfuzz fallback) live in
+        # src/party_match.py, shared with scripts/22_liste_2024.py.
+        matcher = CatalogMatcher(load_catalog(conn))
 
-        matched: list[tuple[str, sqlite3.Row, dict]] = []
+        matched: list[tuple[str, dict, dict]] = []
         unmatched: list[tuple[str, dict]] = []
         for name, info in sorted(election.items(), key=lambda kv: -kv[1]["votes"]):
-            row = None
-            for k in name_variants(name):
-                if k in by_key:
-                    row = by_key[k]
-                    break
-            if row is None:
-                best = process.extractOne(
-                    name, fuzz_map.keys(), scorer=fuzz.token_sort_ratio,
-                    processor=norm_key, score_cutoff=93,
-                )
-                if best:
-                    row = fuzz_map[best[0]]
+            row = matcher.match(name).row
             if row is None:
                 unmatched.append((name, info))
             else:

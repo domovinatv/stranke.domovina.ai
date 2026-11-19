@@ -1,0 +1,2130 @@
+{
+  "izvor": {
+    "broj_zastupnika": 150,
+    "election": "parlament-2024",
+    "generated_at": "2026-11-19T18:32:58+00:00",
+    "izbori": "izbori.domovina.ai/data/izbori.sqlite (DIP arhiva)",
+    "katalog": "data/stranke.db",
+    "zastupnici": "data/financiranje/zastupnici.json",
+    "zastupnici_fetched_at": "2026-10-09T11:21:16+00:00",
+    "zastupnici_izvor": "https://www.sabor.hr/api/interaktivna-sabornica-new?_format=json"
+  },
+  "liste": [
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X",
+            "XI"
+          ],
+          "mandati_varijanti": 61,
+          "match": "exact",
+          "naziv": "HRVATSKA DEMOKRATSKA ZAJEDNICA - HDZ",
+          "party_id": 182,
+          "slug": "hrvatska-demokratska-zajednica",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 58,
+          "match": "exact",
+          "naziv": "HRVATSKA SOCIJALNO - LIBERALNA STRANKA - HSLS",
+          "party_id": 197,
+          "slug": "hrvatska-socijalno-liberalna-stranka",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 58,
+          "match": "exact",
+          "naziv": "HRVATSKA DEMOKRŠĆANSKA STRANKA - HDS",
+          "party_id": 348,
+          "slug": "hrvatska-demokrscanska-stranka",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 58,
+          "match": "exact",
+          "naziv": "HRVATSKA NARODNA STRANKA - LIBERALNI DEMOKRATI - HNS",
+          "party_id": 246,
+          "slug": "hrvatska-narodna-stranka-liberalni-demokrati",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 58,
+          "match": "exact",
+          "naziv": "HRVATSKA STRANKA UMIROVLJENIKA - HSU",
+          "party_id": 97,
+          "slug": "hrvatska-stranka-umirovljenika",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 729949,
+      "izborne_jedinice": [
+        {
+          "jedinica": "I",
+          "mandati": 5
+        },
+        {
+          "jedinica": "II",
+          "mandati": 6
+        },
+        {
+          "jedinica": "III",
+          "mandati": 5
+        },
+        {
+          "jedinica": "IV",
+          "mandati": 7
+        },
+        {
+          "jedinica": "V",
+          "mandati": 7
+        },
+        {
+          "jedinica": "VI",
+          "mandati": 4
+        },
+        {
+          "jedinica": "VII",
+          "mandati": 7
+        },
+        {
+          "jedinica": "VIII",
+          "mandati": 4
+        },
+        {
+          "jedinica": "IX",
+          "mandati": 7
+        },
+        {
+          "jedinica": "X",
+          "mandati": 6
+        },
+        {
+          "jedinica": "XI",
+          "mandati": 3
+        }
+      ],
+      "list_id": "hdz-hsls-hds-hns-hsu",
+      "mandati": 61,
+      "naziv": "HDZ, HSLS, HDS, HNS, HSU",
+      "nositelj": {
+        "naziv": "HRVATSKA DEMOKRATSKA ZAJEDNICA - HDZ",
+        "party_id": 182,
+        "slug": "hrvatska-demokratska-zajednica"
+      },
+      "varijante": [
+        {
+          "glasova": 697841,
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati": 58,
+          "naziv": "HDZ, HSLS, HDS, HNS, HSU",
+          "stranke": [
+            "HRVATSKA DEMOKRATSKA ZAJEDNICA - HDZ",
+            "HRVATSKA SOCIJALNO - LIBERALNA STRANKA - HSLS",
+            "HRVATSKA DEMOKRŠĆANSKA STRANKA - HDS",
+            "HRVATSKA NARODNA STRANKA - LIBERALNI DEMOKRATI - HNS",
+            "HRVATSKA STRANKA UMIROVLJENIKA - HSU"
+          ]
+        },
+        {
+          "glasova": 32108,
+          "jedinice": [
+            "XI"
+          ],
+          "mandati": 3,
+          "naziv": "HDZ",
+          "stranke": [
+            "HRVATSKA DEMOKRATSKA ZAJEDNICA - HDZ"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 42,
+          "match": "exact",
+          "naziv": "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE - SDP",
+          "party_id": 149,
+          "slug": "socijaldemokratska-partija-hrvatske",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 42,
+          "match": "exact",
+          "naziv": "CENTAR",
+          "party_id": 304,
+          "slug": "centar",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 42,
+          "match": "exact",
+          "naziv": "HRVATSKA SELJAČKA STRANKA - HSS",
+          "party_id": 181,
+          "slug": "hrvatska-seljacka-stranka",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 42,
+          "match": "exact",
+          "naziv": "\"DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM\" - \"DO i SIP\"",
+          "party_id": 410,
+          "slug": "dalija-oreskovic-i-ljudi-s-imenom-i-prezimenom",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 32,
+          "match": "exact",
+          "naziv": "NARODNA STRANKA - REFORMISTI - REFORMISTI",
+          "party_id": 341,
+          "slug": "narodna-stranka-reformisti",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 42,
+          "match": "exact",
+          "naziv": "GRAĐANSKO-LIBERALNI SAVEZ - GLAS",
+          "party_id": 358,
+          "slug": "gradansko-liberalni-savez",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 538748,
+      "izborne_jedinice": [
+        {
+          "jedinica": "I",
+          "mandati": 4
+        },
+        {
+          "jedinica": "II",
+          "mandati": 4
+        },
+        {
+          "jedinica": "III",
+          "mandati": 6
+        },
+        {
+          "jedinica": "IV",
+          "mandati": 4
+        },
+        {
+          "jedinica": "V",
+          "mandati": 3
+        },
+        {
+          "jedinica": "VI",
+          "mandati": 4
+        },
+        {
+          "jedinica": "VII",
+          "mandati": 4
+        },
+        {
+          "jedinica": "VIII",
+          "mandati": 6
+        },
+        {
+          "jedinica": "IX",
+          "mandati": 3
+        },
+        {
+          "jedinica": "X",
+          "mandati": 4
+        }
+      ],
+      "list_id": "sdp-centar-hss-do-i-sip-reformisti-glas",
+      "mandati": 42,
+      "naziv": "SDP, CENTAR, HSS, \"DO i SIP\", REFORMISTI, GLAS",
+      "nositelj": {
+        "naziv": "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE - SDP",
+        "party_id": 149,
+        "slug": "socijaldemokratska-partija-hrvatske"
+      },
+      "varijante": [
+        {
+          "glasova": 420746,
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "IX",
+            "X"
+          ],
+          "mandati": 32,
+          "naziv": "SDP, CENTAR, HSS, \"DO i SIP\", REFORMISTI, GLAS",
+          "stranke": [
+            "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE - SDP",
+            "CENTAR",
+            "HRVATSKA SELJAČKA STRANKA - HSS",
+            "\"DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM\" - \"DO i SIP\"",
+            "NARODNA STRANKA - REFORMISTI - REFORMISTI",
+            "GRAĐANSKO-LIBERALNI SAVEZ - GLAS"
+          ]
+        },
+        {
+          "glasova": 118002,
+          "jedinice": [
+            "VII",
+            "VIII"
+          ],
+          "mandati": 10,
+          "naziv": "SDP, CENTAR, HSS, \"DO i SIP\", GLAS",
+          "stranke": [
+            "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE - SDP",
+            "CENTAR",
+            "HRVATSKA SELJAČKA STRANKA - HSS",
+            "\"DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM\" - \"DO i SIP\"",
+            "GRAĐANSKO-LIBERALNI SAVEZ - GLAS"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 14,
+          "match": "exact",
+          "naziv": "DOMOVINSKI POKRET - DP",
+          "party_id": 258,
+          "slug": "domovinski-pokret",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 14,
+          "match": "exact",
+          "naziv": "PRAVO I PRAVDA",
+          "party_id": 412,
+          "slug": "pravo-i-pravda",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "II",
+            "III",
+            "IV",
+            "VI",
+            "VII"
+          ],
+          "mandati_varijanti": 6,
+          "match": "exact",
+          "naziv": "DEMOKRATSKI HSS - DHSS",
+          "party_id": 254,
+          "slug": "demokratski-hss",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "II",
+            "III",
+            "IV",
+            "VI",
+            "VII"
+          ],
+          "mandati_varijanti": 6,
+          "match": "exact",
+          "naziv": "ZELENA LISTA",
+          "party_id": 345,
+          "slug": "zelena-lista-1000123",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "VI"
+          ],
+          "mandati_varijanti": 4,
+          "match": "exact",
+          "naziv": "AGRAMERI - NEZAVISNA LISTA",
+          "party_id": 299,
+          "slug": "agrameri-nezavisna-lista",
+          "status": "PRESTANAK",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "IV"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "NEZAVISNI",
+          "party_id": 317,
+          "slug": "nezavisni",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I"
+          ],
+          "mandati_varijanti": 1,
+          "match": "exact",
+          "naziv": "BLOK ZA HRVATSKU - BLOK",
+          "party_id": 277,
+          "slug": "blok-za-hrvatsku",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 202714,
+      "izborne_jedinice": [
+        {
+          "jedinica": "I",
+          "mandati": 1
+        },
+        {
+          "jedinica": "II",
+          "mandati": 2
+        },
+        {
+          "jedinica": "III",
+          "mandati": 0
+        },
+        {
+          "jedinica": "IV",
+          "mandati": 2
+        },
+        {
+          "jedinica": "V",
+          "mandati": 3
+        },
+        {
+          "jedinica": "VI",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VII",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VIII",
+          "mandati": 0
+        },
+        {
+          "jedinica": "IX",
+          "mandati": 2
+        },
+        {
+          "jedinica": "X",
+          "mandati": 2
+        }
+      ],
+      "list_id": "dp-pravo-i-pravda",
+      "mandati": 14,
+      "naziv": "DP, PRAVO I PRAVDA",
+      "nositelj": {
+        "naziv": "DOMOVINSKI POKRET - DP",
+        "party_id": 258,
+        "slug": "domovinski-pokret"
+      },
+      "varijante": [
+        {
+          "glasova": 84107,
+          "jedinice": [
+            "V",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati": 7,
+          "naziv": "DP, PRAVO I PRAVDA",
+          "stranke": [
+            "DOMOVINSKI POKRET - DP",
+            "PRAVO I PRAVDA"
+          ]
+        },
+        {
+          "glasova": 43142,
+          "jedinice": [
+            "II",
+            "VI"
+          ],
+          "mandati": 3,
+          "naziv": "DP, PRAVO I PRAVDA, DHSS, ZELENA LISTA, AGRAMERI - NEZAVISNA LISTA",
+          "stranke": [
+            "DOMOVINSKI POKRET - DP",
+            "PRAVO I PRAVDA",
+            "DEMOKRATSKI HSS - DHSS",
+            "ZELENA LISTA",
+            "AGRAMERI - NEZAVISNA LISTA"
+          ]
+        },
+        {
+          "glasova": 27548,
+          "jedinice": [
+            "III",
+            "VII"
+          ],
+          "mandati": 1,
+          "naziv": "DP, PRAVO I PRAVDA, DHSS, ZELENA LISTA",
+          "stranke": [
+            "DOMOVINSKI POKRET - DP",
+            "PRAVO I PRAVDA",
+            "DEMOKRATSKI HSS - DHSS",
+            "ZELENA LISTA"
+          ]
+        },
+        {
+          "glasova": 26478,
+          "jedinice": [
+            "IV"
+          ],
+          "mandati": 2,
+          "naziv": "DP, PRAVO I PRAVDA, NEZAVISNI, DHSS, ZELENA LISTA",
+          "stranke": [
+            "DOMOVINSKI POKRET - DP",
+            "PRAVO I PRAVDA",
+            "NEZAVISNI",
+            "DEMOKRATSKI HSS - DHSS",
+            "ZELENA LISTA"
+          ]
+        },
+        {
+          "glasova": 21439,
+          "jedinice": [
+            "I"
+          ],
+          "mandati": 1,
+          "naziv": "DP, PRAVO I PRAVDA, BLOK, AGRAMERI - NEZAVISNA LISTA",
+          "stranke": [
+            "DOMOVINSKI POKRET - DP",
+            "PRAVO I PRAVDA",
+            "BLOK ZA HRVATSKU - BLOK",
+            "AGRAMERI - NEZAVISNA LISTA"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X",
+            "XI"
+          ],
+          "mandati_varijanti": 11,
+          "match": "exact",
+          "naziv": "MOST",
+          "party_id": 390,
+          "slug": "most",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 11,
+          "match": "exact",
+          "naziv": "HRVATSKI SUVERENISTI",
+          "party_id": 366,
+          "slug": "hrvatski-suverenisti",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 11,
+          "match": "exact",
+          "naziv": "HRVATSKA KONZERVATIVNA STRANKA - HKS",
+          "party_id": 350,
+          "slug": "hrvatska-konzervativna-stranka-602722",
+          "status": "PRESTANAK",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati_varijanti": 11,
+          "match": "exact",
+          "naziv": "NEZAVISNA LISTA MLADIH - NLM",
+          "party_id": 296,
+          "slug": "nezavisna-lista-mladih",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 169988,
+      "izborne_jedinice": [
+        {
+          "jedinica": "I",
+          "mandati": 1
+        },
+        {
+          "jedinica": "II",
+          "mandati": 1
+        },
+        {
+          "jedinica": "III",
+          "mandati": 0
+        },
+        {
+          "jedinica": "IV",
+          "mandati": 1
+        },
+        {
+          "jedinica": "V",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VI",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VII",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VIII",
+          "mandati": 1
+        },
+        {
+          "jedinica": "IX",
+          "mandati": 2
+        },
+        {
+          "jedinica": "X",
+          "mandati": 2
+        },
+        {
+          "jedinica": "XI",
+          "mandati": 0
+        }
+      ],
+      "list_id": "most-hrvatski-suverenisti-hks-nlm",
+      "mandati": 11,
+      "naziv": "MOST, HRVATSKI SUVERENISTI, HKS, NLM",
+      "nositelj": {
+        "naziv": "MOST",
+        "party_id": 390,
+        "slug": "most"
+      },
+      "varijante": [
+        {
+          "glasova": 167304,
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X"
+          ],
+          "mandati": 11,
+          "naziv": "MOST, HRVATSKI SUVERENISTI, HKS, NLM",
+          "stranke": [
+            "MOST",
+            "HRVATSKI SUVERENISTI",
+            "HRVATSKA KONZERVATIVNA STRANKA - HKS",
+            "NEZAVISNA LISTA MLADIH - NLM"
+          ]
+        },
+        {
+          "glasova": 2684,
+          "jedinice": [
+            "XI"
+          ],
+          "mandati": 0,
+          "naziv": "MOST",
+          "stranke": [
+            "MOST"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X",
+            "XI"
+          ],
+          "mandati_varijanti": 10,
+          "match": "exact",
+          "naziv": "MOŽEMO! - POLITIČKA PLATFORMA",
+          "party_id": 261,
+          "slug": "mozemo-politicka-platforma",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "mandati_varijanti": 3,
+          "match": "exact",
+          "naziv": "HOĆEMO PRAVEDNO",
+          "party_id": 362,
+          "slug": "hocemo-pravedno",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "X"
+          ],
+          "mandati_varijanti": 0,
+          "match": "exact",
+          "naziv": "SRĐ JE GRAD",
+          "party_id": 301,
+          "slug": "srd-je-grad",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 193051,
+      "izborne_jedinice": [
+        {
+          "jedinica": "I",
+          "mandati": 3
+        },
+        {
+          "jedinica": "II",
+          "mandati": 1
+        },
+        {
+          "jedinica": "III",
+          "mandati": 1
+        },
+        {
+          "jedinica": "IV",
+          "mandati": 0
+        },
+        {
+          "jedinica": "V",
+          "mandati": 0
+        },
+        {
+          "jedinica": "VI",
+          "mandati": 3
+        },
+        {
+          "jedinica": "VII",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VIII",
+          "mandati": 1
+        },
+        {
+          "jedinica": "IX",
+          "mandati": 0
+        },
+        {
+          "jedinica": "X",
+          "mandati": 0
+        },
+        {
+          "jedinica": "XI",
+          "mandati": 0
+        }
+      ],
+      "list_id": "mozemo-politicka-platforma",
+      "mandati": 10,
+      "naziv": "MOŽEMO! - POLITIČKA PLATFORMA",
+      "nositelj": {
+        "naziv": "MOŽEMO! - POLITIČKA PLATFORMA",
+        "party_id": 261,
+        "slug": "mozemo-politicka-platforma"
+      },
+      "varijante": [
+        {
+          "glasova": 119991,
+          "jedinice": [
+            "I",
+            "VI",
+            "VIII",
+            "IX",
+            "XI"
+          ],
+          "mandati": 7,
+          "naziv": "MOŽEMO! - POLITIČKA PLATFORMA",
+          "stranke": [
+            "MOŽEMO! - POLITIČKA PLATFORMA"
+          ]
+        },
+        {
+          "glasova": 61653,
+          "jedinice": [
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VII"
+          ],
+          "mandati": 3,
+          "naziv": "MOŽEMO! - POLITIČKA PLATFORMA, HOĆEMO PRAVEDNO",
+          "stranke": [
+            "MOŽEMO! - POLITIČKA PLATFORMA",
+            "HOĆEMO PRAVEDNO"
+          ]
+        },
+        {
+          "glasova": 11407,
+          "jedinice": [
+            "X"
+          ],
+          "mandati": 0,
+          "naziv": "MOŽEMO! - POLITIČKA PLATFORMA, SRĐ JE GRAD",
+          "stranke": [
+            "MOŽEMO! - POLITIČKA PLATFORMA",
+            "SRĐ JE GRAD"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "ISTARSKI DEMOKRATSKI SABOR - IDS",
+          "party_id": 177,
+          "slug": "istarski-demokratski-sabor",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "PRIMORSKO GORANSKI SAVEZ - PGS",
+          "party_id": 14,
+          "slug": "primorsko-goranski-savez",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "UNIJA KVARNERA - UNIJA",
+          "party_id": 340,
+          "slug": "unija-kvarnera",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "ISTARSKA STRANKA UMIROVLJENIKA - PARTITO ISTRIANO DEI PENSIONATI - ISU - PIP",
+          "party_id": 221,
+          "slug": "istarska-stranka-umirovljenika-partito-istriano-dei-pensionati",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "SOCIJALDEMOKRATI",
+          "party_id": 364,
+          "slug": "socijaldemokrati",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "NARODNA STRANKA - REFORMISTI - REFORMISTI",
+          "party_id": 341,
+          "slug": "narodna-stranka-reformisti",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "DEMOKRATI",
+          "party_id": 253,
+          "slug": "demokrati",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "HRVATSKI LABURISTI - STRANKA RADA - LABURISTI",
+          "party_id": 95,
+          "slug": "hrvatski-laburisti-stranka-rada",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 32728,
+      "izborne_jedinice": [
+        {
+          "jedinica": "VIII",
+          "mandati": 2
+        }
+      ],
+      "list_id": "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti",
+      "mandati": 2,
+      "naziv": "IDS, PGS, UNIJA, ISU - PIP, SOCIJALDEMOKRATI, REFORMISTI, DEMOKRATI, LABURISTI",
+      "nositelj": {
+        "naziv": "ISTARSKI DEMOKRATSKI SABOR - IDS",
+        "party_id": 177,
+        "slug": "istarski-demokratski-sabor"
+      },
+      "varijante": [
+        {
+          "glasova": 32728,
+          "jedinice": [
+            "VIII"
+          ],
+          "mandati": 2,
+          "naziv": "IDS, PGS, UNIJA, ISU - PIP, SOCIJALDEMOKRATI, REFORMISTI, DEMOKRATI, LABURISTI",
+          "stranke": [
+            "ISTARSKI DEMOKRATSKI SABOR - IDS",
+            "PRIMORSKO GORANSKI SAVEZ - PGS",
+            "UNIJA KVARNERA - UNIJA",
+            "ISTARSKA STRANKA UMIROVLJENIKA - PARTITO ISTRIANO DEI PENSIONATI - ISU - PIP",
+            "SOCIJALDEMOKRATI",
+            "NARODNA STRANKA - REFORMISTI - REFORMISTI",
+            "DEMOKRATI",
+            "HRVATSKI LABURISTI - STRANKA RADA - LABURISTI"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "III"
+          ],
+          "mandati_varijanti": 2,
+          "match": "exact",
+          "naziv": "NEZAVISNA PLATFORMA SJEVERA - NPS",
+          "party_id": 375,
+          "slug": "nezavisna-platforma-sjevera",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 25830,
+      "izborne_jedinice": [
+        {
+          "jedinica": "III",
+          "mandati": 2
+        }
+      ],
+      "list_id": "nps",
+      "mandati": 2,
+      "naziv": "NPS",
+      "nositelj": {
+        "naziv": "NEZAVISNA PLATFORMA SJEVERA - NPS",
+        "party_id": 375,
+        "slug": "nezavisna-platforma-sjevera"
+      },
+      "varijante": [
+        {
+          "glasova": 25830,
+          "jedinice": [
+            "III"
+          ],
+          "mandati": 2,
+          "naziv": "NPS",
+          "stranke": [
+            "NEZAVISNA PLATFORMA SJEVERA - NPS"
+          ]
+        }
+      ]
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X",
+            "XI"
+          ],
+          "mandati_varijanti": 1,
+          "match": "exact",
+          "naziv": "FOKUS",
+          "party_id": 279,
+          "slug": "fokus",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        },
+        {
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X",
+            "XI"
+          ],
+          "mandati_varijanti": 1,
+          "match": "exact",
+          "naziv": "REPUBLIKA",
+          "party_id": 431,
+          "slug": "republika",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 47715,
+      "izborne_jedinice": [
+        {
+          "jedinica": "I",
+          "mandati": 0
+        },
+        {
+          "jedinica": "II",
+          "mandati": 0
+        },
+        {
+          "jedinica": "III",
+          "mandati": 0
+        },
+        {
+          "jedinica": "IV",
+          "mandati": 0
+        },
+        {
+          "jedinica": "V",
+          "mandati": 0
+        },
+        {
+          "jedinica": "VI",
+          "mandati": 1
+        },
+        {
+          "jedinica": "VII",
+          "mandati": 0
+        },
+        {
+          "jedinica": "VIII",
+          "mandati": 0
+        },
+        {
+          "jedinica": "IX",
+          "mandati": 0
+        },
+        {
+          "jedinica": "X",
+          "mandati": 0
+        },
+        {
+          "jedinica": "XI",
+          "mandati": 0
+        }
+      ],
+      "list_id": "fokus-republika",
+      "mandati": 1,
+      "naziv": "FOKUS, REPUBLIKA",
+      "nositelj": {
+        "naziv": "FOKUS",
+        "party_id": 279,
+        "slug": "fokus"
+      },
+      "varijante": [
+        {
+          "glasova": 47715,
+          "jedinice": [
+            "I",
+            "II",
+            "III",
+            "IV",
+            "V",
+            "VI",
+            "VII",
+            "VIII",
+            "IX",
+            "X",
+            "XI"
+          ],
+          "mandati": 1,
+          "naziv": "FOKUS, REPUBLIKA",
+          "stranke": [
+            "FOKUS",
+            "REPUBLIKA"
+          ]
+        }
+      ]
+    }
+  ],
+  "mandati": {
+    "liste": 143,
+    "liste_rh_razina": 143,
+    "manjine": 8,
+    "ukupno": 151
+  },
+  "manjine": [
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "XII"
+          ],
+          "mandati_varijanti": 3,
+          "match": "exact",
+          "naziv": "SAMOSTALNA DEMOKRATSKA SRPSKA STRANKA - SDSS",
+          "party_id": 13,
+          "slug": "samostalna-demokratska-srpska-stranka",
+          "status": "AKTIVAN",
+          "vrsta": "stranka"
+        }
+      ],
+      "glasova": 32846,
+      "kandidati": [
+        {
+          "glasova": 11660,
+          "ime": "MILORAD PUPOVAC"
+        },
+        {
+          "glasova": 10842,
+          "ime": "ANJA ŠIMPRAGA"
+        },
+        {
+          "glasova": 10344,
+          "ime": "DRAGANA JECKOV"
+        }
+      ],
+      "mandati": 3,
+      "manjina": "srpska",
+      "manjine_id": "manjina-13-sdss",
+      "vrsta_izbora": "13"
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "XII"
+          ],
+          "mandati_varijanti": 1,
+          "match": "none",
+          "naziv": "DEMOKRATSKA ZAJEDNICA MAĐARA HRVATSKE - DZMH - HORVÁTORSZÁGI MAGYAROK DEMOKRATIKUS KÖZÖSSÉGE - HMDK",
+          "party_id": null,
+          "slug": null,
+          "status": null,
+          "vrsta": "izvan-kataloga"
+        }
+      ],
+      "glasova": 2804,
+      "kandidati": [
+        {
+          "glasova": 2804,
+          "ime": "RÓBERT JANKOVICS"
+        }
+      ],
+      "mandati": 1,
+      "manjina": "mađarska",
+      "manjine_id": "manjina-23-dzmh",
+      "vrsta_izbora": "23"
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "XII"
+          ],
+          "mandati_varijanti": 1,
+          "match": "none",
+          "naziv": "FURIO RADIN  - KANDIDAT GRUPE BIRAČA",
+          "party_id": null,
+          "slug": null,
+          "status": null,
+          "vrsta": "grupa-biraca"
+        }
+      ],
+      "glasova": 971,
+      "kandidati": [
+        {
+          "glasova": 971,
+          "ime": "FURIO RADIN"
+        }
+      ],
+      "mandati": 1,
+      "manjina": "talijanska",
+      "manjine_id": "manjina-33-furio-radin",
+      "vrsta_izbora": "33"
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "XII"
+          ],
+          "mandati_varijanti": 1,
+          "match": "none",
+          "naziv": "VLADIMIR BILEK  - KANDIDAT GRUPE BIRAČA",
+          "party_id": null,
+          "slug": null,
+          "status": null,
+          "vrsta": "grupa-biraca"
+        }
+      ],
+      "glasova": 1764,
+      "kandidati": [
+        {
+          "glasova": 1764,
+          "ime": "VLADIMIR BILEK"
+        }
+      ],
+      "mandati": 1,
+      "manjina": "češka i slovačka",
+      "manjine_id": "manjina-43-vladimir-bilek",
+      "vrsta_izbora": "43"
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "XII"
+          ],
+          "mandati_varijanti": 1,
+          "match": "none",
+          "naziv": "SAVEZ ROMA U REPUBLICI HRVATSKOJ \"KALI SARA\" - SRRH \"KALI SARA\"",
+          "party_id": null,
+          "slug": null,
+          "status": null,
+          "vrsta": "izvan-kataloga"
+        }
+      ],
+      "glasova": 3017,
+      "kandidati": [
+        {
+          "glasova": 3017,
+          "ime": "VELJKO KAJTAZI"
+        }
+      ],
+      "mandati": 1,
+      "manjina": "austrijska, bugarska, njemačka, poljska, romska, rumunjska, rusinska, ruska, turska, ukrajinska, vlaška i židovska",
+      "manjine_id": "manjina-53-srrh-kali-sara",
+      "vrsta_izbora": "53"
+    },
+    {
+      "clanice": [
+        {
+          "jedinice": [
+            "XII"
+          ],
+          "mandati_varijanti": 1,
+          "match": "none",
+          "naziv": "BOŠNJACI ZAJEDNO! - NACIONALNA KOORDINACIJA BOŠNJAKA U REPUBLICI HRVATSKOJ - BOŠNJACI ZAJEDNO!",
+          "party_id": null,
+          "slug": null,
+          "status": null,
+          "vrsta": "izvan-kataloga"
+        }
+      ],
+      "glasova": 3357,
+      "kandidati": [
+        {
+          "glasova": 3357,
+          "ime": "ARMIN HODŽIĆ"
+        }
+      ],
+      "mandati": 1,
+      "manjina": "albanska, bošnjačka, crnogorska, makedonska i slovenska",
+      "manjine_id": "manjina-63-bosnjaci-zajedno",
+      "vrsta_izbora": "63"
+    }
+  ],
+  "nezavisni_zastupnici": {
+    "broj": 12,
+    "zastupnici": [
+      {
+        "ime": "Armin Hodžić",
+        "izabran_na": "lista Bošnjaci zajedno! - Nacionalna koordinacija Bošnjaka u Republici Hrvatskoj",
+        "klub": "Klub zastupnika Hrvatske seljačke stranke, Hrvatske  narodne stranke i nezavisnih zastupnika"
+      },
+      {
+        "ime": "Boris Piližota",
+        "izabran_na": "lista Socijaldemokratske partije Hrvatske, Centra, Hrvatske seljačke stranke, \"Dalije Orešković i ljudi s imenom i prezimenom\", Narodne stranke - Reformista i Građansko-liberalnog saveza",
+        "klub": "Zastupnici izvan klubova političkih stranaka"
+      },
+      {
+        "ime": "Branko Kolarić",
+        "izabran_na": "lista Socijaldemokratske partije Hrvatske, Centra, Hrvatske seljačke stranke, \"Dalije Orešković i ljudi s imenom i prezimenom\", Narodne stranke - Reformista i Građansko-liberalnog saveza",
+        "klub": "Zastupnici izvan klubova političkih stranaka"
+      },
+      {
+        "ime": "Josip Jurčević",
+        "izabran_na": "lista Domovinskog pokreta, Prava i pravde, Demokratskog HSS-a, Zelene liste i Agramera - nezavisne liste",
+        "klub": "Zastupnici izvan klubova političkih stranaka"
+      },
+      {
+        "ime": "Marijana Petir",
+        "izabran_na": "lista Hrvatske demokratske zajednice, Hrvatske socijalno-liberalne stranke, Hrvatske demokršćanske stranke, Hrvatske narodne stranke - liberalnih demokrata i Hrvatske stranke umirovljenika",
+        "klub": "Klub zastupnika Hrvatske demokratske zajednice"
+      },
+      {
+        "ime": "Marin Corva",
+        "izabran_na": "kandidat grupe birača",
+        "klub": "Klub zastupnika Istarskog demokratskog sabora (IDS), Primorsko-goranskog saveza (PGS), Unije Kvarnera (UNIJA) i Istarske stranke umirovljenika - Partito Istriano dei pensionati (ISU - PIP)"
+      },
+      {
+        "ime": "Predrag Mišić",
+        "izabran_na": "lista Domovinskog pokreta i Prava i pravde",
+        "klub": "Klub zastupnika Domovinskog pokreta"
+      },
+      {
+        "ime": "Robert Jankovics",
+        "izabran_na": "kandidat Demokratske zajednice Mađara Hrvatske",
+        "klub": "Zastupnici izvan klubova političkih stranaka"
+      },
+      {
+        "ime": "Tomislav Zadro",
+        "izabran_na": "lista Hrvatske demokratske zajednice, Hrvatske socijalno-liberalne stranke, Hrvatske demokršćanske stranke, Hrvatske narodne stranke - liberalnih demokrata i Hrvatske stranke umirovljenika",
+        "klub": "Klub zastupnika Hrvatske demokratske zajednice"
+      },
+      {
+        "ime": "Veljko Kajtazi",
+        "izabran_na": "kandidat Saveza Roma u Republici Hrvatskoj „Kali Sara“",
+        "klub": "Zastupnici izvan klubova političkih stranaka"
+      },
+      {
+        "ime": "Vesna Vučemilović",
+        "izabran_na": "lista Mosta, Hrvatskih suverenista, Hrvatske konzervativne stranke i Nezavisne liste mladih",
+        "klub": "Klub zastupnika Nezavisni i HSU"
+      },
+      {
+        "ime": "Vladimir Bilek",
+        "izabran_na": "kandidat grupe birača",
+        "klub": "Klub zastupnika Hrvatske socijalno-liberalne stranke i nezavisnog zastupnika Vladimira Bileka"
+      }
+    ]
+  },
+  "stranke": [
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "AGRAMERI - NEZAVISNA LISTA",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 299,
+      "short_name": null,
+      "slug": "agrameri-nezavisna-lista",
+      "status": "PRESTANAK",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "BLOK ZA HRVATSKU",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 277,
+      "short_name": "BLOK",
+      "slug": "blok-za-hrvatsku",
+      "status": "AKTIVAN",
+      "website": "http://blokzahrvatsku.hr"
+    },
+    {
+      "broj_zastupnika": 2,
+      "canonical_name": "CENTAR",
+      "izvan_lista": false,
+      "list_ids": [
+        "sdp-centar-hss-do-i-sip-reformisti-glas"
+      ],
+      "party_id": 304,
+      "short_name": null,
+      "slug": "centar",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "\"DALIJA OREŠKOVIĆ I LJUDI S IMENOM I PREZIMENOM\"",
+      "izvan_lista": false,
+      "list_ids": [
+        "sdp-centar-hss-do-i-sip-reformisti-glas"
+      ],
+      "party_id": 410,
+      "short_name": "\"DO i SIP\"",
+      "slug": "dalija-oreskovic-i-ljudi-s-imenom-i-prezimenom",
+      "status": "AKTIVAN",
+      "website": "https://dalijaoreskovic.hr/"
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "DARIO ZUROVEC - NEZAVISNA LISTA",
+      "izvan_lista": true,
+      "list_ids": [],
+      "party_id": 398,
+      "short_name": "DARIO ZUROVEC - NL",
+      "slug": "dario-zurovec-nezavisna-lista",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "DEMOKRATI",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 253,
+      "short_name": null,
+      "slug": "demokrati",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "DEMOKRATSKI HSS",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 254,
+      "short_name": "DHSS",
+      "slug": "demokratski-hss",
+      "status": "AKTIVAN",
+      "website": "https://demokratskihss.org/"
+    },
+    {
+      "broj_zastupnika": 3,
+      "canonical_name": "DOM I NACIONALNO OKUPLJANJE",
+      "izvan_lista": true,
+      "list_ids": [],
+      "party_id": 394,
+      "short_name": "DOMINO",
+      "slug": "dom-i-nacionalno-okupljanje",
+      "status": "AKTIVAN",
+      "website": "https://www.strankadomino.hr"
+    },
+    {
+      "broj_zastupnika": 7,
+      "canonical_name": "DOMOVINSKI POKRET",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 258,
+      "short_name": "DP",
+      "slug": "domovinski-pokret",
+      "status": "AKTIVAN",
+      "website": "https://domovinskipokret.hr/"
+    },
+    {
+      "broj_zastupnika": 2,
+      "canonical_name": "DRITO",
+      "izvan_lista": true,
+      "list_ids": [],
+      "party_id": 434,
+      "short_name": null,
+      "slug": "drito",
+      "status": "AKTIVAN",
+      "website": "https://www.edusinfo.hr/aktualno/u-sredistu/selak-raspudic-predstavila-novo-ime-i-deklaraciju-stranke-drito-68326"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "FOKUS",
+      "izvan_lista": false,
+      "list_ids": [
+        "fokus-republika"
+      ],
+      "party_id": 279,
+      "short_name": null,
+      "slug": "fokus",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "GRAĐANSKO-LIBERALNI SAVEZ",
+      "izvan_lista": false,
+      "list_ids": [
+        "sdp-centar-hss-do-i-sip-reformisti-glas"
+      ],
+      "party_id": 358,
+      "short_name": "GLAS",
+      "slug": "gradansko-liberalni-savez",
+      "status": "AKTIVAN",
+      "website": "https://glas.com.hr/"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "HOĆEMO PRAVEDNO",
+      "izvan_lista": false,
+      "list_ids": [
+        "mozemo-politicka-platforma"
+      ],
+      "party_id": 362,
+      "short_name": "HOĆEMO",
+      "slug": "hocemo-pravedno",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 55,
+      "canonical_name": "HRVATSKA DEMOKRATSKA ZAJEDNICA",
+      "izvan_lista": false,
+      "list_ids": [
+        "hdz-hsls-hds-hns-hsu"
+      ],
+      "party_id": 182,
+      "short_name": "HDZ",
+      "slug": "hrvatska-demokratska-zajednica",
+      "status": "AKTIVAN",
+      "website": "https://www.hdz.hr"
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "HRVATSKA DEMOKRŠĆANSKA STRANKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "hdz-hsls-hds-hns-hsu"
+      ],
+      "party_id": 348,
+      "short_name": "HDS",
+      "slug": "hrvatska-demokrscanska-stranka",
+      "status": "AKTIVAN",
+      "website": "https://hrvatskidemokrscani.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "HRVATSKA KONZERVATIVNA STRANKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "most-hrvatski-suverenisti-hks-nlm"
+      ],
+      "party_id": 350,
+      "short_name": "HKS",
+      "slug": "hrvatska-konzervativna-stranka-602722",
+      "status": "PRESTANAK",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "HRVATSKA NARODNA STRANKA - LIBERALNI DEMOKRATI",
+      "izvan_lista": false,
+      "list_ids": [
+        "hdz-hsls-hds-hns-hsu"
+      ],
+      "party_id": 246,
+      "short_name": "HNS",
+      "slug": "hrvatska-narodna-stranka-liberalni-demokrati",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "HRVATSKA SELJAČKA STRANKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "sdp-centar-hss-do-i-sip-reformisti-glas"
+      ],
+      "party_id": 181,
+      "short_name": "HSS",
+      "slug": "hrvatska-seljacka-stranka",
+      "status": "AKTIVAN",
+      "website": "https://hss.hr"
+    },
+    {
+      "broj_zastupnika": 2,
+      "canonical_name": "HRVATSKA SOCIJALNO - LIBERALNA STRANKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "hdz-hsls-hds-hns-hsu"
+      ],
+      "party_id": 197,
+      "short_name": "HSLS",
+      "slug": "hrvatska-socijalno-liberalna-stranka",
+      "status": "AKTIVAN",
+      "website": "https://hsls.hr/web/amp"
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "HRVATSKA STRANKA UMIROVLJENIKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "hdz-hsls-hds-hns-hsu"
+      ],
+      "party_id": 97,
+      "short_name": "HSU",
+      "slug": "hrvatska-stranka-umirovljenika",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "HRVATSKI LABURISTI - STRANKA RADA",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 95,
+      "short_name": "LABURISTI",
+      "slug": "hrvatski-laburisti-stranka-rada",
+      "status": "AKTIVAN",
+      "website": "https://www.iusinfo.hr"
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "HRVATSKI SUVERENISTI",
+      "izvan_lista": false,
+      "list_ids": [
+        "most-hrvatski-suverenisti-hks-nlm"
+      ],
+      "party_id": 366,
+      "short_name": null,
+      "slug": "hrvatski-suverenisti",
+      "status": "AKTIVAN",
+      "website": "https://suverenisti.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "ISTARSKA STRANKA UMIROVLJENIKA - PARTITO ISTRIANO DEI PENSIONATI",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 221,
+      "short_name": "ISU - PIP",
+      "slug": "istarska-stranka-umirovljenika-partito-istriano-dei-pensionati",
+      "status": "AKTIVAN",
+      "website": "https://www.isu-pip.org/"
+    },
+    {
+      "broj_zastupnika": 2,
+      "canonical_name": "ISTARSKI DEMOKRATSKI SABOR",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 177,
+      "short_name": "IDS",
+      "slug": "istarski-demokratski-sabor",
+      "status": "AKTIVAN",
+      "website": "https://ids-ddi.com/"
+    },
+    {
+      "broj_zastupnika": 7,
+      "canonical_name": "MOST",
+      "izvan_lista": false,
+      "list_ids": [
+        "most-hrvatski-suverenisti-hks-nlm"
+      ],
+      "party_id": 390,
+      "short_name": null,
+      "slug": "most",
+      "status": "AKTIVAN",
+      "website": "https://most-hrvatska.hr"
+    },
+    {
+      "broj_zastupnika": 10,
+      "canonical_name": "Možemo! - politička platforma",
+      "izvan_lista": false,
+      "list_ids": [
+        "mozemo-politicka-platforma"
+      ],
+      "party_id": 261,
+      "short_name": "Možemo!",
+      "slug": "mozemo-politicka-platforma",
+      "status": "AKTIVAN",
+      "website": "https://mozemo.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "NARODNA STRANKA - REFORMISTI",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti",
+        "sdp-centar-hss-do-i-sip-reformisti-glas"
+      ],
+      "party_id": 341,
+      "short_name": "REFORMISTI",
+      "slug": "narodna-stranka-reformisti",
+      "status": "AKTIVAN",
+      "website": "https://www.reformisti.hr/index.php"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "NEZAVISNA LISTA MLADIH",
+      "izvan_lista": false,
+      "list_ids": [
+        "most-hrvatski-suverenisti-hks-nlm"
+      ],
+      "party_id": 296,
+      "short_name": "NLM",
+      "slug": "nezavisna-lista-mladih",
+      "status": "AKTIVAN",
+      "website": "https://nlm.hr"
+    },
+    {
+      "broj_zastupnika": 2,
+      "canonical_name": "NEZAVISNA PLATFORMA SJEVERA",
+      "izvan_lista": false,
+      "list_ids": [
+        "nps"
+      ],
+      "party_id": 375,
+      "short_name": "NPS",
+      "slug": "nezavisna-platforma-sjevera",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 1,
+      "canonical_name": "NEZAVISNI",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 317,
+      "short_name": null,
+      "slug": "nezavisni",
+      "status": "AKTIVAN",
+      "website": "http://nezavisni.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "PRAVO I PRAVDA",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 412,
+      "short_name": null,
+      "slug": "pravo-i-pravda",
+      "status": "AKTIVAN",
+      "website": "https://pravoipravda.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "PRIMORSKO GORANSKI SAVEZ",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 14,
+      "short_name": "PGS",
+      "slug": "primorsko-goranski-savez",
+      "status": "AKTIVAN",
+      "website": "https://pgs.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "REPUBLIKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "fokus-republika"
+      ],
+      "party_id": 431,
+      "short_name": null,
+      "slug": "republika",
+      "status": "AKTIVAN",
+      "website": "https://republika.hr"
+    },
+    {
+      "broj_zastupnika": 3,
+      "canonical_name": "SAMOSTALNA DEMOKRATSKA SRPSKA STRANKA",
+      "izvan_lista": false,
+      "list_ids": [
+        "manjina-13-sdss"
+      ],
+      "party_id": 13,
+      "short_name": "SDSS",
+      "slug": "samostalna-demokratska-srpska-stranka",
+      "status": "AKTIVAN",
+      "website": "https://sdss.hr"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "SOCIJALDEMOKRATI",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 364,
+      "short_name": null,
+      "slug": "socijaldemokrati",
+      "status": "AKTIVAN",
+      "website": null
+    },
+    {
+      "broj_zastupnika": 34,
+      "canonical_name": "SOCIJALDEMOKRATSKA PARTIJA HRVATSKE",
+      "izvan_lista": false,
+      "list_ids": [
+        "sdp-centar-hss-do-i-sip-reformisti-glas"
+      ],
+      "party_id": 149,
+      "short_name": "SDP",
+      "slug": "socijaldemokratska-partija-hrvatske",
+      "status": "AKTIVAN",
+      "website": "https://www.sdp.hr/"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "SRĐ JE GRAD",
+      "izvan_lista": false,
+      "list_ids": [
+        "mozemo-politicka-platforma"
+      ],
+      "party_id": 301,
+      "short_name": "SJG",
+      "slug": "srd-je-grad",
+      "status": "AKTIVAN",
+      "website": "https://www.srdjegrad.hr/"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "UNIJA KVARNERA",
+      "izvan_lista": false,
+      "list_ids": [
+        "ids-pgs-unija-isu-pip-socijaldemokrati-reformisti-demokrati-laburisti"
+      ],
+      "party_id": 340,
+      "short_name": "UNIJA",
+      "slug": "unija-kvarnera",
+      "status": "AKTIVAN",
+      "website": "https://unija.hr/"
+    },
+    {
+      "broj_zastupnika": 0,
+      "canonical_name": "ZELENA LISTA",
+      "izvan_lista": false,
+      "list_ids": [
+        "dp-pravo-i-pravda"
+      ],
+      "party_id": 345,
+      "short_name": null,
+      "slug": "zelena-lista-1000123",
+      "status": "AKTIVAN",
+      "website": null
+    }
+  ],
+  "zastupnici_bez_kataloga": [],
+  "zastupnici_izvan_lista": [
+    {
+      "broj_zastupnika": 3,
+      "kratica": "DOMINO",
+      "match": "exact",
+      "naziv": "Dom i nacionalno okupljanje",
+      "party_id": 394,
+      "slug": "dom-i-nacionalno-okupljanje",
+      "zastupnici": [
+        {
+          "ime": "Damir Biloglav",
+          "izabran_na": "lista Domovinskog pokreta i Prava i pravde",
+          "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti"
+        },
+        {
+          "ime": "Igor Peternel",
+          "izabran_na": "lista Domovinskog pokreta, Prava i pravde, Demokratskog HSS-a, Zelene liste i Agramera - nezavisne liste",
+          "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti"
+        },
+        {
+          "ime": "Krešimir Čabaj",
+          "izabran_na": "lista Domovinskog pokreta, Prava i pravde, nezavisnih, Demokratskog HSS-a i Zelene liste",
+          "klub": "Klub zastupnika Dom i nacionalno okupljanje i Hrvatski suverenisti"
+        }
+      ]
+    },
+    {
+      "broj_zastupnika": 2,
+      "kratica": "Drito",
+      "match": "exact",
+      "naziv": "Drito",
+      "party_id": 434,
+      "slug": "drito",
+      "zastupnici": [
+        {
+          "ime": "Marija Selak Raspudić",
+          "izabran_na": "lista Mosta, Hrvatskih suverenista, Hrvatske konzervativne stranke i Nezavisne liste mladih",
+          "klub": "Klub nezavisnih zastupnika"
+        },
+        {
+          "ime": "Nino Raspudić",
+          "izabran_na": "lista Mosta, Hrvatskih suverenista, Hrvatske konzervativne stranke i Nezavisne liste mladih",
+          "klub": "Klub nezavisnih zastupnika"
+        }
+      ]
+    },
+    {
+      "broj_zastupnika": 1,
+      "kratica": "Dario Zurovec - NL",
+      "match": "exact",
+      "naziv": "Dario Zurovec - Nezavisna lista",
+      "party_id": 398,
+      "slug": "dario-zurovec-nezavisna-lista",
+      "zastupnici": [
+        {
+          "ime": "Dario Zurovec",
+          "izabran_na": "lista Fokusa i Republike",
+          "klub": "Klub nezavisnih zastupnika"
+        }
+      ]
+    }
+  ]
+}
