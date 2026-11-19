@@ -70,3 +70,48 @@ vrijede kao izborni-2024. Revizija: S2 ako ekstrakcija pokaže krive dokumente.
 **103. Program nositelja koalicije ne pripisuje se partnerima** dok korisnik ne odluči na vratima 1
 (dokument ima `list_id`, pa je to jedna izmjena). Zajednički su samo SDP – Rijeke pravde i
 Fokus – Republika. Revizija: vrata 1.
+
+## S2 (2026-11-19)
+
+**200. Vrata 1 (korisnik, 2026-11-19):** u opsegu su svih 8 lista te SDSS, DOMiNO, Drito i Zurovec.
+Stranke bez programa ostaju u matrici sa ćelijama `null` i oznakom „nema programa”. Izborni program 2024.
+je primarni, trajni je dopuna, a izvor se označava po ćeliji. Program nositelja ne pripisuje se partnerima
+(odluka 103 ostaje). Bez OCR-a. Odobreni su svi nesigurni izvori, uz oznaku `nesiguran` i razlog.
+Zamjenjuje odluke 2 i 101 (opseg) te potvrđuje 103. Revizija: nikad (odluka korisnika).
+
+**201. Ekstrakcija:** pypdf s `visitor_text`.
+- **Naslovi:** naslov je redak s fontom ≥ 1,15 × tijela i ≥ tijelo + 1 pt, ili samostalan redak u cijelosti
+  podebljan. Blokovi dulji od 20 riječi ili s interpunkcijom na kraju nisu naslovi.
+- **Fallback:** kad dokument nema naslova po fontu, naslovi su kratki retci u velikim slovima ili numerirani.
+- **Uklanja se:** ponavljani rubni retci (više od 50 % stranica), brojevi stranica i stranice sadržaja.
+- **Normalizacija:** NFC, a znakovi oznaka iz privatnog područja Unicodea mapiraju se u obične oznake.
+- **De-hyphenation:** samo kad spojeni oblik ne postoji drugdje u dokumentu kao oblik s crticom.
+- **HTML:** jedna logička stranica, isti izbor glavnog sadržaja kao `programi.html_main()`.
+Izlaz: `<doc_id>.pages.json` (gitignored). Idempotentno po sha256 i `EXTRACTOR_VERSION`.
+Revizija: ako S5 ili S6 nađu citate koji se zbog ekstrakcije ne mogu doslovno pronaći.
+
+**202. Chunking:**
+- **Granice:** chunk ne prelazi granicu sekcije, a naziv sekcije je put naslova „A › B” (najviše 3 razine).
+- **Male sekcije:** sekcija ispod 80 riječi spaja se sa sljedećom („A / B”).
+- **Veličina:** n = ceil(riječi / 550) chunkova po sekciji, dobiveno je prosječno 280 riječi.
+- **Preklop:** 40–80 riječi iz cijelih rečenica.
+- **ID:** `prog_<doc_id>_<NNNN>`, s `chunk_index` od 1.
+Format je oblik ETL-a u domovina-rag (`id`, `text`, `metadata.type = "program_section"`). Dokument s
+više stranaka daje jedan chunk s `party_ids`, ne kopiju po stranci. Revizija: S3, ako recall@5 traži
+drukčiju veličinu.
+
+**203. `chunks.jsonl` je uvijek u `data/raw/kompas/` (gitignored), jer sadrži pune tekstove**
+(odluka 8), bez obzira na veličinu (2,7 MB). U git ide samo `data/kompas/chunks_stats.json`, koji ima
+brojke bez teksta. Revizija: nikad.
+
+**204. `nesiguran` je eksplicitan popis `NESIGURNI` u `src/kompas/chunk.py`** (doc_id → razlog).
+Popis ima 9 dokumenata: svih 7 s Waybacka, Suverenisti 24, „Ozbiljno za Hrvatsku” i SDP s
+grabancijas.com. Test drži popis usklađenim s `izvor == "wayback"`. Revizija: kad se izvor zamijeni
+izvornim URL-om stranke.
+
+**205. Poznate mane ostaju za kasnije:**
+- **IDS (`5111e0ffaee2`):** dvojezičan je, pa je oko polovice chunkova talijanski duplikat.
+- **DP (`7c54f0dd36a8`):** prijelom je 2-up, pa ponegdje stupci isprepliću rečenice.
+- **Nezavisni i NLM:** imaju tanku HTML stranicu s ostacima izbornika.
+Ne blokiraju S3. Revizija: IDS-ov filtar jezika u S3 ako duplikati kvare recall, a DP-ov prijelom u S5
+ako citati ne prolaze doslovnu provjeru.
