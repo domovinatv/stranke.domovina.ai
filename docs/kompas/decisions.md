@@ -56,3 +56,17 @@ objave. Revizija: vrata 2 i 4.
 `25_fetch_glasanja.py`.** Liste trebaju vlastitu skriptu prije dohvata programa, a postojeća
 konvencija `scripts/NN_` ima jedinstvene brojeve. Testabilna logika ide u `src/kompas/`, skripte
 su tanki CLI. Revizija: nikad (samo naprijed).
+
+**101. Lista = sve varijante istog nositelja.** Varijante po izbornim jedinicama (SDP s/bez
+Reformista, DP s raznim partnerima, Možemo s/bez Hoćemo pravedno) jedna su lista s `list_id` iz
+glavne varijante; članica nosi jedinice i mandate svojih varijanti. Liste drugih nositelja bez
+mandata ostaju izvan opsega. Revizija: vrata 1.
+
+**102. Što je program, odlučuje pregled, ne skripta.** Prihvaćeni URL-ovi i razlozi su u
+`data/kompas/programi_izvori.json` (u gitu); `23_fetch_programi.py` ih dohvaća, kešira i mjeri,
+a `--discover` samo predlaže kandidate. Medijski sažeci i programi za lokalne izbore 2025. ne
+vrijede kao izborni-2024. Revizija: S2 ako ekstrakcija pokaže krive dokumente.
+
+**103. Program nositelja koalicije ne pripisuje se partnerima** dok korisnik ne odluči na vratima 1
+(dokument ima `list_id`, pa je to jedna izmjena). Zajednički su samo SDP – Rijeke pravde i
+Fokus – Republika. Revizija: vrata 1.

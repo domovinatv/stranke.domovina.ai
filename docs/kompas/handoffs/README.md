@@ -25,7 +25,7 @@ prompt iz clipboarda; to znači prvi red u „Stanje lanca” koji nije gotov.
 | Sesija | Paket | Stanje | Commit | Testovi | Napomena |
 | --- | --- | --- | --- | --- | --- |
 | S0 | Plan | gotovo | 2849e71 | build zelen, lint ne radi (nema eslinta) | plan, odluke 1–12 |
-| S1 | check.sh, liste 2024, programi, pokrivenost | otvoreno | | | |
+| S1 | check.sh, liste 2024, programi, pokrivenost | gotovo | 557cd47 | pytest 53 passed, 0 skipped; build, lint OK | 39 stranaka, 32 s programom; vrata 1 otvorena |
 | S2 | Ekstrakcija i chunking | otvoreno | | | iza vrata 1 |
 | S3 | domovina-rag: program_chunks, search_programs, eval | otvoreno | | | paralelno sa S4 |
 | S4 | Metodologija, tvrdnje, shema matrice | otvoreno | | | vrata 2 nakon |
