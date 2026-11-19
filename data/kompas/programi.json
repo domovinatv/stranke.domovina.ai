@@ -1,0 +1,1457 @@
+{
+  "dokumenti": [
+    {
+      "datum": "2024-03-31",
+      "doc_id": "492e03c11720",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "manjine_id": "manjina-13-sdss",
+      "napomena": "Objavljeno 31. 3. 2024. (article:published_time); snimka u Waybacku 15. 4. 2024. istog sadržaja. Tekst ne navodi godinu; datira ga datum objave.",
+      "naslov": "Izborni program SDSS-a",
+      "party_ids": [
+        13
+      ],
+      "preuzeto": "2026-11-19T18:46:01+00:00",
+      "rijeci": 3084,
+      "sha256": "492e03c11720b440df8945d834d16b2dd9b7b028188bbfb13b48211652f869a8",
+      "stranica": null,
+      "url": "https://sdss.hr/izborni-program-sdss-a/",
+      "vrsta": "izborni-2024"
+    },
+    {
+      "datum": null,
+      "doc_id": "108476029df2",
+      "format": "pdf",
+      "izvor": "wayback",
+      "list_id": null,
+      "napomena": "Program saveza Naša Hrvatska (Socijaldemokrati, Hrvatski laburisti i partneri) predstavljen 2. 4. 2024. (socijaldemokrati.hr, snimka 17. 9. 2024.; laburisti.com 5. 4. 2024.). Savez nije osvojio mandat; u VIII. jedinici obje su stranke bile na listi IDS-a, za koju zajednički program nije pronađen. Snimka PDF-a 16. 4. 2024.",
+      "naslov": "Ozbiljno za Hrvatsku – izborne natuknice 2024. (savez Naša Hrvatska)",
+      "party_ids": [
+        95,
+        364
+      ],
+      "preuzeto": "2026-11-19T19:17:19+00:00",
+      "rijeci": 8116,
+      "sha256": "108476029df21c2ccd0bf937fa1d5a795957a95b1a03838279820cea97437fa2",
+      "stranica": 25,
+      "url": "https://socijaldemokrati.hr/wp-content/uploads/2024/04/PROGRAM-OZBILJNO-ZA-HRVATSKU-2024.pdf",
+      "vrsta": "izborni-2024",
+      "wayback_url": "https://web.archive.org/web/20240416040215/https://socijaldemokrati.hr/wp-content/uploads/2024/04/PROGRAM-OZBILJNO-ZA-HRVATSKU-2024.pdf"
+    },
+    {
+      "datum": null,
+      "doc_id": "7c54f0dd36a8",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": "dp-pravo-i-pravda",
+      "napomena": "Objavljen u ožujku 2024. kao program za parlamentarne izbore (politickikompas.com/programi); dp.hr ga i danas nudi kao 'Politički program' pa vrijedi i kao trajni. Ne imenuje partnere s liste.",
+      "naslov": "Politički program Domovinskog pokreta",
+      "party_ids": [
+        258
+      ],
+      "preuzeto": "2026-11-19T18:43:38+00:00",
+      "rijeci": 40789,
+      "sha256": "7c54f0dd36a8e6a9749a1c47b513de534114fd05f6fbd436e1061fc56e123d63",
+      "stranica": 40,
+      "ujedno_trajni": true,
+      "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf",
+      "vrsta": "izborni-2024"
+    },
+    {
+      "datum": null,
+      "doc_id": "a23c4dd56c14",
+      "format": "pdf",
+      "izvor": "wayback",
+      "list_id": "hdz-hsls-hds-hns-hsu",
+      "napomena": "Kampanjska domena zasveizazove.hr više ne postoji; snimka 17. 4. 2024. Predstavljen 29. 3. 2024. (hdz.hr/article/4406). Ne imenuje partnere s liste.",
+      "naslov": "Program za izbore za Hrvatski sabor 2024 („Za sve izazove”)",
+      "party_ids": [
+        182
+      ],
+      "preuzeto": "2026-11-19T18:45:34+00:00",
+      "rijeci": 19301,
+      "sha256": "a23c4dd56c147423be4865d7f4983521322fbcc1e229406ab8f9222fd450f461",
+      "stranica": 69,
+      "url": "https://zasveizazove.hr/wp-content/uploads/2024/04/HDZ-2024-Program-stranke-v2.6.pdf",
+      "vrsta": "izborni-2024",
+      "wayback_url": "https://web.archive.org/web/20240417125138/https://zasveizazove.hr/wp-content/uploads/2024/04/HDZ-2024-Program-stranke-v2.6.pdf"
+    },
+    {
+      "datum": "2024-04-06",
+      "doc_id": "5570c574133e",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": "hdz-hsls-hds-hns-hsu",
+      "napomena": "Predstavljene 6. 4. 2024. (hsls.hr/web/predstavljanje-programskih-politika-hsls-a-2024-2028-2/). Godine su samo na naslovnici (slika), pa provjera teksta ne nalazi 2024.",
+      "naslov": "Programske politike HSLS-a 2024.–2028.",
+      "party_ids": [
+        197
+      ],
+      "preuzeto": "2026-11-19T18:49:20+00:00",
+      "rijeci": 1368,
+      "sha256": "5570c574133eb85c74aa6b9c74981986c575838f6fb47b2aa1e63a9eede5f8c2",
+      "stranica": 20,
+      "url": "https://hsls.hr/web/wp-content/uploads/2024/04/HSLS-program-2024_240406_123546.pdf",
+      "vrsta": "izborni-2024"
+    },
+    {
+      "datum": "2023-06-03",
+      "doc_id": "1c4d71d9b198",
+      "format": "html",
+      "izvor": "web",
+      "list_id": "most-hrvatski-suverenisti-hks-nlm",
+      "napomena": "Objava stranke sa sažetkom programskih smjernica „Suverenisti 24” za izbornu 2024.; cjeloviti dokument nije pronađen. Slab izvor (444 riječi).",
+      "naslov": "Predstavljen program „Suverenisti 24”",
+      "party_ids": [
+        366
+      ],
+      "preuzeto": "2026-11-19T18:57:20+00:00",
+      "rijeci": 444,
+      "sha256": "1c4d71d9b19879f6341733680beb237aa8928f08e80b70c9e6290252fc3bc1b3",
+      "stranica": null,
+      "url": "https://suverenisti.hr/2023/06/03/predstavljen-program-suverenisti-24/",
+      "vrsta": "izborni-2024"
+    },
+    {
+      "datum": null,
+      "doc_id": "51c9d6ca0b5b",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": "most-hrvatski-suverenisti-hks-nlm",
+      "napomena": "S kampanjske stranice natvojojstrani.com ('PUNI PROGRAM', snimka 20. 4. 2024.). Ne imenuje partnere s liste.",
+      "naslov": "Program Mosta (izborni program 2024.)",
+      "party_ids": [
+        390
+      ],
+      "preuzeto": "2026-11-19T18:45:26+00:00",
+      "rijeci": 26416,
+      "sha256": "51c9d6ca0b5bdbc420d4d9a3ef2ed15442af0b6f98f021a885481ebddf352522",
+      "stranica": 61,
+      "url": "https://assets-global.website-files.com/65ed9eafd9252c7b9c174f55/65fa0e2d2c6b098ca48cb69b_Most_izborni_program.pdf",
+      "vrsta": "izborni-2024"
+    },
+    {
+      "datum": null,
+      "doc_id": "b8ed429ac83d",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": "mozemo-politicka-platforma",
+      "napomena": "Jedini program u izborniku mozemo.hr ('Program 2024.'), pa vrijedi i kao trajni. Ne imenuje Hoćemo pravedno ni Srđ je grad.",
+      "naslov": "Program Možemo! za nacionalne izbore 2024.",
+      "party_ids": [
+        261
+      ],
+      "preuzeto": "2026-11-19T18:45:27+00:00",
+      "rijeci": 38620,
+      "sha256": "b8ed429ac83d6a0d73e6feadd5cfb08cb803cd67bf8e14d028225cb2da4a70b8",
+      "stranica": 96,
+      "ujedno_trajni": true,
+      "url": "https://mozemo.hr/wp-content/uploads/2024/04/A4-program-2024b.pdf",
+      "vrsta": "izborni-2024"
+    },
+    {
+      "datum": null,
+      "doc_id": "d25cfec55e11",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": "fokus-republika",
+      "napomena": "Objavila Republika (republika.hr/clanak/prestavljen-program-koalicije-fokus-republika/); dokument je naslovljen kao program koalicije.",
+      "naslov": "Program koalicije Fokus – Republika | Parlamentarni izbori 2024.",
+      "party_ids": [
+        279,
+        431
+      ],
+      "preuzeto": "2026-11-19T18:47:17+00:00",
+      "rijeci": 2549,
+      "sha256": "d25cfec55e114944171858ab673feee53181a324032a4ecaa9ebde1cf0b95264",
+      "stranica": 14,
+      "url": "https://republika.hr/wp-content/uploads/2024/04/program-formatirano.pdf",
+      "vrsta": "koalicijski"
+    },
+    {
+      "datum": null,
+      "doc_id": "74d4a5515dd4",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": "sdp-centar-hss-do-i-sip-reformisti-glas",
+      "napomena": "Dokument nosi oznake SDP-a i ne imenuje partnere, ali ga je koalicija Rijeke pravde predstavila kao zajednički program 6. 4. 2024. (priopćenje reformisti.hr/index.php/press/item/1219; program.sdp.hr: 'Odaberite koaliciju'). Izvorni SDP-ov URL PDF-a nije pronađen ni u Waybacku; ovo je preslika na portalu grabancijas.com (izvorni dokument, ne sažetak).",
+      "naslov": "Izborni program 2024. (koalicija Rijeke pravde)",
+      "party_ids": [
+        149,
+        181,
+        304,
+        341,
+        358,
+        410
+      ],
+      "preuzeto": "2026-11-19T18:58:05+00:00",
+      "rijeci": 22699,
+      "sha256": "74d4a5515dd41935ed109959886e6315d3365169f06e3347e5646d39d4687eb8",
+      "stranica": 207,
+      "url": "https://grabancijas.com/wp-content/uploads/2024/04/izborni-program-sdp-2024.pdf",
+      "vrsta": "koalicijski"
+    },
+    {
+      "datum": "1997-03-05",
+      "doc_id": "1869ed311faf",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "napomena": "Donesen na Osnivačkoj skupštini 5. 3. 1997.",
+      "naslov": "Program Samostalne demokratske srpske stranke",
+      "party_ids": [
+        13
+      ],
+      "preuzeto": "2026-11-19T19:09:37+00:00",
+      "rijeci": 5144,
+      "sha256": "1869ed311faf49a768f194e3f03fc35f4897c73badbaf7acd53ef0f324c80f10",
+      "stranica": 10,
+      "url": "https://sdss.hr/wp-content/uploads/2022/11/ProgramSDSS-a.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2017-03-21",
+      "doc_id": "b185b4e53c79",
+      "format": "html",
+      "izvor": "wayback",
+      "list_id": null,
+      "napomena": "laburisti.com je iza Cloudflare provjere (403 za httpx); snimka iz Waybacka 14. 4. 2024. Ostali programski dokumenti na stranici su iz 2010.–2014.",
+      "naslov": "Osnivačka deklaracija Hrvatskih laburista – Stranke rada",
+      "party_ids": [
+        95
+      ],
+      "preuzeto": "2026-11-19T18:49:12+00:00",
+      "rijeci": 1574,
+      "sha256": "b185b4e53c790c6101278994709f673855b89cb029bb5c49b0f2c3321cfe6b91",
+      "stranica": null,
+      "url": "https://laburisti.com/dokumenti/o-laburistima/deklaracija/",
+      "vrsta": "trajni",
+      "wayback_url": "https://web.archive.org/web/20240414141146/https://laburisti.com/dokumenti/o-laburistima/deklaracija/"
+    },
+    {
+      "datum": "2020-03-06",
+      "doc_id": "b821b9c9d8d2",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program stranke – Hrvatska stranka umirovljenika",
+      "party_ids": [
+        97
+      ],
+      "preuzeto": "2026-11-19T18:45:58+00:00",
+      "rijeci": 3888,
+      "sha256": "b821b9c9d8d24e6c3664ddc15d5ea68b9ecbd8c6a7cc1a8d8011eab8172f736f",
+      "stranica": null,
+      "url": "https://hsu.hr/program-stranke/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "5111e0ffaee2",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Programska deklaracija Istarskog demokratskog sabora",
+      "party_ids": [
+        177
+      ],
+      "preuzeto": "2026-11-19T19:02:44+00:00",
+      "rijeci": 8845,
+      "sha256": "5111e0ffaee2050706eb6e83a26c52191f2c4bb50a7144cd5527bdc5e4b7045e",
+      "stranica": 21,
+      "url": "https://ids-ddi.com/wp-content/uploads/2024/03/programska_deklaracija.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2022-06-11",
+      "doc_id": "c180c7161d85",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "napomena": "Donio Opći sabor HDZ-a 11. 6. 2022. (hdz.hr/category/121/program).",
+      "naslov": "Program HDZ-a „HDZ i Hrvatska u četvrtom desetljeću samostalnosti”",
+      "party_ids": [
+        182
+      ],
+      "preuzeto": "2026-11-19T18:49:54+00:00",
+      "rijeci": 6846,
+      "sha256": "c180c7161d853629c9ea07914fca418dc2dfb4779a2fd2f7d738e02023763706",
+      "stranica": 11,
+      "url": "https://www.hdz.hr/userfiles/pdf/PROGRAM_HDZ-a_%E2%80%9EHDZ_I_HRVATSKA_U_%C4%8CETVRTOM_DESETLJE%C4%86U_SAMOSTALNOSTI%E2%80%9C.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "ad0c92e32f2a",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Temeljna načela Hrvatske socijalno liberalne stranke",
+      "party_ids": [
+        197
+      ],
+      "preuzeto": "2026-11-19T18:57:00+00:00",
+      "rijeci": 699,
+      "sha256": "ad0c92e32f2a9f477cccc5ebc77828bc97a8684786f8427d8759f15f91158a2c",
+      "stranica": 3,
+      "url": "https://hsls.hr/web/wp-content/uploads/2023/06/Temeljna-nacela-Hrvatske-socijalno-liberalne-stranke.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2012-03-21",
+      "doc_id": "ced2c39025a0",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Programska deklaracija Istarske stranke umirovljenika",
+      "party_ids": [
+        221
+      ],
+      "preuzeto": "2026-11-19T18:56:18+00:00",
+      "rijeci": 2776,
+      "sha256": "ced2c39025a00ee9391393d981b95f2e1e8b0a362919205b82f005c9ccb6e824",
+      "stranica": null,
+      "url": "https://www.isu-pip.org/programska-deklaracija",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "a613e3bd5a79",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program HNS-a",
+      "party_ids": [
+        246
+      ],
+      "preuzeto": "2026-11-19T18:45:55+00:00",
+      "rijeci": 22640,
+      "sha256": "a613e3bd5a794e4e8e7ec716377a1fd9ddda82a6a764474b9ce13703696895ff",
+      "stranica": null,
+      "url": "https://hns.hr/program/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2018-10-17",
+      "doc_id": "e41f4b2b6916",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Programska osnova: Hrvatska 2030.",
+      "party_ids": [
+        253
+      ],
+      "preuzeto": "2026-11-19T18:41:00+00:00",
+      "rijeci": 2563,
+      "sha256": "e41f4b2b691643e875f58fa73cebef1d4b34196cc148f589b0bb4866dfa0891f",
+      "stranica": null,
+      "url": "https://demokrati.hr/programska-osnova-hrvatska-2030/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2019-11-09",
+      "doc_id": "dcf0c5c4cba4",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "napomena": "Usvojen na Osnivačkom saboru 9. 11. 2019.; isti tekst je na blokzahrvatsku.hr/program/.",
+      "naslov": "Program političke stranke Blok za Hrvatsku",
+      "party_ids": [
+        277
+      ],
+      "preuzeto": "2026-11-19T18:50:09+00:00",
+      "rijeci": 4920,
+      "sha256": "dcf0c5c4cba486695613c81faaf35661930f68efc56254f164bd1e53d80e04df",
+      "stranica": 9,
+      "url": "https://blokzahrvatsku.hr/wp-content/uploads/2020/01/BLOK-20200101-program.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "85b6274fc7ee",
+      "format": "html",
+      "izvor": "wayback",
+      "list_id": null,
+      "napomena": "Snimka 8. 4. 2024.; stara domena fokusnabitno.com danas vraća 404, a fokusnabitno.hr/program/ je bez teksta (JS).",
+      "naslov": "Fokus – Program stranke",
+      "party_ids": [
+        279
+      ],
+      "preuzeto": "2026-11-19T18:46:29+00:00",
+      "rijeci": 834,
+      "sha256": "85b6274fc7eefd9635a8d8043dcedfd7ed9b3bd694f7610ecbae500f36d113cf",
+      "stranica": null,
+      "url": "https://fokusnabitno.com/program-stranke/",
+      "vrsta": "trajni",
+      "wayback_url": "https://web.archive.org/web/20240408115259/https://fokusnabitno.com/program-stranke/"
+    },
+    {
+      "datum": null,
+      "doc_id": "3abc0adbc608",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "napomena": "Kratko (oko 150 riječi). 'Plan i program' na nlm.hr/dokumenti/ su godišnji financijski planovi.",
+      "naslov": "Temeljna načela Nezavisne liste mladih",
+      "party_ids": [
+        296
+      ],
+      "preuzeto": "2026-11-19T18:45:58+00:00",
+      "rijeci": 151,
+      "sha256": "3abc0adbc608d67c23d3a119c2f6d952ef4573a4ed020db1691b06bcb7429e00",
+      "stranica": null,
+      "url": "https://nlm.hr/temeljna-nacela/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "4eecdc283be0",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program – Srđ je Grad",
+      "party_ids": [
+        301
+      ],
+      "preuzeto": "2026-11-19T19:09:20+00:00",
+      "rijeci": 1390,
+      "sha256": "4eecdc283be03b1c155a53429bd7579c123b059ca338be99802fb50def5ac8c5",
+      "stranica": null,
+      "url": "http://www.srdjegrad.hr/program/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2023-08-03",
+      "doc_id": "9d33d8b579c5",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program Centra",
+      "party_ids": [
+        304
+      ],
+      "preuzeto": "2026-11-19T18:46:01+00:00",
+      "rijeci": 5360,
+      "sha256": "9d33d8b579c5e5725fedb70c3caa22d10b37088a16f079c1ae476c25b99795ae",
+      "stranica": null,
+      "url": "https://www.strankacentar.hr/stranka-centar/program/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "42b55b04e20a",
+      "format": "html",
+      "izvor": "wayback",
+      "list_id": null,
+      "napomena": "Snimka 17. 4. 2024.; deklaracija je bila na naslovnici. Domena danas služi nepovezanom spam-sadržaju.",
+      "naslov": "Deklaracija Nezavisnih (naslovnica nezavisni.hr)",
+      "party_ids": [
+        317
+      ],
+      "preuzeto": "2026-11-19T18:48:38+00:00",
+      "rijeci": 814,
+      "sha256": "42b55b04e20a52d47d77ffdb41b20e1a17143c68cefbea581fbaf75c47432b55",
+      "stranica": null,
+      "url": "http://nezavisni.hr/",
+      "vrsta": "trajni",
+      "wayback_url": "https://web.archive.org/web/20240417195819/http://nezavisni.hr/"
+    },
+    {
+      "datum": null,
+      "doc_id": "7a760992225f",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program Unije Kvarnera",
+      "party_ids": [
+        340
+      ],
+      "preuzeto": "2026-11-19T19:09:52+00:00",
+      "rijeci": 8257,
+      "sha256": "7a760992225f94234cc22dfd7f10089c7360332ef6cf2287d2cff48f1ca8c642",
+      "stranica": null,
+      "url": "https://unija.hr/index.php/hr/program",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2017-04-22",
+      "doc_id": "59ca1be10e69",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program Narodne stranke – Reformisti",
+      "party_ids": [
+        341
+      ],
+      "preuzeto": "2026-11-19T18:45:59+00:00",
+      "rijeci": 2116,
+      "sha256": "59ca1be10e69d89128c1f3b567f28c5ed4117c4a47b7bd6982537806dfea90ec",
+      "stranica": null,
+      "url": "https://reformisti.hr/index.php/stranka/program-stranke",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2025-01-02",
+      "doc_id": "9be7dd415944",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program GLAS-a",
+      "party_ids": [
+        358
+      ],
+      "preuzeto": "2026-11-19T18:45:00+00:00",
+      "rijeci": 1105,
+      "sha256": "9be7dd41594443dfc8e0c2377e508791c855abc5360745d8ceaa4b67e0da1963",
+      "stranica": null,
+      "url": "https://glas.com.hr/program/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "5ecdb2c2e827",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program stranke Hoćemo pravedno",
+      "party_ids": [
+        362
+      ],
+      "preuzeto": "2026-11-19T18:45:29+00:00",
+      "rijeci": 216,
+      "sha256": "5ecdb2c2e827f0011900dfc9dc0fae636be9fa80b4f88d07ab1f406f6089fadf",
+      "stranica": null,
+      "url": "https://hocemopravedno.hr/program",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2022-10-06",
+      "doc_id": "1336763429f2",
+      "format": "html",
+      "izvor": "wayback",
+      "list_id": null,
+      "napomena": "Domena socijaldemokrati.hr više ne postoji; snimka 20. 4. 2024.",
+      "naslov": "Programske smjernice – Socijaldemokrati",
+      "party_ids": [
+        364
+      ],
+      "preuzeto": "2026-11-19T18:46:23+00:00",
+      "rijeci": 8110,
+      "sha256": "1336763429f2120f56b5139bc36091074fa68751740561c01e0a82063216f6a5",
+      "stranica": null,
+      "url": "https://socijaldemokrati.hr/programske-smjernice/",
+      "vrsta": "trajni",
+      "wayback_url": "https://web.archive.org/web/20240420123201/https://socijaldemokrati.hr/programske-smjernice/"
+    },
+    {
+      "datum": null,
+      "doc_id": "7002e5b9360c",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Politička deklaracija Mosta (2026.)",
+      "party_ids": [
+        390
+      ],
+      "preuzeto": "2026-11-19T19:02:58+00:00",
+      "rijeci": 3131,
+      "sha256": "7002e5b9360cd22e4270e52c711709a08356836a9c1f0569524bc424a0297bdf",
+      "stranica": 24,
+      "url": "https://most-hrvatska.hr/wp-content/uploads/2026/03/Deklaracija-Most_2026.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "cd6897a070a3",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "napomena": "Objavljen u studenom 2024. (stranka osnovana nakon izbora; zastupnici izabrani na listi DP-a).",
+      "naslov": "Politički program stranke Dom i nacionalno okupljanje",
+      "party_ids": [
+        394
+      ],
+      "preuzeto": "2026-11-19T18:50:09+00:00",
+      "rijeci": 8463,
+      "sha256": "cd6897a070a32e80aed40451ad3b0e0ee64f683aaa57d421c9ea62322c4ea0f4",
+      "stranica": 29,
+      "url": "https://strankadomino.hr/wp-content/uploads/2024/11/POLITICKI-PROGRAM-STRANKE-DOM-I-NACIONALNO-OKUPLJANJE.pdf",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2025-02-16",
+      "doc_id": "64cd7cfed088",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program – Dario Zurovec – Nezavisna lista",
+      "party_ids": [
+        398
+      ],
+      "preuzeto": "2026-11-19T18:48:21+00:00",
+      "rijeci": 470,
+      "sha256": "64cd7cfed088dab80f66b20b9393b0c5c55797e9cd79c9decac1ae99e5e3633f",
+      "stranica": null,
+      "url": "https://dariozurovec.hr/program/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": "2025-01-20",
+      "doc_id": "02b01cceb53e",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Program i ciljevi",
+      "party_ids": [
+        410
+      ],
+      "preuzeto": "2026-11-19T19:10:08+00:00",
+      "rijeci": 576,
+      "sha256": "02b01cceb53e0d7f43ffde084ed380d2e692a7c638e0d460cf4b25fd32169f87",
+      "stranica": null,
+      "url": "https://dosip.hr/program-i-ciljevi/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "7f59aaaebcae",
+      "format": "html",
+      "izvor": "wayback",
+      "list_id": null,
+      "napomena": "Stanje 20. 4. 2024. (Wayback). Današnja stranica ('Program za novu europsku stvarnost', 20 potstranica) je novija verzija i nije preuzeta.",
+      "naslov": "Program – Pravo i Pravda (programske smjernice)",
+      "party_ids": [
+        412
+      ],
+      "preuzeto": "2026-11-19T18:46:21+00:00",
+      "rijeci": 579,
+      "sha256": "7f59aaaebcaee24faf401b8183ac7da071aaf47d93aae3dc3fac07da064b73d7",
+      "stranica": null,
+      "url": "https://pravoipravda.hr/program/",
+      "vrsta": "trajni",
+      "wayback_url": "https://web.archive.org/web/20240420134450/https://pravoipravda.hr/program/"
+    },
+    {
+      "datum": "2023-11-28",
+      "doc_id": "f10089813942",
+      "format": "html",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Naš program – Stranka Republika",
+      "party_ids": [
+        431
+      ],
+      "preuzeto": "2026-11-19T19:07:49+00:00",
+      "rijeci": 2129,
+      "sha256": "f10089813942ef37414ca9bfe74b87372e95680eba80e97c3545d7a2e853fe28",
+      "stranica": null,
+      "url": "https://republika.hr/nas-program/",
+      "vrsta": "trajni"
+    },
+    {
+      "datum": null,
+      "doc_id": "fa6d5b4963a9",
+      "format": "pdf",
+      "izvor": "web",
+      "list_id": null,
+      "naslov": "Deklaracija stranke Drito",
+      "party_ids": [
+        434
+      ],
+      "preuzeto": "2026-11-19T18:49:20+00:00",
+      "rijeci": 2623,
+      "sha256": "fa6d5b4963a9f9bcb4891425a58d5f959ca9c9508bab67ad82d933551a070c46",
+      "stranica": 16,
+      "url": "https://www.drito.hr/storage/upload/gen_ebooks/DRITO-brosura-A5-141048.pdf",
+      "vrsta": "trajni"
+    }
+  ],
+  "generated_at": "2026-11-19T19:17:22+00:00",
+  "manjine": [
+    {
+      "doc_ids": [
+        "492e03c11720"
+      ],
+      "manjine_id": "manjina-13-sdss",
+      "naziv": "SAMOSTALNA DEMOKRATSKA SRPSKA STRANKA - SDSS",
+      "party_id": 13,
+      "provjereno": [],
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [],
+      "manjine_id": "manjina-23-dzmh",
+      "naziv": "DEMOKRATSKA ZAJEDNICA MAĐARA HRVATSKE - DZMH - HORVÁTORSZÁGI MAGYAROK DEMOKRATIKUS KÖZÖSSÉGE - HMDK",
+      "party_id": null,
+      "provjereno": [
+        {
+          "napomena": "samo DIP-ove liste i izvješća; program nije pronađen",
+          "pretraga": "firecrawl search: \"Demokratska zajednica Mađara Hrvatske\" program izbori 2024"
+        }
+      ],
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [],
+      "manjine_id": "manjina-33-furio-radin",
+      "napomena": "kandidat grupe birača, nije stranka; program nije tražen",
+      "naziv": "FURIO RADIN  - KANDIDAT GRUPE BIRAČA",
+      "party_id": null,
+      "provjereno": [],
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [],
+      "manjine_id": "manjina-43-vladimir-bilek",
+      "napomena": "kandidat grupe birača, nije stranka; program nije tražen",
+      "naziv": "VLADIMIR BILEK  - KANDIDAT GRUPE BIRAČA",
+      "party_id": null,
+      "provjereno": [],
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [],
+      "manjine_id": "manjina-53-srrh-kali-sara",
+      "naziv": "SAVEZ ROMA U REPUBLICI HRVATSKOJ \"KALI SARA\" - SRRH \"KALI SARA\"",
+      "party_id": null,
+      "provjereno": [
+        {
+          "napomena": "samo vijesti o kandidatu; program nije pronađen",
+          "pretraga": "firecrawl search: \"Kali Sara\" Savez Roma program izbori 2024 Veljko Kajtazi"
+        }
+      ],
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [],
+      "manjine_id": "manjina-63-bosnjaci-zajedno",
+      "naziv": "BOŠNJACI ZAJEDNO! - NACIONALNA KOORDINACIJA BOŠNJAKA U REPUBLICI HRVATSKOJ - BOŠNJACI ZAJEDNO!",
+      "party_id": null,
+      "provjereno": [
+        {
+          "napomena": "samo vijesti (grabancijas.com, radiosarajevo.ba); program nije pronađen",
+          "pretraga": "firecrawl search: \"Bošnjaci zajedno\" program izbori 2024 Armin Hodžić"
+        }
+      ],
+      "status": "nije-pronađen"
+    }
+  ],
+  "stranke": [
+    {
+      "doc_ids": [],
+      "party_id": 299,
+      "provjereno": [
+        {
+          "napomena": "nema web-stranice; samo X/Facebook profil i vijesti",
+          "pretraga": "firecrawl search: \"Agrameri\" nezavisna lista program"
+        },
+        {
+          "napomena": "registarski podaci; stranka je u statusu PRESTANAK",
+          "url": "https://akti.hr/stranka/agrameri-nezavisna-lista"
+        },
+        {
+          "napomena": "DP-ov program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf"
+        }
+      ],
+      "slug": "agrameri-nezavisna-lista",
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [
+        "dcf0c5c4cba4"
+      ],
+      "party_id": 277,
+      "provjereno": [
+        {
+          "napomena": "trajni program po temama; zaseban izborni program 2024. nije pronađen (Blok je bio na listi DP-a)",
+          "url": "https://blokzahrvatsku.hr/program/"
+        },
+        {
+          "napomena": "DP-ov program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf"
+        }
+      ],
+      "slug": "blok-za-hrvatsku",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "74d4a5515dd4",
+        "9d33d8b579c5"
+      ],
+      "party_id": 304,
+      "provjereno": [],
+      "slug": "centar",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "74d4a5515dd4",
+        "02b01cceb53e"
+      ],
+      "party_id": 410,
+      "provjereno": [],
+      "slug": "dalija-oreskovic-i-ljudi-s-imenom-i-prezimenom",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "64cd7cfed088"
+      ],
+      "party_id": 398,
+      "provjereno": [],
+      "slug": "dario-zurovec-nezavisna-lista",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "e41f4b2b6916"
+      ],
+      "party_id": 253,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://demokrati.hr/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=demokrati.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: DEMOKRATI izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: DEMOKRATI program stranke"
+        },
+        {
+          "napomena": "zajednički program s Laburistima za izbore 2020., nije 2024; nije prihvaćen",
+          "url": "https://demokrati.hr/wp-content/uploads/2020/06/Program_Demokrati_i_Hrvatski_laburisti_Odgovorno_za_Hrvatsku_2020.pdf"
+        },
+        {
+          "napomena": "IDS-ova lista u VIII. jedinici: program je predstavljen samo u vijesti, dokument nije objavljen",
+          "url": "https://ids-ddi.com/2024/04/02/ids-predstavio-izborni-program-borit-cemo-se-za-daljnju-decentralizaciju-i-jos-bolji-zivot-u-istri/"
+        }
+      ],
+      "slug": "demokrati",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [],
+      "party_id": 254,
+      "provjereno": [
+        {
+          "napomena": "naslovnica s kratkim opisom (200 riječi), bez programa",
+          "url": "https://demokratskihss.org/"
+        },
+        {
+          "napomena": "samo statut",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/2023_05_52_888.html"
+        },
+        {
+          "napomena": "DP-ov program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf"
+        }
+      ],
+      "slug": "demokratski-hss",
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [
+        "cd6897a070a3"
+      ],
+      "party_id": 394,
+      "provjereno": [],
+      "slug": "dom-i-nacionalno-okupljanje",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "7c54f0dd36a8"
+      ],
+      "party_id": 258,
+      "provjereno": [],
+      "slug": "domovinski-pokret",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "fa6d5b4963a9"
+      ],
+      "party_id": 434,
+      "provjereno": [],
+      "slug": "drito",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "d25cfec55e11",
+        "85b6274fc7ee"
+      ],
+      "party_id": 279,
+      "provjereno": [],
+      "slug": "fokus",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "74d4a5515dd4",
+        "9be7dd415944"
+      ],
+      "party_id": 358,
+      "provjereno": [],
+      "slug": "gradansko-liberalni-savez",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "5ecdb2c2e827"
+      ],
+      "party_id": 362,
+      "provjereno": [
+        {
+          "napomena": "izborni program Možemo! ne imenuje Hoćemo pravedno; nije pripisan",
+          "url": "https://mozemo.hr/wp-content/uploads/2024/04/A4-program-2024b.pdf"
+        }
+      ],
+      "slug": "hocemo-pravedno",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "a23c4dd56c14",
+        "c180c7161d85"
+      ],
+      "party_id": 182,
+      "provjereno": [],
+      "slug": "hrvatska-demokratska-zajednica",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [],
+      "party_id": 348,
+      "provjereno": [
+        {
+          "napomena": "samo popis vodstva",
+          "url": "https://hrvatskidemokrscani.hr/o-nama/"
+        },
+        {
+          "napomena": "samo statut",
+          "url": "https://narodne-novine.nn.hr/clanci/sluzbeni/full/2022_05_55_750.html"
+        },
+        {
+          "napomena": "ništa",
+          "pretraga": "firecrawl search: \"Hrvatska demokršćanska stranka\" HDS program načela"
+        },
+        {
+          "napomena": "HDZ-ov izborni program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://zasveizazove.hr/wp-content/uploads/2024/04/HDZ-2024-Program-stranke-v2.6.pdf"
+        }
+      ],
+      "slug": "hrvatska-demokrscanska-stranka",
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [],
+      "party_id": 350,
+      "provjereno": [
+        {
+          "napomena": "samo vijesti i sabor.hr; web-stranica nije pronađena",
+          "pretraga": "firecrawl search: \"Hrvatska konzervativna stranka\" program stranke"
+        },
+        {
+          "napomena": "hks.hr je Hrvatski kinološki savez, ne stranka",
+          "url": "https://hks.hr/"
+        },
+        {
+          "napomena": "Mostov izborni program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://assets-global.website-files.com/65ed9eafd9252c7b9c174f55/65fa0e2d2c6b098ca48cb69b_Most_izborni_program.pdf"
+        }
+      ],
+      "slug": "hrvatska-konzervativna-stranka-602722",
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [
+        "a613e3bd5a79"
+      ],
+      "party_id": 246,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://hns.hr/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=hns.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: HNS izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: HNS program stranke"
+        },
+        {
+          "napomena": "HDZ-ov izborni program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://zasveizazove.hr/wp-content/uploads/2024/04/HDZ-2024-Program-stranke-v2.6.pdf"
+        }
+      ],
+      "slug": "hrvatska-narodna-stranka-liberalni-demokrati",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "74d4a5515dd4"
+      ],
+      "party_id": 181,
+      "provjereno": [
+        {
+          "napomena": "samo statut i pravilnici",
+          "url": "https://hss.hr/dokumenti/"
+        },
+        {
+          "napomena": "statut (čl. 3 navodi načela, ali upućuje na zaseban Program stranke koji nije objavljen); nije prihvaćen kao program",
+          "url": "https://hss.hr/wp-content/uploads/2022/09/STATUT-2021.pdf"
+        },
+        {
+          "napomena": "samo povijesni izvori",
+          "pretraga": "firecrawl search: \"Hrvatska seljačka stranka\" program stranke"
+        }
+      ],
+      "slug": "hrvatska-seljacka-stranka",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "5570c574133e",
+        "ad0c92e32f2a"
+      ],
+      "party_id": 197,
+      "provjereno": [],
+      "slug": "hrvatska-socijalno-liberalna-stranka",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "b821b9c9d8d2"
+      ],
+      "party_id": 97,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://hsu.hr/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=hsu.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: HSU izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: HSU program stranke"
+        },
+        {
+          "napomena": "HDZ-ov izborni program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://zasveizazove.hr/wp-content/uploads/2024/04/HDZ-2024-Program-stranke-v2.6.pdf"
+        }
+      ],
+      "slug": "hrvatska-stranka-umirovljenika",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "108476029df2",
+        "b185b4e53c79"
+      ],
+      "party_id": 95,
+      "provjereno": [],
+      "slug": "hrvatski-laburisti-stranka-rada",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "1c4d71d9b198"
+      ],
+      "party_id": 366,
+      "provjereno": [
+        {
+          "napomena": "samo vodstvo; trajni program nije objavljen (na stranici su statut i ECR deklaracija)",
+          "url": "https://suverenisti.hr/o-nama/"
+        },
+        {
+          "napomena": "ništa",
+          "pretraga": "firecrawl search: \"Suverenisti 24\" programske smjernice pdf"
+        },
+        {
+          "napomena": "Mostov izborni program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://assets-global.website-files.com/65ed9eafd9252c7b9c174f55/65fa0e2d2c6b098ca48cb69b_Most_izborni_program.pdf"
+        }
+      ],
+      "slug": "hrvatski-suverenisti",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "ced2c39025a0"
+      ],
+      "party_id": 221,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://www.isu-pip.org/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=isu-pip.org/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: ISU - PIP izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: ISU - PIP program stranke"
+        },
+        {
+          "napomena": "IDS-ova lista u VIII. jedinici: program je predstavljen samo u vijesti, dokument nije objavljen",
+          "url": "https://ids-ddi.com/2024/04/02/ids-predstavio-izborni-program-borit-cemo-se-za-daljnju-decentralizaciju-i-jos-bolji-zivot-u-istri/"
+        }
+      ],
+      "slug": "istarska-stranka-umirovljenika-partito-istriano-dei-pensionati",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "5111e0ffaee2"
+      ],
+      "party_id": 177,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://ids-ddi.com/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=ids-ddi.com/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: IDS izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: IDS program stranke"
+        },
+        {
+          "napomena": "IDS-ova lista u VIII. jedinici: program je predstavljen samo u vijesti, dokument nije objavljen",
+          "url": "https://ids-ddi.com/2024/04/02/ids-predstavio-izborni-program-borit-cemo-se-za-daljnju-decentralizaciju-i-jos-bolji-zivot-u-istri/"
+        }
+      ],
+      "slug": "istarski-demokratski-sabor",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "51c9d6ca0b5b",
+        "7002e5b9360c"
+      ],
+      "party_id": 390,
+      "provjereno": [],
+      "slug": "most",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "b8ed429ac83d"
+      ],
+      "party_id": 261,
+      "provjereno": [],
+      "slug": "mozemo-politicka-platforma",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "74d4a5515dd4",
+        "59ca1be10e69"
+      ],
+      "party_id": 341,
+      "provjereno": [],
+      "slug": "narodna-stranka-reformisti",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "3abc0adbc608"
+      ],
+      "party_id": 296,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://nlm.hr"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=nlm.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: NLM izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: NLM program stranke"
+        },
+        {
+          "napomena": "Mostov izborni program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://assets-global.website-files.com/65ed9eafd9252c7b9c174f55/65fa0e2d2c6b098ca48cb69b_Most_izborni_program.pdf"
+        }
+      ],
+      "slug": "nezavisna-lista-mladih",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [],
+      "party_id": 375,
+      "provjereno": [
+        {
+          "napomena": "samo vijesti, bez stranice s programom",
+          "url": "https://platformasjever.hr/"
+        },
+        {
+          "napomena": "nijedna snimka programa ni PDF-a",
+          "url": "https://web.archive.org/cdx/search/cdx?url=platformasjever.hr/*&from=2020&to=2026"
+        },
+        {
+          "napomena": "predizborna vijest 2024., nije program",
+          "url": "https://platformasjever.hr/medimurje-i-istra-najvece-snage-hrvatske-vode-listu-broj-9-u-novu-sansu-za-uspjeh-i-rast/"
+        }
+      ],
+      "slug": "nezavisna-platforma-sjevera",
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [
+        "42b55b04e20a"
+      ],
+      "party_id": 317,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "http://nezavisni.hr"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=nezavisni.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: NEZAVISNI izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: NEZAVISNI program stranke"
+        },
+        {
+          "napomena": "DP-ov program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf"
+        }
+      ],
+      "slug": "nezavisni",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "7f59aaaebcae"
+      ],
+      "party_id": 412,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://pravoipravda.hr"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=pravoipravda.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: PRAVO I PRAVDA izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: PRAVO I PRAVDA program stranke"
+        },
+        {
+          "napomena": "DP-ov program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf"
+        },
+        {
+          "napomena": "godišnji program rada (financijski), nije politički program",
+          "url": "https://pravoipravda.hr/wp-content/uploads/2025/09/Program-rada-2024.pdf"
+        }
+      ],
+      "slug": "pravo-i-pravda",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [],
+      "party_id": 14,
+      "provjereno": [
+        {
+          "napomena": "statut, etički kodeks i koalicijski sporazum za 2016.; programa nema",
+          "url": "https://pgs.hr/strateski-dokumenti/"
+        },
+        {
+          "napomena": "riječ predsjednika, nije program",
+          "url": "https://pgs.hr/o-nama/"
+        },
+        {
+          "napomena": "IDS-ova lista u VIII. jedinici: program je predstavljen samo u vijesti, dokument nije objavljen",
+          "url": "https://ids-ddi.com/2024/04/02/ids-predstavio-izborni-program-borit-cemo-se-za-daljnju-decentralizaciju-i-jos-bolji-zivot-u-istri/"
+        }
+      ],
+      "slug": "primorsko-goranski-savez",
+      "status": "nije-pronađen"
+    },
+    {
+      "doc_ids": [
+        "d25cfec55e11",
+        "f10089813942"
+      ],
+      "party_id": 431,
+      "provjereno": [],
+      "slug": "republika",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "1869ed311faf",
+        "492e03c11720"
+      ],
+      "party_id": 13,
+      "provjereno": [],
+      "slug": "samostalna-demokratska-srpska-stranka",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "108476029df2",
+        "1336763429f2"
+      ],
+      "party_id": 364,
+      "provjereno": [],
+      "slug": "socijaldemokrati",
+      "status": "pronađen"
+    },
+    {
+      "doc_ids": [
+        "74d4a5515dd4"
+      ],
+      "party_id": 149,
+      "provjereno": [
+        {
+          "napomena": "naslovnica: nema stranice ni PDF-a trajnog programa",
+          "url": "https://www.sdp.hr/"
+        },
+        {
+          "napomena": "samo dokumenti Prve konvencije SDP-a (30godina.sdp.hr), nije program",
+          "pretraga": "firecrawl search: site:sdp.hr program SDP-a temeljne vrijednosti načela"
+        },
+        {
+          "napomena": "izborni program 2024. ima uvodno poglavlje 'Misija, vizija, vrijednosti i načela stranke', ali nije označen kao ujedno trajni",
+          "url": "https://grabancijas.com/wp-content/uploads/2024/04/izborni-program-sdp-2024.pdf"
+        }
+      ],
+      "slug": "socijaldemokratska-partija-hrvatske",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "4eecdc283be0"
+      ],
+      "party_id": 301,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://www.srdjegrad.hr/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=srdjegrad.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: SJG izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: SJG program stranke"
+        },
+        {
+          "napomena": "medijski prikaz zajedničkih '13 politika' Možemo! i SJG-a za X. jedinicu; dokument nije pronađen, nije prihvaćeno",
+          "url": "https://grabancijas.com/porez-na-ekstra-profit-javni-stanovi-raskidanje-koncesija-13-hrabrih-politika-mozemo-i-sjg-a/"
+        },
+        {
+          "napomena": "izborni program Možemo! ne imenuje Srđ je grad; nije pripisan",
+          "url": "https://mozemo.hr/wp-content/uploads/2024/04/A4-program-2024b.pdf"
+        }
+      ],
+      "slug": "srd-je-grad",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [
+        "7a760992225f"
+      ],
+      "party_id": 340,
+      "provjereno": [
+        {
+          "napomena": "naslovnica i poveznice s riječima program/deklaracija/izborni pregledane",
+          "url": "https://unija.hr/"
+        },
+        {
+          "napomena": "Wayback: PDF-ovi na domeni 2023.–2024.",
+          "url": "https://web.archive.org/cdx/search/cdx?url=unija.hr/*&from=2023&to=2024&filter=mimetype:application/pdf"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: UNIJA izborni program 2024 parlamentarni izbori"
+        },
+        {
+          "napomena": "pregledani rezultati",
+          "pretraga": "firecrawl search: UNIJA program stranke"
+        },
+        {
+          "napomena": "IDS-ova lista u VIII. jedinici: program je predstavljen samo u vijesti, dokument nije objavljen",
+          "url": "https://ids-ddi.com/2024/04/02/ids-predstavio-izborni-program-borit-cemo-se-za-daljnju-decentralizaciju-i-jos-bolji-zivot-u-istri/"
+        }
+      ],
+      "slug": "unija-kvarnera",
+      "status": "djelomično"
+    },
+    {
+      "doc_ids": [],
+      "party_id": 345,
+      "provjereno": [
+        {
+          "napomena": "samo vijesti 2011.–2015. (spajanje s ORaH-om); web-stranica nije pronađena",
+          "pretraga": "firecrawl search: \"Zelena lista\" stranka program Hrvatska"
+        },
+        {
+          "napomena": "DP-ov program ne imenuje partnere s liste; nije pripisan",
+          "url": "https://dp.hr/wp-content/uploads/2024/03/Politicki-pogram-Domovinskog-pokreta.pdf"
+        }
+      ],
+      "slug": "zelena-lista-1000123",
+      "status": "nije-pronađen"
+    }
+  ]
+}
