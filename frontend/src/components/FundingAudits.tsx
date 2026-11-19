@@ -13,11 +13,11 @@ const money = (n: number | null | undefined) => {
   if (n == null) return "–";
   const sign = n < 0 ? "−" : "";
   const a = Math.abs(n);
-  return a >= 1e6 ? `${sign}${NF2.format(a / 1e6)} mil. €` : `${sign}${NF0.format(a)} €`;
+  return a >= 1e6 ? `${sign}${NF2.format(a / 1e6)}\u00a0mil.\u00a0€` : `${sign}${NF0.format(a)}\u00a0€`;
 };
 const signed = (n: number) => (n > 0 ? "+" : "") + money(n);
 const share = (a: number | null, b: number | null) =>
-  a == null || !b ? "" : `${NF0.format((100 * a) / b)} %`;
+  a == null || !b ? "" : `${NF0.format((100 * a) / b)}\u00a0%`;
 
 function avatarParty(p: AuditParty) {
   return { name: p.name, slug: p.slug, short: p.short, independent: false } as Parameters<typeof catalogAvatar>[0];
@@ -64,7 +64,7 @@ export function FundingAudits({
   const negative = audits.parties.filter((p) => (!onlyCurrent || p.current) && (p.years[last]?.balance.equity ?? 0) < 0);
   const pctAbs = (a: number, b: number) => `${NF0.format(Math.abs((100 * (b - a)) / a))}\u00a0%`;
   const grew = (a: number, b: number) => (b >= a ? "porasli su za" : "smanjili su se za");
-  const pct = (a: number, b: number) => `${b - a >= 0 ? "+" : "−"}${NF0.format(Math.abs((100 * (b - a)) / a))} %`;
+  const pct = (a: number, b: number) => `${b - a >= 0 ? "+" : "−"}${NF0.format(Math.abs((100 * (b - a)) / a))}\u00a0%`;
 
   const th = "px-2 py-3 font-semibold text-right whitespace-nowrap";
   const td = "px-2 py-2.5 text-right tabular-nums whitespace-nowrap";

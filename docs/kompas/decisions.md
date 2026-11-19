@@ -49,3 +49,10 @@ petlji i bez Fablea. Broj poziva i trošak procjenjuju se prije S6 (vrata 3). Re
 ravnomjerno po osima (gospodarstvo, društvo/vrijednosti, suverenitet/EU, država i institucije,
 okoliš/energija, regije i demografija), svaka stranka dobiva svoj redak na odgovor prije
 objave. Revizija: vrata 2 i 4.
+
+## S1 (2026-11-19)
+
+**100. Brojevi skripti: `22_liste_2024.py`, `23_fetch_programi.py`, `24_extract_programi.py`,
+`25_fetch_glasanja.py`.** Liste trebaju vlastitu skriptu prije dohvata programa, a postojeća
+konvencija `scripts/NN_` ima jedinstvene brojeve. Testabilna logika ide u `src/kompas/`, skripte
+su tanki CLI. Revizija: nikad (samo naprijed).

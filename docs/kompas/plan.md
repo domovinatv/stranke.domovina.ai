@@ -13,9 +13,9 @@ Smartvote. AI je sučelje i pomoćnik pri pripremi; o rezultatu ne odlučuje.
 ```mermaid
 flowchart LR
     subgraph S["stranke.domovina.ai (ovaj repo, javan)"]
-        L[liste_2024.json] --> F[22_fetch_programi]
+        L[liste_2024.json] --> F[23_fetch_programi]
         F --> R[(data/raw/programi)]
-        R --> X[23_extract_programi]
+        R --> X[24_extract_programi]
         X --> C[chunks.jsonl]
         T[tvrdnje.json] --> M[matrica.json]
         C -->|LLM prijedlog + citat| M

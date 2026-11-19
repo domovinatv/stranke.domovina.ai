@@ -11,11 +11,11 @@ Legenda: `[x]` gotovo · `[ ]` otvoreno · `[~]` u radu · `(!)` traži korisnik
 ## F0 — Temelj i mjerenje pokrivenosti (ništa javno)
 
 - [ ] `scripts/check.sh`: pytest (`tests/`) + `npm run build` + `npm run lint` (eslint dodan u devDependencies), izlaz ≠ 0 na grešku → S1
-- [ ] `data/kompas/liste_2024.json`: sve liste parlamentarnih izbora 2024. s mandatima, članice koalicija mapirane na `party_id` u `stranke.db` → S1
-- [ ] `scripts/22_fetch_programi.py`: za svaku stranku s liste nađe program (izborni 2024. i/ili trajni), sprema u `data/raw/programi/`, metapodaci (URL, datum, vrsta, sha256, stranica) u `data/kompas/programi.json` → S1
+- [ ] `scripts/22_liste_2024.py` → `data/kompas/liste_2024.json`: sve liste parlamentarnih izbora 2024. s mandatima, članice koalicija mapirane na `party_id` u `stranke.db` → S1
+- [ ] `scripts/23_fetch_programi.py`: za svaku stranku s liste nađe program (izborni 2024. i/ili trajni), sprema u `data/raw/programi/`, metapodaci (URL, datum, vrsta, sha256, stranica) u `data/kompas/programi.json` → S1
 - [ ] Izmjerena pokrivenost: koliko lista/stranaka ima program, koliko stranica, PDF/HTML/skeniran → `docs/research/2026-..-pokrivenost-programa.md` → S1
 - [ ] (!) Vrata 1: korisnik potvrđuje opseg (koje liste, koja vrsta programa) → nakon S1
-- [ ] `scripts/23_extract_programi.py`: PDF/HTML → tekst po stranicama, sekcije, chunkovi s `party_id`, `doc_id`, `page`, `section` → `data/kompas/chunks.jsonl` (gitignored ako je velik) → S2
+- [ ] `scripts/24_extract_programi.py`: PDF/HTML → tekst po stranicama, sekcije, chunkovi s `party_id`, `doc_id`, `page`, `section` → `data/kompas/chunks.jsonl` (gitignored ako je velik) → S2
 - [ ] Mjerena kvaliteta ekstrakcije (prazne stranice, OCR potreban, dijakritici) → S2
 - [ ] domovina-rag: CH tablica `program_chunks` (1024-d, bge-m3), ETL iz `chunks.jsonl`, korak u `scripts/sync-cron.sh` → S3
 - [ ] domovina-rag: MCP alat `search_programs(query, party?, limit?)` s vitest testovima, lokalno (bez deploya) → S3

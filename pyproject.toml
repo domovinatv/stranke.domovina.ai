@@ -12,3 +12,14 @@ dependencies = [
     "rapidfuzz>=3.14.5",
     "uvicorn[standard]>=0.47.0",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+# anyio's pytest plugin (via fastapi/httpx) still imports the renamed CallSpec2.
+filterwarnings = ["ignore:_pytest.python.CallSpec2 has been renamed:pytest.PytestRemovedIn10Warning"]
