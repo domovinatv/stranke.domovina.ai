@@ -1,0 +1,457 @@
+{
+  "opis": "Zlatni skup za search_programs (S3): 20 pitanja o stavovima stranaka s ručno označenim chunkovima iz data/raw/kompas/chunks.jsonl. Snippet je doslovni citat (najviše 15 riječi) koji opravdava oznaku i služi za ponovno mapiranje ako se chunk_id promijeni.",
+  "chunks_izvor": "data/raw/kompas/chunks.jsonl (961 chunk, 37 dokumenata, S2)",
+  "oznaceno": "2026-11-19",
+  "pitanja": [
+    {
+      "id": "q01",
+      "question": "Koliko bi umirovljenici dobili više ako HDZ ostane na vlasti?",
+      "party": "HDZ",
+      "party_ids": [
+        182
+      ],
+      "topic": "mirovine",
+      "expected": [
+        {
+          "chunk_id": "prog_a23c4dd56c14_0042",
+          "doc_id": "a23c4dd56c14",
+          "snippet": "Do kraja mandata povećat ćemo mirovine za najmanje 30 %"
+        }
+      ],
+      "note": "0037 opisuje dosadašnja povećanja (prošli mandat), nije obećanje pa nije označen."
+    },
+    {
+      "id": "q02",
+      "question": "Hoće li Domovinski pokret uvesti porez na stanove i kuće koje ljudi posjeduju?",
+      "party": "DP",
+      "party_ids": [
+        258
+      ],
+      "topic": "porezi",
+      "expected": [
+        {
+          "chunk_id": "prog_7c54f0dd36a8_0066",
+          "doc_id": "7c54f0dd36a8",
+          "snippet": "DP se protivi uvođenju poreza na nekretnine."
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "question": "Što Most misli o zapošljavanju radnika iz Azije i drugih dalekih zemalja?",
+      "party": "most",
+      "party_ids": [
+        390
+      ],
+      "topic": "migracije i tržište rada",
+      "expected": [
+        {
+          "chunk_id": "prog_51c9d6ca0b5b_0026",
+          "doc_id": "51c9d6ca0b5b",
+          "snippet": "ponovno uspostavljanje strogih kontrola stvarnih potreba za stranom radnom snagom"
+        },
+        {
+          "chunk_id": "prog_51c9d6ca0b5b_0025",
+          "doc_id": "51c9d6ca0b5b",
+          "snippet": "hrvatsko tržište rada počelo se pojačano popunjavati stranim radnicima"
+        }
+      ],
+      "note": "0025 je dijagnoza (strani radnici zamjenjuju domaće), stav i mjera su u 0026."
+    },
+    {
+      "id": "q04",
+      "question": "Koliko novca Možemo želi uložiti u stanove koje bi gradila ili kupovala država?",
+      "party": "Možemo!",
+      "party_ids": [
+        261
+      ],
+      "topic": "stanovanje",
+      "expected": [
+        {
+          "chunk_id": "prog_b8ed429ac83d_0068",
+          "doc_id": "b8ed429ac83d",
+          "snippet": "U četverogodišnjem razdoblju uložit ćemo 900 milijuna eura u stanovanje"
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "question": "Hoće li SDP-ova koalicija davati novac za svako dijete, bez obzira na primanja obitelji?",
+      "party": "SDP",
+      "party_ids": [
+        149
+      ],
+      "topic": "demografija",
+      "expected": [
+        {
+          "chunk_id": "prog_74d4a5515dd4_0032",
+          "doc_id": "74d4a5515dd4",
+          "snippet": "doplatak za djecu kao potporu mladim obiteljima – u obliku demografske mjere za svako dijete"
+        }
+      ],
+      "note": "Koalicijski dokument Rijeke pravde (party_ids uključuje SDP)."
+    },
+    {
+      "id": "q06",
+      "question": "Što Fokus želi napraviti s porezom koji se plaća na plaću?",
+      "party": "fokus",
+      "party_ids": [
+        279
+      ],
+      "topic": "porezi",
+      "expected": [
+        {
+          "chunk_id": "prog_85b6274fc7ee_0002",
+          "doc_id": "85b6274fc7ee",
+          "snippet": "porez na dohodak već mogao ukinuti"
+        },
+        {
+          "chunk_id": "prog_85b6274fc7ee_0001",
+          "doc_id": "85b6274fc7ee",
+          "snippet": "Kako je u planu i ukidanje poreza na dohodak"
+        },
+        {
+          "chunk_id": "prog_d25cfec55e11_0002",
+          "doc_id": "d25cfec55e11",
+          "snippet": "Smanjiti porez na dohodak (na stope 0% i 10%)."
+        }
+      ],
+      "note": "Trajni program traži ukidanje, koalicijski Fokus – Republika smanjenje na 0 % i 10 %."
+    },
+    {
+      "id": "q07",
+      "question": "Za što se SDSS zalaže kad je riječ o srpskom jeziku i pismu na natpisima i u općinama?",
+      "party": "SDSS",
+      "party_ids": [
+        13
+      ],
+      "topic": "manjine",
+      "expected": [
+        {
+          "chunk_id": "prog_492e03c11720_0006",
+          "doc_id": "492e03c11720",
+          "snippet": "nastaviti zalagati za normalizaciju srpske ćirilice u javnom prostoru"
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "question": "Što HSU traži od države da umirovljenicima nadoknadi ono što su izgubili tijekom devedesetih?",
+      "party": "HSU",
+      "party_ids": [
+        97
+      ],
+      "topic": "mirovine",
+      "expected": [
+        {
+          "chunk_id": "prog_b821b9c9d8d2_0007",
+          "doc_id": "b821b9c9d8d2",
+          "snippet": "da se donese Zakon o obeštećenju umirovljenika"
+        },
+        {
+          "chunk_id": "prog_b821b9c9d8d2_0008",
+          "doc_id": "b821b9c9d8d2",
+          "snippet": "da se riješi pitanje najniže mirovine"
+        }
+      ],
+      "note": "Popis zahtjeva počinje u 0007 i nastavlja se u 0008 (preklop)."
+    },
+    {
+      "id": "q09",
+      "question": "Kako IDS gleda na vojsku i vojne objekte u Istri?",
+      "party": "IDS",
+      "party_ids": [
+        177
+      ],
+      "topic": "obrana",
+      "expected": [
+        {
+          "chunk_id": "prog_5111e0ffaee2_0009",
+          "doc_id": "5111e0ffaee2",
+          "snippet": "Stranka se zalaže za demilitarizaciju Regije jer je najbolja politika - mir."
+        },
+        {
+          "chunk_id": "prog_5111e0ffaee2_0026",
+          "doc_id": "5111e0ffaee2",
+          "snippet": "Il partito s’ impegna per la smilitarizzazione della Regione"
+        }
+      ],
+      "note": "0026 je talijanski duplikat istog odlomka (odluka 205); hrvatski 0009 je glavni cilj."
+    },
+    {
+      "id": "q10",
+      "question": "Smije li teško bolesna osoba sama odlučiti o kraju svog života, prema HNS-u?",
+      "party": "HNS",
+      "party_ids": [
+        246
+      ],
+      "topic": "svjetonazor",
+      "expected": [
+        {
+          "chunk_id": "prog_a613e3bd5a79_0013",
+          "doc_id": "a613e3bd5a79",
+          "snippet": "pitanje eutanazije, kao prava na slobodu izbora dostojanstvene smrti, potrebno zakonski regulirati"
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "question": "Što Demokrati misle o Schengenu i primanju susjednih zemalja u Uniju?",
+      "party": "demokrati",
+      "party_ids": [
+        253
+      ],
+      "topic": "EU i NATO",
+      "expected": [
+        {
+          "chunk_id": "prog_e41f4b2b6916_0009",
+          "doc_id": "e41f4b2b6916",
+          "snippet": "Poticat ćemo proširenje EU na nama susjedne zemlje."
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "question": "Kako bi Republika natjerala pravosuđe da brže i strože kažnjava političare koji kradu?",
+      "party": "republika",
+      "party_ids": [
+        431
+      ],
+      "topic": "korupcija i pravosuđe",
+      "expected": [
+        {
+          "chunk_id": "prog_f10089813942_0010",
+          "doc_id": "f10089813942",
+          "snippet": "Uvesti kontrolu porijekla imovine kod svakog gospodarskog kriminala"
+        },
+        {
+          "chunk_id": "prog_f10089813942_0009",
+          "doc_id": "f10089813942",
+          "snippet": "Neovisno i učinkovito sudstvo koje jamči osobne i poduzetničke slobode te suzbijanje korupcije"
+        },
+        {
+          "chunk_id": "prog_d25cfec55e11_0004",
+          "doc_id": "d25cfec55e11",
+          "snippet": "Procesi koji uključuju dužnosnike bi time bili gotovi za godinu, maksimalno dvije"
+        }
+      ],
+      "note": "d25cfec55e11 je zajednički program Fokus – Republika."
+    },
+    {
+      "id": "q13",
+      "question": "Kako Unija Kvarnera namjerava zaštititi obalu od prekomjerne izgradnje?",
+      "party": "UNIJA",
+      "party_ids": [
+        340
+      ],
+      "topic": "okoliš i prostor",
+      "expected": [
+        {
+          "chunk_id": "prog_7a760992225f_0016",
+          "doc_id": "7a760992225f",
+          "snippet": "zaustavljanjem nelegalne gradnje, devatsacije prostora, prekomjerne betonizacije i apartmanizacije"
+        },
+        {
+          "chunk_id": "prog_7a760992225f_0015",
+          "doc_id": "7a760992225f",
+          "snippet": "značajna je devastacija prostora, pogotovo priobalnog, neumjernom betonizacijom, nelegalnom gradnjom"
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "question": "Što Centar predlaže za trajanje nastavnog sata i računanje općeg uspjeha učenika?",
+      "party": "centar",
+      "party_ids": [
+        304
+      ],
+      "topic": "obrazovanje",
+      "expected": [
+        {
+          "chunk_id": "prog_9d33d8b579c5_0003",
+          "doc_id": "9d33d8b579c5",
+          "snippet": "odustane od 45 minutnog sata. Treba također odustati od općeg prosjeka ocjena"
+        }
+      ],
+      "note": "Centar je i u koalicijskom dokumentu Rijeke pravde (74d4a5515dd4), koji o ovome ne govori."
+    },
+    {
+      "id": "q15",
+      "question": "Što stranke predlažu za oporezivanje hrane i osnovnih proizvoda u trgovini?",
+      "party": null,
+      "party_ids": null,
+      "topic": "porezi",
+      "expected": [
+        {
+          "chunk_id": "prog_108476029df2_0006",
+          "doc_id": "108476029df2",
+          "snippet": "Proširit ćemo krug proizvoda na koje ćemo smanjiti PDV"
+        },
+        {
+          "chunk_id": "prog_64cd7cfed088_0001",
+          "doc_id": "64cd7cfed088",
+          "snippet": "smanjenjem poreza na osnovne životne namirnice"
+        },
+        {
+          "chunk_id": "prog_b8ed429ac83d_0112",
+          "doc_id": "b8ed429ac83d",
+          "snippet": "planiramo ukidanje smanjenih stopa PDV-a na najvećem broju roba"
+        }
+      ],
+      "note": "Možemo (0112) ide u suprotnom smjeru: manje sniženih stopa. b8ed429ac83d_0010 samo komentira učinak sniženja, nije označen."
+    },
+    {
+      "id": "q16",
+      "question": "Koje stranke brane pravo na abortus, a koje ga žele ograničiti?",
+      "party": null,
+      "party_ids": null,
+      "topic": "svjetonazor",
+      "expected": [
+        {
+          "chunk_id": "prog_b8ed429ac83d_0127",
+          "doc_id": "b8ed429ac83d",
+          "snippet": "Osigurat ćemo dostupan, siguran i besplatan pobačaj."
+        },
+        {
+          "chunk_id": "prog_7c54f0dd36a8_0017",
+          "doc_id": "7c54f0dd36a8",
+          "snippet": "DP se zalaže za zaštitu života od začeća do prirodne smrti"
+        },
+        {
+          "chunk_id": "prog_dcf0c5c4cba4_0003",
+          "doc_id": "dcf0c5c4cba4",
+          "snippet": "zagovarati pravo nerođenih na život"
+        },
+        {
+          "chunk_id": "prog_02b01cceb53e_0001",
+          "doc_id": "02b01cceb53e",
+          "snippet": "poštivanje prava žene na izbor u pitanju pobačaja"
+        }
+      ]
+    },
+    {
+      "id": "q17",
+      "question": "Koje stranke žele da mladići ponovno moraju ići u vojsku?",
+      "party": null,
+      "party_ids": null,
+      "topic": "obrana",
+      "expected": [
+        {
+          "chunk_id": "prog_7c54f0dd36a8_0038",
+          "doc_id": "7c54f0dd36a8",
+          "snippet": "neminovnosti aktiviranja obaveznog služenja vojnog roka"
+        },
+        {
+          "chunk_id": "prog_7c54f0dd36a8_0035",
+          "doc_id": "7c54f0dd36a8",
+          "snippet": "Hrvatska je primorana uvesti obavezni vojni rok"
+        },
+        {
+          "chunk_id": "prog_7c54f0dd36a8_0138",
+          "doc_id": "7c54f0dd36a8",
+          "snippet": "uvođenje obaveznog četveromjesečnog vojnog roka za ročnike"
+        },
+        {
+          "chunk_id": "prog_cd6897a070a3_0011",
+          "doc_id": "cd6897a070a3",
+          "snippet": "podržava obvezno služenje vojnog roka"
+        },
+        {
+          "chunk_id": "prog_1c4d71d9b198_0001",
+          "doc_id": "1c4d71d9b198",
+          "snippet": "obvezu vojnog osposobljavanja ročnika u trajanju od dva mjeseca"
+        }
+      ],
+      "note": "Pet ciljeva iz tri stranke (DP tri puta), pa je recall@5 = 1 teško dostižan; hit@5 je primarna mjera."
+    },
+    {
+      "id": "q18",
+      "question": "Koje stranke predlažu da država pokrije trošak privatnog liječnika kad se u javnom sustavu predugo čeka?",
+      "party": null,
+      "party_ids": null,
+      "topic": "zdravstvo",
+      "expected": [
+        {
+          "chunk_id": "prog_108476029df2_0020",
+          "doc_id": "108476029df2",
+          "snippet": "omogućit ćemo da se na teret HZZO-a građani liječe i u privatnim ustanovama"
+        },
+        {
+          "chunk_id": "prog_d25cfec55e11_0002",
+          "doc_id": "d25cfec55e11",
+          "snippet": "o trošku HZZO-a (po istim cijenama kao i u javnim ustanovama) liječiti u privatnom sektoru"
+        },
+        {
+          "chunk_id": "prog_f10089813942_0007",
+          "doc_id": "f10089813942",
+          "snippet": "Priznavanje naknade u bilo kojoj privatnoj ustanovi po cijenama za ugovorne partnere"
+        },
+        {
+          "chunk_id": "prog_5570c574133e_0008",
+          "doc_id": "5570c574133e",
+          "snippet": "pravo povrata poreza na iznos cijene privatne zdravstvene usluge"
+        }
+      ],
+      "note": "Most 51c9d6ca0b5b_0053 (kapacitete privatnog zdravstva staviti na raspolaganje) preopćenit je, nije označen."
+    },
+    {
+      "id": "q19",
+      "question": "Koje stranke podržavaju atomske elektrane, a koje su protiv?",
+      "party": null,
+      "party_ids": null,
+      "topic": "energetika",
+      "expected": [
+        {
+          "chunk_id": "prog_c180c7161d85_0015",
+          "doc_id": "c180c7161d85",
+          "snippet": "HDZ podržava korištenje nuklearne energije"
+        },
+        {
+          "chunk_id": "prog_a23c4dd56c14_0072",
+          "doc_id": "a23c4dd56c14",
+          "snippet": "Sa Slovenijom ćemo nastaviti odgovorno upravljati nuklearnom elektranom Krško"
+        },
+        {
+          "chunk_id": "prog_5570c574133e_0005",
+          "doc_id": "5570c574133e",
+          "snippet": "Proširujemo Nuklearnu elektranu Krško u suradnji s Republikom Slovenijom"
+        },
+        {
+          "chunk_id": "prog_51c9d6ca0b5b_0021",
+          "doc_id": "51c9d6ca0b5b",
+          "snippet": "povećati kapacitete proizvodnje energije u suradnji sa Slovenijom kroz NE Krško"
+        },
+        {
+          "chunk_id": "prog_e41f4b2b6916_0008",
+          "doc_id": "e41f4b2b6916",
+          "snippet": "Protivimo se korištenju nuklearne energije."
+        }
+      ]
+    },
+    {
+      "id": "q20",
+      "question": "Koje stranke žele zabraniti ili ograničiti genetski mijenjane biljke u poljoprivredi?",
+      "party": null,
+      "party_ids": null,
+      "topic": "poljoprivreda",
+      "expected": [
+        {
+          "chunk_id": "prog_7c54f0dd36a8_0071",
+          "doc_id": "7c54f0dd36a8",
+          "snippet": "zakonsko ograničenje upotrebe genetski modifici - ranih organizama - GMO"
+        },
+        {
+          "chunk_id": "prog_b8ed429ac83d_0016",
+          "doc_id": "b8ed429ac83d",
+          "snippet": "zdravu hranu koja nije uzgojena prekomjernom upotrebom pesticida i gnojiva, korištenjem GMO usjeva"
+        },
+        {
+          "chunk_id": "prog_e41f4b2b6916_0004",
+          "doc_id": "e41f4b2b6916",
+          "snippet": "Spriječit ćemo korištenje GMO-a u poljoprivredi"
+        }
+      ],
+      "note": "Kod Demokrata je stav samo u naslovu sekcije (e41f4b2b6916_0004); 0005 nosi isti naslov uz drugi sadržaj, nije označen."
+    }
+  ]
+}
