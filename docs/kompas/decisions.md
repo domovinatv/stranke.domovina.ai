@@ -115,3 +115,56 @@ izvornim URL-om stranke.
 - **Nezavisni i NLM:** imaju tanku HTML stranicu s ostacima izbornika.
 Ne blokiraju S3. Revizija: IDS-ov filtar jezika u S3 ako duplikati kvare recall, a DP-ov prijelom u S5
 ako citati ne prolaze doslovnu provjeru.
+
+## S3 (2026-11-19, prvi dio; ingest i recall@5 nisu izmjereni)
+
+**300. `rag.program_chunks`** (domovina-rag `aaf1be2`): sva polja iz `chunks.jsonl` kao stupci (null → `''`/0),
+uz `party_names`, `party_short` i `party_slugs`. To su nizovi paralelni s `party_ids`, a ETL ih spaja iz
+`data/kompas/liste_2024.json`, da MCP može filtrirati po imenu stranke bez stranke repoa.
+`ReplacingMergeTree(inserted_at) ORDER BY (doc_id, chunk_index)`, HNSW cosine kao `rag_chunks`.
+Revizija: kad se promijeni oblik `chunks.jsonl` (odluka 202).
+
+**301. ETL `python -m etl programs`** (`d8226b2`) radi u ETL containeru (`docker compose --profile etl run`),
+s ulazima montiranima read-only.
+- **Odluka po dokumentu:** otisak čine `chunk_id`, `text_hash`, metapodaci i imena stranaka. Kad se otisak ne
+  promijeni, dokument se preskače bez embeddera. Kad se promijeni, briše se `ALTER … DELETE` s `mutations_sync`
+  tek kad su novi embeddinzi gotovi, a dokumenti kojih više nema u datoteci se brišu.
+- **Embeddinzi se ponovno koriste** po `text_hash`, pa promjena samih metapodataka ne zove embedder.
+- **Batch ≤ 8**, jedan proces. Kad je embedder dolje, WARN i izlaz 0. Prazan ulaz je greška, da ne obriše tablicu.
+
+Revizija: ako lightweight `DELETE` proradi uz vektorski indeks.
+
+**302. Cloud sync `scripts/sync-programs.sh --cloud`** (`cdffe82`):
+- **Tablica:** sama je kreira DDL-om iz `init.sql`, jer se `init.sql` na cloudu ne pokreće ponovno.
+- **Usporedba:** usporedi otisak po dokumentu (broj redaka i hash) lokalno i na cloudu, pa prenese samo
+  promijenjene dokumente (Native). Puna zamjena je odbačena jer bi tablica na trenutak bila prazna.
+- **Cron:** korak 6c u `sync-cron.sh`, lokalno pa `--cloud`, best-effort.
+
+`--cloud` još nije pokrenut (S10).
+
+**303. `search_programs`** (`0c457cd`):
+- **`party`:** prima broj (`has(party_ids, …)`), slug, točan kratki naziv ili podniz imena od ≥ 3 znaka, bez
+  obzira na velika slova i dijakritike. Kratki naziv se ne traži kao podniz, jer bi „DP” pogodio „SDP”.
+- **Nepoznata stranka:** filtar ostaje, a odgovor kaže da program nije nađen.
+- **`limit`:** 5, kapica 20.
+- **Upit:** bez `FINAL`, duplikati se uklanjaju po `chunk_id`.
+- **Odgovor:** citat do 700 znakova, stranica ili „web stranica”, a za `nesiguran` oznaka „⚠ izvor: …”.
+
+Revizija: S10 (deploy) ili kad eval pokaže da filtar po imenu griješi.
+
+**304. Testovi MCP-a su `node:test` (`npm test`), ne vitest:** repo tako testira. „Vitest zelen” iz plana znači
+`npm test` zelen. Revizija: nikad.
+
+**305. Eval** (`b5e94ab`): `scripts/26_eval_search_programs.py`. Broj 25 je rezerviran za `25_fetch_glasanja.py`
+(S11).
+- **Zlatni skup:** `data/kompas/eval/search_programs_gold.json`, 20 pitanja (14 s filtrom stranke, 6 bez filtra),
+  46 ručno označenih chunkova, svaki s doslovnim isječkom do 15 riječi.
+- **„recall@5” iz plana** = prosječni hit@5. Uz njega se mjere i recall@5 i MRR@20, odvojeno za upite s filtrom
+  i bez njega.
+- **Slaba pitanja:** popisana su u commitu (q05, q11, q14, q20, a q17 i q19 imaju po 5 oznaka).
+
+Revizija: kad se promijene chunk ID-jevi (odluka 202). Isječci tada služe za ponovno mapiranje.
+
+**306. Reranker ne postoji u domovina-rag** (`services/reranker` je samo README). Eval ima `--rerank`
+(CrossEncoder `BAAI/bge-reranker-v2-m3` na CPU-u nad top 20, kao `uv run --with sentence-transformers`).
+Pokreće se samo ako je hit@5 nizak, a prvi put skida oko 2,3 GB. Revizija: ako pomogne, reranker ide u MCP (S10).

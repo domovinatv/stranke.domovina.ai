@@ -17,9 +17,9 @@ Legenda: `[x]` gotovo · `[ ]` otvoreno · `[~]` u radu · `(!)` traži korisnik
 - [x] (!) Vrata 1: korisnik potvrđuje opseg (koje liste, koja vrsta programa) → nakon S1 (odluka 200)
 - [x] `scripts/24_extract_programi.py`: PDF/HTML → tekst po stranicama, sekcije, chunkovi s `party_ids`, `doc_id`, `page_from/to`, `section` → `data/raw/kompas/chunks.jsonl` (gitignored, odluka 203) → S2
 - [x] Mjerena kvaliteta ekstrakcije (prazne stranice, OCR potreban, dijakritici) → S2 (`docs/research/2026-11-19-kvaliteta-ekstrakcije.md`)
-- [ ] domovina-rag: CH tablica `program_chunks` (1024-d, bge-m3), ETL iz `chunks.jsonl`, korak u `scripts/sync-cron.sh` → S3
-- [ ] domovina-rag: MCP alat `search_programs(query, party?, limit?)` s vitest testovima, lokalno (bez deploya) → S3
-- [ ] Eval: 20 pitanja o stavovima s očekivanim odlomkom, izmjeren recall@5 → S3
+- [ ] domovina-rag: CH tablica `program_chunks` (1024-d, bge-m3), ETL iz `chunks.jsonl`, korak u `scripts/sync-cron.sh` → S3 (kod gotov, ingest čeka embedder)
+- [ ] domovina-rag: MCP alat `search_programs(query, party?, limit?)` s testovima (`node:test`, odluka 304), lokalno (bez deploya) → S3 (kod gotov, nije probano na pravim podacima)
+- [ ] Eval: 20 pitanja o stavovima s očekivanim odlomkom, izmjeren recall@5 → S3 (zlatni skup i skripta 26 gotovi, mjerenje čeka ingest)
 
 ## F1 — Metodologija i matrica stavova
 
