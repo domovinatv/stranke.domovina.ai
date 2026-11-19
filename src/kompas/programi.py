@@ -253,19 +253,28 @@ def pdf_analysis(body: bytes) -> Analysis:
     return Analysis(fmt, "pdf", pages, len(_WORD_RE.findall(text)), text, title)
 
 
-def html_text(body: bytes) -> tuple[str, str | None]:
+def html_main(body: bytes):
+    """(main-content element or None, <title>): drops script/style/nav/header/
+    footer/form and picks the first <main>/<article>, else the whole document.
+    Shared with src/kompas/extract.py so word counts agree."""
     import lxml.html
 
     try:
         doc = lxml.html.fromstring(body)
     except (ValueError, lxml.etree.ParserError):
-        return "", None
+        return None, None
     title_el = doc.find(".//title")
     title = title_el.text_content().strip() if title_el is not None else None
     for bad in doc.xpath("//script|//style|//noscript|//nav|//header|//footer|//form"):
         bad.drop_tree()
     main = doc.xpath("//main|//article")
-    root = main[0] if main else doc
+    return (main[0] if main else doc), (title or None)
+
+
+def html_text(body: bytes) -> tuple[str, str | None]:
+    root, title = html_main(body)
+    if root is None:
+        return "", None
     text = re.sub(r"[ \t]+", " ", root.text_content())
     text = re.sub(r"\n\s*\n+", "\n\n", text).strip()
     return text, title or None

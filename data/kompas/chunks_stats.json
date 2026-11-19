@@ -1,0 +1,1231 @@
+{
+  "chunks_bytes": 2701806,
+  "chunks_path": "data/raw/kompas/chunks.jsonl",
+  "chunks_sha256": "196b6850588206d8a534894682da0155fd7c646b6f1df986d3b3dc96d701115d",
+  "dokumenti": [
+    {
+      "avg_chunk_words": 300.3,
+      "chunks": 10,
+      "diacritics_share": 0.1934,
+      "diacritics_suspicious": false,
+      "doc_id": "492e03c11720",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 12,
+      "max_chunk_words": 381,
+      "min_chunk_words": 110,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        13
+      ],
+      "rijeci": 3084,
+      "sections": 10,
+      "slug": "samostalna-demokratska-srpska-stranka",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 3084
+    },
+    {
+      "avg_chunk_words": 283.4,
+      "chunks": 29,
+      "diacritics_share": 0.1829,
+      "diacritics_suspicious": false,
+      "doc_id": "108476029df2",
+      "empty_page_list": [
+        1
+      ],
+      "empty_pages": 1,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 27,
+      "max_chunk_words": 477,
+      "min_chunk_words": 84,
+      "needs_ocr_pages": 1,
+      "nesiguran": true,
+      "pages": 25,
+      "party_ids": [
+        95,
+        364
+      ],
+      "rijeci": 8116,
+      "sections": 24,
+      "slug": "socijaldemokrati",
+      "suspicious_clean": {},
+      "suspicious_raw": {
+        "combining_caron": 2,
+        "private_use": 159
+      },
+      "toc_pages": 0,
+      "words": 8089
+    },
+    {
+      "avg_chunk_words": 252.3,
+      "chunks": 157,
+      "diacritics_share": 0.1676,
+      "diacritics_suspicious": false,
+      "doc_id": "7c54f0dd36a8",
+      "empty_page_list": [
+        1,
+        40
+      ],
+      "empty_pages": 2,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 172,
+      "max_chunk_words": 545,
+      "min_chunk_words": 82,
+      "needs_ocr_pages": 2,
+      "nesiguran": false,
+      "pages": 40,
+      "party_ids": [
+        258
+      ],
+      "rijeci": 40789,
+      "sections": 133,
+      "slug": "domovinski-pokret",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 39148
+    },
+    {
+      "avg_chunk_words": 206.6,
+      "chunks": 91,
+      "diacritics_share": 0.1929,
+      "diacritics_suspicious": false,
+      "doc_id": "a23c4dd56c14",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 102,
+      "max_chunk_words": 486,
+      "min_chunk_words": 81,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 69,
+      "party_ids": [
+        182
+      ],
+      "rijeci": 19301,
+      "sections": 85,
+      "slug": "hrvatska-demokratska-zajednica",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 1,
+      "words": 19132
+    },
+    {
+      "avg_chunk_words": 130.3,
+      "chunks": 10,
+      "diacritics_share": 0.1697,
+      "diacritics_suspicious": false,
+      "doc_id": "5570c574133e",
+      "empty_page_list": [
+        1,
+        18
+      ],
+      "empty_pages": 2,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 19,
+      "max_chunk_words": 151,
+      "min_chunk_words": 104,
+      "needs_ocr_pages": 1,
+      "nesiguran": false,
+      "pages": 20,
+      "party_ids": [
+        197
+      ],
+      "rijeci": 1368,
+      "sections": 10,
+      "slug": "hrvatska-socijalno-liberalna-stranka",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 1365
+    },
+    {
+      "avg_chunk_words": 425.0,
+      "chunks": 1,
+      "diacritics_share": 0.1882,
+      "diacritics_suspicious": false,
+      "doc_id": "1c4d71d9b198",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 5,
+      "max_chunk_words": 425,
+      "min_chunk_words": 425,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 1,
+      "party_ids": [
+        366
+      ],
+      "rijeci": 444,
+      "sections": 1,
+      "slug": "hrvatski-suverenisti",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 449
+    },
+    {
+      "avg_chunk_words": 354.5,
+      "chunks": 77,
+      "diacritics_share": 0.1737,
+      "diacritics_suspicious": false,
+      "doc_id": "51c9d6ca0b5b",
+      "empty_page_list": [
+        1
+      ],
+      "empty_pages": 1,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 67,
+      "max_chunk_words": 573,
+      "min_chunk_words": 89,
+      "needs_ocr_pages": 1,
+      "nesiguran": false,
+      "pages": 61,
+      "party_ids": [
+        390
+      ],
+      "rijeci": 26416,
+      "sections": 54,
+      "slug": "most",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 26409
+    },
+    {
+      "avg_chunk_words": 245.1,
+      "chunks": 152,
+      "diacritics_share": 0.188,
+      "diacritics_suspicious": false,
+      "doc_id": "b8ed429ac83d",
+      "empty_page_list": [
+        1,
+        96
+      ],
+      "empty_pages": 2,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 161,
+      "max_chunk_words": 529,
+      "min_chunk_words": 84,
+      "needs_ocr_pages": 2,
+      "nesiguran": false,
+      "pages": 96,
+      "party_ids": [
+        261
+      ],
+      "rijeci": 38620,
+      "sections": 145,
+      "slug": "mozemo-politicka-platforma",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 1,
+      "words": 37743
+    },
+    {
+      "avg_chunk_words": 401.7,
+      "chunks": 6,
+      "diacritics_share": 0.1818,
+      "diacritics_suspicious": false,
+      "doc_id": "d25cfec55e11",
+      "empty_page_list": [
+        14
+      ],
+      "empty_pages": 1,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 7,
+      "max_chunk_words": 594,
+      "min_chunk_words": 151,
+      "needs_ocr_pages": 1,
+      "nesiguran": false,
+      "pages": 14,
+      "party_ids": [
+        279,
+        431
+      ],
+      "rijeci": 2549,
+      "sections": 5,
+      "slug": "fokus",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2417
+    },
+    {
+      "avg_chunk_words": 180.9,
+      "chunks": 114,
+      "diacritics_share": 0.1788,
+      "diacritics_suspicious": false,
+      "doc_id": "74d4a5515dd4",
+      "empty_page_list": [
+        1
+      ],
+      "empty_pages": 1,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 269,
+      "max_chunk_words": 512,
+      "min_chunk_words": 80,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 207,
+      "party_ids": [
+        149,
+        181,
+        304,
+        341,
+        358,
+        410
+      ],
+      "rijeci": 22699,
+      "sections": 112,
+      "slug": "socijaldemokratska-partija-hrvatske",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 5,
+      "words": 21283
+    },
+    {
+      "avg_chunk_words": 350.3,
+      "chunks": 15,
+      "diacritics_share": 0.1589,
+      "diacritics_suspicious": false,
+      "doc_id": "1869ed311faf",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 12,
+      "max_chunk_words": 515,
+      "min_chunk_words": 182,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 10,
+      "party_ids": [
+        13
+      ],
+      "rijeci": 5144,
+      "sections": 12,
+      "slug": "samostalna-demokratska-srpska-stranka",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 5134
+    },
+    {
+      "avg_chunk_words": 556.3,
+      "chunks": 3,
+      "diacritics_share": 0.1635,
+      "diacritics_suspicious": false,
+      "doc_id": "b185b4e53c79",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 1,
+      "max_chunk_words": 576,
+      "min_chunk_words": 537,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 1,
+      "party_ids": [
+        95
+      ],
+      "rijeci": 1574,
+      "sections": 1,
+      "slug": "hrvatski-laburisti-stranka-rada",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 1574
+    },
+    {
+      "avg_chunk_words": 530.5,
+      "chunks": 8,
+      "diacritics_share": 0.1895,
+      "diacritics_suspicious": false,
+      "doc_id": "b821b9c9d8d2",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 1,
+      "max_chunk_words": 570,
+      "min_chunk_words": 464,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        97
+      ],
+      "rijeci": 3888,
+      "sections": 1,
+      "slug": "hrvatska-stranka-umirovljenika",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 3889
+    },
+    {
+      "avg_chunk_words": 242.5,
+      "chunks": 37,
+      "diacritics_share": 0.076,
+      "diacritics_suspicious": false,
+      "doc_id": "5111e0ffaee2",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 37,
+      "max_chunk_words": 520,
+      "min_chunk_words": 87,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 21,
+      "party_ids": [
+        177
+      ],
+      "rijeci": 8845,
+      "sections": 33,
+      "slug": "istarski-demokratski-sabor",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 8841
+    },
+    {
+      "avg_chunk_words": 448.8,
+      "chunks": 16,
+      "diacritics_share": 0.2104,
+      "diacritics_suspicious": false,
+      "doc_id": "c180c7161d85",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 10,
+      "max_chunk_words": 607,
+      "min_chunk_words": 205,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 11,
+      "party_ids": [
+        182
+      ],
+      "rijeci": 6846,
+      "sections": 6,
+      "slug": "hrvatska-demokratska-zajednica",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 1,
+      "words": 6690
+    },
+    {
+      "avg_chunk_words": 344.5,
+      "chunks": 2,
+      "diacritics_share": 0.1795,
+      "diacritics_suspicious": false,
+      "doc_id": "ad0c92e32f2a",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "pdf",
+      "heading_method": "fallback",
+      "headings": 1,
+      "max_chunk_words": 356,
+      "min_chunk_words": 333,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 3,
+      "party_ids": [
+        197
+      ],
+      "rijeci": 699,
+      "sections": 2,
+      "slug": "hrvatska-socijalno-liberalna-stranka",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 699
+    },
+    {
+      "avg_chunk_words": 226.3,
+      "chunks": 12,
+      "diacritics_share": 0.1739,
+      "diacritics_suspicious": false,
+      "doc_id": "ced2c39025a0",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 19,
+      "max_chunk_words": 334,
+      "min_chunk_words": 127,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        221
+      ],
+      "rijeci": 2776,
+      "sections": 12,
+      "slug": "istarska-stranka-umirovljenika-partito-istriano-dei-pensionati",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2776
+    },
+    {
+      "avg_chunk_words": 534.3,
+      "chunks": 46,
+      "diacritics_share": 0.1777,
+      "diacritics_suspicious": false,
+      "doc_id": "a613e3bd5a79",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 10,
+      "max_chunk_words": 641,
+      "min_chunk_words": 382,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        246
+      ],
+      "rijeci": 22640,
+      "sections": 10,
+      "slug": "hrvatska-narodna-stranka-liberalni-demokrati",
+      "suspicious_clean": {},
+      "suspicious_raw": {
+        "combining_acute": 7,
+        "combining_caron": 29,
+        "private_use": 15
+      },
+      "toc_pages": 0,
+      "words": 22703
+    },
+    {
+      "avg_chunk_words": 255.0,
+      "chunks": 10,
+      "diacritics_share": 0.1939,
+      "diacritics_suspicious": false,
+      "doc_id": "e41f4b2b6916",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 12,
+      "max_chunk_words": 478,
+      "min_chunk_words": 101,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        253
+      ],
+      "rijeci": 2563,
+      "sections": 9,
+      "slug": "demokrati",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2558
+    },
+    {
+      "avg_chunk_words": 590.0,
+      "chunks": 9,
+      "diacritics_share": 0.182,
+      "diacritics_suspicious": false,
+      "doc_id": "dcf0c5c4cba4",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 2,
+      "max_chunk_words": 653,
+      "min_chunk_words": 423,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 9,
+      "party_ids": [
+        277
+      ],
+      "rijeci": 4920,
+      "sections": 1,
+      "slug": "blok-za-hrvatsku",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 4909
+    },
+    {
+      "avg_chunk_words": 267.7,
+      "chunks": 3,
+      "diacritics_share": 0.1602,
+      "diacritics_suspicious": false,
+      "doc_id": "85b6274fc7ee",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 5,
+      "max_chunk_words": 520,
+      "min_chunk_words": 136,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 1,
+      "party_ids": [
+        279
+      ],
+      "rijeci": 834,
+      "sections": 3,
+      "slug": "fokus",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 830
+    },
+    {
+      "avg_chunk_words": 106.0,
+      "chunks": 1,
+      "diacritics_share": 0.23,
+      "diacritics_suspicious": false,
+      "doc_id": "3abc0adbc608",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 9,
+      "max_chunk_words": 106,
+      "min_chunk_words": 106,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        296
+      ],
+      "rijeci": 151,
+      "sections": 1,
+      "slug": "nezavisna-lista-mladih",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 139
+    },
+    {
+      "avg_chunk_words": 358.8,
+      "chunks": 4,
+      "diacritics_share": 0.15,
+      "diacritics_suspicious": false,
+      "doc_id": "4eecdc283be0",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 5,
+      "max_chunk_words": 507,
+      "min_chunk_words": 132,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        301
+      ],
+      "rijeci": 1390,
+      "sections": 3,
+      "slug": "srd-je-grad",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 1383
+    },
+    {
+      "avg_chunk_words": 371.0,
+      "chunks": 15,
+      "diacritics_share": 0.1754,
+      "diacritics_suspicious": false,
+      "doc_id": "9d33d8b579c5",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 15,
+      "max_chunk_words": 550,
+      "min_chunk_words": 107,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        304
+      ],
+      "rijeci": 5360,
+      "sections": 11,
+      "slug": "centar",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 5387
+    },
+    {
+      "avg_chunk_words": 184.0,
+      "chunks": 4,
+      "diacritics_share": 0.1754,
+      "diacritics_suspicious": false,
+      "doc_id": "42b55b04e20a",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 15,
+      "max_chunk_words": 368,
+      "min_chunk_words": 113,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 1,
+      "party_ids": [
+        317
+      ],
+      "rijeci": 814,
+      "sections": 4,
+      "slug": "nezavisni",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 802
+    },
+    {
+      "avg_chunk_words": 444.8,
+      "chunks": 20,
+      "diacritics_share": 0.1744,
+      "diacritics_suspicious": false,
+      "doc_id": "7a760992225f",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 8,
+      "max_chunk_words": 599,
+      "min_chunk_words": 95,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        340
+      ],
+      "rijeci": 8257,
+      "sections": 7,
+      "slug": "unija-kvarnera",
+      "suspicious_clean": {},
+      "suspicious_raw": {
+        "combining_acute": 2,
+        "combining_caron": 11
+      },
+      "toc_pages": 0,
+      "words": 8244
+    },
+    {
+      "avg_chunk_words": 267.0,
+      "chunks": 8,
+      "diacritics_share": 0.1668,
+      "diacritics_suspicious": false,
+      "doc_id": "59ca1be10e69",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 8,
+      "max_chunk_words": 482,
+      "min_chunk_words": 96,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        341
+      ],
+      "rijeci": 2116,
+      "sections": 7,
+      "slug": "narodna-stranka-reformisti",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2117
+    },
+    {
+      "avg_chunk_words": 368.3,
+      "chunks": 3,
+      "diacritics_share": 0.1679,
+      "diacritics_suspicious": false,
+      "doc_id": "9be7dd415944",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 13,
+      "max_chunk_words": 502,
+      "min_chunk_words": 172,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        358
+      ],
+      "rijeci": 1105,
+      "sections": 2,
+      "slug": "gradansko-liberalni-savez",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 1100
+    },
+    {
+      "avg_chunk_words": 98.5,
+      "chunks": 2,
+      "diacritics_share": 0.2024,
+      "diacritics_suspicious": false,
+      "doc_id": "5ecdb2c2e827",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 9,
+      "max_chunk_words": 116,
+      "min_chunk_words": 81,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        362
+      ],
+      "rijeci": 216,
+      "sections": 2,
+      "slug": "hocemo-pravedno",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 222
+    },
+    {
+      "avg_chunk_words": 293.5,
+      "chunks": 28,
+      "diacritics_share": 0.1999,
+      "diacritics_suspicious": false,
+      "doc_id": "1336763429f2",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 27,
+      "max_chunk_words": 525,
+      "min_chunk_words": 123,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 1,
+      "party_ids": [
+        364
+      ],
+      "rijeci": 8110,
+      "sections": 24,
+      "slug": "socijaldemokrati",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 8134
+    },
+    {
+      "avg_chunk_words": 159.8,
+      "chunks": 18,
+      "diacritics_share": 0.1924,
+      "diacritics_suspicious": false,
+      "doc_id": "7002e5b9360c",
+      "empty_page_list": [
+        1,
+        2,
+        4,
+        6
+      ],
+      "empty_pages": 4,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 26,
+      "max_chunk_words": 291,
+      "min_chunk_words": 88,
+      "needs_ocr_pages": 2,
+      "nesiguran": false,
+      "pages": 24,
+      "party_ids": [
+        390
+      ],
+      "rijeci": 3131,
+      "sections": 18,
+      "slug": "most",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2941
+    },
+    {
+      "avg_chunk_words": 576.3,
+      "chunks": 16,
+      "diacritics_share": 0.1616,
+      "diacritics_suspicious": false,
+      "doc_id": "cd6897a070a3",
+      "empty_page_list": [
+        29
+      ],
+      "empty_pages": 1,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 2,
+      "max_chunk_words": 620,
+      "min_chunk_words": 407,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 29,
+      "party_ids": [
+        394
+      ],
+      "rijeci": 8463,
+      "sections": 1,
+      "slug": "dom-i-nacionalno-okupljanje",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 8433
+    },
+    {
+      "avg_chunk_words": 469.0,
+      "chunks": 1,
+      "diacritics_share": 0.1814,
+      "diacritics_suspicious": false,
+      "doc_id": "64cd7cfed088",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 1,
+      "max_chunk_words": 469,
+      "min_chunk_words": 469,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        398
+      ],
+      "rijeci": 470,
+      "sections": 1,
+      "slug": "dario-zurovec-nezavisna-lista",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 470
+    },
+    {
+      "avg_chunk_words": 136.5,
+      "chunks": 4,
+      "diacritics_share": 0.1811,
+      "diacritics_suspicious": false,
+      "doc_id": "02b01cceb53e",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 8,
+      "max_chunk_words": 231,
+      "min_chunk_words": 101,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        410
+      ],
+      "rijeci": 576,
+      "sections": 3,
+      "slug": "dalija-oreskovic-i-ljudi-s-imenom-i-prezimenom",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 564
+    },
+    {
+      "avg_chunk_words": 101.0,
+      "chunks": 4,
+      "diacritics_share": 0.2327,
+      "diacritics_suspicious": false,
+      "doc_id": "7f59aaaebcae",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 31,
+      "max_chunk_words": 106,
+      "min_chunk_words": 92,
+      "needs_ocr_pages": 0,
+      "nesiguran": true,
+      "pages": 1,
+      "party_ids": [
+        412
+      ],
+      "rijeci": 579,
+      "sections": 4,
+      "slug": "pravo-i-pravda",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 579
+    },
+    {
+      "avg_chunk_words": 127.6,
+      "chunks": 17,
+      "diacritics_share": 0.1786,
+      "diacritics_suspicious": false,
+      "doc_id": "f10089813942",
+      "empty_page_list": [],
+      "empty_pages": 0,
+      "format": "html",
+      "heading_method": "html",
+      "headings": 52,
+      "max_chunk_words": 196,
+      "min_chunk_words": 84,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 1,
+      "party_ids": [
+        431
+      ],
+      "rijeci": 2129,
+      "sections": 17,
+      "slug": "republika",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2254
+    },
+    {
+      "avg_chunk_words": 307.8,
+      "chunks": 8,
+      "diacritics_share": 0.1833,
+      "diacritics_suspicious": false,
+      "doc_id": "fa6d5b4963a9",
+      "empty_page_list": [
+        1,
+        2,
+        16
+      ],
+      "empty_pages": 3,
+      "format": "pdf",
+      "heading_method": "font",
+      "headings": 9,
+      "max_chunk_words": 479,
+      "min_chunk_words": 177,
+      "needs_ocr_pages": 0,
+      "nesiguran": false,
+      "pages": 16,
+      "party_ids": [
+        434
+      ],
+      "rijeci": 2623,
+      "sections": 7,
+      "slug": "drito",
+      "suspicious_clean": {},
+      "suspicious_raw": {},
+      "toc_pages": 0,
+      "words": 2455
+    }
+  ],
+  "params": {
+    "chunk_max": 550,
+    "generic_heading_min": 3,
+    "overlap_words": 50,
+    "para_split": 250,
+    "tiny_section": 80
+  },
+  "stranke": {
+    "13": {
+      "chunks": 25,
+      "docs": 2,
+      "slug": "samostalna-demokratska-srpska-stranka"
+    },
+    "149": {
+      "chunks": 114,
+      "docs": 1,
+      "slug": "socijaldemokratska-partija-hrvatske"
+    },
+    "177": {
+      "chunks": 37,
+      "docs": 1,
+      "slug": "istarski-demokratski-sabor"
+    },
+    "181": {
+      "chunks": 114,
+      "docs": 1,
+      "slug": "hrvatska-seljacka-stranka"
+    },
+    "182": {
+      "chunks": 107,
+      "docs": 2,
+      "slug": "hrvatska-demokratska-zajednica"
+    },
+    "197": {
+      "chunks": 12,
+      "docs": 2,
+      "slug": "hrvatska-socijalno-liberalna-stranka"
+    },
+    "221": {
+      "chunks": 12,
+      "docs": 1,
+      "slug": "istarska-stranka-umirovljenika-partito-istriano-dei-pensionati"
+    },
+    "246": {
+      "chunks": 46,
+      "docs": 1,
+      "slug": "hrvatska-narodna-stranka-liberalni-demokrati"
+    },
+    "253": {
+      "chunks": 10,
+      "docs": 1,
+      "slug": "demokrati"
+    },
+    "258": {
+      "chunks": 157,
+      "docs": 1,
+      "slug": "domovinski-pokret"
+    },
+    "261": {
+      "chunks": 152,
+      "docs": 1,
+      "slug": "mozemo-politicka-platforma"
+    },
+    "277": {
+      "chunks": 9,
+      "docs": 1,
+      "slug": "blok-za-hrvatsku"
+    },
+    "279": {
+      "chunks": 9,
+      "docs": 2,
+      "slug": "fokus"
+    },
+    "296": {
+      "chunks": 1,
+      "docs": 1,
+      "slug": "nezavisna-lista-mladih"
+    },
+    "301": {
+      "chunks": 4,
+      "docs": 1,
+      "slug": "srd-je-grad"
+    },
+    "304": {
+      "chunks": 129,
+      "docs": 2,
+      "slug": "centar"
+    },
+    "317": {
+      "chunks": 4,
+      "docs": 1,
+      "slug": "nezavisni"
+    },
+    "340": {
+      "chunks": 20,
+      "docs": 1,
+      "slug": "unija-kvarnera"
+    },
+    "341": {
+      "chunks": 122,
+      "docs": 2,
+      "slug": "narodna-stranka-reformisti"
+    },
+    "358": {
+      "chunks": 117,
+      "docs": 2,
+      "slug": "gradansko-liberalni-savez"
+    },
+    "362": {
+      "chunks": 2,
+      "docs": 1,
+      "slug": "hocemo-pravedno"
+    },
+    "364": {
+      "chunks": 57,
+      "docs": 2,
+      "slug": "socijaldemokrati"
+    },
+    "366": {
+      "chunks": 1,
+      "docs": 1,
+      "slug": "hrvatski-suverenisti"
+    },
+    "390": {
+      "chunks": 95,
+      "docs": 2,
+      "slug": "most"
+    },
+    "394": {
+      "chunks": 16,
+      "docs": 1,
+      "slug": "dom-i-nacionalno-okupljanje"
+    },
+    "398": {
+      "chunks": 1,
+      "docs": 1,
+      "slug": "dario-zurovec-nezavisna-lista"
+    },
+    "410": {
+      "chunks": 118,
+      "docs": 2,
+      "slug": "dalija-oreskovic-i-ljudi-s-imenom-i-prezimenom"
+    },
+    "412": {
+      "chunks": 4,
+      "docs": 1,
+      "slug": "pravo-i-pravda"
+    },
+    "431": {
+      "chunks": 23,
+      "docs": 2,
+      "slug": "republika"
+    },
+    "434": {
+      "chunks": 8,
+      "docs": 1,
+      "slug": "drito"
+    },
+    "95": {
+      "chunks": 32,
+      "docs": 2,
+      "slug": "hrvatski-laburisti-stranka-rada"
+    },
+    "97": {
+      "chunks": 8,
+      "docs": 1,
+      "slug": "hrvatska-stranka-umirovljenika"
+    }
+  },
+  "totals": {
+    "avg_chunk_words": 280.4,
+    "chunks": 961,
+    "diacritics_suspicious_docs": [],
+    "docs": 37,
+    "empty_pages": 18,
+    "needs_ocr_pages": 10,
+    "nesigurni_docs": 9,
+    "pages": 676,
+    "words": 264946
+  }
+}
